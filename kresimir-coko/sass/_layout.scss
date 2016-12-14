@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  @include align-items(stretch);
+  @include display(flex);
+  @include flex-direction(column);
+  @include justify-content(center);
+  width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    width: 1024px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 768px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
