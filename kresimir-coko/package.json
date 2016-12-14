@@ -1,0 +1,30 @@
+{
+  "name": "kresimircoko.xyz",
+  "version": "1.0.0",
+  "description": "Krešimir Čoko personal website",
+  "main": "index.html",
+  "scripts": {
+    "test": "dev test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kresimircoko/portfolio.git"
+  },
+  "keywords": [
+    "kresimircoko"
+  ],
+  "author": "Krešimir Čoko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kresimircoko/portfolio/issues"
+  },
+  "homepage": "https://github.com/kresimircoko/portfolio#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-watch": "^4.3.11",
+    "gulp-webserver": "^0.9.1"
+  }
+}
