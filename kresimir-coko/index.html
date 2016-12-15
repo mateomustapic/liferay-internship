@@ -6,19 +6,126 @@
     <link rel="stylesheet" href="/css/base.css">
   </head>
   <body>
-    <header id="site-header" class="container">
-      <h1>Header</h1>
+    <header id="site-header">
+
     </header>
 
-    <section class="container">
-      <h2>Content</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+    <section id="landing-section" class="flex-row">
+      <div id="left-landing" class="flex-column">
+        <h1>Krešimir Čoko</h1>
+        <small>Front End Developer</small>
+        <a id="landing-cta" class="btn"> Send me an email! </a>
+      </div>
+
+      <div class="arrow-left"></div>
+
+      <div id="right-landing" class="flex-column">
+        <div class="title-row flex-column">
+          <img id="avatar" src="http://placehold.it/240x240" alt="">
+          <h2>Get to know what im all about...</h2>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+      </div>
+    </section>
+
+    <section id="blog-section" class="container flex-column">
+      <h2 class="section-heading">... maybe read some of my stories.</h2>
+      <div class="articles-row flex-row">
+        <article class="article flex-column">
+          <header><a href="#"> <i class="fa fa-hashtag"></i> Developing a college website as a student</a></header>
+          <p>
+            Read about my struggles with the college administrations as well as the good, the bad and the ugly of developing a website for your college.
+          </p>
+          <footer>
+            <span>March 18, 2016</span>
+          </footer>
+        </article>
+        <article class="article flex-column">
+          <header><a href="#"> <i class="fa fa-hashtag"></i> Building a portfolio</a></header>
+          <p>
+            Read about my thoughts and the development process of building my portfolio. I write about the tools I used, my workflow and more.
+          </p>
+          <footer>
+            <span>March 16, 2016</span>
+        </footer>
+        </article>
+        <article class="article flex-column">
+          <header><a href="#"> <i class="fa fa-hashtag"></i> Article Header</a></header>
+          <p>Placeholder article content text goes here.</p>
+          <footer>
+            <span>July 12, 2016</span>
+        </footer>
+        </article>
+      </div>
+    </section>
+
+    <div class="cool-separator flex-row">
+      <div class="tiny-separator"></div>
+      <div class="outer-separator"></div>
+      <div class="inner-separator"></div>
+      <div class="outer-separator"></div>
+      <div class="tiny-separator"></div>
+    </div>
+
+    <section id="work-section" class="container flex-row">
+      <div class="work-example flex-column">
+        <!-- Cool animation for info about project -->
+
+        <div class="tech-stack flex-column">
+          <ul class="fa-ul">
+            <li><i class="fa-li fa fa-html5"></i> HTML</li>
+            <li><i class="fa-li fa fa-css3"></i> CSS</li>
+            <li><i class="fa-li fa fa-wordpress"></i> WordPress</li>
+            <li><i class="fa-li fa fa-github"></i> GitHub</li>
+          </ul>
+        </div>
+
+        <footer>
+          <span>Placeholder Work #1</span>
+        </footer>
+      </div>
+      <div class="work-example flex-column">
+        <!-- Cool animation for info about project -->
+
+        <div class="tech-stack flex-column">
+          <ul class="fa-ul">
+            <li><i class="fa-li fa fa-html5"></i> HTML</li>
+            <li><i class="fa-li fa fa-css3"></i> CSS</li>
+            <li><i class="fa-li fa fa-wordpress"></i> WordPress</li>
+            <li><i class="fa-li fa fa-github"></i> GitHub</li>
+          </ul>
+        </div>
+
+        <footer>
+          <span>Placeholder Work #2</span>
+        </footer>
+      </div>
+      <div class="work-example flex-column">
+        <!-- Cool animation for info about project -->
+
+        <div class="tech-stack flex-column">
+          <ul class="fa-ul">
+            <li><i class="fa-li fa fa-html5"></i> HTML</li>
+            <li><i class="fa-li fa fa-css3"></i> CSS</li>
+            <li><i class="fa-li fa fa-wordpress"></i> WordPress</li>
+            <li><i class="fa-li fa fa-github"></i> GitHub</li>
+          </ul>
+        </div>
+
+        <footer>
+          <span>Placeholder Work #3</span>
+        </footer>
+      </div>
     </section>
 
     <footer id="site-footer" class="container">
       <p>Liferay.com, 2017.</p>
     </footer>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>

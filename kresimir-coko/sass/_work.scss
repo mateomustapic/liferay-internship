@@ -1,0 +1,79 @@
+#work-section {
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.work-example {
+  position: relative;
+  height: 450px;
+  width: 30%;
+  padding: 20px;
+  box-shadow: $box-s;
+  border-radius: 2px;
+  background-image: url('../img/hero.jpg');
+  background-size: cover;
+  background-position: center;
+
+  p {
+    text-align: center;
+    color: $white;
+    text-shadow: 0 1px 2px #333;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+    width: 98%;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: $box-s;
+
+    span {
+      display: block;
+      line-height: 1;
+      font-family: Montserrat;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: $lightText;
+      padding: 10px;
+    }
+  }
+}
+
+.tech-stack {
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s ease-in-out;
+  position: absolute;
+  top: 20px;
+  padding: 20px 10px;
+  background-color: rgba(white, 0.7);
+  border-radius: 2px;
+  box-shadow: $box-s;
+  width: calc(100% - 40px);
+
+  ul {
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  li {
+    padding-bottom: 5px;
+    font-family: Montserrat;
+    font-weight: 900;
+    color: $text;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transition: .3s ease-in-out;
+  }
+}
