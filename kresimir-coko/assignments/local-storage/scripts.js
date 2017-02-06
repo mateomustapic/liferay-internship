@@ -1,45 +1,51 @@
-const addItems = document.querySelector('#addItems');
 const foodList = document.querySelector('#food');
-const items = JSON.parse(localStorage.getItem('items')) || [];
+const foodForm = document.querySelector('#addFood');
+const food = JSON.parse(localStorage.getItem('food')) || [];
 
-function addItem(evt) {
+function handleForm(evt) {
 	evt.preventDefault();
-	const text = (this.querySelector('[name=item]')).value;
+	const mealName = (this.querySelector('[name=meal]')).value;
 
-	const item = {
-		text,
+	const meal = {
+		name: mealName,
 		done: false,
 	};
 
-	items.push(item);
+	food.push(meal);
 
-	populateList(items, foodList);
+	displayFood(food, foodList);
 
-	localStorage.setItem('items', JSON.stringify(items));
+	// set LocalStorage
+	localStorage.setItem('food', JSON.stringify(food));
 	this.reset();
 }
 
-function populateList(food, foodList) {
-	foodList.innerHTML = food.map((meal, i) => {
-		return `
-			<li>
-				<input
-					type="checkbox" data-index=${i} id="item${i}"
-					${meal.done ? 'checked' : ''} />
-				<label for="item${i}">${meal.text}</label>
-			</li>`;
+function displayFood(arr, el) {
+	el.innerHTML = arr.map((item, i) => {
+		return `<li>
+			<input data-index=${i} type="checkbox" id="item${i}"
+			${item.done ? 'checked' : ''}/>
+			<label for="item${i}">${item.name}</label>
+		</li>`;
 	}).join('');
 }
 
-function toggleDone(el) {
-	if (!el.target.matches('input')) return;
+function handleChecked(el) {
 	const target = el.target;
+
+	if(!target.matches('input')) return;
+
 	const index = target.dataset.index;
-	items[index].done = !items[index].done;
-	localStorage.setItem('items', JSON.stringify(items));
-	populateList(items, foodList);
+
+	food[index].done = !food[index].done;
+
+	// Change LocalStorage
+	localStorage.setItem('food', JSON.stringify(food));
+
+	displayFood(food, foodList);
 }
 
-addItems.addEventListener('submit', addItem);
-foodList.addEventListener('click', toggleDone);
-populateList(items, foodList);
+foodForm.addEventListener('submit', handleForm);
+foodList.addEventListener('click', handleChecked);
+
+displayFood(food, foodList);
