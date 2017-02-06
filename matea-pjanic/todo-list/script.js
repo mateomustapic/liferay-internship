@@ -1,45 +1,67 @@
-$(document).ready(function() {
+/* global $ */
 
-  function addNewItem(itemText, list) {
-       $(list).prepend('<li><input type ="checkbox"><span>' + itemText + '</span><span class = "close">&times</span></li>');
-  }
+$(document).ready(
+	function() {
+		function addNewItem(itemText, list) {
+			$(list).prepend('<li><input type ="checkbox"><span>' + itemText + '</span><span class = "close">&times</span></li>');
+		}
 
-  var newBtn = document.getElementById("addBtn");
-  var input = document.getElementById("myInput");
-  var list = document.getElementById("myUL");
+		var input = document.getElementById('myInput');
 
-  newBtn.onclick = function() {
-    var itemText = input.value;
-    if(itemText == "") {
-      alert("come on! don't be lazy");
-    }
-    else {
-      addNewItem(itemText, list);
-    }
-    input.value = "";
-  };
+		var list = document.getElementById('myUL');
 
-  input.onkeyup = function(event) {
-    if (event.which == 13) {
-      var itemText = input.value;
-      if(itemText == "") {
-        alert("come on! don't be lazy");
-      }
-      else {
-        addNewItem(itemText, list);
-      }
-      input.value = "";
-    }
-  };
+		var newBtn = document.getElementById('addBtn');
 
-  $('#myUL').on("click", "input[type='checkbox']",
-                function(e) {
-    ($(this).parent()).toggleClass('ab');
-  });
+		newBtn.onclick = function() {
+			var itemText = input.value;
 
-  $('#myUL').on("click", ".close",
-                function(e) {
-     $(this).parent().hide();
-   });
+			if (itemText == '') {
+				alert('come on! dont be lazy');
+			}
+			else {
+				addNewItem(itemText, list);
+			}
+			input.value = '';
+		};
 
-});
+		input.onkeyup = function(event) {
+			if (event.which == 13) {
+				var itemText = input.value;
+
+				if (itemText == '') {
+					alert('come on! dont be lazy');
+				}
+				else {
+					addNewItem(itemText, list);
+				}
+				input.value = '';
+			}
+		};
+
+		var ul = $('#myUL');
+
+		ul.on(
+			'click',
+			'input[type="checkbox"]',
+			function(event) {
+				var target = $(event.target);
+
+				var parent = target.parent();
+
+				parent.toggleClass('ab');
+			}
+		);
+
+		ul.on(
+			'click',
+			'.close',
+			function(event) {
+				var target = $(event.target);
+
+				var parent = target.parent();
+
+				parent.hide();
+			}
+		);
+	}
+);
