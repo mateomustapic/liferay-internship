@@ -53,10 +53,3 @@ requestApartments
 
 		}).join('');
 	})
-
-function handleFilter(evt) {
-	const target = evt.target;
-	console.log(target);
-}
-
-filterContainer.addEventListener('submit', handleFilter);
