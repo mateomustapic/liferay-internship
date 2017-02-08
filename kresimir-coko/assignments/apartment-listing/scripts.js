@@ -7,21 +7,19 @@ const ratingSelect = filterContainer.querySelector('[name=rating]');
 const bedsSelect = filterContainer.querySelector('[name=beds]');
 const peopleSelect = filterContainer.querySelector('[name=people]');
 
-const requestApartments =
-	new Promise((resolve, reject) => {
-		const xhr = new XMLHttpRequest();
-		xhr.onload = function() {
-			try {
-				resolve(JSON.parse(this.responseText));
-			}
-			catch (e) {
-				reject(e);
-			}
-		};
-		xhr.onerror = reject;
-		xhr.open('GET', 'https://api.myjson.com/bins/16wiy5');
-		xhr.send();
-	});
+const requestApartments = new Promise((resolve, reject) => {
+	const xhr = new XMLHttpRequest();
+	xhr.onload = function() {
+		try {
+			resolve(JSON.parse(this.responseText));
+		} catch (e) {
+			reject(e);
+		}
+	};
+	xhr.onerror = reject;
+	xhr.open('GET', 'https://api.myjson.com/bins/16wiy5');
+	xhr.send();
+});
 
 requestApartments
 	.then(apartments => {
@@ -54,4 +52,4 @@ requestApartments
 			`;
 
 		}).join('');
-	})
+	});
