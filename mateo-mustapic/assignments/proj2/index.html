@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculator</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="js/script.js"></script>
+	</head>
+	<body>
+		<div id="calculator">
+                <b>CALCULATOR</b>
+        </div>
+        <hr></hr>
+		<form>
+            <div id="numbers">
+                Please input 2 numbers between 1 and 100
+                <br><br>
+                1st number: <input type="text" id="firstNumber" placeholder="Enter 1st number.." />
+                2nd Number: <input type="text" id="secondNumber" placeholder="Enter 2nd number.."/><br>
+            </div>
+            <br>
+
+            <input type="button" class="button" onClick="multiplyBy()" Value="Multiply" />
+            <input type="button" class="button" onClick="divideBy()" Value="Divide" />
+            <input type="button" class="button" onClick="sumBy()" Value="Sum" />
+            <input type="button" class="button" onClick="substractBy()" Value="Substract" />
+            <input type="button" class="button" onClick="increment()" Value="Increment" />
+            <input type="button" class="reset"onclick="reset()" value="Clear form">
+        </form>
+        <br>
+        
+        <div id="res">
+            <p>The Result is : <br></p>
+        </div>
+
+        <div id="result">
+            
+        </div>
+
+        <hr></hr>
+        <br>
+        <input type="button" class="button" onClick="showPi()" Value="Show Pi"/>
+        <br><br>
+        <div id="pi">
+                Value of Pi is: <div id="piResult"></div>
+        </div>
+        <br>
+        <hr></hr>
+
+         <div id="salary">
+            My salary: 
+            <br>
+            <input type="text" id="sal" placeholder="Enter your salary.."/>
+        </div>
+            
+        <div id="tax">
+            Tax is (25% of salary):
+        </div>
+
+        <div id="taxResult">
+             
+        </div>
+
+        <input type="button" class="button" onClick="calculateTax()" Value="Calculate Tax"/>
+        <br><br>
+        <hr></hr>
+        <form name="converter">
+            <div id="converter">
+                <b>CURRENCY CONVERTER</b>
+            </div>
+            <table border="0">
+            <tr>
+            <td>Euro: </td><td><input type="text" name="euro" placeholder="EUR" onChange="euroConverter()" /></td>
+            </tr>
+            <tr>
+            <td>US Dollar: </td><td><input type="text" name="dollar" placeholder="USD" onChange="dollarConverter()" /></td>
+            </tr>
+            <tr>
+            <td>British Pound:</td><td><input type="text" name="pound" placeholder="GBP" onChange="poundConverter()" /></td>
+            </tr>
+            <tr>
+            <td>Japanese Yen: </td><td><input type="text" name="yen" placeholder="YEN" onChange="yenConverter()" /></td>
+            </tr>
+            <tr>
+            <td colspan="2" align="center"><input type="button" class="button" value="Convert!" /></td>
+            </tr>
+
+            </table>
+        </form>
+
+        <br>
+        <hr></hr>
+
+        <footer class="page-row">
+          <p>&copy; 2017 Project 2</p>
+        </footer>
+
+	</body>
+</html>
