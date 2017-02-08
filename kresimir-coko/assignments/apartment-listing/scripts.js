@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */
+
 const apartmentsContainer = document.querySelector('#app-content_apartments-container');
 const filterContainer = document.querySelector('#app-content_filter-container');
 const priceSelect = filterContainer.querySelector('[name=price]');
