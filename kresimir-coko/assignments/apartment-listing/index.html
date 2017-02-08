@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<title>Apartment Listing</title>
+		<link href="./styles.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300,400,600|Raleway:300,400&amp;subset=latin-ext" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<div id="app">
+
+			<header id="app-header">
+				<div class="container">
+					<h2>Apartment Listing</h2>
+				</div>
+			</header>
+
+			<main id="app-content">
+				<div class="container">
+					<section class="content-section" id="app-content_filter">
+						<form id="app-content_filter-container">
+							<div class="filter">
+								<label for="price">Price</label>
+								<select class="filter-select" name="price">
+									<option value="">100€ - 199€</option>
+									<option value="">200€ - 299€</option>
+									<option value="">300€ - 399€</option>
+									<option value="">400€ - 500€</option>
+								</select>
+							</div>
+							<div class="filter">
+								<label for="rating">Rating</label>
+								<select class="filter-select" name="rating">
+									<option value="">3 or less</option>
+									<option value="">4</option>
+									<option value="">5</option>
+								</select>
+							</div>
+							<div class="filter">
+								<label for="beds">Beds</label>
+								<select class="filter-select" name="beds">
+									<option value="">1</option>
+									<option value="">2</option>
+									<option value="">3</option>
+									<option value="">4</option>
+								</select>
+							</div>
+							<div class="filter">
+								<label for="people">People</label>
+								<select class="filter-select" name="people">
+									<option value="">1</option>
+									<option value="">2</option>
+									<option value="">3</option>
+									<option value="">4</option>
+								</select>
+							</div>
+						</form>
+					</section>
+
+					<section class="content-section" id="app-content_apartments">
+						<div id="app-content_apartments-container">
+							<!-- Apartments Get Loaded Here -->
+						</div>
+					</section>
+				</div>
+			</main>
+
+			<footer id="app-footer">
+				<div class="container">
+					<h3>App Footer</h3>
+				</div>
+			</footer>
+
+		</div>
+
+		<script charset="utf-8" src="./scripts.js"></script>
+	</body>
+</html>
