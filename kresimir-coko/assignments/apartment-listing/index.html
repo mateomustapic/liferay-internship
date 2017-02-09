@@ -2,11 +2,11 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+		<meta content="initial-scale=1, maximum-scale=1" name="viewport">
 		<title>Apartment Listing</title>
 		<link href="./styles.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300,400,600|Raleway:300,400&amp;subset=latin-ext" rel="stylesheet">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	</head>
 	<body>
 		<div id="app">
@@ -21,41 +21,50 @@
 				<div class="container">
 					<section class="content-section" id="app-content_filter">
 						<form id="app-content_filter-container">
+
 							<div class="filter">
 								<label for="price">Price</label>
-								<select class="filter-select" name="price">
-									<option value="">100€ - 199€</option>
-									<option value="">200€ - 299€</option>
-									<option value="">300€ - 399€</option>
-									<option value="">400€ - 500€</option>
-								</select>
+								<input class="filter-slider" max="500" min="100" name="price"  step="100"type="range" value="100">
+								<output class="filter-output" for="price">100</output>
+								<div class="slider-range">
+									<span class="slider-range_min">100</span>
+									<span class="slider-range_max">500</span>
+								</div>
 							</div>
+
 							<div class="filter">
 								<label for="rating">Rating</label>
-								<select class="filter-select" name="rating">
-									<option value="">3 or less</option>
-									<option value="">4</option>
-									<option value="">5</option>
-								</select>
+								<input class="filter-slider" type="range" name="rating"
+								step="1" min="3" max="5" value="3">
+								<output class="filter-output" for="rating">3</output>
+								<div class="slider-range">
+									<span class="slider-range_min">3</span>
+									<span class="slider-range_max">5</span>
+								</div>
 							</div>
+
 							<div class="filter">
 								<label for="beds">Beds</label>
-								<select class="filter-select" name="beds">
-									<option value="">1</option>
-									<option value="">2</option>
-									<option value="">3</option>
-									<option value="">4</option>
-								</select>
+								<input class="filter-slider" type="range" name="beds"
+								step="1" min="1" max="4" value="1">
+								<output class="filter-output" for="beds">1</output>
+								<div class="slider-range">
+									<span class="slider-range_min">1</span>
+									<span class="slider-range_max">4</span>
+								</div>
 							</div>
+
 							<div class="filter">
 								<label for="people">People</label>
-								<select class="filter-select" name="people">
-									<option value="">1</option>
-									<option value="">2</option>
-									<option value="">3</option>
-									<option value="">4</option>
-								</select>
+								<input class="filter-slider" type="range" name="people"
+								step="1" min="1" max="4" value="1">
+								<output class="filter-output" for="people">1</output>
+								<div class="slider-range">
+									<span class="slider-range_min">1</span>
+									<span class="slider-range_max">4</span>
+								</div>
 							</div>
+
 						</form>
 					</section>
 
