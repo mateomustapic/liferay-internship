@@ -3,12 +3,9 @@
 const apartmentsContainer = document.querySelector('#app-content_apartments-container');
 const filterContainer = document.querySelector('#app-content_filter-container');
 const filterSlider = filterContainer.querySelectorAll('.filter-slider');
-let filters = {
-	price: 100,
-	rating: 3,
-	beds: 1,
-	people: 1
-};
+const filteringBy = document.querySelector('#app-content_filtering-by .container');
+const activeFilters = filteringBy.querySelectorAll('span');
+const filters = {};
 
 const requestApartments = new Promise((resolve, reject) => {
 	const xhr = new XMLHttpRequest();
@@ -23,6 +20,41 @@ const requestApartments = new Promise((resolve, reject) => {
 	xhr.open('GET', 'https://api.myjson.com/bins/16wiy5');
 	xhr.send();
 });
+
+requestApartments
+	.then(apartments => {
+		apartments = apartments.filter(apartment => {
+			return apartment.rating == 5;
+		});
+		apartmentsContainer.innerHTML = apartments.map(apartment => {
+			return `
+				<div id="apartment-${apartment.id}" class="apartment">
+					<h3>${apartment.title}</h3>
+					<p>${apartment.description}</p>
+					<div class="metadata">
+						<span class="metadata-date">
+							<i class="fa fa-calendar"></i> ${apartment.date}
+						</span>
+						<span class="metadata-price">
+							<i class="fa fa-money"></i> ${apartment.price}
+						</span>
+						<span class="metadata-rating">
+							<i class="fa fa-star"></i> ${apartment.rating}
+						</span>
+						<span class="metadata-address">
+							<i class="fa fa-location-arrow"></i> ${apartment.address}
+						</span>
+						<span class="metadata-beds">
+							<i class="fa fa-bed"></i> ${apartment.beds}
+						</span>
+						<span class="metadata-people">
+							<i class="fa fa-user"></i>${apartment.people}
+						</span>
+					</div>
+				</div>
+			`;
+		}).join('');
+	});
 
 function handleFilter() {
 	const filterOutput = this.parentNode.querySelector('.filter-output');
@@ -39,10 +71,10 @@ function handleFilter() {
 		filters.people = value;
 	}
 
-	const min = this.getAttribute('min');
-	const max = this.getAttribute('max');
+	const minValue = this.getAttribute('min');
+	const maxValue = this.getAttribute('max');
 
-	const positionX = (value - min) / (max - min);
+	const positionX = (value - minValue) / (maxValue - minValue);
 
 	const currentX = this.offsetWidth * positionX - (16 * positionX);
 
@@ -55,57 +87,119 @@ function handleFilter() {
 	}
 
 	filterOutput.classList.add('active');
+	const filterKeys = Object.keys(filters);
+	let output = '';
+
+	filterKeys.forEach(key => {
+		output += `
+			<span data-filter-type="${key}">
+				${filters[key]}
+				<i class="clear-filter fa fa-close"></i>
+			</span>
+		`;
+		return output;
+	});
+
+	filteringBy.parentNode.classList.add('active');
+	filteringBy.innerHTML = output;
+
+	renderFilteredApartments();
+
+	filteringBy.addEventListener('click', _ => {
+		const target = _.target;
+
+		const currentFilter = target.parentNode.dataset.filterType;
+		const index = filterKeys.indexOf(currentFilter);
+
+		if (!target.classList.contains('fa-close') || index < 0)
+		return;
+
+		const clearedFilter = filterKeys.splice(index, 1);
+
+		const matchingSlider = [...filterSlider].find(_ => {
+			return _.getAttribute('name') === currentFilter;
+		});
+
+		matchingSlider.value = 0;
+		matchingSlider.nextSibling.nextSibling.classList.remove('active');
+		delete filters[clearedFilter];
+		target.parentNode.remove();
+
+		renderFilteredApartments();
+
+		if (!filteringBy.hasChildNodes()) {
+			filteringBy.parentNode.classList.remove('active');
+		}
+	});
+}
+
+function renderFilteredApartments() {
+	const propertyFilter = (prop) => {
+		return (apartment) => {
+			if (filters[prop] != undefined) {
+				return filters[prop] == apartment[prop];
+			}
+			return true;
+		}
+	}
+
+	const parsePrice = (price) => {
+		if (typeof price == 'string') {
+			price = price.replace( /^\D+/g, '');
+		}
+		return price;
+	};
 
 	requestApartments
 		.then(apartments => {
-			apartments = apartments.filter(apartment => {
-				if (typeof apartment.price == 'string') {
-					apartment.price = apartment.price.replace( /^\D+/g, '');
-				}
-
-				if (apartment.price <= (filters.price - 100) ||
-					apartment.price >= filters.price) {
-						return false;
-				}
-				if (apartment.rating != filters.rating)
-					return false;
-				if (apartment.beds != filters.beds)
-					return false;
-				if (apartment.people != filters.people)
-					return false;
-				else
+			apartments = apartments
+				.filter(propertyFilter('rating'))
+				.filter(propertyFilter('beds'))
+				.filter(propertyFilter('people'))
+				.filter(apartment => {
+					if (apartment.price != undefined) {
+						const price = parsePrice(apartment.price);
+						if (price <= (filters.price - 100) || price >= filters.price) {
+							return false;
+						}
+					}
 					return true;
-			});
+				});
 
-			apartmentsContainer.innerHTML = apartments.map(apartment => {
-				return `
-					<div id="apartment-${apartment.id}" class="apartment">
-						<h3>${apartment.title}</h3>
-						<p>${apartment.description}</p>
-						<div class="metadata">
-							<span class="metadata-date">
-								<i class="fa fa-calendar"></i> ${apartment.date}
-							</span>
-							<span class="metadata-price">
-								<i class="fa fa-money"></i> ${apartment.price}
-							</span>
-							<span class="metadata-rating">
-								<i class="fa fa-star"></i> ${apartment.rating}
-							</span>
-							<span class="metadata-address">
-								<i class="fa fa-location-arrow"></i> ${apartment.address}
-							</span>
-							<span class="metadata-beds">
-								<i class="fa fa-bed"></i> ${apartment.beds}
-							</span>
-							<span class="metadata-people">
-								<i class="fa fa-user"></i>${apartment.people}
-							</span>
+			if (apartments.length < 1) {
+				apartmentsContainer.innerHTML =
+					'<span class="error">No apartments match your criteria</span>';
+			} else {
+				apartmentsContainer.innerHTML = apartments.map(apartment => {
+					return `
+						<div id="apartment-${apartment.id}" class="apartment">
+							<h3>${apartment.title}</h3>
+							<p>${apartment.description}</p>
+							<div class="metadata">
+								<span class="metadata-date">
+									<i class="fa fa-calendar"></i> ${apartment.date}
+								</span>
+								<span class="metadata-price">
+									<i class="fa fa-money"></i> ${apartment.price}
+								</span>
+								<span class="metadata-rating">
+									<i class="fa fa-star"></i> ${apartment.rating}
+								</span>
+								<span class="metadata-address">
+									<i class="fa fa-location-arrow"></i> ${apartment.address}
+								</span>
+								<span class="metadata-beds">
+									<i class="fa fa-bed"></i> ${apartment.beds}
+								</span>
+								<span class="metadata-people">
+									<i class="fa fa-user"></i>${apartment.people}
+								</span>
+							</div>
 						</div>
-					</div>
-				`;
-			}).join('');
-		});
+					`;
+				}).join('');
+		}
+	});
 }
 
 filterSlider.forEach(filter => {
