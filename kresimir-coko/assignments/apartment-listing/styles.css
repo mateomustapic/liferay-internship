@@ -514,7 +514,7 @@ span[data-filter-type="people"]:before {
 		width: 45%;
 	}
 
-	#app-content_filtering-by span:nth-child(n+3) {
+	#app-content_filtering-by span:nth-child(n + 3) {
 		margin-top: 0;
 	}
 
