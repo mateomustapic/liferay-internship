@@ -1,71 +1,93 @@
+$(document).ready(function(){
+
+var firstNumberInput = document.getElementById("firstNumber");
+var secondNumberInput = document.getElementById("secondNumber");
+var resultInput = document.getElementById("result");
+
+$('#multiply').on('click', multiplyBy);
+$('#divide').on('click', divideBy);
+$('#sum').on('click', sumBy);
+$('#substract').on('click', substractBy);
+$('#increment').on('click', increment);
+$('#showPi').on('click',showPi);
+$('#calculateTax').on('click',calculateTax);
+$('#euroConverter').on('change',euroConverter);
+$('#dollarConverter').on('change',dollarConverter);
+$('#poundConverter').on('change',poundConverter);
+$('#yenConverter').on('change',yenConverter);
+
+
+
 function multiplyBy(){
-	num1 = document.getElementById("firstNumber").value;
-	num2 = document.getElementById("secondNumber").value;
-	
+	var num1 = parseInt(firstNumberInput.value);
+	var num2 = parseInt(secondNumberInput.value);
+
 	if (num1 > 100 || num1 < 1) {
 		alert("Please insert first number between 1 and 100");
 	}
 	
-	if (num2 > 100 || num2 < 1) {
+	else if (num2 > 100 || num2 < 1) {
 		alert("Please insert second number between 1 and 100");
 	}
 
-	else if ((num1 >= 1 && num1 <= 100)&&(num2 >= 1 && num2 <= 100)){
-		document.getElementById("result").innerHTML = num1 * num2;
+	else {
+		(resultInput).innerHTML = num1 * num2;
 	}
 }
 
-function divideBy() 
-{ 
-    num1 = parseInt(document.getElementById("firstNumber").value);
-    num2 = parseInt(document.getElementById("secondNumber").value);
-	
+function divideBy(){
+	var num1 = parseInt(firstNumberInput.value);
+	var num2 = parseInt(secondNumberInput.value);
+
 	if (num1 > 100 || num1 < 1) {
 		alert("Please insert first number between 1 and 100");
 	}
 	
-	if (num2 > 100 || num2 < 1) {
+	else if (num2 > 100 || num2 < 1) {
 		alert("Please insert second number between 1 and 100");
 	}
-	else if ((num1 >= 1 && num1 <= 100)&&(num2 >= 1 && num2 <= 100)){
-		document.getElementById("result").innerHTML = num1 / num2;
+
+	else {
+		(resultInput).innerHTML = num1 / num2;
 	}
 }
 
 function sumBy(){
-	num1 = parseInt(document.getElementById("firstNumber").value);
-	num2 = parseInt(document.getElementById("secondNumber").value);
-	
+	var num1 = parseInt(firstNumberInput.value);
+	var num2 = parseInt(secondNumberInput.value);
+
 	if (num1 > 100 || num1 < 1) {
 		alert("Please insert first number between 1 and 100");
 	}
 	
-	if (num2 > 100 || num2 < 1) {
+	else if (num2 > 100 || num2 < 1) {
 		alert("Please insert second number between 1 and 100");
 	}
-	else if ((num1 >= 1 && num1 <= 100)&&(num2 >= 1 && num2 <= 100)){
-		document.getElementById("result").innerHTML = num1 + num2;
+
+	else {
+		(resultInput).innerHTML = num1 + num2;
 	}
 }
 
 function substractBy(){
-	num1 = parseInt(document.getElementById("firstNumber").value);
-	num2 = parseInt(document.getElementById("secondNumber").value);
-	
+	var num1 = parseInt(firstNumberInput.value);
+	var num2 = parseInt(secondNumberInput.value);
+
 	if (num1 > 100 || num1 < 1) {
-		alert("Please insert number between 1 and 100");
+		alert("Please insert first number between 1 and 100");
 	}
 	
-	if (num2 > 100 || num2 < 1) {
-		alert("Please insert number between 1 and 100");
+	else if (num2 > 100 || num2 < 1) {
+		alert("Please insert second number between 1 and 100");
 	}
-	else if ((num1 >= 1 && num1 <= 100)&&(num2 >= 1 && num2 <= 100)){
-		document.getElementById("result").innerHTML = num1 - num2;
+
+	else {
+		(resultInput).innerHTML = num1 - num2;
 	}
 }
 
 function increment(){
-	num1 = parseInt(document.getElementById("firstNumber").value);
+	var num1 = parseInt(firstNumberInput.value);
 	num1++;
 	num2 = num1;
 
@@ -73,11 +95,11 @@ function increment(){
 		alert("Please insert first number between 1 and 100");
 	}
 	
-	if (num2 > 100 || num2 < 1) {
+	else if (num2 > 100 || num2 < 1) {
 		alert("Please insert second number between 1 and 100");
 	}
 
-	else if ((num1 >= 1 && num1 <= 100)&&(num2 >= 1 && num2 <= 100)){
+	else {
 		document.getElementById("secondNumber").value = num2;
 	}
 }
@@ -121,3 +143,4 @@ function yenConverter(){
 	document.converter.euro.value = document.converter.yen.value * 0.00605;
 }
 
+});

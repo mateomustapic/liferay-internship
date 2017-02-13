@@ -21,11 +21,11 @@
             </div>
             <br>
 
-            <input type="button" class="button" onClick="multiplyBy()" Value="Multiply" />
-            <input type="button" class="button" onClick="divideBy()" Value="Divide" />
-            <input type="button" class="button" onClick="sumBy()" Value="Sum" />
-            <input type="button" class="button" onClick="substractBy()" Value="Substract" />
-            <input type="button" class="button" onClick="increment()" Value="Increment" />
+            <input type="button" class="button" id="multiply" Value="Multiply" />
+            <input type="button" class="button" id="divide" Value="Divide" />
+            <input type="button" class="button" id="sum" Value="Sum" />
+            <input type="button" class="button" id="substract" Value="Substract" />
+            <input type="button" class="button" id="increment" Value="Increment" />
             <input type="button" class="reset"onclick="reset()" value="Clear form">
         </form>
         <br>
@@ -40,7 +40,7 @@
 
         <hr></hr>
         <br>
-        <input type="button" class="button" onClick="showPi()" Value="Show Pi"/>
+        <input type="button" class="button" id="showPi" Value="Show Pi"/>
         <br><br>
         <div id="pi">
                 Value of Pi is: <div id="piResult"></div>
@@ -62,7 +62,7 @@
              
         </div>
 
-        <input type="button" class="button" onClick="calculateTax()" Value="Calculate Tax"/>
+        <input type="button" class="button" id="calculateTax" Value="Calculate Tax"/>
         <br><br>
         <hr></hr>
         <form name="converter">
@@ -71,16 +71,16 @@
             </div>
             <table border="0">
             <tr>
-            <td>Euro: </td><td><input type="text" name="euro" placeholder="EUR" onChange="euroConverter()" /></td>
+            <td>Euro: </td><td><input type="text" name="euro" placeholder="EUR" id="euroConverter" /></td>
             </tr>
             <tr>
-            <td>US Dollar: </td><td><input type="text" name="dollar" placeholder="USD" onChange="dollarConverter()" /></td>
+            <td>US Dollar: </td><td><input type="text" name="dollar" placeholder="USD" id="dollarConverter" /></td>
             </tr>
             <tr>
-            <td>British Pound:</td><td><input type="text" name="pound" placeholder="GBP" onChange="poundConverter()" /></td>
+            <td>British Pound:</td><td><input type="text" name="pound" placeholder="GBP" id="poundConverter" /></td>
             </tr>
             <tr>
-            <td>Japanese Yen: </td><td><input type="text" name="yen" placeholder="YEN" onChange="yenConverter()" /></td>
+            <td>Japanese Yen: </td><td><input type="text" name="yen" placeholder="YEN" id="yenConverter" /></td>
             </tr>
             <tr>
             <td colspan="2" align="center"><input type="button" class="button" value="Convert!" /></td>
