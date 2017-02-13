@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Table with search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <script src="lib/jquery.Pagination.js"></script>
+    <script type="text/javascript" src="lib/sorttable.js"></script>
+    <script type="text/javascript" src="lib/script.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+
+     <div id="welcome">
+        SEARCH FOR THE PLAYER
+     </div>
+
+     <div data-role="main" class="ui-content">
+        <form>
+      <input id="filterTable-input" data-type="search" data-toggle="tooltip" title="Search for the player by name, nationality, position, club or age!" placeholder="Search For Players...">
+        </form>
+
+       <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow sortable" id="myTable" data-filter="true" data-input="#filterTable-input">
+        <thead>
+        <tr>
+          <th>Player Name</th>
+          <th data-priority="3">Nationality</th>
+          <th data-priority="2">Position</th>
+          <th data-priority="1">Club</th>
+          <th data-priority="4">Age</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr class="item">
+          <td>Manuel Neuer</td>
+          <td>Germany</td>
+          <td>GK</td>
+          <td>Bayern Munchen</td>
+          <td>30</td>
+        </tr>
+        <tr class="item">
+          <td>Zlatan Ibrahimovic</td>
+          <td>Sweden</td>
+          <td>ST</td>
+          <td>Manchester United</td>
+          <td>35</td>
+        </tr>
+        <tr class="item">
+          <td>Eden Hazard</td>
+          <td>Belgium</td>
+          <td>LW</td>
+          <td>Chelsea</td>
+          <td>26</td>
+        </tr>
+        <tr class="item">
+          <td>Carlos Bacca</td>
+          <td>Colombia</td>
+          <td>ST</td>
+          <td>AC Milan</td>
+          <td>30</td>
+        </tr>
+        <tr class="item">
+          <td>Gianluigi Buffon</td>
+          <td>Italia</td>
+          <td>GK</td>
+          <td>Juventus</td>
+          <td>30</td>
+        </tr>
+        <tr class="item">
+          <td>Olivier Giroud</td>
+          <td>France</td>
+          <td>CF</td>
+          <td>Arsenal</td>
+          <td>30</td>
+        </tr>
+        <tr class="item">
+          <td>Hugo Lloris</td>
+          <td>France</td>
+          <td>GK</td>
+          <td>Bayern Munchen</td>
+          <td>30</td>
+        </tr>
+        <tr class="item">
+          <td>Zlatan Ibrahimovic</td>
+          <td>Sweden</td>
+          <td>ST</td>
+          <td>Manchester United</td>
+          <td>35</td>
+        </tr>
+        <tr class="item">
+          <td>Eden Hazard</td>
+          <td>Belgium</td>
+          <td>LW</td>
+          <td>Chelsea</td>
+          <td>26</td>
+        </tr>
+        <tr class="item">
+          <td>Carlos Bacca</td>
+          <td>Colombia</td>
+          <td>ST</td>
+          <td>AC Milan</td>
+          <td>30</td>
+        </tr>
+        <tr class="item">
+          <td>Gianluigi Buffon</td>
+          <td>Italia</td>
+          <td>GK</td>
+          <td>Juventus</td>
+          <td>30</td>
+        </tr>
+        <tr class="item">
+          <td>Olivier Giroud</td>
+          <td>France</td>
+          <td>CF</td>
+          <td>Arsenal</td>
+          <td>30</td>
+        </tr>
+      </tbody>
+      </table>
+     
+      <script>
+      </script>
+     
+      </div>
+      <div id="showhide">
+        <button id="hide">Hide the table</button>
+        <button id="show">Show the table</button>
+      </div>
+
+	</body>
+</html>
+
