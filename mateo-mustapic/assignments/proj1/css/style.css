@@ -1,6 +1,40 @@
 body{
 	font-family: 'Lato', sans-serif;
 	width: 100%;
+  
+}
+
+#home{
+  padding-top: 70px;
+}
+
+.navbar-header {
+    float: none;
+}
+.navbar-toggle {
+    display: block;
+}
+.navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+/*
+.navbar-collapse.collapse {
+    display: none!important;
+}
+*/
+
+.navbar-nav {
+    float: none!important;
+    margin: 7.5px -15px;
+}
+.navbar-nav>li {
+    float: none;
+}
+.navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 h1 {
@@ -55,7 +89,7 @@ p{
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .gallery-item {
@@ -67,6 +101,9 @@ p{
   border: 5px solid #FFF;
 }
 
+#weather{
+  text-align: center;
+}
 
 .jumbotron {
   text-align: center;
@@ -106,9 +143,103 @@ float: none !important
     display: inline-block;
     width: 100%;
     height: 100%;
-     border-radius: 25px;
+    border-radius: 25px;
+    padding: 8px;
 }
 
 
+/*max width: 1200px*/
+@media screen and (max-width: 1200px){
+  .gallery img{
+    display: inline-block;
+    width: 45%;
+    height: 45%;
+    border-radius: 25px;
+    padding: 5px;
+  } 
+}
 
+/*max width: 768px */
+@media screen and (max-width: 768px){
+  .gallery img{
+      display: inline-block;
+      width: 33%;
+      height: 33%;
+      border-radius: 25px;
+      padding: 5px;
+    }
+    #menu{
+      background-color: red;
+    }
+    
+    .jumbotron{
+      height: 80%;
+    }
+
+    .jumbotron h2 {
+    text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+   }
+
+   #menu {
+      padding: 5px;
+      text-align: center;
+      color: #ffffff;
+      background-color: #265eb7;
+      border: solid 2px #c3c3c3;
+      font-size: 10px;
+  }
+
+  h2{
+    font-size: 10px;
+  }
+  
+}
+
+/*max width: 400px */
+@media screen and (max-width: 400px){
+  .gallery img{
+      display: inline-block;
+      width: 33%;
+      height: 33%;
+      border-radius: 25px;
+      padding: 5px;
+    }
+    #menu{
+      background-color: red;
+    }
+    
+    .jumbotron{
+      height: 80%;
+    }
+
+    .jumbotron h2 {
+    text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+   }
+   
+   #paragraph{
+      font-size: 1em;
+   }
+
+   #menu {
+      padding: 5px;
+      text-align: center;
+      color: #ffffff;
+      background-color: #265eb7;
+      border: solid 2px #c3c3c3;
+      font-size: 10px;
+  }
+
+  h2{
+    font-size: 10px;
+  }
+  
+  .navbar-toggle {
+    display: block;
+  }
+
+}
 

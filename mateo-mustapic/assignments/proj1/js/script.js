@@ -1,4 +1,4 @@
-alert("Welcome to travel site!");
+/*alert("Welcome to travel site!");*/
 
 $(document).ready(function(){
     $('#menu').accordion();
