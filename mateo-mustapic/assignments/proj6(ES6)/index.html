@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ES6 practice</title>
+		<script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+
+    <div id="team">
+    </div>
+
+    <button onclick="book1()" id="book" title="Click to show book 1 title and price">Book1</button>
+    <div id="book1">
+    </div>
+
+    <br>
+    <button onclick="book2()" id="book" title="Click to show book 1 title and price">Book2</button>
+    <div id="book2">
+    </div>
+
+    <br>
+    <button onclick="book3()" id="book" title="Click to show book 1 title and price">Book3</button>
+    <div id="book3"></div>
+
+    <div id="date"></div>
+
+
+    <script>
+    document.getElementById("team").innerHTML = team.teamSummary();
+    document.getElementById("date").innerHTML = getMessage();
+    function book1(){
+        document.getElementById("book1").innerHTML = bookShop.priceForTitle('Harry Potter');
+    };
+    function book2(){
+        document.getElementById("book2").innerHTML = bookShop.priceForTitle('Game of Thrones');
+    }
+    function book3(){
+        document.getElementById("book3").innerHTML = bookShop.priceForTitle('Eloquent Javascript');
+    }
+    </script>
+
+	</body>
+
+</html>
+
