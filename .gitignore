@@ -6,6 +6,8 @@
 *.iws
 *.processed
 *.swp
+*.idea
+
 .ant_targets
 .ant-targets-build.xml
 .gh.json
@@ -17,8 +19,16 @@ _sass_cache_*.css
 **/pmd-reports
 
 **/sdk/*
-!**/sdk/themes/
+!**/sdk/themes
 **/sdk/themes/*.*
+**/sdk/themes/*/*.*
+**/sdk/themes/*/docroot/css
+**/sdk/themes/*/docroot/images
+**/sdk/themes/*/docroot/js
+**/sdk/themes/*/docroot/templates
+**/sdk/themes/*/docroot/WEB-INF
+
+
 !**/sdk/portlets/
 **/sdk/portlets/*.*
 !**/sdk/hooks/

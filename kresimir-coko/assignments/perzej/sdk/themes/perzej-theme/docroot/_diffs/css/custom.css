@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700,800,900');
+
+/* Colors */
+$dark: #424242;
+$red: #F44336;
+$green: #00E676;
+$grey: #BDBDBD;
+$light: #F5F5F5;
+$silver: #607D8B;
+$bigShadow: 0 2px 4px rgba(#333, 0.3);
+$smallShadow: 0 1px 2px rgba(#333, 0.3);
+
+* {
+    box-sizing: border-box;
+}
+
+#perzej {
+    height: 100%;
+
+body {
+    height: 100%;
+    font-family: Nunito, sans-serif;
+}
+
+/* Overrides
+************************************************************/
+
+h1, h3, h3, p, a, li, span {
+    color: #333;
+    font-family: Nunito, sans-serif;
+    margin: 0;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: $grey;
+}
+
+p, a, li, span {
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.navbar-inner .dropdown-menu * {
+    font-size: 1em;
+    color: #333;
+}
+
+#_145_dockbarbodyContent, #_145_navAccountControls {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+#_2_WAR_notificationsportlet_userNotificationsCount {
+    border-width: 0;
+    border-radius: 2px;
+    box-shadow: $smallShadow;
+    color: #FFF;
+}
+
+#sign-in {
+    color: rgba(#FFF, 0.7);
+    font-size: 1.3em;
+    transition: 0.15s ease;
+
+&:hover {
+     color: #FFF;
+     transition: 0.15s ease;
+ }
+}
+
+.lfr-meta-actions {
+span {
+    color: $light;
+    padding-right: 8px;
+
+&:last-child {
+     padding-right: 0;
+ }
+}
+}
+
+/* Layout
+************************************************************/
+
+#wrapper {
+    padding: 0;
+    position: relative;
+}
+
+#heading, .powered-by {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+}
+
+/* Header
+************************************************************/
+
+#banner {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#heading {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1280px;
+    padding: 12px 0;
+    position: absolute;
+    width: 100%;
+}
+
+/* Hero
+************************************************************/
+
+#hero {
+    align-items: center;
+    background-image: linear-gradient(
+            rgba(#333, 0.3),
+            rgba(#333, 0.3)
+    ), url(../images/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 60vh;
+    justify-content: center;
+    width: 100%;
+}
+
+span.site-name {
+    color: #FFF;
+    font-size: 5em;
+    font-weight: 300;
+}
+
+/* Content
+************************************************************/
+
+#content {
+    flex: 1;
+    flex-direction: column;
+    margin-bottom: 71px;
+
+.portlet-title {
+    display: none;
+}
+
+.portlet-content {
+    padding: 0;
+}
+
+.section {
+    padding: 64px 0;
+
+.container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.section_column {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 70%;
+    width: auto;
+
+p {
+    font-size: 1.6em;
+}
+}
+
+.section-heading {
+    font-size: 2.5em;
+    font-family: Montserrat, sans-serif;
+    padding-bottom: 32px;
+    text-transform: uppercase;
+}
+}
+}
+
+// Liferay Section
+
+   #about-liferay {
+
+.section_column {
+    padding-right:48px;
+}
+}
+
+#about-lcs {
+    background-color: $light;
+
+.section_column {
+    padding-left: 48px;
+}
+}
+
+#tech-stack {
+    background-color: $dark;
+
+.container {
+    flex-wrap: wrap;
+}
+
+i {
+    color: $light;
+    font-size: 6em;
+    padding-bottom: 64px;
+    text-align: center;
+    width: 20%;
+
+&:nth-child(n+6) {
+     padding-bottom: 0;
+ }
+}
+}
+
+#contact-location.section {
+    align-items: center;
+    background-color: $light;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+#contact {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: Nunito;
+    justify-content: center;
+    padding: 64px;
+    width: 50%;
+
+#contact-form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 0;
+    width: 50%;
+}
+
+label {
+    color: $silver;
+    font-family: Montserrat;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+input, textarea {
+    background-color: #FFf;
+    border: 0;
+    box-shadow: $bigShadow;
+    font-family: inherit;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 24px;
+    padding: 16px;
+    resize: none;
+    width: 100%;
+}
+
+input[type="email"] {
+    height: 48px;
+}
+
+input[type="submit"] {
+    background-color: $green;
+    border-radius: 3px;
+    box-shadow: none;
+    color: $silver;
+    font-family: Montserrat;
+    font-weight: 700;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    transition: .15s ease;
+    width: 50%;
+
+&:hover {
+     background-color: lighten($green, 5%);
+     color: lighten($silver, 5%);
+     transition: .15s ease;
+ }
+}
+}
+
+#location {
+    align-self: stretch;
+    background-image: url(../images/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+
+/* Footer
+************************************************************/
+
+#footer {
+    align-self: flex-end;
+    background-color: $dark;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+    position: absolute;
+    width: 100%;
+}
+
+p.powered-by {
+    color: $light;
+    display: block;
+    font-size: 1.2em;
+
+a {
+    color: $light;
+    transition: 0.15s ease;
+
+:hover {
+    color: #FFF;
+    transition: 0.15s ease;
+}
+}
+}
+
+/* Responsive
+************************************************************/
+/* 1280px
+************************************************************/
+
+@media screen and (max-width: 1280px) {
+    #banner, #content, #footer {
+        max-width: 1024px;
+        width: 100%;
+    }
+}
+
+/* 768px
+************************************************************/
+
+@media screen and (max-width: 768px) {
+    #banner, #content, #footer {
+        width: 100%;
+    }
+}
+}
