@@ -35,19 +35,6 @@ body{
   display: block!important;
 }
    
-h1 {
-	color: rgb(46,105,163);
-	font-size: 68px;
-	text-align: center;
-}
-
-h2{
-	font-family: 'Lato', sans-serif;
-	font-size: 56px;
-	text-align: center;
-}
-
-header .row,
 footer .row {
   display: flex;
   align-items: center;
@@ -58,8 +45,8 @@ ul {
   display: inline;
 }
 
-p{
-	font-size: 2rem;
+#paragraph p{
+	font-size: 2.2rem;
 	text-align: center;
 }
 
@@ -69,13 +56,13 @@ p{
   height: 33%;
   border-radius: 25px;
   padding: 5px;
-  font-size: 10px;
 }
 
 .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 
 .gallery-item {
@@ -105,12 +92,11 @@ p{
   font-size: 60px;
   font-weight: 700;
   margin: 0;
-  color: #fff;
+  text-shadow: 2px 2px #eff3f9;
 }
 
 .jumbotron h3 {
   margin: 0 0 20px;
-  color: #fff;
 }
 
 #menu {
@@ -121,6 +107,16 @@ p{
   border: solid 2px #c3c3c3;
 }
 
+#menu p {
+  font-size: 1.8rem;
+}
+
+#titlemenu{
+  font-size: 28px;
+  text-align: center;
+  font-weight: bold;
+}
+
 .center-block {
 float: none !important
 }
@@ -129,23 +125,35 @@ float: none !important
 @media screen and (max-width: 1200px){
   .gallery img{
     display: inline-block;
-    width: 45%;
-    height: 45%;
+    width: 49.5%;
+    height: 49.5%;
     border-radius: 25px;
     padding: 5px;
   } 
+
+  #titlemenu{
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+  }
 }
 
 /*max width: 768px */
 @media screen and (max-width: 768px){
 .gallery img{
   display: inline-block;
-  width: 45%;
-  height: 45%;
+  width: 49.5%;
+  height: 49.5%;
   border-radius: 25px;
   padding: 5px;
 } 
- 
+
+#titlemenu{
+  font-size: 19px;
+  text-align: center;
+  font-weight: bold;
+} 
+
 #menu p{
   font-size: 15px;
 }
@@ -160,13 +168,10 @@ float: none !important
   overflow: hidden;
 }
 
- #menu {
-    padding: 5px;
-    text-align: center;
-    color: #ffffff;
-    background-color: #265eb7;
-    border: solid 2px #c3c3c3;   
-  }
+#paragraph p{
+  font-size: 1.8rem;
+}
+
 }
 
 /*max width: 400px */
@@ -177,7 +182,7 @@ float: none !important
     height: 100%;
     border-radius: 25px;
     padding: 8px;
-}
+  }
 #menu{
   background-color: red;
 }
@@ -192,8 +197,14 @@ float: none !important
   overflow: hidden;
 }
    
-#paragraph{
-  font-size: 1em;
+#paragraph p{
+  font-size: 1.8rem;
+}
+
+#titlemenu{
+  font-size: 17px;
+  text-align: center;
+  font-weight: bold;
 }
 
 #menu{
@@ -202,15 +213,7 @@ float: none !important
   color: #ffffff;
   background-color: #265eb7;
   border: solid 2px #c3c3c3;
-  font-size: 10px;
-}
-
-h2{
-  font-size: 10px;
-}
-  
-.navbar-toggle {
-  display: block;
+  font-size: 17px;
 }
 
 }
