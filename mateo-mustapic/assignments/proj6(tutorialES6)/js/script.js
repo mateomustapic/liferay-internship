@@ -32,10 +32,10 @@ console.log(doubled);
 
 var cars = [
 {model: 'Opel Astra', price: 'Mid-price'},
-{model: 'BMW M5', price: 'expensive'},
-{model: 'Volkswagen Golf', price:'Mid-price'},
-{model: 'Mercedes GLE', price:'expensive'},
-{model: 'Chevrolet Spark', price: 'cheap'}
+{model: 'BMW M5', price: ' expensive'},
+{model: 'Volkswagen Golf', price:' Mid-price'},
+{model: 'Mercedes GLE', price:' expensive'},
+{model: 'Chevrolet Spark', price: ' cheap'}
 ];
 
 var models = cars.map(function(car){
@@ -45,8 +45,17 @@ var models = cars.map(function(car){
 var prices = cars.map(function(car){
 	return car.price;
 })
+
 console.log(prices);
 console.log(models);
+
+function carModels (){
+	return models;
+}
+
+function carPrices (){
+	return prices;
+}
 
 var products = [
 	{name: 'cucumber', type: 'vegetable', quantity: 0, price: 1},
@@ -234,3 +243,72 @@ const defeaultColors = ['red', 'green'];
 const userFavoriteColors = ['orange','yellow'];
 
 [...defeaultColors, userFavoriteColors];
+
+const MathLibrary = {
+	calculateProduct(...rest){
+		console.log('Please use multiply method instead');
+		return this.multiply(...rest);
+	},
+	multiply(a, b){
+		return a * b;
+	}
+
+};
+
+console.log(MathLibrary.multiply(2,2));
+
+var countries = ['Moldova', 'Ukraine'];  
+var otherCountries = ['USA', 'Japan']; 
+var africanCountries = ['Nigeria', 'Congo']; 
+countries.push(...otherCountries,...africanCountries);  
+console.log(countries); 
+
+var expense = {
+	type: 'Business',
+	amount: '$45 USD',
+	year: '1962'
+};
+
+/*
+var type = expense.type;
+var amount = expense.amount;*/
+const {type,amount,year} = expense;
+
+
+console.log(type + ' - ' + amount + ' Year: ' + year);
+
+const companies = [
+	'Google',
+	'Facebook',
+	'Uber',
+	'Twitter'
+];
+
+console.log(companies[0]);
+console.log(companies[1]);
+console.log(companies[2]);
+
+function Car(options) {
+	this.title = options.title;
+}
+
+Car.prototype.drive = function() {
+	return 'vroom';
+}
+
+const car = new Car({ title: 'Focus'});
+console.log(car.title);
+console.log(car.drive());
+
+function mySort(...args){
+	return args.sort((a,b) => a-b);
+}
+
+mySort(10, 2, 3);
+
+const numbers3 = [1,2,3,4];
+let total = 0;
+for (let number of numbers3) {
+	total += number;
+	console.log(total);
+}

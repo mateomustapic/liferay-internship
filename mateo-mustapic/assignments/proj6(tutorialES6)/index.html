@@ -23,12 +23,27 @@
     <button onclick="book3()" id="book" title="Click to show book 1 title and price">Book3</button>
     <div id="book3"></div>
 
+    <br>
     <div id="date"></div>
+
+    <br>
+    <b>Car models</b>
+    <br><hr>
+    <div id="cars"></div>
+    
+    <br>
+    <b>Prices</b>
+    <br><hr>
+    <div id="prices"></div>
+
 
 
     <script>
     document.getElementById("team").innerHTML = team.teamSummary();
     document.getElementById("date").innerHTML = getMessage();
+    document.getElementById("cars").innerHTML = carModels();
+    document.getElementById("prices").innerHTML = carPrices();
+
     function book1(){
         document.getElementById("book1").innerHTML = bookShop.priceForTitle('Harry Potter');
     };
