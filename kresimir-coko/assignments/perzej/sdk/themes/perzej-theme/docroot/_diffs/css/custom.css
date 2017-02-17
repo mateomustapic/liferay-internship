@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&subset=latin-ext');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Karma:300,400,700|Gruppo|Raleway:300,400,500,600,700,800,900&subset=latin-ext');
 
-/* Colors */
+// Colors
 $dark: #424242;
 $red: #F44336;
 $green: #00E676;
 $grey: #BDBDBD;
 $light: #F5F5F5;
+$blue: #78b2e1;
 $silver: #607D8B;
 $bigShadow: 0 2px 4px rgba(#333, 0.3);
 $smallShadow: 0 1px 2px rgba(#333, 0.3);
@@ -20,20 +20,20 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 body {
     height: 100%;
-    font-family: Nunito, sans-serif;
 }
 
 /* Overrides
 ************************************************************/
 
-h1, h3, h3, p, a, li, span {
-    color: #333;
-    font-family: Nunito, sans-serif;
+h1, h3, h3, p, a, li, input, textarea {
+    color: $dark;
+    font-family: Karma, sans-serif;
     margin: 0;
     text-decoration: none;
 }
 
-h1, h2, h3 {
+h1, h2, h3, label, input[type="submit"] {
+    font-family: Raleway, sans-serif;
     font-weight: 700;
     color: $grey;
 }
@@ -45,7 +45,7 @@ p, a, li, span {
 
 .navbar-inner .dropdown-menu * {
     font-size: 1em;
-    color: #333;
+    color: $dark;
 }
 
 #_145_dockbarbodyContent, #_145_navAccountControls {
@@ -62,12 +62,17 @@ p, a, li, span {
 }
 
 #sign-in {
+    border: 2px solid rgba(#FFF, 0.7);
+    border-radius: 2px;
     color: rgba(#FFF, 0.7);
     font-size: 1.3em;
+    padding: 8px 24px;
     transition: 0.15s ease;
 
 &:hover {
-     color: #FFF;
+     background-color: #FFF;
+     border-color: #FFF;
+     color: $blue;
      transition: 0.15s ease;
  }
 }
@@ -81,6 +86,11 @@ span {
      padding-right: 0;
  }
 }
+}
+
+.columns-max {
+    width: 1280px;
+    margin: 64px auto;
 }
 
 /* Layout
@@ -115,7 +125,7 @@ span {
     display: flex;
     justify-content: space-between;
     max-width: 1280px;
-    padding: 12px 0;
+    padding: 16px 0;
     position: absolute;
     width: 100%;
 }
@@ -126,8 +136,8 @@ span {
 #hero {
     align-items: center;
     background-image: linear-gradient(
-            rgba(#333, 0.3),
-            rgba(#333, 0.3)
+            rgba(#333, 0.5),
+            rgba(#333, 0.5)
     ), url(../images/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -139,9 +149,10 @@ span {
 }
 
 span.site-name {
-    color: #FFF;
+    color: $light;
+    font-family: 'Gruppo', cursive;
     font-size: 5em;
-    font-weight: 300;
+    text-transform: uppercase;
 }
 
 /* Content
@@ -182,9 +193,13 @@ p {
 }
 }
 
+img {
+    width: 30%;
+}
+
 .section-heading {
+    color: $blue;
     font-size: 2.5em;
-    font-family: Montserrat, sans-serif;
     padding-bottom: 32px;
     text-transform: uppercase;
 }
@@ -209,18 +224,22 @@ p {
 }
 
 #tech-stack {
-    background-color: $dark;
+    background-color: $silver;
 
 .container {
     flex-wrap: wrap;
 }
 
-i {
-    color: $light;
-    font-size: 6em;
+img {
     padding-bottom: 64px;
+    padding-right: 64px;
+    height: auto;
     text-align: center;
-    width: 20%;
+    width: 200px;
+
+&:nth-child(5n+1) {
+     padding-right: 0;
+ }
 
 &:nth-child(n+6) {
      padding-bottom: 0;
@@ -240,7 +259,6 @@ i {
     align-items: center;
     display: flex;
     flex-direction: column;
-    font-family: Nunito;
     justify-content: center;
     padding: 64px;
     width: 50%;
@@ -255,8 +273,7 @@ i {
 }
 
 label {
-    color: $silver;
-    font-family: Montserrat;
+    color: $blue;
     font-size: 1.2em;
     font-weight: 700;
     padding-bottom: 8px;
@@ -269,7 +286,6 @@ input, textarea {
     background-color: #FFf;
     border: 0;
     box-shadow: $bigShadow;
-    font-family: inherit;
     font-size: 1.5em;
     font-weight: 300;
     margin-bottom: 24px;
@@ -283,11 +299,9 @@ input[type="email"] {
 }
 
 input[type="submit"] {
-    background-color: $green;
+    background-color: #FFF;
     border-radius: 3px;
-    box-shadow: none;
-    color: $silver;
-    font-family: Montserrat;
+    color: $blue;
     font-weight: 700;
     margin-bottom: 0;
     text-transform: uppercase;
@@ -295,8 +309,7 @@ input[type="submit"] {
     width: 50%;
 
 &:hover {
-     background-color: lighten($green, 5%);
-     color: lighten($silver, 5%);
+     box-shadow: $smallShadow;
      transition: .15s ease;
  }
 }
@@ -304,7 +317,7 @@ input[type="submit"] {
 
 #location {
     align-self: stretch;
-    background-image: url(../images/background.jpg);
+    background-image: url(../images/location.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -360,5 +373,153 @@ a {
     #banner, #content, #footer {
         width: 100%;
     }
+}
+
+/*480px
+************************************************************/
+
+@media screen and (max-width: 480px) {
+
+    .yui3-skin-sam {
+        padding: 0;
+    }
+
+    #heading {
+        padding: 16px;
+    }
+
+    #sign-in {
+        display: none;
+    }
+
+    .site-title {
+        font-size: 0;
+    }
+
+    #hero {
+        height: 80vh;
+    }
+
+    #content {
+        margin-bottom: 55px;
+
+    .section {
+        padding: 32px 16px;
+
+    .section_column {
+
+    p {
+        font-weight: 300;
+        font-size: 1.5em;
+    }
+}
+}
+
+#about-liferay, #about-lcs {
+    position: relative;
+
+.section-heading {
+    font-size: 2em;
+    font-weight: 300;
+    padding-bottom: 24px;
+}
+
+.section_column {
+    padding: 0;
+    z-index: 1;
+}
+
+.container {
+    flex-direction: column;
+}
+}
+
+#about-liferay {
+
+img {
+    height: 64px;
+    padding-bottom: 24px;
+    order: 1;
+    width: auto !important;
+}
+
+.section_column {
+    order: 2;
+}
+
+}
+
+#about-lcs {
+svg {
+    height: 128px;
+    padding-bottom: 24px;
+    width: auto;
+}
+}
+
+#tech-stack {
+
+.container {
+    flex-wrap: wrap;
+}
+
+img {
+    width: 18%;
+    height: auto;
+    padding-right: 16px;
+}
+}
+
+#contact-location.section {
+    padding: 0;
+    flex-direction: column;
+}
+
+#contact {
+    background-color: #FFF;
+    padding: 32px 16px;
+    width: 100%;
+
+#contact-form {
+    width: 100%;
+
+label {
+    font-weight: 300;
+}
+
+input, textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-weight: 300;
+    max-width: 100% !important;
+}
+
+input[type="email"], textarea {
+    border-bottom: 1px solid $light;
+    font-size: 1.4em;
+    padding: 8px;
+
+&:focus {
+     border-bottom: 2px solid $blue;
+     transition: 0.01s ease;
+ }
+}
+
+textarea {
+    height: 128px;
+}
+}
+}
+
+#location {
+    height: 300px;
+    width: 100%;
+    background-size: 200%;
+}
+}
+
+#footer {
+    padding: 16px;
+}
 }
 }
