@@ -3,13 +3,15 @@
 // Colors
 $dark: #424242;
 $red: #F44336;
-$green: #00E676;
+$green: #00B6B7;
 $grey: #BDBDBD;
 $light: #F5F5F5;
-$blue: #78b2e1;
-$silver: #607D8B;
+$lightBlue: #038AB5;
+$blue: #005B96;
+$silver: #009DB7;
 $bigShadow: 0 2px 4px rgba(#333, 0.3);
 $smallShadow: 0 1px 2px rgba(#333, 0.3);
+$gradient: linear-gradient(to right, #005b96 0%,#038ab5 54%,#00b6b7 100%);
 
 * {
     box-sizing: border-box;
@@ -34,7 +36,7 @@ h1, h3, h3, p, a, li, input, textarea {
 
 h1, h2, h3, label, input[type="submit"] {
     font-family: Raleway, sans-serif;
-    font-weight: 700;
+    font-weight: 300;
     color: $grey;
 }
 
@@ -163,6 +165,14 @@ span.site-name {
     flex-direction: column;
     margin-bottom: 71px;
 
+.container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    max-width: 1280px;
+    width: 100%;
+}
+
 .portlet-title {
     display: none;
 }
@@ -174,31 +184,12 @@ span.site-name {
 .section {
     padding: 64px 0;
 
-.container {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
-.section_column {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-width: 70%;
-    width: auto;
-
-p {
-    font-size: 1.6em;
-}
-}
-
 img {
     width: 30%;
 }
 
 .section-heading {
-    color: $blue;
+    color: $green;
     font-size: 2.5em;
     padding-bottom: 32px;
     text-transform: uppercase;
@@ -206,25 +197,58 @@ img {
 }
 }
 
+.section_column {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+
+p {
+    font-size: 1.6em;
+}
+}
+
 // Liferay Section
 
    #about-liferay {
+
+.container {
+    justify-content: space-between;
+}
 
 .section_column {
     padding-right:48px;
 }
 }
 
-#about-lcs {
-    background-color: $light;
+#liferay-img {
+    background-image: url(../images/liferay-logo_text.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 32%;
+    height: 100px;
+}
+
+// LCS Section
+
+   #about-lcs {
+       background-color: $light;
+
+svg {
+    width: 32%;
+}
 
 .section_column {
     padding-left: 48px;
+    width: 60%;
 }
 }
 
-#tech-stack {
-    background-color: $silver;
+// Tech Stack Section
+
+   #tech-stack.section {
+       background: $gradient;
 
 .container {
     flex-wrap: wrap;
@@ -235,9 +259,9 @@ img {
     padding-right: 64px;
     height: auto;
     text-align: center;
-    width: 200px;
+    width: 220px;
 
-&:nth-child(5n+1) {
+&:nth-child(5n) {
      padding-right: 0;
  }
 
@@ -247,13 +271,15 @@ img {
 }
 }
 
-#contact-location.section {
-    align-items: center;
-    background-color: $light;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-}
+// Contact Section
+
+   #contact-location.section {
+       align-items: center;
+       background-color: #FFF;
+       display: flex;
+       justify-content: center;
+       padding: 0;
+   }
 
 #contact {
     align-items: center;
@@ -269,13 +295,13 @@ img {
     flex-direction: column;
     justify-content: flex-start;
     margin-bottom: 0;
-    width: 50%;
+    width: 70%;
 }
 
 label {
-    color: $blue;
+    color: $green;
     font-size: 1.2em;
-    font-weight: 700;
+    font-weight: 300;
     padding-bottom: 8px;
     padding-left: 8px;
     text-transform: uppercase;
@@ -283,15 +309,22 @@ label {
 }
 
 input, textarea {
-    background-color: #FFf;
-    border: 0;
-    box-shadow: $bigShadow;
+    background-color: #FFF;
+    border: none;
+    border-bottom: 2px solid $light;
+    box-shadow: none;
     font-size: 1.5em;
     font-weight: 300;
     margin-bottom: 24px;
     padding: 16px;
     resize: none;
     width: 100%;
+
+&:focus {
+     border-color: transparent;
+     border-image: $gradient;
+     border-image-slice: 1;
+ }
 }
 
 input[type="email"] {
@@ -299,18 +332,19 @@ input[type="email"] {
 }
 
 input[type="submit"] {
-    background-color: #FFF;
+    background: #FFF;
+    border: 2px solid $light;
     border-radius: 3px;
-    color: $blue;
-    font-weight: 700;
+    color: $green;
+    font-weight: 300;
     margin-bottom: 0;
     text-transform: uppercase;
-    transition: .15s ease;
     width: 50%;
 
 &:hover {
-     box-shadow: $smallShadow;
-     transition: .15s ease;
+     background: $gradient;
+     border-color: #FFF;
+     color: #FFF;
  }
 }
 }
@@ -373,6 +407,79 @@ a {
     #banner, #content, #footer {
         width: 100%;
     }
+
+    #content {
+        margin-bottom: 55px;
+    }
+
+    #heading {
+        padding: 16px;
+    }
+
+    .section_column {
+        width: 50%;
+    }
+
+    .container {
+        padding: 0 24px;
+    }
+
+    #about-liferay {
+    .section_column {
+        padding-right: 0;
+    }
+}
+
+#liferay-img {
+    background-image: url(../images/liferay-logo_img.png);
+    height: 290px;
+    width: 40%;
+}
+
+#tech-stack.section {
+img {
+    width: 20%;
+    padding-bottom: 24px;
+    padding-right: 24px;
+
+&:nth-child(3n) {
+     padding-right: 0;
+ }
+
+&:nth-child(5n) {
+     padding-right: 24px;
+ }
+}
+}
+
+#contact-location {
+    flex-direction: column;
+}
+
+#contact {
+    width: 100%;
+
+#contact-form {
+    width: 100%;
+}
+
+textarea {
+    height: 150px;
+}
+}
+
+#location {
+    width: 100%;
+    height: 350px;
+}
+
+#footer {
+    padding: 16px;
+
+.powered-by {
+    line-height: 1;
+}
+}
 }
 
 /*480px
@@ -407,6 +514,7 @@ a {
         padding: 32px 16px;
 
     .section_column {
+        width: 100%;
 
     p {
         font-weight: 300;
@@ -446,7 +554,12 @@ img {
 .section_column {
     order: 2;
 }
+}
 
+#liferay-img {
+    background-image: url(../images/liferay-logo_img.png);
+    margin-bottom: 24px;
+    width: 26%;
 }
 
 #about-lcs {
@@ -503,6 +616,10 @@ input[type="email"], textarea {
      border-bottom: 2px solid $blue;
      transition: 0.01s ease;
  }
+}
+
+input[type="submit"] {
+    border: 1px solid $light;
 }
 
 textarea {
