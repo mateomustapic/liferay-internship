@@ -1,6 +1,7 @@
 *~
 *-ext.properties
 *.bak
+*.class
 *.iml
 *.ipr
 *.iws
