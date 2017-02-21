@@ -11,7 +11,7 @@ $blue: #005B96;
 $silver: #009DB7;
 $bigShadow: 0 2px 4px rgba(#333, 0.3);
 $smallShadow: 0 1px 2px rgba(#333, 0.3);
-$gradient: linear-gradient(to right, #005b96 0%,#038ab5 54%,#00b6b7 100%);
+$gradient: linear-gradient(to right, #005b96 0%,#038ab5 35%,#00b6b7 77%);
 
 * {
     box-sizing: border-box;
@@ -80,8 +80,14 @@ p, a, li, span {
 }
 
 .lfr-meta-actions {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+
 span {
     color: $light;
+    font-size: 1em;
     padding-right: 8px;
 
 &:last-child {
@@ -90,11 +96,20 @@ span {
 }
 }
 
+
+
 .columns-max {
     width: 1280px;
-    margin: 64px auto;
+    margin: 64px auto 128px auto;
 }
 
+.input-container {
+    font-size: 1.2em;
+
+* {
+    font-size: inherit;
+}
+}
 /* Layout
 ************************************************************/
 
@@ -117,6 +132,9 @@ span {
 
 #banner {
     background-color: transparent;
+    border-top: 3px solid transparent;
+    border-image: $gradient;
+    border-image-slice: 1;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -163,7 +181,7 @@ span.site-name {
 #content {
     flex: 1;
     flex-direction: column;
-    margin-bottom: 71px;
+    margin-bottom: 55px;
 
 .container {
     align-items: center;
@@ -209,10 +227,17 @@ p {
 }
 }
 
+.section {
+svg {
+    height: 100%;
+    max-height: 250px;
+    width: 32%;
+}
+}
+
 // Liferay Section
 
    #about-liferay {
-
 .container {
     justify-content: space-between;
 }
@@ -224,8 +249,9 @@ p {
 
 #liferay-img {
     background-image: url(../images/liferay-logo_text.png);
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     width: 32%;
     height: 100px;
 }
@@ -234,10 +260,6 @@ p {
 
    #about-lcs {
        background-color: $light;
-
-svg {
-    width: 32%;
-}
 
 .section_column {
     padding-left: 48px;
@@ -249,25 +271,30 @@ svg {
 
    #tech-stack.section {
        background: $gradient;
+       padding: 32px 0;
 
 .container {
     flex-wrap: wrap;
 }
 
 img {
-    padding-bottom: 64px;
-    padding-right: 64px;
-    height: auto;
-    text-align: center;
-    width: 220px;
+    width: 20%;
 
-&:nth-child(5n) {
-     padding-right: 0;
+&:not(:last-child) {
+     padding-right: 48px;
  }
+}
 
-&:nth-child(n+6) {
-     padding-bottom: 0;
- }
+#metaljs {
+    width: 8%;
+}
+
+#freemarker {
+    width: 25%;
+}
+
+#sass, #java, #gradle {
+    width: 10%;
 }
 }
 
@@ -332,19 +359,23 @@ input[type="email"] {
 }
 
 input[type="submit"] {
-    background: #FFF;
-    border: 2px solid $light;
+    background: $gradient;
+    border: 2px solid #FFF;
     border-radius: 3px;
-    color: $green;
+    color: #FFF;
     font-weight: 300;
     margin-bottom: 0;
     text-transform: uppercase;
+    transition: all .15s ease;
     width: 50%;
 
 &:hover {
-     background: $gradient;
-     border-color: #FFF;
-     color: #FFF;
+     background: #FFF;
+     border-image: $gradient;
+     border-image-slice: 1;
+     border-radius: 3px;
+     color: $green;
+     transition: all .15s ease;
  }
 }
 }
@@ -381,10 +412,10 @@ a {
     color: $light;
     transition: 0.15s ease;
 
-:hover {
-    color: #FFF;
-    transition: 0.15s ease;
-}
+&:hover {
+     color: #FFF;
+     transition: 0.15s ease;
+ }
 }
 }
 
@@ -395,9 +426,27 @@ a {
 
 @media screen and (max-width: 1280px) {
     #banner, #content, #footer {
-        max-width: 1024px;
         width: 100%;
     }
+
+    #heading {
+        padding: 24px;
+    }
+
+    #liferay-img {
+        display: flex;
+        height: 200px;
+        max-width: 400px;
+        width: 32%;
+    }
+
+    #contact {
+        padding: 48px;
+
+    #contact-form {
+        width: 100%;
+    }
+}
 }
 
 /* 768px
@@ -432,8 +481,8 @@ a {
 
 #liferay-img {
     background-image: url(../images/liferay-logo_img.png);
-    height: 290px;
-    width: 40%;
+    height: 200px;
+    width: 28%;
 }
 
 #tech-stack.section {
@@ -470,7 +519,7 @@ textarea {
 
 #location {
     width: 100%;
-    height: 350px;
+    height: 47vh;
 }
 
 #footer {
@@ -486,7 +535,6 @@ textarea {
 ************************************************************/
 
 @media screen and (max-width: 480px) {
-
     .yui3-skin-sam {
         padding: 0;
     }
@@ -522,6 +570,7 @@ textarea {
     }
 }
 }
+}
 
 #about-liferay, #about-lcs {
     position: relative;
@@ -543,7 +592,6 @@ textarea {
 }
 
 #about-liferay {
-
 img {
     height: 64px;
     padding-bottom: 24px;
@@ -571,7 +619,6 @@ svg {
 }
 
 #tech-stack {
-
 .container {
     flex-wrap: wrap;
 }
@@ -637,6 +684,5 @@ textarea {
 
 #footer {
     padding: 16px;
-}
 }
 }
