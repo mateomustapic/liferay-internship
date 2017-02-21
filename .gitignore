@@ -28,6 +28,7 @@ _sass_cache_*.css
 **/sdk/themes/*/docroot/templates
 **/sdk/themes/*/docroot/WEB-INF
 
+**/sdk/portlets/*/test/integration/arquillian.xml
 
 !**/sdk/portlets/
 **/sdk/portlets/*.*
