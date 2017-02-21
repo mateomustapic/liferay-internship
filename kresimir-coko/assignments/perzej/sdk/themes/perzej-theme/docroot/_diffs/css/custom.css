@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Karma:300,400,700|Gruppo|Raleway:300,400,500,600,700,800,900&subset=latin-ext');
+@import url(https: //fonts.googleapis.com/css?family=Karma:300, 400, 700|Gruppo|Raleway:300, 400, 500, 600, 700, 800, 900&subset=latin-ext);
 
 // Colors
+$bigShadow: 0 2px 4px rgba(#333, 0.3);
+$blue: #005B96;
 $dark: #424242;
-$red: #F44336;
+$gradient: linear-gradient(to right, #005B96 0%, #038AB5 35%, #00B6B7 77%);
 $green: #00B6B7;
 $grey: #BDBDBD;
 $light: #F5F5F5;
 $lightBlue: #038AB5;
-$blue: #005B96;
+$red: #F44336;
 $silver: #009DB7;
-$bigShadow: 0 2px 4px rgba(#333, 0.3);
 $smallShadow: 0 1px 2px rgba(#333, 0.3);
-$gradient: linear-gradient(to right, #005b96 0%,#038ab5 35%,#00b6b7 77%);
 
 * {
     box-sizing: border-box;
@@ -35,9 +35,9 @@ h1, h3, h3, p, a, li, input, textarea {
 }
 
 h1, h2, h3, label, input[type="submit"] {
+    color: $grey;
     font-family: Raleway, sans-serif;
     font-weight: 300;
-    color: $grey;
 }
 
 p, a, li, span {
@@ -46,8 +46,8 @@ p, a, li, span {
 }
 
 .navbar-inner .dropdown-menu * {
-    font-size: 1em;
     color: $dark;
+    font-size: 1em;
 }
 
 #_145_dockbarbodyContent, #_145_navAccountControls {
@@ -57,8 +57,8 @@ p, a, li, span {
 }
 
 #_2_WAR_notificationsportlet_userNotificationsCount {
-    border-width: 0;
     border-radius: 2px;
+    border-width: 0;
     box-shadow: $smallShadow;
     color: #FFF;
 }
@@ -80,9 +80,9 @@ p, a, li, span {
 }
 
 .lfr-meta-actions {
-    padding: 0;
     margin: 0 auto;
     max-width: 1280px;
+    padding: 0;
     width: 100%;
 
 span {
@@ -96,11 +96,9 @@ span {
 }
 }
 
-
-
 .columns-max {
-    width: 1280px;
     margin: 64px auto 128px auto;
+    width: 1280px;
 }
 
 .input-container {
@@ -110,6 +108,7 @@ span {
     font-size: inherit;
 }
 }
+
 /* Layout
 ************************************************************/
 
@@ -132,9 +131,9 @@ span {
 
 #banner {
     background-color: transparent;
-    border-top: 3px solid transparent;
     border-image: $gradient;
     border-image-slice: 1;
+    border-top: 3px solid transparent;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -243,7 +242,7 @@ svg {
 }
 
 .section_column {
-    padding-right:48px;
+    padding-right: 48px;
 }
 }
 
@@ -252,8 +251,8 @@ svg {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 32%;
     height: 100px;
+    width: 32%;
 }
 
 // LCS Section
@@ -337,8 +336,8 @@ label {
 
 input, textarea {
     background-color: #FFF;
-    border: none;
     border-bottom: 2px solid $light;
+    border-width: 0;
     box-shadow: none;
     font-size: 1.5em;
     font-weight: 300;
@@ -366,7 +365,7 @@ input[type="submit"] {
     font-weight: 300;
     margin-bottom: 0;
     text-transform: uppercase;
-    transition: all .15s ease;
+    transition: all 0.15s ease;
     width: 50%;
 
 &:hover {
@@ -375,7 +374,7 @@ input[type="submit"] {
      border-image-slice: 1;
      border-radius: 3px;
      color: $green;
-     transition: all .15s ease;
+     transition: all 0.15s ease;
  }
 }
 }
@@ -487,9 +486,9 @@ a {
 
 #tech-stack.section {
 img {
-    width: 20%;
     padding-bottom: 24px;
     padding-right: 24px;
+    width: 20%;
 
 &:nth-child(3n) {
      padding-right: 0;
@@ -518,8 +517,8 @@ textarea {
 }
 
 #location {
-    width: 100%;
     height: 47vh;
+    width: 100%;
 }
 
 #footer {
@@ -565,8 +564,8 @@ textarea {
         width: 100%;
 
     p {
-        font-weight: 300;
         font-size: 1.5em;
+        font-weight: 300;
     }
 }
 }
@@ -594,8 +593,8 @@ textarea {
 #about-liferay {
 img {
     height: 64px;
-    padding-bottom: 24px;
     order: 1;
+    padding-bottom: 24px;
     width: auto !important;
 }
 
@@ -624,15 +623,15 @@ svg {
 }
 
 img {
-    width: 18%;
     height: auto;
     padding-right: 16px;
+    width: 18%;
 }
 }
 
 #contact-location.section {
-    padding: 0;
     flex-direction: column;
+    padding: 0;
 }
 
 #contact {
@@ -676,9 +675,9 @@ textarea {
 }
 
 #location {
+    background-size: 200%;
     height: 300px;
     width: 100%;
-    background-size: 200%;
 }
 }
 
