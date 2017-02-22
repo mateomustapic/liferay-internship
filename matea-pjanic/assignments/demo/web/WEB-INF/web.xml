@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>Ch3 Registration</servlet-name>
+        <servlet-class>com.company.Registration</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Ch3 Registration</servlet-name>
+        <url-pattern>/Registrationpath</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <servlet>
+        <servlet-name>info</servlet-name>
+        <servlet-class>com.company.Info</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>info</servlet-name>
+        <url-pattern>/Infopath</url-pattern>
+    </servlet-mapping>
+
+    <context-param>
+        <param-name>contact</param-name>
+        <param-value>matematka@gmail.com</param-value>
+    </context-param>
+</web-app>
