@@ -15,48 +15,44 @@
             integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
             crossorigin="anonymous"></script>
     <script src="app-ajax.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-<P>Hy,${param.username}</P>
+<P>Hy, ${param.username}
+</P>
 
-<p>Your music choice is: </p>
-
-<% String[] musica = request.getParameterValues("music");
+<%  String[] musica = request.getParameterValues("music");
     if (musica != null) {
-        for(int i=0; i<musica.length; i++) { %>
-<%= musica[i]%><br><br>
-<% }
-} %>
-<br>
-<fieldset>
-    <legend> Article1: </legend>
-</fieldset>
-<br>
+        for(int i=1; i<=musica.length; i++) { %>
+        <fieldset class="article<%=i%>">
+            <legend> Article<%=i%>: </legend>
+            <div><%= musica[i-1]%></div>
+        </fieldset>
+        <br>
+<% }} %>
 
-<fieldset>
-    <legend> Article2: </legend>
-</fieldset>
-<br>
-
-<form method="post" id="requestForm">
+<form method="post" id="searchMusicForm">
     <fieldset>
         <legend> Bend searching: </legend><br>
+
         <p>
             <label for="bend">Bend:</label>
-            <input id="bend" type="text" name="bendName" />
+            <input id="bend" type="text" name="bendName" autocomplete="off"/>
         </p>
         <p>
-            <input id="btn" type="submit" value="Submit" />
+            <input id="btn2" type="submit" value="Submit" />
         </p>
+
     </fieldset>
 </form>
-<div id="result">
+<div id="resultDiv">
     <fieldset>
         <legend> Result </legend>
-        <div id="response"></div>
+        <div id="result"></div>
     </fieldset>
 </div>
-<p>Contact me on: ${initParam.contact}</p>
+<p>Contact me on: ${initParam.contact}
+</p>
 </body>
 </html>

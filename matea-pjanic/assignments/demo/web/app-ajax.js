@@ -3,21 +3,34 @@
  */
 $(document).ready(function() {
 
-    $("#requestForm").submit(function (e) {
+    $("#searchMusicForm").submit(function (e) {
         e.preventDefault();
     });
 
-
-    $("#btn").click(function() {
+    $("#btn2").click(function() {
         var bend = $('#bend').val();
         $.ajax({
-            url: '/Infopath',
-            data: {a: bend},
-            // dataType: 'json',
+            url: '/InfoPath',
+            data: {yourBend: bend},
+            dataType: 'json',
             type: 'post',
-            success: function(responseText) {
-                $('#response').append('<p>You wrote: ' + bend + '</p>');
-                $('#response').append('<p>but all I have (for now) is:<br> ' + responseText + '</p>');
+            success: function(responseJson) {
+                var count = Object.keys(responseJson).length;
+                console.log(responseJson);
+                console.log(count);
+                var result = $('#result');
+                if(count>1) {
+                    result.append('<br>Bend: ' + responseJson.bendName + '<br>');
+                    for (var i = 0; i < responseJson.albums.length; i++) {
+                        result.append('Album: ' + responseJson.albums[i].albumName + '<br>');
+                        for (var j = 0; j < responseJson.albums[i].songs.length; j++) {
+                            result.append('Song: ' + responseJson.albums[i].songs[j].songName + '<br>');
+                        }
+                    }
+                }
+                else {
+                    result.append('<br>' + responseJson.no);
+                }
             }
         });
     });

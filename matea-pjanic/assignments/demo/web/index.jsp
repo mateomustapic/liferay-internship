@@ -14,9 +14,10 @@
           integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
           crossorigin="anonymous"></script>
   <script src="app-ajax.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<form method="post" action="Registrationpath">
+<form method="post" id="selectMusicForm" action="RegistrationPath">
   <fieldset>
     <legend> Registration </legend>
     </br>
@@ -39,7 +40,7 @@
 
   </fieldset>
   <br>
-  <input type="submit">
+  <input id="btn1" type="submit" value="Submit">
 </form>
 </body>
 </html>

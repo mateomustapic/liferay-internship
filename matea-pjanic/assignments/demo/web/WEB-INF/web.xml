@@ -9,7 +9,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Ch3 Registration</servlet-name>
-        <url-pattern>/Registrationpath</url-pattern>
+        <url-pattern>/RegistrationPath</url-pattern>
     </servlet-mapping>
 
     <session-config>
@@ -22,7 +22,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>info</servlet-name>
-        <url-pattern>/Infopath</url-pattern>
+        <url-pattern>/InfoPath</url-pattern>
     </servlet-mapping>
 
     <context-param>
