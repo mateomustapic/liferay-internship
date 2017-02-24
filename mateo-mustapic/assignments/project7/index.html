@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Interactive website</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		    <script src="js/script.js"></script>
+        <script src="js/menu.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400;300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+        <div class="menu">
+          <!-- Menu icon -->
+          <div class="icon-close">
+            <img src="images/close.png">
+          </div>
+          <!-- Menu -->
+          <div class="menu-items">
+            <ul>
+              <li><a href="index.html">News Feed</a></li>
+              <li><a href="users.html">Users</a></li>
+              <li><a href="details.html">User Details</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Main body -->
+        <div class="jumbotron">
+          <div class="icon-menu">
+            <i class="fa fa-bars"></i>
+            Menu
+          </div>
+        </div>
+        <div class="container">
+            <form>
+              <h3>News Feed</h3>
+            <div class="form-group">
+              <textarea class="form-control status-box" data-toggle="tooltip" title="Write your status in this field" id="myInput" rows="4" placeholder="What's on your mind?"></textarea>
+            </div>
+            </form>
+            <div class="button-group pull-right">
+                <p class="counter">140</p>
+                <a href="#" id="postButton" class="btn btn-primary">Post</a>
+            </div>
+            <ul class="posts">
+              <li data-toggle="tooltip" title="Click X to remove this item">- Status no.2 - /by mike735 (at 11:36 AM )</li>
+              <li data-toggle="tooltip" title="Click X to remove this item">The weather is nice today... /by annie100 (at 9:36 PM )</li>
+            </ul> 
+        </div>
+        <br><hr>
+	</body>
+</html>
+

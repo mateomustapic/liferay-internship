@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interactive website/Users</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="js/users.js"></script>
+        <script src="js/menu.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400;300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+        <div class="menu">
+          <!-- Menu icon -->
+          <div class="icon-close">
+            <img src="images/close.png">
+          </div>
+          <!-- Menu -->
+          <div class="menu-items">
+            <ul>
+              <li><a href="index.html">News Feed</a></li>
+              <li><a href="users.html">Users</a></li>
+              <li><a href="details.html">User Details</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Main body -->
+        <div class="jumbotron">
+          <div class="icon-menu">
+            <i class="fa fa-bars"></i>
+            Menu
+          </div>
+        </div>
+        <div class="container">
+              <a href="#" id="addButton" class="btn btn-primary">New User</a>
+              <input id="btnSortName" type="button" value="Sort List" class="btn btn-success"></input>
+              <br>
+              <input type="text" id="input" onkeyup="search()" placeholder="Search for username..">
+              <h3>Users</h3>
+              <ul id="myUL">
+                <li><a href="#">george2345<button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#georgeModal">Info</button></a>
+                  <!-- George Modal-->
+                  <div class="modal fade" id="georgeModal" role="dialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title"><b>George Watson</b></h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>username: george2345,
+                             firstName: George, 
+                             lastName: Watson,  
+                             email: gwatson@gmail.com</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li><a href="#">gilles112<button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#gillesModal">Info</button></a>
+                  <!-- Gilles Modal-->
+                  <div class="modal fade" id="gillesModal" role="dialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title"><b>Gilles Villneuve</b></h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>username: gilles112,
+                             firstName: Gilles, 
+                             lastName: Villneuve,  
+                             email: gilles112@gmail.com</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li><a href="#">halley735<button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#halleyModal">Info</button></a>
+                  <!-- Halley Modal-->
+                  <div class="modal fade" id="halleyModal" role="dialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title"><b>Halley Jackson</b></h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>username: halley735,
+                            firstName: Halley,
+                            lastName: Jackson,
+                            email: halley735@live.com</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li><a href="#">adele2345<button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#adeleModal">Info</button></a>
+                  <!-- Adele Modal-->
+                  <div class="modal fade" id="adeleModal" role="dialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title"><b>Adele Smith</b></h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>username: 'adele2345',
+                             firstName: 'Adele',
+                             lastName: 'Smith',
+                             email: 'adele2345@gmail.com'</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li><a href="#">agnes112<button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#agnesModal">Info</button></a>
+                  <!-- Agnes Modal-->
+                  <div class="modal fade" id="agnesModal" role="dialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title"><b>Agnes Bellington</b></h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>username: 'agnes112',
+                             firstName: 'Agnes',
+                             lastName: 'Bellington',
+                             email: 'agny248@gmail.com'</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li><a href="#">billy735<button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#billyModal">Info</button></a>
+                  <!-- Billy Modal-->
+                  <div class="modal fade" id="billyModal" role="dialog">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title"><b>Billy Jordan</b></h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>username: 'billy735',
+                             firstName: 'Billy',
+                             lastName: 'Jordan',
+                             email: 'billybob@gmail.com'</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li><a href="#">bob424<button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#georgeModal">Info</button></a></li>
+                <li><a href="#">calvin112<button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#georgeModal">Info</button></a></li>
+                <li><a href="#">tom555<button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#georgeModal">Info</button></a></li>
+                <li><a href="#">cindy001<button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#georgeModal">Info</button></a></li>
+                <li><a href="#">hugh2345<button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#georgeModal">Info</button></a></li>
+                <li><a href="#">derrick112<button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#georgeModal">Info</button></a></li>
+              </ul>
+        </div> 
+  </body>
+</html>
+
