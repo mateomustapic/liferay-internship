@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300|Roboto:300,700&subset=latin-ext');
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -5,20 +7,41 @@
 }
 
 html {
-	font-family: Arial;
-	font-size: 18px;
+	font-family: Roboto;
+	font-size: 16px;
+	font-weight: 300;
 	height: 100%;
-	line-height: 1.4;
+	line-height: 1.35;
 	min-height: 100vh;
 }
 
 body {
 	align-items: center;
-	background-color: #EEE;
+	background-color: #FFF;
 	display: flex;
 	flex-direction: column;
-	height: 100%;
+	height: auto;
+	min-height: 100%;
 	justify-content: center;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 2.25em;
+}
+
+h3 {
+	font-size: 1.75em;
+	margin-bottom: 16px;
+}
+
+p {
+	font-family: Roboto Slab;
+	font-size: 1em;
+	line-height: 1.25em;
 }
 
 p, a {
@@ -26,26 +49,74 @@ p, a {
 	color: #333;
 }
 
+textarea {
+	height: 200px;
+}
+
+@media screen and (max-width: 1024px) {
+	h1 {
+		font-size: 2.5em;
+	}
+
+	h2 {
+		font-size: 2em;
+	}
+
+	h3 {
+		font-size: 1.5em;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	h1 {
+		font-size: 2em;
+	}
+
+	h2 {
+		font-size: 1.625em;
+	}
+
+	h3 {
+		font-size: 1.375em;
+	}
+}
+
 main {
 	align-items: flex-start;
 	display: flex;
 	flex: 1;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: flex-start;
 	padding: 64px 0;
+	width: 100%;
 }
 
 #site-header, #site-footer  {
 	align-items: center;
-	background-color: darkturquoise;
+	background-color: #8E44AD;
 	display: flex;
 	justify-content: center;
 	width: 100%;
+}
+
+#site-footer {
+	background-color: #22313F;
 }
 
 .container {
 	max-width: 1280px;
 	padding: 16px;
 	width: 100%;
+}
+
+#site-header .container {
+	position: relative;
+	padding: 0;
+}
+
+#site-nav {
+	display: flex;
+	padding-left: 32px;
 }
 
 #site-nav a {
@@ -64,6 +135,180 @@ main {
 }
 
 #site-footer p {
-	color: rgba(0, 0, 0, 0.5);
+	color: rgba(255, 255, 255, 0.7);
 	font-size: 0.9em;
+}
+
+#burger-open {
+	display: none;
+}
+
+#burger-close {
+	display: none;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	margin-top: 24px;
+}
+
+form label {
+	font-weight: 700;
+	padding-bottom: 8px;
+}
+
+form input, form textarea {
+	border-width: 0;
+	border-bottom: 1px solid #EEE;
+	font-family: Roboto;
+	font-size: 1em;
+	margin-bottom: 24px;
+	padding: 8px;
+	resize: vertical;
+	transition: all 0.3s ease;
+}
+
+form input:hover,
+form input:focus,
+form textarea:hover,
+form textarea:focus {
+	border-bottom-color: #8E44AD;
+	outline-width: 0;
+}
+
+form input[type="submit"] {
+	background-color: #8E44AD;
+	border-radius: 3px;
+	color: #FFF;
+	margin-bottom: 8px;
+	padding: 16px;
+}
+
+#form-success {
+	background-color: limegreen;
+	border-radius: 3px;
+	color: #FFF;
+	display: flex;
+	justify-content: center;
+	padding: 8px 16px;
+}
+
+#products > main {
+	flex-direction: column;
+}
+
+#crud {
+	background-color: #EEE;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+#crud > .container {
+	padding: 16px 0;
+}
+
+#crud a {
+	align-items: center;
+	background-color: limegreen;
+	border-width: 0;
+	color: #FFF;
+	display: flex;
+	font-family: Roboto;
+	font-size: 1.2em;
+	font-weight: 300;
+	justify-content: center;
+	margin-bottom: 16px;
+	padding: 32px;
+	text-decoration: none;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+	transition: all 0.3s ease;
+	width: 100%;
+}
+
+#crud a:last-child {
+	margin-bottom: 0;
+}
+
+#crud a:hover,
+#crud a:focus {
+	background-color: #8E44AD;
+	outline-width: 0;
+}
+
+.backlink {
+	color: limegreen;
+	display: flex;
+	text-decoration: none;
+}
+
+.product-form {
+	background-color: #EEE;
+	height: auto;
+	flex: 1;
+	margin-top: 0;
+	width: 100%;
+}
+
+.product-form > .container {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+
+.product-form input {
+	background-color: transparent;
+	border-bottom-color: #CECECE;
+}
+
+@media screen and (max-width: 480px) {
+	#site-header .container {
+		padding: 16px;
+	}
+
+	#burger-open {
+		display: flex;
+	}
+
+	#site-nav {
+		background-color: #8E44AD;
+		flex-direction: column;
+		left: 0;
+		opacity: 0;
+		padding-left: 0;
+		position: absolute;
+		transform: translateY(-118%);
+		transition: all 0.3s cubic-bezier(1,-0.09, 0, 1.37);
+		visibility: hidden;
+		width: 100%;
+	}
+
+	#site-nav.open {
+		opacity: 1;
+		transform: translateY(0);
+		visibility: visible;
+	}
+
+	#site-nav a {
+		border-bottom: 1px solid #9B59B6;
+		margin-right: 0;
+		padding-left: 24px;
+	}
+
+	#site-nav a:hover {
+		border-bottom-color: #EEE;
+	}
+
+	main {
+		padding: 0;
+	}
+
+	textarea {
+		height: 100px;
+	}
+
+	form input, form textarea {
+		font-size: 1.2em;
+	}
 }
