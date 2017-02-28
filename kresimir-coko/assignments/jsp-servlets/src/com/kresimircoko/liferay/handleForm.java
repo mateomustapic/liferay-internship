@@ -18,7 +18,7 @@ public class handleForm extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
-		RequestDispatcher dispatch = request.getRequestDispatcher("contact.jsp");
+		RequestDispatcher dispatch = request.getRequestDispatcher("/pages/contact/contact.jsp");
 		dispatch.include(request, response);
 	}
 

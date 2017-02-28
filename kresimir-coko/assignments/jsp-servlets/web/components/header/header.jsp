@@ -17,10 +17,10 @@
 			<path d="M0 0h24v24H0z" fill="none"/>
 		</svg>
 		<nav id="site-nav">
-			<a href="index.jsp">Home</a>
-			<a href="products.jsp">Products</a>
-			<a href="testimonials.jsp">Testimonials</a>
-			<a href="contact.jsp">Contact</a>
+			<a href="../../index.jsp">Home</a>
+			<a href="../../pages/products/products.jsp">Products</a>
+			<a href="../../pages/testimonials/testimonials.jsp">Testimonials</a>
+			<a href="../../pages/contact/contact.jsp">Contact</a>
 		</nav>
 	</div>
 </header>

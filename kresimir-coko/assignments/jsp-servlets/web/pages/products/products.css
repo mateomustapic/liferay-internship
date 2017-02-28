@@ -1,0 +1,75 @@
+#crud {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	margin-top: 24px;
+	width: 100%;
+}
+
+#crud > .container {
+	padding: 16px 0;
+}
+
+#crud a {
+	align-items: center;
+	background-color: #00bcd4;
+	border-width: 0;
+	color: #FFF;
+	display: flex;
+	font-family: Roboto;
+	font-size: 1.2em;
+	font-weight: 300;
+	justify-content: center;
+	margin-bottom: 16px;
+	padding: 24px;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+	transition: all 0.3s ease;
+	width: 100%;
+}
+
+#crud a:last-child {
+	margin-bottom: 0;
+}
+
+#crud a:hover,
+#crud a:focus {
+	background-color: #8E44AD;
+	outline-width: 0;
+}
+
+#crud svg {
+	margin-right: 8px;
+	filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.product-form {
+	background-color: #EEE;
+	height: auto;
+	margin-top: 0;
+	width: 100%;
+}
+
+.product-form > .container {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+
+.product-form input {
+	background-color: transparent;
+	border-bottom-color: #CECECE;
+}
+
+.product-form li {
+	background-color: #FFF;
+	border-radius: 2px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+	list-style: none;
+	margin-bottom: 8px;
+	padding: 8px 16px;
+}
+
+.product-form li:last-child {
+	margin-bottom: 0;
+}
