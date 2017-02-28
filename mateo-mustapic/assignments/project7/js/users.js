@@ -11,8 +11,7 @@ function newUser(){
         }
     })
 }
-$(document).ready(newUser);
-/* Search the list of users*/
+/* Search the list of users */
 function search(){
     var input, filter, li, ul, a, i;
     input = document.getElementById('input');
@@ -30,7 +29,7 @@ function search(){
     }
 }
 /* Sort the list of users */
-$(document).ready(function () {
+function sortUser(){
     $("#btnSortName").on("click", function () {
         $("#myUL").html(
             $("#myUL").children("li").sort(function (a, b) {
@@ -38,5 +37,8 @@ $(document).ready(function () {
             }) 
         ); 
     }); 
-});
+};
+$(document).ready(newUser);
+$(document).ready(search);
+$(document).ready(sortUser);
 
