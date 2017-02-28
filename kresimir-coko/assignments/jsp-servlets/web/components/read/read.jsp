@@ -25,12 +25,13 @@
 			<form class="product-form" id="formRead" method="GET">
 				<div class="container">
 					<ul>
-						<li>Product #1</li>
-						<li>Product #2</li>
-						<li>Product #3</li>
-						<li>Product #4</li>
-						<li>Product #5</li>
-						<li>Product #6</li>
+						<%
+							request.setCharacterEncoding("UTF-8");
+
+							String productName = (String)session.getAttribute("productName");
+
+							out.println("<li>" + productName + "</li>");
+						%>
 					</ul>
 				</div>
 			</form>

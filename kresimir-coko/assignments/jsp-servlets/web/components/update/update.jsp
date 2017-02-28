@@ -23,7 +23,7 @@
 				<p>This form lets you update existing products.</p>
 			</div>
 
-			<form action="handleUpdate" class="product-form" id="formUpdate" method="POST">
+			<form action="/handleUpdate" class="product-form" id="formUpdate" method="POST">
 				<div class="container">
 					<label for="selectProduct">Select a product</label>
 					<select name="selectProduct">

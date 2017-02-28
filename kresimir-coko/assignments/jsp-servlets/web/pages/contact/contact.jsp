@@ -42,7 +42,7 @@
 					String name = request.getParameter("name");
 
 					if (name != null) {
-						out.println("<span id='form-success'> Thank you for contacting us " + name + ".</span>");
+						out.println("<span class='form-success'> Thank you for contacting us " + name + ".</span>");
 					}
 				%>
 			</div>
