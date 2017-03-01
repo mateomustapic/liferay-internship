@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="../../styles.css">
 		<link rel="stylesheet" href="/pages/contact/contact.css">
 	</head>
-	<body>
+	<body id="body-contact">
 
 		<jsp:include page="/components/header/header.jsp" />
 
@@ -35,16 +35,16 @@
 						<textarea name="message" placeholder="Send us your feedback..." required></textarea>
 
 						<input type="submit" value="Send">
+						<%
+							request.setCharacterEncoding("UTF-8");
+							String name = request.getParameter("name");
+
+							if (name != null) {
+								out.println("<span class='form-success'> Thank you for contacting us " + name + ".</span>");
+							}
+						%>
 					</div>
 				</form>
-				<%
-					request.setCharacterEncoding("UTF-8");
-					String name = request.getParameter("name");
-
-					if (name != null) {
-						out.println("<span class='form-success'> Thank you for contacting us " + name + ".</span>");
-					}
-				%>
 			</div>
 		</main>
 

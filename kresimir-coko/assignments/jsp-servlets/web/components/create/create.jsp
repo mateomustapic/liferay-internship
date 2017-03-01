@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: kresimircoko
   Date: 27/02/2017
@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Create a product</title>
@@ -24,24 +25,26 @@
 				<form action="/handleCreate" class="product-form" id="formCreate" method="post">
 					<div class="container">
 						<label for="productName">Product Name</label>
-						<input name="productName" placeholder="Product Name" type="text">
+						<input name="productName" placeholder="Product Name" required type="text">
 
 						<label for="productType">Product type</label>
 						<input name="productType" placeholder="Product Type" type="text">
 
 						<input type="submit" value="Add a Product">
+
+						<%
+							request.setCharacterEncoding("UTF-8");
+
+							String productName = request.getParameter("productName");
+
+							if (productName != null && !productName.isEmpty()) {
+								out.println("<span class='form-success'>" + productName + " has been added</span>");
+							}
+
+						%>
 					</div>
 				</form>
 
-				<%
-					request.setCharacterEncoding("UTF-8");
-
-					String productName = (String)session.getAttribute("productName");
-
-					if (productName != null) {
-						out.println("<span class='form-success'>" + productName + " has been added.</span>");
-					}
-				%>
 			</div>
 
 			<a class="backlink" href="../../pages/products/products.jsp">

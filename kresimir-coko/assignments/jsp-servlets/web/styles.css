@@ -205,6 +205,64 @@ input[type="submit"] {
 	h3 {
 		font-size: 1.5em;
 	}
+
+	#site-nav {
+		padding-left: 0;
+	}
+
+	#site-nav a {
+		flex: 1;
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	body > main > .container {
+		align-items: center;
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		justify-content: initial !important;
+	}
+
+	main {
+		padding: 0;
+		min-height: calc(100vh - 121px);
+	}
+
+	.container {
+		padding: 24px 16px;
+	}
+
+	form {
+		background-color: #EEE;
+		display: flex;
+		flex: 1;
+		margin-top: 24px;
+		justify-content: center;
+		padding: 24px;
+		width: 100%;
+	}
+
+	form > .container {
+		flex: initial;
+		padding: 0;
+		width: 50%;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	main {
+		align-items: center;
+	}
+
+	main > .container {
+		background-color: initial;
+	}
+
+	form {
+		background-color: #FFF;
+	}
 }
 
 @media screen and (max-width: 480px) {

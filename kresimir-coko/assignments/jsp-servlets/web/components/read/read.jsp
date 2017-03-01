@@ -5,7 +5,8 @@
   Time: 15:06
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" import="java.util.ArrayList" language="java" %>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Read a product</title>
@@ -22,19 +23,27 @@
 				<h3>Product List</h3>
 				<p>Here you can see a list of all the products</p>
 			</div>
+
 			<form class="product-form" id="formRead" method="GET">
 				<div class="container">
 					<ul>
 						<%
 							request.setCharacterEncoding("UTF-8");
 
-							String productName = (String)session.getAttribute("productName");
+							ArrayList<String> products = (ArrayList<String>) session.getAttribute("products");
 
-							out.println("<li>" + productName + "</li>");
+							if (products != null) {
+								for(String product : products) {
+									out.println("<li>" + product + "</li>");
+								}
+							} else {
+								out.println("<span> Create some products before you can view them here </span>");
+							}
 						%>
 					</ul>
 				</div>
 			</form>
+
 			<a class="backlink" href="../../pages/products/products.jsp">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"
 						 height="24" viewBox="0 0 24 24" width="24">

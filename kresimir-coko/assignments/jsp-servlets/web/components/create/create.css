@@ -9,3 +9,14 @@
 #formCreate > .container {
 	padding: 0;
 }
+
+@media screen and (min-width: 768px) {
+	#body-create > main > .container {
+		align-items: center;
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		justify-content: center;
+		padding: 24px 0 0 0;
+	}
+}

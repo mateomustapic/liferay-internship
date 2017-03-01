@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Delete a product</title>
@@ -13,7 +14,7 @@
 		<link rel="stylesheet" href="../../styles.css">
 		<link rel="stylesheet" href="delete.css">
 	</head>
-	<body>
+	<body id="body-delete">
 
 	<jsp:include page="../header/header.jsp" />
 
@@ -21,21 +22,21 @@
 			<div class="container">
 				<h3>Delete a product</h3>
 				<p>This form lets you delete existing products.</p>
-			</div>
-			<form action="handleDelete" class="product-form" id="formDelete" method="POST">
-				<div class="container">
-					<label for="deleteProduct">Select a product</label>
-					<select name="deleteProduct">
-						<option value="product1">Product #1</option>
-						<option value="product2">Product #2</option>
-						<option value="product3">Product #3</option>
-						<option value="product4">Product #4</option>
-						<option value="product5">Product #5</option>
-					</select>
+				<form action="handleDelete" class="product-form" id="formDelete" method="POST">
+					<div class="container">
+						<label for="deleteProduct">Select a product</label>
+						<select name="deleteProduct">
+							<option value="product1">Product #1</option>
+							<option value="product2">Product #2</option>
+							<option value="product3">Product #3</option>
+							<option value="product4">Product #4</option>
+							<option value="product5">Product #5</option>
+						</select>
 
-					<input type="submit" value="Delete This Product">
-				</div>
-			</form>
+						<input type="submit" value="Delete This Product">
+					</div>
+				</form>
+			</div>
 			<a class="backlink" href="../../pages/products/products.jsp">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"
 						 height="24" viewBox="0 0 24 24" width="24">
