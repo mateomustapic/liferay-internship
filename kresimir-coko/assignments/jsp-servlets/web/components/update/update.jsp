@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: kresimircoko
   Date: 27/02/2017
@@ -23,23 +23,50 @@
 				<h3>Update a product</h3>
 				<p>This form lets you update existing products.</p>
 
-				<form action="/handleUpdate" class="product-form" id="formUpdate" method="POST">
+				<form action="/handleUpdate" class="product-form" id="formUpdate" method="post">
 					<div class="container">
+
+						<%
+							request.setCharacterEncoding("UTF-8");
+
+							ArrayList<String> products;
+							products = (ArrayList<String>) session.getAttribute("products");
+
+							if (products == null) {
+								out.println("<span class='warning'> Create some products before you can update them </span>");
+							}
+						%>
+
 						<label for="selectProduct">Select a product</label>
 						<select name="selectProduct">
-							<option value="product1">Product #1</option>
-							<option value="product2">Product #2</option>
-							<option value="product3">Product #3</option>
-							<option value="product4">Product #4</option>
-							<option value="product5">Product #5</option>
+
+							<%
+								if (products != null) {
+									for (String product : products) {
+										out.println("<option value='" + product + "'>" + product + "</option>");
+									}
+								}
+							%>
+
 						</select>
 
 						<label for="updateProduct">Update the product Name</label>
 						<input name="updateProduct" placeholder="New Product Name" type="text">
 
 						<input type="submit" value="Update This Product">
+
+						<%
+							String selectedProduct = request.getParameter("selectProduct");
+							String newProductName = request.getParameter("updateProduct");
+
+							if (newProductName != null && !newProductName.isEmpty()) {
+								out.println("<span class='form-success'>" + selectedProduct + " updated with " + newProductName + "</span>");
+							}
+						%>
 					</div>
 				</form>
+
+
 			</div>
 
 			<a class="backlink" href="../../pages/products/products.jsp">

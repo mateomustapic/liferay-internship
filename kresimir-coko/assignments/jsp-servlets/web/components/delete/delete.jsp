@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: kresimircoko
   Date: 27/02/2017
@@ -22,18 +22,40 @@
 			<div class="container">
 				<h3>Delete a product</h3>
 				<p>This form lets you delete existing products.</p>
-				<form action="handleDelete" class="product-form" id="formDelete" method="POST">
+				<form action="/handleDelete" class="product-form" id="formDelete" method="POST">
 					<div class="container">
+
+						<%
+							request.setCharacterEncoding("UTF-8");
+
+							ArrayList<String> products;
+							products = (ArrayList<String>) session.getAttribute("products");
+
+							if (products == null) {
+								out.println("<span class='warning'> Create some products before you can delete them </span>");
+							}
+						%>
+
 						<label for="deleteProduct">Select a product</label>
 						<select name="deleteProduct">
-							<option value="product1">Product #1</option>
-							<option value="product2">Product #2</option>
-							<option value="product3">Product #3</option>
-							<option value="product4">Product #4</option>
-							<option value="product5">Product #5</option>
+							<%
+								if (products != null) {
+									for (String product : products) {
+										out.println("<option value='" + product + "'>" + product + "</option>");
+									}
+								}
+							%>
 						</select>
 
 						<input type="submit" value="Delete This Product">
+
+						<%
+							String deletedProduct = request.getParameter("deleteProduct");
+
+							if (deletedProduct != null) {
+								out.println("<span class='form-success'>" + deletedProduct + " deleted</span>");
+							}
+						%>
 					</div>
 				</form>
 			</div>

@@ -290,8 +290,12 @@ input[type="submit"] {
 	/* Layout */
 
 	main {
-		height: calc(100% - 106px);
+		min-height: calc(100vh - 106px);
 		padding: 0;
+	}
+
+	main > .container {
+		flex: 1;
 	}
 
 	textarea {
@@ -331,6 +335,7 @@ input[type="submit"] {
 		border-bottom: 1px solid #9B59B6;
 		margin-right: 0;
 		padding-left: 24px;
+		text-align: left;
 	}
 
 	#site-nav a:hover {

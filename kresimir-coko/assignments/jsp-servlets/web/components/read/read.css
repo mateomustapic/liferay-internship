@@ -34,3 +34,9 @@
 		width: 50%;
 	}
 }
+
+@media screen and (max-width: 480px) {
+	#body-read > main > .container {
+		flex: initial;
+	}
+}
