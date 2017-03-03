@@ -1,0 +1,179 @@
+body {
+  	left: 0;
+  	margin: 0;
+  	position: relative;
+  	font-size: 1.8em;
+  	padding-left: 25px;
+  	padding-right: 25px;
+  	padding-bottom: 25px;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    background-color: #e8edf7;
+}
+/* Side navigation */
+#sideNav a {
+    position: fixed;
+    font-size: 1.6em; 
+    left: -120px; 
+    transition: 0.3s; 
+    padding: 15px; 
+    width: 140px; 
+    text-decoration: none; 
+    font-size: 18px; 
+    color: white; 
+    border-radius: 0 5px 5px 0; 
+}
+#sideNav a:hover {
+    left: 0; 
+}
+#indexTab {
+    top: 40px;
+    background-color: #4CAF50;
+}
+
+#flightsTab {
+    top: 100px;
+    background-color: #2196F3; 
+}
+
+#companies {
+    top: 160px;
+    background-color: #f44336; 
+    right: 80px;
+}
+#contact {
+    top: 220px;
+    background-color: #555 
+}
+table, h1 {
+    margin-top: 25px;
+    margin-left: 120px;
+    border-collapse: collapse;
+    width: 86%;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+th{
+    color: #E4F1FE;
+    background-color: #747992
+}
+tr:nth-child(even) {
+    color: black;
+    background-color: #c4cad3;
+}
+ul.respNav {
+    position: absolute;
+    top: -200px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+ul.respNav li {
+    float: left;
+}
+ul.respNav li a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+ul.respNav li a:hover {
+    background-color: #555;
+}
+ul.respNav li.icon {
+    display: none;
+}
+@media screen and (max-width: 1200px){
+    #sideNav a {
+        position: absolute;
+        font-size: 1.6em; 
+        left: -200px; 
+    }
+    ul.respNav {
+        position: relative;
+        top:0;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+    ul.respNav li {
+        float: left;
+    }
+    ul.respNav li a {
+        display: inline-block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+    ul.respNav li a:hover {
+        background-color: #555;
+    }
+    ul.respNav li.icon {
+        display: none;
+    }
+    ul.respNav li:not(:first-child) {display: none;}
+    ul.respNav li.icon {
+        float: right;
+        display: inline-block;
+    }
+    ul.respNav.responsive {position: relative;}
+    ul.respNav.responsive li.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    ul.respNav.responsive li {
+        float: none;
+        display: inline;
+    }
+    ul.respNav.responsive li a {
+        display: block;
+        text-align: left;
+    }   
+}
+@media screen and (max-width: 1000px){
+    body{
+        font-size: 1.4em;
+    }
+    h3{
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    #main{
+        width:88%;
+        height: 90%;
+        margin: 40px auto;
+        text-align:center;
+        padding: 10px;
+        background-color: white;
+        border-radius: 25px;
+    }
+    table, h1 {
+        font-weight: bold;
+        margin-left: 0;
+        border-collapse: collapse;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 600px){
+    h3{
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    #main{
+        width:95%;
+        height: 600px;
+    }
+}

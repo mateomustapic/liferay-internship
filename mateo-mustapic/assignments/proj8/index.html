@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Practice</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Aladin' rel='stylesheet'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		    <script src="js/script.js"></script>
+        <script src="js/flightsModals.js"></script>
+        <script src="js/menu.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400;300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="icon" href="icons/plane.ico" type="image/gif" sizes="16x16">
+        <link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+    <div id="sideNav" class="sidenav">
+      <a href="index.html" id="indexTab">Home</a>
+      <a href="flights.html" id="flightsTab">Flights</a>
+      <a href="companies.html" id="companies">Companies</a>
+      <a href="contact.html" id="contact">Contact</a>
+    </div>
+    <ul class="respNav" id="topnav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="flights.html">Flights</a></li>
+      <li><a href="companies.html">Companies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="icon">
+        <a href="javascript:void(0);" style="font-size:15px;" onclick="menuFunction()">☰</a>
+      </li>
+    </ul>
+    <div id="flights">
+      <h3><b>Flights</b></h3>
+        <button id="btn1" class="btn btn-primary">Zagreb <i class="fa fa-plane" aria-hidden="true"></i> Dubrovnik</button>
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Flight Zagreb <i class="fa fa-plane" aria-hidden="true"></i> Dubrovnik</h2>
+              <h3><u>Departure</u></h3>
+                <div id="dep">
+                </div> 
+              <h3><u>Arrival</u></h3>
+              <div id="arr">
+              </div>
+            <h3><u>Pilot</u></h3>
+            <div id="pilot1">
+            </div> 
+          </div>
+        </div>
+        <button id="btn2" class="btn btn-success">Zagreb <i class="fa fa-plane" aria-hidden="true"></i> Split</button>
+          <div id="modal2" class="modal2">
+            <div class="modal-content2">
+              <span class="close2">&times;</span>
+              <h2>Flight Zagreb <i class="fa fa-plane" aria-hidden="true"></i> Split</h2>
+              <h3><u>Departure</u></h3>
+                <div id="dep2">
+                </div> 
+                <h3><u>Arrival</u></h3>
+                <div id="arr2">
+                </div>
+              <h3><u>Pilot</u></h3>
+              <div id="pilot2"> 
+              </div> 
+          </div>
+        </div>
+        <button id="btn3" class="btn btn-primary">Zagreb <i class="fa fa-plane" aria-hidden="true"></i> London</button>
+          <div id="modal3" class="modal3">
+            <div class="modal-content3">
+            <span class="close3">&times;</span>
+            <h2>Flight Zagreb <i class="fa fa-plane" aria-hidden="true"></i> London</h2>
+            <h3><u>Departure</u></h3>
+              <div id="dep3">
+              </div> 
+              <h3><u>Arrival</u></h3>
+              <div id="arr3">
+              </div>
+              <h3><u>Pilot</u></h3>
+              <div id="pilot3">  
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="pilot">
+      <h3><b>Pilots</b></h3>
+      <button type="submit" id="addBtn" class="btn btn-info">
+          Add Pilot         <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+        <div id="pilots">
+          <div id="michaelDiv">   
+          </div>
+          <div id="peterDiv">   
+          </div>
+          <div id="johnDiv">   
+          </div>
+          <div id="newPilot">
+            <ul id="pilotUL" class="list-unstyled">
+            </ul>
+          </div>
+      </div>
+    <hr>
+    <div class="columns">
+      <div id="airlineCompanies">
+        <h3><b>Airline companies</b></h3>
+        <button type="submit" id="sortBtn" class="btn btn-success">
+          Sort Companies <i class="fa fa-sort" aria-hidden="true"></i> 
+        </button>
+        <a href="companies.html" id="infoBtn" class="btn btn-info">
+          Company Details <i class="fa fa-info" aria-hidden="true"></i> 
+        </a>
+        <ul id="companiesList" class="list-unstyled">
+        </ul>
+      </div>
+      <div id="airports">
+      <br>
+        <h3><b>List of airports</b></h3>
+        <button type="submit" id="sortBtn2" class="btn btn-success">
+          Sort Airports <i class="fa fa-sort" aria-hidden="true"></i> 
+        </button>
+        <ul id="airportList" class="list-unstyled">
+          <li>Heathrow, London - UK</li>
+          <li>Gatwick, London - UK</li>
+          <li>Cilipi, Dubrovnik - Croatia</li>
+          <li>Pleso, Zagreb - Croatia</li>
+          <li>Resnik, Split - Croatia</li>
+          <li>Fiumicino, Rome - Italy</li>
+          <li>JFK, New York - United States</li>
+        </ul>
+      </div>
+    </div>
+    <br>
+	</body>
+</html>
+
