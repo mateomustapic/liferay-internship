@@ -5,6 +5,7 @@ package com.company;
  */
 public class Bend {
     private String bendName;
+    private String image;
     private Album[] albums;
 
     public String getBendName() {
@@ -14,6 +15,10 @@ public class Bend {
     public void setBendName(String bendName) {
         this.bendName = bendName;
     }
+
+    public String getImage() { return image; }
+
+    public void setImage(String image) { this.image = image; }
 
     public Album[] getAlbums() {
         return albums;

@@ -5,6 +5,7 @@ package com.company;
  */
 public class Song {
     private String songName;
+    private String songDuration;
 
     public String getSongName() {
         return songName;
@@ -13,4 +14,8 @@ public class Song {
     public void setSongName(String songName) {
         this.songName = songName;
     }
+
+    public String getSongDuration() { return songDuration; }
+
+    public void setSongDuration(String songDuration) { this.songDuration = songDuration; }
 }

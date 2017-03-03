@@ -1,0 +1,307 @@
+header, footer {
+    background-color: black;
+    color: white;
+    position: fixed;
+    width: 100%;
+}
+
+header {
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    align-items: center;
+}
+
+footer {
+    bottom: 0;
+    color: lemonchiffon;
+}
+
+#searchMusicForm {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#searchMusicForm > .easy-autocomplete.eac-dark {
+    width: auto !important;
+}
+
+#site-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+}
+
+#content, #joinContent, #loginContent, .resultContainer {
+    margin-top: 100px;
+}
+
+#result{
+    margin-top: 0 !important;
+}
+
+#profileLinksContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 72px;
+    padding: 16px;
+}
+
+#profileLinksContainer a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#profileLinksContainer a:first-child {
+    padding-right: 16px;
+}
+
+#profileLinksContainer a:hover,#profileLinksContainer a:active
+{
+    text-decoration: none;
+    color: seagreen;
+}
+
+#search {
+    border: 0;
+    background: none;
+    border-bottom: 1px;
+    border-style: solid;
+    border-bottom-color: lemonchiffon;
+    padding: 3px 10px;
+}
+
+#search:focus, #searchBtn:focus {
+    outline: none;
+}
+
+.headLink {
+    color: lemonchiffon;
+    padding-left: 12px;
+}
+
+
+.headLink:hover,.headLink:active
+{
+    text-decoration: none;
+    color: seagreen;
+}
+
+#searchBtn {
+    font-size: 16px;
+    color: #FFF;
+    background-color: transparent;
+    border: none;
+}
+
+.form-horizontal {
+    margin-top: 80px;
+    margin-right: 50px;
+}
+
+#musicChoice {
+    padding-left: 120px;
+}
+
+.newsPic {
+    float: left;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 25%;
+}
+
+h4 {
+    margin-top: 20px;
+}
+
+#news {
+    margin-top: 20px;
+}
+
+#artists {
+    margin: 0;
+    padding: 0;
+}
+
+.artistsPic {
+    float: left;
+    background-size: cover;
+    margin: 0;
+    height: 150px;
+    width: 150px;
+}
+
+.artistsPic:hover {
+    opacity: 0.8;
+}
+
+.artistsPar {
+    display: none;
+}
+
+@keyframes enlargeText {
+    from {font-size: 20px; left: 0; top: 0;}
+    to{font-size: 26px; left: 10px; top: 20px;}
+}
+
+.artistsPic:hover .artistsPar{
+    display: block;
+    position: relative;
+    color: white;
+    animation: enlargeText 1.0s forwards;
+}
+
+#thunder {
+    background-image: url('../img/thundercat.jpg');
+    width: 500px;
+    height: 300px;
+}
+
+#weeknd {
+    background-image: url('../img/the-weeknd.jpg');
+}
+
+#future {
+    background-image: url('../img/future.jpg');
+}
+
+#justin {
+    background-image: url('../img/justinh.jpg');
+}
+
+#xx {
+    background-image: url('../img/xx.jpg');
+}
+
+#adele {
+    background-image: url('../img/adele.jpg');
+}
+
+#chain {
+    background-image: url('../img/chainsmokers.jpg');
+}
+
+#maus {
+    background-image: url('../img/deadmau5.jpg');
+}
+
+#lana {
+    background-image: url('../img/lana.jpg');
+}
+
+hr{
+    background-color: black;
+    height: 1px;
+}
+
+#moreAdvL, #moreCornL, #moreJohnL {
+    color: black;
+    float: none;
+}
+
+.moreAdvP, .moreCornP, .moreJohnP {
+    display: none;
+}
+
+.readMore {
+    display: inline;
+}
+
+.glyphicon-play-circle, .glyphicon-heart-empty {
+    color: gainsboro;
+}
+
+#searchBtn {
+    color: lemonchiffon;
+}
+
+.glyphicon-heart-empty:hover {
+    color: red;
+}
+
+.glyphicon-play-circle:hover {
+    color: seagreen;
+}
+
+#searchBtn:hover {
+    color: seagreen;
+}
+
+@media only screen and (max-width: 1200px) {
+    #thunder {
+        width: 600px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #musicChoice{
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #thunder {
+        width: 450px;
+    }
+    .newsPic {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 628px) {
+    header {
+        flex-direction: column;
+    }
+    #profileLinksContainer {
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .artistsPic {
+        width: 100px;
+        height: 100px;
+    }
+    #thunder {
+        width: 300px;
+    }
+    .newsPic {
+        width: 40%;
+    }
+    #tracks table th{
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .artistsPic {
+        width: 90px;
+        height: 90px;
+    }
+    #thunder {
+        width: 180px;
+        height: 180px;
+    }
+    .newsPic {
+        width: 70%;
+        float: none;
+    }
+    #tracks table th{
+        font-size: 12px;
+    }
+}
+
+.col-sm-10 {
+    max-width: 500px;
+}
+
+.easy-autocomplete {
+    display: inline-block;
+}
+
+

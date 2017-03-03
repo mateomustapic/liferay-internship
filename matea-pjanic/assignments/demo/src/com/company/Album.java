@@ -5,6 +5,7 @@ package com.company;
  */
 public class Album {
     private String albumName;
+    private int year;
     private Song[] songs;
 
     public String getAlbumName() {
@@ -13,6 +14,12 @@ public class Album {
 
     public void setAlbumName(String albumName) {
         this.albumName = albumName;
+    }
+
+    public int getYear() { return year; }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public Song[] getSongs() {

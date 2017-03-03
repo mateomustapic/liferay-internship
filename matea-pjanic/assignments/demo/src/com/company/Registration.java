@@ -16,17 +16,8 @@ public class Registration extends HttpServlet {
 
         response.setContentType("text/html");
 
-        String pass = request.getParameter("password");
-        String user = request.getParameter("username");
-
-        if (pass == null || pass.equals("") || user.equals("")) {
-            RequestDispatcher view = request.getRequestDispatcher("index.jsp");
-            view.forward(request,response);
-        }
-        else {
-            RequestDispatcher view = request.getRequestDispatcher("profile.jsp");
-            view.forward(request,response);
-        }
+        RequestDispatcher view = request.getRequestDispatcher("profile.jsp");
+        view.forward(request,response);
     }
 }
 
