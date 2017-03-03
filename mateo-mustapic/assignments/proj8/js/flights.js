@@ -16,7 +16,7 @@ $(document).ready(function(){
 	/* adding information to div2 */
 	function addDubai () { 
 		const para = document.createElement("p");
-		var text = document.createTextNode(`Dubai International Airport (IATA: DXB, ICAO: OMDB) is the primary airport serving Dubai, 
+		let text = document.createTextNode(`Dubai International Airport (IATA: DXB, ICAO: OMDB) is the primary airport serving Dubai, 
 			United Arab Emirates and is the world's busiest airport by international passenger traffic.
 		 	It is also the 3rd busiest airport in the world by passenger traffic, the 6th busiest cargo airport in world, 
 		 	the busiest airport for Airbus A380 and Boeing 777 movements, and the busiest airport in the world operating with only two runways.`);
@@ -27,7 +27,7 @@ $(document).ready(function(){
 	/* adding information to div3 */
 	function addFrankfurt () { 
 		const para = document.createElement("p");
-		var text = document.createTextNode(`Frankfurt Airport (IATA: FRA, ICAO: EDDF) is a major international airport located in Frankfurt.  
+		let text = document.createTextNode(`Frankfurt Airport (IATA: FRA, ICAO: EDDF) is a major international airport located in Frankfurt.  
 			The airport covers an area of 2,000 hectares of land and features two passenger terminals with a 
 			capacity of approximately 65 million passengers per year, four runways and extensive logistics and maintenance facilities.`);
 		para.appendChild(text);

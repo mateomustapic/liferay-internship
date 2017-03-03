@@ -115,17 +115,16 @@ ul.respNav li.icon {
     }
     ul.respNav li a {
         display: inline-block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      transition: 0.3s;
-      font-size: 17px;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 17px;
     }
     ul.respNav li a:hover {
         background-color: #555;
     }
-
     ul.respNav li.icon {
         display: none;
     }

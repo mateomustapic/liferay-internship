@@ -118,14 +118,14 @@ ul.respNav li a {
   font-size: 17px;
 }
 ul.respNav li a:hover {
-    background-color: #555;
+  background-color: #555;
 }
 ul.respNav li.icon {
-    display: none;
+  display: none;
 }
 ul.respNav {
-    position: absolute;
-    top: -200px;
+  position: absolute;
+  top: -200px;
   list-style-type: none;
   margin: 0;
   padding: 0;
