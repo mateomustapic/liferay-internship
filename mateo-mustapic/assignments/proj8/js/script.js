@@ -80,16 +80,16 @@ $(document).ready(function(){
 		    $('#companiesList').children("li").sort(function (a, b) {
 		       return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
 		    }) 
-           ); 
-       }); 
+        ); 
+    }); 
 	/* Sort the list of airports */
 	$("#sortBtn2").on("click", function () {
 		$('#airportList').html(
 	        $('#airportList').children("li").sort(function (a, b) {
 	           return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
 	       	}) 
-           ); 
-       }); 
+        ); 
+    }); 
 	/* Pilot class */
 	class Pilot {
 	    constructor(name,lastname,email,id,country){
