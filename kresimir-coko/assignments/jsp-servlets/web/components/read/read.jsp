@@ -12,11 +12,10 @@
 		<title>Read a product</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="../../styles.css">
-		<link rel="stylesheet" href="read.css">
 	</head>
 	<body id="body-read">
 
-	<jsp:include page="../header/header.jsp" />
+	<jsp:include page="/components/header/header.jsp" />
 
 		<main>
 			<div class="container">
@@ -54,7 +53,7 @@
 			</a>
 		</main>
 
-		<jsp:include page="../footer/footer.jsp" />
+		<jsp:include page="/components/footer/footer.jsp" />
 
 		<script type="text/javascript" src="../../scripts.js"></script>
 	</body>

@@ -18,6 +18,18 @@
   	<jsp:include page="components/header/header.jsp" />
 
     <main>
+
+			<div id="hero">
+				<h1>
+					Awesome CRUD App made without JavaScript*
+					<small>
+						* It saddens me too
+					</small>
+				</h1>
+
+				<a href="./pages/products/products.jsp">I wanna CRUD</a>
+			</div>
+
       <div class="container">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cupiditate deserunt fuga molestiae nesciunt odit quas rem reprehenderit voluptate. Illo ipsa ratione rem repellendus unde vel? Neque numquam odio vel.</p>
       </div>

@@ -12,7 +12,6 @@
 		<title>Create a product</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="../../styles.css">
-		<link rel="stylesheet" href="/components/create/create.css">
 	</head>
 	<body id="body-create">
 
@@ -22,30 +21,30 @@
 			<div class="container">
 				<h3>Create a product</h3>
 				<p>This form lets you create a new product.</p>
-				<form action="/handleCreate" class="product-form" id="formCreate" method="post">
-					<div class="container">
-						<label for="productName">Product Name</label>
-						<input name="productName" placeholder="Product Name" required type="text">
-
-						<label for="productType">Product type</label>
-						<input name="productType" placeholder="Product Type" type="text">
-
-						<input type="submit" value="Add a Product">
-
-						<%
-							request.setCharacterEncoding("UTF-8");
-
-							String productName = request.getParameter("productName");
-
-							if (productName != null && !productName.isEmpty()) {
-								out.println("<span class='form-success'>" + productName + " has been added</span>");
-							}
-
-						%>
-					</div>
-				</form>
-
 			</div>
+
+			<form action="/handleCreate" class="product-form" id="formCreate" method="post">
+				<div class="container">
+					<label for="productName">Product Name</label>
+					<input name="productName" placeholder="Product Name" required type="text">
+
+					<%--<label for="productType">Product type</label>--%>
+					<%--<input name="productType" placeholder="Product Type" type="text">--%>
+
+					<input type="submit" value="Add a Product">
+
+					<%
+						request.setCharacterEncoding("UTF-8");
+
+						String productName = request.getParameter("productName");
+
+						if (productName != null && !productName.isEmpty()) {
+							out.println("<span class='form-success'>" + productName + " has been added</span>");
+						}
+
+					%>
+				</div>
+			</form>
 
 			<a class="backlink" href="../../pages/products/products.jsp">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"

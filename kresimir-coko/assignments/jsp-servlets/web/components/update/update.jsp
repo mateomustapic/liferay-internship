@@ -16,58 +16,57 @@
 	</head>
 	<body id="body-update">
 
-	<jsp:include page="../header/header.jsp" />
+	<jsp:include page="/components/header/header.jsp" />
 
 		<main>
 			<div class="container">
 				<h3>Update a product</h3>
 				<p>This form lets you update existing products.</p>
-
-				<form action="/handleUpdate" class="product-form" id="formUpdate" method="post">
-					<div class="container">
-
-						<%
-							request.setCharacterEncoding("UTF-8");
-
-							ArrayList<String> products;
-							products = (ArrayList<String>) session.getAttribute("products");
-
-							if (products == null) {
-								out.println("<span class='warning'> Create some products before you can update them </span>");
-							}
-						%>
-
-						<label for="selectProduct">Select a product</label>
-						<select name="selectProduct">
-
-							<%
-								if (products != null) {
-									for (String product : products) {
-										out.println("<option value='" + product + "'>" + product + "</option>");
-									}
-								}
-							%>
-
-						</select>
-
-						<label for="updateProduct">Update the product Name</label>
-						<input name="updateProduct" placeholder="New Product Name" type="text">
-
-						<input type="submit" value="Update This Product">
-
-						<%
-							String selectedProduct = request.getParameter("selectProduct");
-							String newProductName = request.getParameter("updateProduct");
-
-							if (newProductName != null && !newProductName.isEmpty()) {
-								out.println("<span class='form-success'>" + selectedProduct + " updated with " + newProductName + "</span>");
-							}
-						%>
-					</div>
-				</form>
-
-
 			</div>
+
+			<form action="/handleUpdate" class="product-form" id="formUpdate" method="post">
+				<div class="container">
+
+					<%
+						request.setCharacterEncoding("UTF-8");
+
+						ArrayList<String> products;
+						products = (ArrayList<String>) session.getAttribute("products");
+
+						if (products == null) {
+							out.println("<span class='warning'> Create some products before you can update them </span>");
+						}
+					%>
+
+					<label for="selectProduct">Select a product</label>
+					<select name="selectProduct">
+						<option selected disabled style="display:none">Select a product</option>
+
+						<%
+							if (products != null) {
+								for (String product : products) {
+									out.println("<option value='" + product + "'>" + product + "</option>");
+								}
+							}
+						%>
+
+					</select>
+
+					<label for="updateProduct">Update the product Name</label>
+					<input name="updateProduct" placeholder="New Product Name" type="text">
+
+					<input type="submit" value="Update This Product">
+
+					<%
+						String selectedProduct = request.getParameter("selectProduct");
+						String newProductName = request.getParameter("updateProduct");
+
+						if (newProductName != null && !newProductName.isEmpty()) {
+							out.println("<span class='form-success'>" + selectedProduct + " updated with " + newProductName + "</span>");
+						}
+					%>
+				</div>
+			</form>
 
 			<a class="backlink" href="../../pages/products/products.jsp">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"
@@ -79,7 +78,7 @@
 			</a>
 		</main>
 
-		<jsp:include page="../footer/footer.jsp" />
+		<jsp:include page="/components/footer/footer.jsp" />
 
 		<script type="text/javascript" src="../../scripts.js"></script>
 	</body>

@@ -9,7 +9,7 @@
 
 		<footer id="site-footer">
 			<div class="container">
-				<p>Lorem Ipsum Liferay Inc. 2017 Krešimir Čoko</p>
+				<p>Liferay Inc. 2017 Krešimir Čoko</p>
 			</div>
 		</footer>
 
