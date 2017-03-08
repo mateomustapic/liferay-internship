@@ -4,16 +4,29 @@
 	color: $inactiveLightText;
 	display: flex;
 	justify-content: space-between;
-	padding: 8px 16px;
 }
 
-#header-logo {
-	height: 40px;
+#header-menu-icon {
+	cursor: pointer;
+	padding: 16px;
+	transform: rotate(0);
+	transition: all .3s ease;
+	user-select: none;
+
+	&:hover {
+		color: #FFF;
+	}
+
+	&.menu-icon-open {
+		transform: rotate(90deg);
+		margin-left: 4px;
+	}
 }
 
 #header-user {
 	align-items: center;
 	display: flex;
+	padding: 8px 16px;
 }
 
 #header-user-image {

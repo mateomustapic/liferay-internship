@@ -1,12 +1,64 @@
-#sidebar {
+#sidebar, #collapsed-sidebar {
 	background-color: $secondary;
 	border-right: 1px solid #EEE;
 	color: $inactiveDarkText;
 	display: flex;
 	flex-direction: column;
 	min-height: calc(100vh - 56px);
-	padding-bottom: 16px;
+	position: fixed;
+	transition: all .3s ease;
 	width: 320px;
+	will-change: transform;
+}
+
+.sidebar-open #sidebar {
+	opacity: 0;
+	transform: translateX(-100%);
+}
+
+#collapsed-sidebar {
+	transform: translateX(-64px);
+	width: 64px;
+
+	li {
+		align-items: center;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		padding: 16px;
+		position: relative;
+		transition: all 0.15 ease;
+
+		&:hover {
+			color: $darkText;
+		}
+	}
+}
+
+.sidebar-open #collapsed-sidebar {
+	transform: translateX(0);
+}
+
+.collapsed-tooltip {
+	background-color: #FFF;
+	border-radius: 3px;
+	box-shadow: $smallBoxShadow;
+	color: $inactiveDarkText;
+	cursor: default;
+	font-size: 0.8em;
+	left: 110%;
+	opacity: 0;
+	padding: 8px;
+	position: absolute;
+	transform: translateX(-30%);
+	transition: all .3s ease;
+	z-index: -9;
+
+	&.tooltip-open {
+		opacity: 1;
+		transform: translateX(0);
+		z-index: 1;
+	}
 }
 
 #sidebar-list {
@@ -28,16 +80,13 @@
 	}
 }
 
-#sidebar-environments {
-	margin-top: 24px;
-}
-
 #sidebar-environments-heading-main {
 	align-items: center;
 	color: $inactiveDarkText;
 	display: flex;
 	font-size: 1.5em;
 	justify-content: center;
+	padding: 16px;
 	position: relative;
 	user-select: none;
 
@@ -60,9 +109,11 @@
 	position: absolute;
 	text-transform: none;
 	width: 240px;
+	z-index: -1;
 
 	&.tooltip-active {
 		opacity: 1;
+		z-index: 1;
 	}
 }
 
@@ -73,13 +124,69 @@
 	text-transform: uppercase;
 }
 
+#sidebar-environments-list-new {
+		background-color: #FFF;
+		border-radius: 3px;
+		box-shadow: $smallBoxShadow;
+		color: $inactiveDarkText;
+		display: flex;
+		font-weight: 600;
+		justify-content: center;
+		margin: 8px 16px 16px 16px;
+		padding: 12px;
+		text-decoration: none;
+		transition: all 0.15s ease;
+
+		&:hover {
+			box-shadow: $bigBoxShadow;
+			color: $darkText;
+			cursor: pointer;
+		}
+
+		i {
+			padding-right: 16px;
+		}
+	}
+
+.list-settings-icon {
+	align-self: flex-end;
+	cursor: pointer;
+	transition: all .3s ease;
+
+	&:hover {
+		color: $darkText;
+		transform: rotate(45deg);
+	}
+}
+
+#sidebar-environments-scrollable {
+	border-top: 1px solid #EEE;
+	max-height: calc(100vh - 56px - 356px);
+	padding: 0 16px 16px 16px;
+	overflow: hidden;
+
+	&:hover {
+		overflow-y: overlay;
+	}
+
+	&::-webkit-scrollbar {
+    width: 4px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: $lightText;
+	}
+}
+
 .sidebar-environments-list {
 	color: $darkText;
-	padding: 0 16px;
 
 	li {
-		border-radius: 2px;
-		box-shadow: $smallBoxShadow;
+		border-radius: 3px;
 		color: $inactiveDarkText;
 		display: flex;
 		flex-direction: column;
@@ -91,24 +198,48 @@
 		}
 
 		div {
-			background-color: #FFF;
-			border-bottom: 1px solid #EEE;
 			align-items: center;
+			background-color: #FFF;
+			border-bottom: 1px solid transparent;
+			border-radius: 3px;
+			box-shadow: $smallBoxShadow;
 			display: flex;
-			justify-content: space-around;
+			justify-content: space-between;
+		}
+
+		i {
 			padding: 12px;
+			user-select: none;
+		}
+	}
+
+	.settings-open {
+		box-shadow: $smallBoxShadow;
+		transition: all .15s ease;
+
+		div {
+			border-bottom-color: $lightBorder;
+			border-radius: 3px 3px 0 0;
+			box-shadow: none;
+		}
+
+		.environments-list-settings {
+			display: flex;
 		}
 	}
 }
 
 .environments-list-settings {
-	display: flex;
+	border-radius: 0 0 3px 3px;
+	display: none;
 	justify-content: space-around;
 	font-family: Open Sans;
-	padding: 8px;
+	transition: all .3s ease;
 
 	i {
 		cursor: pointer;
+		flex: 1;
+		text-align: center;
 	}
 
 	i:first-child {
@@ -119,6 +250,8 @@
 	}
 
 	i:nth-child(2) {
+		border-left: 1px solid $lightBorder;
+		border-right: 1px solid $lightBorder;
 		color: $inactiveDarkText;
 		&:hover {
 			color: $darkText;
@@ -141,31 +274,4 @@
 			color: $success;
 		}
 	} 
-}
-
-#sidebar-environments-list-new {
-		background-color: $success;
-		box-shadow: none;
-		color: $inactiveDarkText;
-		display: flex;
-		font-weight: 600;
-		justify-content: center;
-		margin: 8px 16px;
-		padding: 12px;
-		text-decoration: none;
-		transition: all 0.15s ease;
-
-		&:hover {
-			color: $darkText;
-			cursor: pointer;
-		}
-
-		i {
-			padding-right: 16px;
-		}
-	}
-
-.list-settings-icon {
-	align-self: flex-end;
-	cursor: pointer;
 }

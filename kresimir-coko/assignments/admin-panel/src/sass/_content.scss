@@ -1,5 +1,11 @@
 #content {
 	display: flex;
 	flex: 1;
+	margin-left: 320px;
 	padding: 16px;
+	transition: all .3s ease;
+}
+
+.sidebar-open #content {
+	margin-left: 64px;
 }
