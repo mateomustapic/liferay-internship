@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Admin Panel</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="src/css/bundle.css" rel="stylesheet">
+	</head>
+	<body>
+		<header id="header">
+			<!--<img alt="Liferay" id="header-logo" src="src/img/liferay-logo.png">-->
+			<span id="header-title">Liferay Connected Services</span>
+			<section id="header-user">
+				<i class="material-icons" id="header-user-notification">notifications</i>
+				<img alt="header-user-image" src="src/img/user-image.jpeg" id="header-user-image">
+				<span id="header-user-name">Krešimir Čoko</span>
+			</section>
+		</header>
+
+		<main id="main">
+			<aside id="sidebar">
+				<!-- Dashboard Options -->
+				<ul id="sidebar-list">
+					<li><i class="material-icons">dashboard</i> Dashboard</li>
+					<li><i class="material-icons">people_outline</i> Users</li>
+					<li><i class="material-icons">autorenew</i> Subscriptions</li>
+					<li><i class="material-icons">cloud_download</i> Downloads</li>
+				</ul>
+
+				<section id="sidebar-environments">
+					<h3 class="sidebar-environments-heading" id="sidebar-environments-heading-main">
+					Environments 
+					<i class="material-icons" id="environments-info-icon">info_outline</i>
+					<tooltip id="environments-info-tooltip">
+						<p>This is a tooltip to describe what environments mean in this context</p>
+					</tooltip>
+					</h3>
+	
+					<a href="#" id="sidebar-environments-list-new">
+						<i class="material-icons">add</i>
+						Add Environment
+					</a>
+
+					<h4 class="sidebar-environments-heading">Active</h4>
+					
+					<ul class="sidebar-environments-list" id="sidebar-environments-list-active">
+						<li>
+							<div>
+								<i class="material-icons">cloud</i> 
+								Environment #2 
+								<i class="material-icons list-settings-icon">settings</i>
+							</div>
+							<section class="environments-list-settings">
+								<i class="material-icons">power_settings_new</i>
+								<i class="material-icons">edit</i>
+								<i class="material-icons">delete_forever</i>
+							</section>
+						</li>
+
+						<li>
+							<div>
+								<i class="material-icons">cloud</i> 
+								Environment #3 
+								<i class="material-icons list-settings-icon">settings</i>
+							</div>
+							<section class="environments-list-settings">
+								<i class="material-icons">power_settings_new</i>
+								<i class="material-icons">edit</i>
+								<i class="material-icons">delete_forever</i>
+							</section>
+						</li>
+
+						<li>
+							<div>
+								<i class="material-icons">cloud</i> 
+								Environment #5 
+								<i class="material-icons list-settings-icon">settings</i>
+							</div>
+							<section class="environments-list-settings">
+								<i class="material-icons">power_settings_new</i>
+								<i class="material-icons">edit</i>
+								<i class="material-icons">delete_forever</i>
+							</section>
+					</ul>
+
+					<h4 class="sidebar-environments-heading">Inactive</h4>
+					<ul class="sidebar-environments-list" id="sidebar-environments-list-inactive">
+						<li>
+							<div>
+								<i class="material-icons">cloud_queue</i> 
+								Environment #1 
+								<i class="material-icons list-settings-icon">settings</i>
+							</div>
+							<section class="environments-list-settings">
+								<i class="material-icons">power_settings_new</i>
+								<i class="material-icons">edit</i>
+								<i class="material-icons">delete_forever</i>
+							</section>
+						<li>
+							<div>
+								<i class="material-icons">cloud_queue</i> 
+								Environment #4 
+								<i class="material-icons list-settings-icon">settings</i>
+							</div>
+							<section class="environments-list-settings">
+								<i class="material-icons">power_settings_new</i>
+								<i class="material-icons">edit</i>
+								<i class="material-icons">delete_forever</i>
+							</section>
+						</li>
+						<li>
+							<div>
+								<i class="material-icons">cloud_queue</i> 
+								Environment #6 
+								<i class="material-icons list-settings-icon">settings</i>
+							</div>
+							<section class="environments-list-settings">
+								<i class="material-icons">power_settings_new</i>
+								<i class="material-icons">edit</i>
+								<i class="material-icons">delete_forever</i>
+							</section>
+						</li>
+					</ul>
+				</section>
+			</aside>
+
+			<content id="content">
+				<!-- Dashboard Content -->
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam vitae nihil accusantium doloribus perspiciatis, deleniti cum blanditiis fugiat consequuntur mollitia aspernatur voluptatibus iure hic totam nam non sit nobis omnis.</p>
+			</content>
+		</main>
+		<script rel="text/javascript" src="src/js/app.js"></script>
+	</body>
+</html>

@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:600,700,800|Open+Sans:300,600|Roboto+Slab:300");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Open Sans, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  height: 100%;
+  line-height: 1.35;
+  min-height: 100vh;
+}
+
+body {
+  color: #333;
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.25em;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+p, a, li, span {
+  color: inherit;
+  font-family: Roboto Slab, serif;
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 1.45em;
+  margin: 0;
+}
+
+a, li, span {
+  font-family: Open Sans, sans-serif;
+  font-weight: 600;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#header {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #1F7AFF;
+  color: rgba(255, 255, 255, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 8px 16px;
+}
+
+#header-logo {
+  height: 40px;
+}
+
+#header-user {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#header-user-image {
+  border-radius: 100%;
+  height: 40px;
+  margin: 0 16px;
+  width: 40px;
+}
+
+#sidebar {
+  background-color: #F4F8FF;
+  border-right: 1px solid #EEE;
+  color: rgba(51, 51, 51, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: calc(100vh - 56px);
+  padding-bottom: 16px;
+  width: 320px;
+}
+
+#sidebar-list li {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  padding: 16px;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+#sidebar-list li:hover {
+  color: #333;
+  cursor: pointer;
+}
+
+#sidebar-list li i {
+  padding-right: 16px;
+}
+
+#sidebar-environments {
+  margin-top: 24px;
+}
+
+#sidebar-environments-heading-main {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: rgba(51, 51, 51, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#sidebar-environments-heading-main i {
+  padding-left: 8px;
+  color: #BEBEBE;
+  cursor: pointer;
+}
+
+#environments-info-tooltip {
+  background-color: #FFF;
+  border-radius: 3px;
+  bottom: 80%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  left: 42%;
+  opacity: 0;
+  padding: 8px;
+  position: absolute;
+  text-transform: none;
+  width: 240px;
+}
+
+#environments-info-tooltip.tooltip-active {
+  opacity: 1;
+}
+
+.sidebar-environments-heading {
+  color: #BEBEBE;
+  padding: 16px 0 8px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sidebar-environments-list {
+  color: #333;
+  padding: 0 16px;
+}
+
+.sidebar-environments-list li {
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  color: rgba(51, 51, 51, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.sidebar-environments-list li:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-environments-list li div {
+  background-color: #FFF;
+  border-bottom: 1px solid #EEE;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 12px;
+}
+
+.environments-list-settings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-family: Open Sans;
+  padding: 8px;
+}
+
+.environments-list-settings i {
+  cursor: pointer;
+}
+
+.environments-list-settings i:first-child {
+  color: rgba(255, 167, 38, 0.7);
+}
+
+.environments-list-settings i:first-child:hover {
+  color: #FFA726;
+}
+
+.environments-list-settings i:nth-child(2) {
+  color: rgba(51, 51, 51, 0.7);
+}
+
+.environments-list-settings i:nth-child(2):hover {
+  color: #333;
+}
+
+.environments-list-settings i:last-child {
+  color: rgba(229, 57, 53, 0.7);
+}
+
+.environments-list-settings i:last-child:hover {
+  color: #E53935;
+}
+
+#sidebar-environments-list-active {
+  color: #333;
+}
+
+#sidebar-environments-list-active li > div i:first-of-type {
+  color: #00E676;
+}
+
+#sidebar-environments-list-new {
+  background-color: #00E676;
+  box-shadow: none;
+  color: rgba(51, 51, 51, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 8px 16px;
+  padding: 12px;
+  text-decoration: none;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+#sidebar-environments-list-new:hover {
+  color: #333;
+  cursor: pointer;
+}
+
+#sidebar-environments-list-new i {
+  padding-right: 16px;
+}
+
+.list-settings-icon {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  cursor: pointer;
+}
+
+#content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 16px;
+}

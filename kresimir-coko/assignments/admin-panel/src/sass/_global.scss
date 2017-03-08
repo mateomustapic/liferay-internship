@@ -1,0 +1,60 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Open Sans, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	height: 100%;
+	line-height: 1.35;
+	min-height: 100vh;
+}
+
+body {
+	color: #333;
+	margin: 0;
+}
+
+h1, h2, h3, h4 {
+	font-family: $fontHeading;
+	font-weight: 600;
+	margin: 0;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 2.25em;
+}
+
+h3 {
+	font-size: 1.75em;
+}
+
+p, a, li, span {
+	color: inherit;
+	font-family: $fontBody;
+	font-size: 1.2em;
+	font-weight: 300;
+	line-height: 1.45em;
+	margin: 0;
+}
+
+a, li, span {
+	font-family: $fontNormal;
+	font-weight: 600;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#main {
+	display: flex;
+}

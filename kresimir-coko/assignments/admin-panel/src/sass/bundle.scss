@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600,700,800|Open+Sans:300,600|Roboto+Slab:300');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+$fontHeading: Montserrat, sans-serif;
+$fontNormal: Open Sans, sans-serif;
+$fontBody: Roboto Slab, serif;
+
+$primary: #1F7AFF;
+$secondary: #F4F8FF;
+$tertiary: #18FFFF;
+
+$darkText: #333;
+$inactiveLightText: rgba(#FFF, 0.7);
+$inactiveDarkText: rgba(#333, 0.7);
+$lightText: #BEBEBE;
+
+$success: #00E676;
+$inactiveSuccess: rgba($success, 0.7);
+$warning: #FFA726;
+$inactiveWarning: rgba($warning, 0.7);
+$danger: #E53935;
+$inactiveDanger: rgba($danger, 0.7);
+
+$smallBoxShadow: 0 1px 2px rgba(#000, 0.3);
+$bigBoxShadow: 0 3px 6px rgba(#000, 0.3);
+
+@import 'global';
+@import 'header';
+@import 'sidebar';
+@import 'content';
+
