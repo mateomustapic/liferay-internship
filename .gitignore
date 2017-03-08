@@ -35,3 +35,6 @@ _sass_cache_*.css
 **/sdk/portlets/*.*
 !**/sdk/hooks/
 **/sdk/hooks/*.*
+
+**/**/**/node_modules
+.vscode
