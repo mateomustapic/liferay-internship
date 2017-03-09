@@ -45,9 +45,18 @@ p, a, li, span {
   margin: 0;
 }
 
-a, li, span {
+a, li, span, label {
   font-family: Open Sans, sans-serif;
+  font-size: 1.2em;
+  line-height: 1.45em;
   font-weight: 600;
+}
+
+input, textarea {
+  font-family: Open Sans, sans-serif;
+  font-size: 1.2em;
+  line-height: 1.45em;
+  font-weight: 300;
 }
 
 ul {
@@ -355,6 +364,8 @@ ul {
           flex-direction: column;
   font-weight: 600;
   margin-bottom: 8px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 .sidebar-environments-list li:last-child {
@@ -375,6 +386,7 @@ ul {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 1;
 }
 
 .sidebar-environments-list li i {
@@ -387,8 +399,6 @@ ul {
 
 .sidebar-environments-list .settings-open {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  -webkit-transition: all .15s ease;
-  transition: all .15s ease;
 }
 
 .sidebar-environments-list .settings-open div {
@@ -398,19 +408,30 @@ ul {
 }
 
 .sidebar-environments-list .settings-open .environments-list-settings {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  height: auto;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  z-index: 1;
+}
+
+.sidebar-environments-list .settings-open .environments-list-settings i {
+  opacity: 1;
 }
 
 .environments-list-settings {
   border-radius: 0 0 3px 3px;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: Open Sans;
+  height: 0;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  font-family: Open Sans;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  opacity: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  z-index: -1;
 }
 
 .environments-list-settings i {
@@ -418,7 +439,11 @@ ul {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  opacity: 0;
   text-align: center;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  z-index: -1;
 }
 
 .environments-list-settings i:first-child {
@@ -456,18 +481,182 @@ ul {
 }
 
 #content {
+  background-color: #F4F8FF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-left: 320px;
-  padding: 16px;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  max-height: calc(100vh - 56px);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .sidebar-open #content {
   margin-left: 64px;
+}
+
+#content-welcome {
+  background-color: #FEFEFE;
+  border-bottom: 1px solid #ECECEC;
+  color: rgba(51, 51, 51, 0.7);
+  padding: 24px;
+  width: 100%;
+}
+
+#content-dashboard {
+  background-color: #F4F8FF;
+}
+
+#content-dashboard-nav {
+  background-color: #FFF;
+  border-bottom: 1px solid #ECECEC;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  width: 100%;
+}
+
+#content-dashboard-nav li {
+  border-bottom: 1px solid transparent;
+  color: rgba(51, 51, 51, 0.7);
+  cursor: pointer;
+  padding: 16px 32px;
+  text-align: center;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+#content-dashboard-nav li:hover {
+  color: #333;
+}
+
+#add-environment {
+  background-color: #F4F8FF;
+  color: rgba(51, 51, 51, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 0;
+  opacity: 0;
+  max-width: 33%;
+  min-width: 480px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  z-index: -1;
+}
+
+#add-environment h3 {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  opacity: 0;
+  padding-left: 16px;
+}
+
+#add-environment h3 i {
+  color: rgba(229, 57, 53, 0.7);
+  cursor: pointer;
+  padding: 16px;
+}
+
+#add-environment h3 i:hover {
+  color: #E53935;
+}
+
+#add-environment.add-environment-open {
+  height: auto;
+  opacity: 1;
+  padding: 16px;
+  z-index: 1;
+}
+
+#add-environment.add-environment-open h3 {
+  opacity: 1;
+}
+
+#add-environment.add-environment-open #add-environment-form {
+  opacity: 1;
+}
+
+#add-environment-form {
+  background-color: #FFF;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  opacity: 0;
+  padding: 16px;
+}
+
+#add-environment-form label {
+  padding-bottom: 8px;
+}
+
+#add-environment-form input, #add-environment-form textarea {
+  border: 0;
+  padding: 8px;
+  outline-width: 0;
+  resize: vertical;
+  -webkit-transition: all .15s ease;
+  transition: all .15s ease;
+}
+
+#add-environment-form input:not([type="submit"]), #add-environment-form textarea:not([type="submit"]) {
+  border-bottom: 1px solid #ECECEC;
+  margin-bottom: 16px;
+}
+
+#add-environment-form input:hover, #add-environment-form textarea:hover {
+  border-bottom-color: #1F7AFF;
+}
+
+#add-environment-form input:focus, #add-environment-form textarea:focus {
+  border-bottom-color: #1F7AFF;
+  color: #333;
+}
+
+#add-environment-form textarea {
+  height: 150px;
+}
+
+#add-environment-form input[type="submit"] {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: #1F7AFF;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  width: 50%;
+}
+
+#add-environment-form input[type="submit"]:hover {
+  color: #FFF;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }

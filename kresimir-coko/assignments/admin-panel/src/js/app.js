@@ -1,7 +1,9 @@
 'use strict';
 
 const sidebar = document.querySelector('#sidebar');
+const content = document.querySelector('#content');
 const sidebarEnvironments = sidebar.querySelector('#sidebar-environments');
+const contentDashboard = content.querySelector('#content-dashboard');
 
 // Header Menu
 const headerMenuIcon = document.querySelector('#header-menu-icon');
@@ -28,10 +30,11 @@ const envSettingsIcons = sidebarEnvironments.querySelectorAll('.list-settings-ic
 const envSettings = sidebarEnvironments.querySelectorAll('.environments-list-settings');
 
 function handleEnvironmentsSettings (e) {
-	const target = e.target;
-	console.log(target);
-	if (target.classList.contains('list-settings-icon')) {
-		target.parentElement.parentElement.classList.toggle('settings-open');
+	if (e.target.classList.contains('list-settings-icon')) {
+		const parent = e.target.parentElement.parentElement;
+		const settings = parent.lastChild.previousSibling;
+
+		parent.classList.toggle('settings-open');
 	}
 }
 
@@ -64,3 +67,32 @@ function hideCollapsedSidebarListTooltips (e) {
 
 collapsedSidebarList.addEventListener('mouseover', showCollapsedSidebarListTooltips);
 collapsedSidebarList.addEventListener('mouseout', hideCollapsedSidebarListTooltips);
+
+// Add new Environment
+
+const addEnvironmentComponent = content.querySelector('#add-environment');
+const addEnvironmentBtn = sidebar.querySelector('#sidebar-environments-list-new');
+const closeAddEnvironmentBtn = content.querySelector('#add-environment-close');
+
+function handleNewEnvironmentComponent () {
+	const el = addEnvironmentComponent;
+
+	const first = el.getBoundingClientRect();
+
+	el.classList.add('add-environment-open');
+	const last = el.getBoundingClientRect();
+
+	const invert = first.top - last.top;
+
+	el.style.transform = `translateY(${invert}px)`;
+
+	content.style.willChange = 'transform';
+}
+
+function closeAddEnvironment () {
+	addEnvironmentComponent.classList.remove('add-environment-open');
+	content.style.willChange = '';
+}
+
+addEnvironmentBtn.addEventListener('click', handleNewEnvironmentComponent);
+closeAddEnvironmentBtn.addEventListener('click', closeAddEnvironment);

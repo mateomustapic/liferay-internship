@@ -82,6 +82,33 @@
 									<i class="material-icons">edit</i>
 									<i class="material-icons">delete_forever</i>
 								</section>
+							</li>
+
+							<li>
+								<div>
+									<i class="material-icons">cloud</i> 
+									Environment #7 
+									<i class="material-icons list-settings-icon">settings</i>
+								</div>
+								<section class="environments-list-settings">
+									<i class="material-icons">power_settings_new</i>
+									<i class="material-icons">edit</i>
+									<i class="material-icons">delete_forever</i>
+								</section>
+							</li>
+
+							<li>
+								<div>
+									<i class="material-icons">cloud</i> 
+									Environment #9 
+									<i class="material-icons list-settings-icon">settings</i>
+								</div>
+								<section class="environments-list-settings">
+									<i class="material-icons">power_settings_new</i>
+									<i class="material-icons">edit</i>
+									<i class="material-icons">delete_forever</i>
+								</section>
+							</li>
 						</ul>
 
 						<h4 class="sidebar-environments-heading">Inactive</h4>
@@ -121,6 +148,18 @@
 									<i class="material-icons">delete_forever</i>
 								</section>
 							</li>
+							<li>
+								<div>
+									<i class="material-icons">cloud_queue</i> 
+									Environment #8 
+									<i class="material-icons list-settings-icon">settings</i>
+								</div>
+								<section class="environments-list-settings">
+									<i class="material-icons">power_settings_new</i>
+									<i class="material-icons">edit</i>
+									<i class="material-icons">delete_forever</i>
+								</section>
+							</li>
 						</ul>
 					</section>
 				</section>
@@ -140,8 +179,35 @@
 			</aside>
 
 			<content id="content">
-				<!-- Dashboard Content -->
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam vitae nihil accusantium doloribus perspiciatis, deleniti cum blanditiis fugiat consequuntur mollitia aspernatur voluptatibus iure hic totam nam non sit nobis omnis.</p>
+				<section id="content-welcome">
+					<h2>Welcome to Liferay Connected Services</h2>
+				</section>
+
+				<section id="add-environment">
+					<h3>Add a new Environment <i id="add-environment-close" class="material-icons">close</i></h3>
+					<form id="add-environment-form">
+						<label for="newEnvironmentName">Environment Name</label>
+						<input type="text" name="newEnvironmentName" placeholder="Your environment name">
+
+						<label for="newEnvironmentLocation">Environment Location</label>
+						<input type="text" name="newEnvironmentLocation" placeholder="Your environment location">
+
+						<label for="newEnvironmentDesc">Environment Description</label>
+						<textarea name="newEnvironmentDesc" placeholder="Your environment description"></textarea>
+
+						<input type="submit" value="Add Environment">
+					</form>
+				</section>
+
+				<section id="content-dashboard">
+					<nav id="content-dashboard-nav">
+						<li>Summary</li>
+						<li>Environments</li>
+						<li>Activity</li>
+						<li>Placeholder</li>
+						<li>Placeholder</li>
+					</nav>
+				</section>
 			</content>
 		</main>
 		<script rel="text/javascript" src="src/js/app.js"></script>

@@ -44,9 +44,18 @@ p, a, li, span {
 	margin: 0;
 }
 
-a, li, span {
+a, li, span, label {
 	font-family: $fontNormal;
+	font-size: 1.2em;
+	line-height: 1.45em;
 	font-weight: 600;
+}
+
+input, textarea {
+	font-family: $fontNormal;
+	font-size: 1.2em;
+	line-height: 1.45em;
+	font-weight: 300;
 }
 
 ul {

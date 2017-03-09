@@ -192,6 +192,7 @@
 		flex-direction: column;
 		font-weight: 600;
 		margin-bottom: 8px;
+		transition: all .3s ease;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -205,6 +206,7 @@
 			box-shadow: $smallBoxShadow;
 			display: flex;
 			justify-content: space-between;
+			z-index: 1;
 		}
 
 		i {
@@ -215,7 +217,6 @@
 
 	.settings-open {
 		box-shadow: $smallBoxShadow;
-		transition: all .15s ease;
 
 		div {
 			border-bottom-color: $lightBorder;
@@ -224,22 +225,35 @@
 		}
 
 		.environments-list-settings {
-			display: flex;
+			height: auto;
+			opacity: 1;
+			transform: translateY(0);
+			z-index: 1;
+
+			i {
+				opacity: 1;
+			}
 		}
 	}
 }
 
 .environments-list-settings {
 	border-radius: 0 0 3px 3px;
-	display: none;
-	justify-content: space-around;
+	display: flex;
 	font-family: Open Sans;
-	transition: all .3s ease;
+	height: 0;
+	justify-content: space-around;
+	opacity: 0;
+	transform: translateY(-100%);
+	z-index: -1;
 
 	i {
 		cursor: pointer;
 		flex: 1;
+		opacity: 0;
 		text-align: center;
+		transition: all .3s ease;
+		z-index: -1;
 	}
 
 	i:first-child {
