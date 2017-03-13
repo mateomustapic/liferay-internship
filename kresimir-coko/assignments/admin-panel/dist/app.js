@@ -1,7 +1,9 @@
 'use strict';
 
 var sidebar = document.querySelector('#sidebar');
+var content = document.querySelector('#content');
 var sidebarEnvironments = sidebar.querySelector('#sidebar-environments');
+var contentDashboard = content.querySelector('#content-dashboard');
 
 // Header Menu
 var headerMenuIcon = document.querySelector('#header-menu-icon');
@@ -28,10 +30,11 @@ var envSettingsIcons = sidebarEnvironments.querySelectorAll('.list-settings-icon
 var envSettings = sidebarEnvironments.querySelectorAll('.environments-list-settings');
 
 function handleEnvironmentsSettings(e) {
-	var target = e.target;
-	console.log(target);
-	if (target.classList.contains('list-settings-icon')) {
-		target.parentElement.parentElement.classList.toggle('settings-open');
+	if (e.target.classList.contains('list-settings-icon')) {
+		var parent = e.target.parentElement.parentElement;
+		var settings = parent.lastChild.previousSibling;
+
+		parent.classList.toggle('settings-open');
 	}
 }
 
@@ -65,28 +68,84 @@ function hideCollapsedSidebarListTooltips(e) {
 collapsedSidebarList.addEventListener('mouseover', showCollapsedSidebarListTooltips);
 collapsedSidebarList.addEventListener('mouseout', hideCollapsedSidebarListTooltips);
 
-// My Clock Component
+// Add new Environment
 
-var MyClock = Object.assign({}, Component, {
+var addEnvironmentComponent = content.querySelector('#add-environment');
+var addEnvironmentBtn = sidebar.querySelector('#sidebar-environments-list-new');
+var closeAddEnvironmentBtn = content.querySelector('#add-environment-close');
+var addEnvironmentBtnCollapsed = collapsedSidebarList.querySelector('li[data-tooltip="Add Environment"]');
 
-	tagName: 'clock',
+function handleNewEnvironmentComponent() {
+	var el = addEnvironmentComponent;
 
-	attributes: {
-		date: new Date()
-	},
+	var first = el.getBoundingClientRect();
 
-	addEvents: function addEvents(clock) {
-		clock._timer = setInterval(function () {
-			clock.date = new Date();
-		}, 1000);
-	},
-	uninit: function uninit(clock) {
-		clearInterval(clock._timer);
-	},
-	__date: function __date(clock, newVal) {
-		clock.textContent = newVal.toLocaleTimeString();
-	}
+	el.classList.add('add-environment-open');
+	var last = el.getBoundingClientRect();
+
+	var invert = first.top - last.top;
+
+	el.style.transform = 'translateY(' + invert + 'px)';
+
+	content.style.willChange = 'transform';
+}
+
+function closeAddEnvironment() {
+	addEnvironmentComponent.classList.remove('add-environment-open');
+	content.style.willChange = '';
+}
+
+addEnvironmentBtn.addEventListener('click', handleNewEnvironmentComponent);
+addEnvironmentBtnCollapsed.addEventListener('click', handleNewEnvironmentComponent);
+closeAddEnvironmentBtn.addEventListener('click', closeAddEnvironment);
+
+// Dynamically fetch environments from environments.json
+var environmentsPromise = new Promise(function (resolve, reject) {
+	var xhr = new XMLHttpRequest();
+	xhr.onload = function () {
+		try {
+			resolve(JSON.parse(this.responseText));
+		} catch (e) {
+			reject(e);
+		}
+	};
+	xhr.onerror = reject;
+	xhr.open('GET', 'https://api.myjson.com/bins/9vlpz');
+	xhr.send();
 });
 
-MyClock.register();
-document.sidebar.appendChild(document.createElement('clock'));
+var activeEnvironments = [];
+var inactiveEnvironments = [];
+
+var environmentsListActive = sidebar.querySelector('#sidebar-environments-list-active');
+var environmentsListInactive = sidebar.querySelector('#sidebar-environments-list-inactive');
+
+environmentsPromise.then(function (environments) {
+	environments.map(function (environment) {
+		if (environment.name.length > 18) {
+			environment.name = environment.name.substring(0, 18) + '...';
+		}
+		if (environment.status) {
+			var output = '\n\t\t\t\t<li dataset-id=\'' + environment.id + '\'>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<i class="material-icons">cloud</i>\n\t\t\t\t\t\t' + environment.name + '\n\t\t\t\t\t\t<i class="material-icons list-settings-icon">settings</i>\n\t\t\t\t\t</div>\n\t\t\t\t\t<section class="environments-list-settings">\n\t\t\t\t\t\t<i data-status=\'' + environment.status + '\' class="material-icons toggle-status">power_settings_new</i>\n\t\t\t\t\t\t<i class="material-icons edit-environment">edit</i>\n\t\t\t\t\t\t<i class="material-icons delete-environment">delete_forever</i>\n\t\t\t\t\t</section>\n\t\t\t\t</li>\n\t\t\t';
+			environmentsListActive.innerHTML += output;
+		} else {
+			var _output = '\n\t\t\t\t<li>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<i class="material-icons">cloud_queue</i>\n\t\t\t\t\t\t' + environment.name + '\n\t\t\t\t\t\t<i class="material-icons list-settings-icon">settings</i>\n\t\t\t\t\t</div>\n\t\t\t\t\t<section class="environments-list-settings">\n\t\t\t\t\t\t<i data-status=\'' + environment.status + '\' class="material-icons toggle-status">power_settings_new</i>\n\t\t\t\t\t\t<i class="material-icons edit-environment">edit</i>\n\t\t\t\t\t\t<i class="material-icons delete-environment">delete_forever</i>\n\t\t\t\t\t</section>\n\t\t\t\t</li>\n\t\t\t';
+			environmentsListInactive.innerHTML += _output;
+		}
+	});
+});
+
+// Display Environments On Dashboard
+
+var dashboardNav = content.querySelector('#content-dashboard-nav');
+
+function handleContentNavigation(e) {
+	var target = e.target;
+	console.log(target);
+
+	if (target.dataset.link.length > 0) {
+		console.log(target);
+	}
+}
+
+dashboardNav.addEventListener('click', handleContentNavigation);

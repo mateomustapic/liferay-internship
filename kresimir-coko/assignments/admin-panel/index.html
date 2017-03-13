@@ -4,7 +4,7 @@
 		<title>Admin Panel</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="src/css/bundle.css" rel="stylesheet">
+		<link href="./src/css/bundle.css" rel="stylesheet">
 	</head>
 	<body>
 		<header id="header">
@@ -21,10 +21,10 @@
 			<aside id="sidebar">
 				<!-- Dashboard Options -->
 				<ul id="sidebar-list">
-					<li><i class="material-icons">dashboard</i> Dashboard</li>
-					<li><i class="material-icons">people_outline</i> Users</li>
-					<li><i class="material-icons">autorenew</i> Subscriptions</li>
-					<li><i class="material-icons">cloud_download</i> Downloads</li>
+					<a href="/"><i class="material-icons">dashboard</i> Dashboard</a>
+					<a href="/users"><i class="material-icons">people_outline</i> Users</a>
+					<a href="/subscriptions"><i class="material-icons">autorenew</i> Subscriptions</a>
+					<a href="/downloads"><i class="material-icons">cloud_download</i> Downloads</a>
 				</ul>
 
 				<section id="sidebar-environments">
@@ -45,121 +45,12 @@
 						<h4 class="sidebar-environments-heading">Active</h4>
 					
 						<ul class="sidebar-environments-list" id="sidebar-environments-list-active">
-							<li>
-								<div>
-									<i class="material-icons">cloud</i> 
-									Environment #2 
-									<i class="material-icons list-settings-icon">settings</i>
-								</div>
-								<section class="environments-list-settings">
-									<i class="material-icons">power_settings_new</i>
-									<i class="material-icons">edit</i>
-									<i class="material-icons">delete_forever</i>
-								</section>
-							</li>
-
-							<li>
-								<div>
-									<i class="material-icons">cloud</i> 
-									Environment #3 
-									<i class="material-icons list-settings-icon">settings</i>
-								</div>
-								<section class="environments-list-settings">
-									<i class="material-icons">power_settings_new</i>
-									<i class="material-icons">edit</i>
-									<i class="material-icons">delete_forever</i>
-								</section>
-							</li>
-
-							<li>
-								<div>
-									<i class="material-icons">cloud</i> 
-									Environment #5 
-									<i class="material-icons list-settings-icon">settings</i>
-								</div>
-								<section class="environments-list-settings">
-									<i class="material-icons">power_settings_new</i>
-									<i class="material-icons">edit</i>
-									<i class="material-icons">delete_forever</i>
-								</section>
-							</li>
-
-							<li>
-								<div>
-									<i class="material-icons">cloud</i> 
-									Environment #7 
-									<i class="material-icons list-settings-icon">settings</i>
-								</div>
-								<section class="environments-list-settings">
-									<i class="material-icons">power_settings_new</i>
-									<i class="material-icons">edit</i>
-									<i class="material-icons">delete_forever</i>
-								</section>
-							</li>
-
-							<li>
-								<div>
-									<i class="material-icons">cloud</i> 
-									Environment #9 
-									<i class="material-icons list-settings-icon">settings</i>
-								</div>
-								<section class="environments-list-settings">
-									<i class="material-icons">power_settings_new</i>
-									<i class="material-icons">edit</i>
-									<i class="material-icons">delete_forever</i>
-								</section>
-							</li>
+							<!-- Dynamically loaded environments -->
 						</ul>
 
 						<h4 class="sidebar-environments-heading">Inactive</h4>
 						<ul class="sidebar-environments-list" id="sidebar-environments-list-inactive">
-							<li>
-								<div>
-									<i class="material-icons">cloud_queue</i> 
-									Environment #1 
-									<i class="material-icons list-settings-icon">settings</i>
-								</div>
-								<section class="environments-list-settings">
-									<i class="material-icons">power_settings_new</i>
-									<i class="material-icons">edit</i>
-									<i class="material-icons">delete_forever</i>
-								</section>
-							<li>
-								<div>
-									<i class="material-icons">cloud_queue</i> 
-									Environment #4 
-									<i class="material-icons list-settings-icon">settings</i>
-								</div>
-								<section class="environments-list-settings">
-									<i class="material-icons">power_settings_new</i>
-									<i class="material-icons">edit</i>
-									<i class="material-icons">delete_forever</i>
-								</section>
-							</li>
-							<li>
-								<div>
-									<i class="material-icons">cloud_queue</i> 
-									Environment #6 
-									<i class="material-icons list-settings-icon">settings</i>
-								</div>
-								<section class="environments-list-settings">
-									<i class="material-icons">power_settings_new</i>
-									<i class="material-icons">edit</i>
-									<i class="material-icons">delete_forever</i>
-								</section>
-							</li>
-							<li>
-								<div>
-									<i class="material-icons">cloud_queue</i> 
-									Environment #8 
-									<i class="material-icons list-settings-icon">settings</i>
-								</div>
-								<section class="environments-list-settings">
-									<i class="material-icons">power_settings_new</i>
-									<i class="material-icons">edit</i>
-									<i class="material-icons">delete_forever</i>
-								</section>
-							</li>
+							<!-- Dynamically loaded environments -->
 						</ul>
 					</section>
 				</section>
@@ -199,17 +90,100 @@
 					</form>
 				</section>
 
-				<section id="content-dashboard">
-					<nav id="content-dashboard-nav">
-						<li>Summary</li>
-						<li>Environments</li>
-						<li>Activity</li>
-						<li>Placeholder</li>
-						<li>Placeholder</li>
-					</nav>
+				<nav id="dashboard-nav">
+					<li data-link="summary">Summary</li>
+					<li data-link="environments">Environments</li>
+					<li data-link="activity">Activity</li>
+					<li data-link="placeholder">Placeholder</li>
+				</nav>
+
+				<section id="dashboard-content">
+					<div id="content-dashboard-summary" class="content-dashboard-content active">
+						<span>Summary</span>
+					</div>
+					<div id="content-dashboard-environments" class="content-dashboard-content">
+						<div class="content-environment">
+							<h3>Cool Environment</h3>
+							<section class="card-actions">
+								<a href="#"><i class="material-icons">power_settings_new</i>Shut Down</a>
+								<a href="#"><i class="material-icons">edit</i>Edit</a>
+								<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+							</section>
+						</div>
+						<div class="content-environment">
+							<h3>Kewl Environment</h3>
+							<section class="card-actions">
+								<a href="#"><i class="material-icons">power_settings_new</i>Shut Down</a>
+								<a href="#"><i class="material-icons">edit</i>Edit</a>
+								<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+							</section>
+						</div>
+						<div class="content-environment">
+							<h3>Emo Environment</h3>
+							<section class="card-actions">
+								<a href="#"><i class="material-icons">power_settings_new</i>Shut Down</a>
+								<a href="#"><i class="material-icons">edit</i>Edit</a>
+								<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+							</section>
+						</div>
+						<div class="content-environment">
+							<h3>Great Environment</h3>
+							<section class="card-actions">
+								<a href="#"><i class="material-icons">power_settings_new</i>Shut Down</a>
+								<a href="#"><i class="material-icons">edit</i>Edit</a>
+								<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+							</section>
+						</div>
+						<div class="content-environment">
+							<h3>OK Environment</h3>
+							<section class="card-actions">
+								<a href="#"><i class="material-icons">power_settings_new</i>Shut Down</a>
+								<a href="#"><i class="material-icons">edit</i>Edit</a>
+								<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+							</section>
+						</div>
+						<div class="content-environment">
+							<h3>Uncool Environment</h3>
+							<section class="card-actions">
+								<a href="#"><i class="material-icons">power_settings_new</i>Turn On</a>
+								<a href="#"><i class="material-icons">edit</i>Edit</a>
+								<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+							</section>
+						</div>
+						<div class="content-environment">
+							<h3>Inactive Environment</h3>
+							<section class="card-actions">
+								<a href="#"><i class="material-icons">power_settings_new</i>Turn On</a>
+								<a href="#"><i class="material-icons">edit</i>Edit</a>
+								<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+							</section>
+						</div>
+						<div class="content-environment">
+							<h3>Exiled Environment</h3>
+							<section class="card-actions">
+								<a href="#"><i class="material-icons">power_settings_new</i>Turn On</a>
+								<a href="#"><i class="material-icons">edit</i>Edit</a>
+								<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+							</section>
+						</div>
+						<div class="content-environment">
+							<h3>Placeholder Environment</h3>
+							<section class="card-actions">
+								<a href="#"><i class="material-icons">power_settings_new</i>Turn On</a>
+								<a href="#"><i class="material-icons">edit</i>Edit</a>
+								<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+							</section>
+						</div>
+					</div>
+					<div id="content-dashboard-activity" class="content-dashboard-content">
+						<span>Activity</span>
+					</div>
+					<div id="content-dashboard-placeholder" class="content-dashboard-content">
+						<span>Placeholder</span>
+					</div>
 				</section>
 			</content>
 		</main>
-		<script rel="text/javascript" src="src/js/app.js"></script>
+		<script type="text/javascript" src="./src/js/app.js"></script>
 	</body>
 </html>

@@ -4,6 +4,8 @@ const autoprefixer = require('gulp-autoprefixer');
 const watch = require('gulp-watch');
 const webserver = require('gulp-webserver');
 const babel = require('gulp-babel');
+const browserify = require('browserify');
+const browserSync = require('browser-sync').create();
 
 // Variables
 let input = './src/sass/*.scss';
@@ -13,39 +15,36 @@ const sassOptions = {
   outputStyle: 'expanded'
 };
 
-// Sass compiler
+// process JS files and return the stream.
+gulp.task('js', function () {
+	return gulp.src('js/*js')
+		.pipe(gulp.dest('./dist'));
+});
+
+// create a task that ensures the `js` task is complete before
+// reloading browsers
+gulp.task('js-watch', ['js'], function (done) {
+	browserSync.reload();
+	done();
+});
+
+// Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
-  return gulp
-    .src(input)
-    .pipe(sass(sassOptions).on('error', sass.logError))
-    .pipe(autoprefixer())
-    .pipe(gulp.dest(output));
+	return gulp.src(input)
+		.pipe(sass(sassOptions).on('error', sass.logError))
+		.pipe(autoprefixer())
+		.pipe(gulp.dest(output))
+		.pipe(browserSync.stream());
 });
 
-// ES6 compiler
-gulp.task('es6', () => {
-  return gulp.src('src/js/*.js')
-    .pipe(babel({
-      presets: ['es2015']
-    }))
-    .pipe(gulp.dest('dist'));
+// Static Server + watching scss/html files
+gulp.task('serve', ['sass'], function() {
+	browserSync.init({
+		server: "./"
+	});
+	gulp.watch(input, ['sass']);
+	gulp.watch("./src/*.html").on('change', browserSync.reload);
+	gulp.watch("./src/js/*.js", ['js-watch']);
 });
 
-// Gulp server
-gulp.task('webserver', function() {
-  gulp.src('./')
-    .pipe(webserver({
-      livereload: true,
-      directoryListing: true,
-      open: false,
-      fallback: 'index.html'
-    }));
-});
-
-// Watch task
-gulp.task('watch', function() {
-  return gulp
-    .watch(input, ['sass']);
-});
-
-gulp.task('default', ['sass', 'es6', 'watch', 'webserver']);
+gulp.task('default', ['serve']);
