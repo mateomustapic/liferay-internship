@@ -12,12 +12,11 @@
         <button id="searchBtn" type="submit"><i class="fa fa-search"></i></button>
     </form>
     <nav id="site-nav">
-        ${param.login}
-        ${param.join}
-        ${param.artists}
-        ${param.tracks}
-        ${param.info}
-        ${param.home}
-        ${param.events}
+        <a class='headLink' href='/home'>Home</a>
+        <a class='headLink' href='/home#artists'>Top artists</a>
+        <a class='headLink' href='/home#tracks'>Top tracks</a>
+        <a class='headLink' href='/login'>Login</a>
+        <a class='headLink' href='/join'>Join</a>
     </nav>
 </header>
+

@@ -34,35 +34,8 @@ footer {
     flex: 1;
 }
 
-#content, #joinContent, #loginContent, .resultContainer {
+#content, #joinContent, #loginContent, .resultContainer, #profileContent{
     margin-top: 100px;
-}
-
-#result{
-    margin-top: 0 !important;
-}
-
-#profileLinksContainer {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 72px;
-    padding: 16px;
-}
-
-#profileLinksContainer a {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#profileLinksContainer a:first-child {
-    padding-right: 16px;
-}
-
-#profileLinksContainer a:hover,#profileLinksContainer a:active
-{
-    text-decoration: none;
-    color: seagreen;
 }
 
 #search {
@@ -82,7 +55,6 @@ footer {
     color: lemonchiffon;
     padding-left: 12px;
 }
-
 
 .headLink:hover,.headLink:active
 {
@@ -211,20 +183,8 @@ hr{
     display: inline;
 }
 
-.glyphicon-play-circle, .glyphicon-heart-empty {
-    color: gainsboro;
-}
-
 #searchBtn {
     color: lemonchiffon;
-}
-
-.glyphicon-heart-empty:hover {
-    color: red;
-}
-
-.glyphicon-play-circle:hover {
-    color: seagreen;
 }
 
 #searchBtn:hover {
@@ -304,4 +264,57 @@ hr{
     display: inline-block;
 }
 
+.hideMessage{
+    display: none;
+    font-size: 12px;
+    padding-left: 48px;
+    margin: 0;
+}
 
+.showMessage {
+    display: block;
+}
+
+.hideP{
+    display: inline-block;
+}
+
+.buttons{
+    display: inline-block;
+    float: right;
+}
+
+table button{
+    font-size: 16px;
+    color: gainsboro;
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+}
+
+table button:hover, table button:active {
+    color: #6d9ed1;
+}
+
+.addBtn:hover, .addBtn:active {
+    color: #ff5b5b;
+}
+
+.audioPlayHide {
+    display: none;
+}
+
+.audioPlayShow {
+    display: inline-block;
+}
+
+.song{
+    display: flex;
+    align-items: center;
+}
+
+.song p {
+    flex: 1;
+    align-items: center;
+    margin: 0 !important;
+}

@@ -1,7 +1,7 @@
 package com.company;
 
 /**
- * Created by Matea Pjanic on 22/02/2017.
+ * Created by Matea Pjanic on 27/02/2017.
  */
 public class Album {
     private String albumName;

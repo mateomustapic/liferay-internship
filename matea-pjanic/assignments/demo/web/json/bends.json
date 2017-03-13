@@ -2,7 +2,7 @@
 
   {
     "bendName": "Azra",
-    "image": "image",
+    "image": "../../img/Azra.jpg",
     "albums": [
       {
         "albumName": "Ravno do dna",
@@ -10,35 +10,15 @@
         "songs": [
           {
             "songName": "Uradi nesto",
-            "songDuration": "3:18"
+            "mp3": "../../mp3/Azra-RavnoDoDna.mp3"
           },
           {
             "songName": "Poziv na ples",
-            "songDuration": "2:21"
+            "mp3": "../../mp3/Azra-PozivNaPles.mp3"
           },
           {
             "songName": "Tople usne zene",
-            "songDuration": "2:46"
-          },
-          {
-            "songName": "Iggy Pop",
-            "songDuration": "3:32"
-          },
-          {
-            "songName": "Bankrot mama",
-            "songDuration": "2:46"
-          },
-          {
-            "songName": "A sta da radim",
-            "songDuration": "2:40"
-          },
-          {
-            "songName": "Lijepe zene prolaze kroz grad",
-            "songDuration": "2:19"
-          },
-          {
-            "songName": "Plavo-smede",
-            "songDuration": "2:09"
+            "mp3": "../../mp3/Azra-TopleUsneZene.mp3"
           }
         ]
       }
@@ -47,31 +27,19 @@
 
   {
     "bendName": "Santana",
-    "image": "image",
+    "image": "../../img/Santana.jpg",
     "albums": [
       {
         "albumName": "Supernatural",
         "year": 1999,
         "songs": [
           {
-            "songName": "Yaleo",
-            "songDuration": "5:51"
-          },
-          {
             "songName": "Love Of My Love",
-            "songDuration": "5:48"
+            "mp3": "../../mp3/Santana-LoveOfMyLife.mp3"
           },
           {
-            "songName": "Put Your Lights On",
-            "songDuration": "4:47"
-          },
-          {
-            "songName": "Africa Bamba",
-            "songDuration": "4:40"
-          },
-          {
-            "songName": "Smooth",
-            "songDuration": "4:56"
+            "songName": "Put Your Lights",
+            "mp3": "../../mp3/Santana-PutYourLights.mp3"
           }
         ]
       },
@@ -81,83 +49,21 @@
         "songs": [
           {
             "songName": "Dawn",
-            "songDuration": "2:44"
+            "mp3": "../../mp3/Santana-Dawn.mp3"
           },
           {
             "songName": "Carnaval",
-            "songDuration": "2:17"
-          },
-          {
-            "songName": "Let The Children Play",
-            "songDuration": "2:37"
-          },
-          {
-            "songName": "Jugando",
-            "songDuration": "2:09"
+            "mp3": "../../mp3/Santana-Carnaval.mp3"
           }
         ]
       }
     ]
   },
 
-  {
-    "bendName": "Bob Dylan",
-    "image": "image",
-    "albums": [
-      {
-        "albumName": "Time Out Of Mind",
-        "year": 1997,
-        "songs": [
-          {
-            "songName": "Love Sick",
-            "songDuration": "5:22"
-          },
-          {
-            "songName": "Dirt Road Blues",
-            "songDuration": "3:36"
-          },
-          {
-            "songName": "Standing In The Doorway",
-            "songDuration": "7:43"
-          },
-          {
-            "songName": "Million Miles",
-            "songDuration": "5:53"
-          },
-          {
-            "songName": "Trying To Get To Heaven",
-            "songDuration": "5:22"
-          }
-        ]
-      },
-      {
-        "albumName": "Blonde On Blonde",
-        "year": 1966,
-        "songs": [
-          {
-            "songName": "Rainy Day Women",
-            "songDuration": "4:37"
-          },
-          {
-            "songName": "Pledging My Time",
-            "songDuration": "3:50"
-          },
-          {
-            "songName": "Visions Of Johanna",
-            "songDuration": "7:33"
-          },
-          {
-            "songName": "One Of Us must Know",
-            "songDuration": "4:55"
-          }
-        ]
-      }
-    ]
-  },
 
   {
     "bendName": "Creedence Clearwater Revival",
-    "image": "image",
+    "image": "../../img/CreedenceClearwaterRevival.jpg",
     "albums": [
       {
         "albumName": "Mardi Gras",
@@ -165,65 +71,11 @@
         "songs": [
           {
             "songName": "Looking for a reason",
-            "songDuration": "3:29"
+            "mp3": "../../mp3/CreedenceClearwaterRevival-LookingForAReason.mp3"
           },
           {
             "songName": "Take it like a friend",
-            "songDuration": "3:02"
-          },
-          {
-            "songName": "Need someone to hold",
-            "songDuration": "3:03"
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "bendName": "Dido",
-    "image": "image",
-    "albums": [
-      {
-        "albumName": "Life for rent",
-        "year": 2003,
-        "songs": [
-          {
-            "songName": "White Flag",
-            "songDuration": "4:01"
-          },
-          {
-            "songName": "Stoned",
-            "songDuration": "5:55"
-          },
-          {
-            "songName": "Life for rent",
-            "songDuration": "3:42"
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "bendName": "Enya",
-    "image": "image",
-    "albums": [
-      {
-        "albumName": "The memory of trees",
-        "year": 1995,
-        "songs": [
-          {
-            "songName": "The memory of trees",
-            "songDuration": "4:20"
-          },
-          {
-            "songName": "Anywhere is",
-            "songDuration": "3:59"
-          },
-          {
-            "songName": "Pax Deorum",
-            "songDuration": "5:00"
+            "mp3": "../../mp3/CreedenceClearwaterRevival-TakeItLikeAFriend.mp3"
           }
         ]
       }
@@ -232,7 +84,7 @@
 
   {
     "bendName": "Florence and the machine",
-    "image": "image",
+    "image": "../../img/FlorenceAndTheMachine.jpg",
     "albums": [
       {
         "albumName": "Lungs",
@@ -240,40 +92,11 @@
         "songs": [
           {
             "songName": "Dog days are over",
-            "songDuration": "4:13"
+            "mp3": "../../mp3/FlorenceAndTheMachine-DogDaysAreOver.mp3"
           },
           {
             "songName": "Rabbit heart",
-            "songDuration": "3:52"
-          },
-          {
-            "songName": "I am not calling you a a liar",
-            "songDuration": "3:05"
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "bendName": "Gustafi",
-    "image": "image",
-    "albums": [
-      {
-        "albumName": "Chupacabra",
-        "year": 2009,
-        "songs": [
-          {
-            "songName": "Sanjati cemo zuto",
-            "songDuration": "3:46"
-          },
-          {
-            "songName": "Mirko i slavko",
-            "songDuration": "3:44"
-          },
-          {
-            "songName": "Da ne moram pojti ca",
-            "songDuration": "2:54"
+            "mp3": "../../mp3/FlorenceAndTheMachine-RabbitHeart.mp3"
           }
         ]
       }
@@ -282,48 +105,15 @@
 
   {
     "bendName": "Hank Williams",
-    "image": "image",
+    "image": "../../img/HankWilliams.jpg",
     "albums": [
       {
         "albumName": "Beyond the sunset",
         "year": 1953,
         "songs": [
           {
-            "songName": "Pictures form life's other side",
-            "songDuration": "2:53"
-          },
-          {
             "songName": "Men with broken hearts",
-            "songDuration": "3:12"
-          },
-          {
-            "songName": "The funeral",
-            "songDuration": "3:07"
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "bendName": "Iggy Pop",
-    "image": "image",
-    "albums": [
-      {
-        "albumName": "The idiot",
-        "year": 1977,
-        "songs": [
-          {
-            "songName": "Sister midnight",
-            "songDuration": "4:20"
-          },
-          {
-            "songName": "Nightclubing",
-            "songDuration": "4:15"
-          },
-          {
-            "songName": "Funtime",
-            "songDuration": "2:55"
+            "mp3": "../../mp3/HankWilliams-MenWithBrokenHearts.mp3"
           }
         ]
       }
@@ -332,23 +122,19 @@
 
   {
     "bendName": "Jayke Orvis",
-    "image": "image",
+    "image": "../../img/JaykeOrvis.jpg",
     "albums": [
       {
         "albumName": "It'a all been said",
         "year": 2010,
         "songs": [
           {
-            "songName": "A recipe for tea",
-            "songDuration": "1:24"
+            "songName": "Crooked smile",
+            "mp3": "../../mp3/JaykeOrvis-CrookedSmile.mp3"
           },
           {
-            "songName": "Yankee Taste",
-            "songDuration": "2:15"
-          },
-          {
-            "songName": "Feelings like this",
-            "songDuration": "4:52"
+            "songName": "Lead me astray",
+            "mp3": "../../mp3/JaykeOrvis-LeadMeAstray.mp3"
           }
         ]
       }
@@ -356,108 +142,8 @@
   },
 
   {
-    "bendName": "Kosheen",
-    "image": "image",
-    "albums": [
-      {
-        "albumName": "Resist",
-        "year": 2010,
-        "songs": [
-          {
-            "songName": "Demonstrate",
-            "songDuration": "0:28"
-          },
-          {
-            "songName": "Hude u",
-            "songDuration": "4:12"
-          },
-          {
-            "songName": "Catch",
-            "songDuration": "3:22"
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "bendName": "Lorena McKennit",
-    "image": "image",
-    "albums": [
-      {
-        "albumName": "The book of secrets",
-        "year": 1997,
-        "songs": [
-          {
-            "songName": "Prologue",
-            "songDuration": "4:25"
-          },
-          {
-            "songName": "The mummers' dance",
-            "songDuration": "6:09"
-          },
-          {
-            "songName": "Skellig",
-            "songDuration": "6:08"
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "bendName": "Ozzy Osbourne",
-    "image": "image",
-    "albums": [
-      {
-        "albumName": "Prince of darkness",
-        "year": 2005,
-        "songs": [
-          {
-            "songName": "I don't know",
-            "songDuration": "5:03"
-          },
-          {
-            "songName": "Mr. Crowles",
-            "songDuration": "4:57"
-          },
-          {
-            "songName": "Crazy train",
-            "songDuration": "4:51"
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "bendName": "Picksiener",
-    "image": "image",
-    "albums": [
-      {
-        "albumName": "Skladiste duhana",
-        "year": 2010,
-        "songs": [
-          {
-            "songName": "Skladiste duhana",
-            "songDuration": "3:16"
-          },
-          {
-            "songName": "Grizzly Adams",
-            "songDuration": "2:58"
-          },
-          {
-            "songName": "Galijoti",
-            "songDuration": "3:15"
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "bendName": "Radioheah",
-    "image": "image",
+    "bendName": "Radiohead",
+    "image": "../../img/Radiohead.jpg",
     "albums": [
       {
         "albumName": "A moon shaped pool",
@@ -465,40 +151,11 @@
         "songs": [
           {
             "songName": "Burn the witch",
-            "songDuration": "3:41"
+            "mp3": "../../mp3/Radiohead-BurnTheWitch.mp3"
           },
           {
             "songName": "Daydreaming",
-            "songDuration": "6:25"
-          },
-          {
-            "songName": "Decks dark",
-            "songDuration": "4:41"
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "bendName": "Sturgill Simpson",
-    "image": "image",
-    "albums": [
-      {
-        "albumName": "A sailors guide to Earth",
-        "year": 2016,
-        "songs": [
-          {
-            "songName": "Welcome to Earth",
-            "songDuration": "4:53"
-          },
-          {
-            "songName": "Breakers roar",
-            "songDuration": "3:33"
-          },
-          {
-            "songName": "Keep it between the lines",
-            "songDuration": "4:01"
+            "mp3": "../../mp3/Radiohead-Daydreaming.mp3"
           }
         ]
       }
@@ -507,7 +164,7 @@
 
   {
     "bendName": "Tom Waits",
-    "image": "image",
+    "image": "../../img/TomWaits.jpg",
     "albums": [
       {
         "albumName": "Rain dogs",
@@ -515,90 +172,11 @@
         "songs": [
           {
             "songName": "Singapore",
-            "songDuration": "2:45"
+            "mp3": "../../mp3/TomWaits-Singapore.mp3"
           },
           {
             "songName": "Clap hands",
-            "songDuration": "3:49"
-          },
-          {
-            "songName": "Cementery polka",
-            "songDuration": "1:47"
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "bendName": "Urban",
-    "image": "image",
-    "albums": [
-      {
-        "albumName": "Zena dijete",
-        "year": 1998,
-        "songs": [
-          {
-            "songName": "Romeo",
-            "songDuration": "4:04"
-          },
-          {
-            "songName": "Privatni Romeo",
-            "songDuration": "4:42"
-          },
-          {
-            "songName": "Mala truba",
-            "songDuration": "3:24"
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "bendName": "Vatra",
-    "image": "image",
-    "albums": [
-      {
-        "albumName": "Ima li budnih?",
-        "year": 2010,
-        "songs": [
-          {
-            "songName": "Ima li budnih",
-            "songDuration": "3:38"
-          },
-          {
-            "songName": "Kamikaze",
-            "songDuration": "3:28"
-          },
-          {
-            "songName": "3:13",
-            "songDuration": "4:52"
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "bendName": "Zoster",
-    "image": "image",
-    "albums": [
-      {
-        "albumName": "Festival budala",
-        "year": 2007,
-        "songs": [
-          {
-            "songName": "Ko je jamio",
-            "songDuration": "5:34"
-          },
-          {
-            "songName": "Mob Barley",
-            "songDuration": "4:56"
-          },
-          {
-            "songName": "A gdje sam bio ja",
-            "songDuration": "3:43"
+            "mp3": "../../mp3/TomWaits-ClapHands.mp3"
           }
         ]
       }
