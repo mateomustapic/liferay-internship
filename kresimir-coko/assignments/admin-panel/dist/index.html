@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Admin Panel</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="./src/css/bundle.css" rel="stylesheet">
+	</head>
+	<body>
+		<header id="header">
+			<i class="material-icons" id="header-menu-icon">menu</i>
+			<span id="header-title">Liferay Connected Services</span>
+			<section id="header-user">
+				<i class="material-icons" id="header-user-notification">notifications</i>
+				<img alt="header-user-image" src="src/img/user-image.jpeg" id="header-user-image">
+				<span id="header-user-name">Krešimir Čoko</span>
+			</section>
+		</header>
+
+		<main id="main">
+			<aside id="sidebar">
+				<!-- Dashboard Options -->
+				<ul id="sidebar-list">
+					<a href="/"><i class="material-icons">dashboard</i> Dashboard</a>
+					<a href="/users"><i class="material-icons">people_outline</i> Users</a>
+					<a href="/subscriptions"><i class="material-icons">autorenew</i> Subscriptions</a>
+					<a href="/downloads"><i class="material-icons">cloud_download</i> Downloads</a>
+				</ul>
+
+				<section id="sidebar-environments">
+					<h3 class="sidebar-environments-heading" id="sidebar-environments-heading-main">
+					Environments 
+					<i class="material-icons" id="environments-info-icon">info_outline</i>
+					<tooltip id="environments-info-tooltip">
+						<p>This is a tooltip to describe what environments mean in this context</p>
+					</tooltip>
+					</h3>
+	
+					<a href="#" id="sidebar-environments-list-new">
+						<i class="material-icons">add</i>
+						Add Environment
+					</a>
+
+					<section id="sidebar-environments-scrollable">
+						<h4 class="sidebar-environments-heading">Active</h4>
+					
+						<ul class="sidebar-environments-list" id="sidebar-environments-list-active">
+							<!-- Dynamically loaded environments -->
+						</ul>
+
+						<h4 class="sidebar-environments-heading">Inactive</h4>
+						<ul class="sidebar-environments-list" id="sidebar-environments-list-inactive">
+							<!-- Dynamically loaded environments -->
+						</ul>
+					</section>
+				</section>
+			</aside>
+
+			<aside id="collapsed-sidebar">
+				<ul id="collapsed-sidebar-list">
+					<li data-tooltip="Dashboard"><i class="material-icons">dashboard</i><span class="collapsed-tooltip"></span></li>
+					<li data-tooltip="Users"><i class="material-icons">people_outline</i><span class="collapsed-tooltip"></span></li>
+					<li data-tooltip="Subscriptions"><i class="material-icons">autorenew</i><span class="collapsed-tooltip"></span></li>
+					<li data-tooltip="Downloads"><i class="material-icons">cloud_download</i><span class="collapsed-tooltip"></span></li>
+					<li data-tooltip="Environments"><i class="material-icons">cloud_circle</i><span class="collapsed-tooltip"></span></li>
+					<li data-tooltip="Add Environment"><i class="material-icons">add</i><span class="collapsed-tooltip"></span></li>
+					<li data-tooltip="Active Environments"><i class="material-icons">cloud</i><span class="collapsed-tooltip"></span></li>
+					<li data-tooltip="Inactive Environments"><i class="material-icons">cloud_queue</i><span class="collapsed-tooltip"></span></li>
+				</ul>
+			</aside>
+
+			<content id="content">
+				<section id="content-welcome">
+					<h2>Welcome to Liferay Connected Services</h2>
+				</section>
+
+				<section id="add-environment">
+					<h3>Add a new Environment <i id="add-environment-close" class="material-icons">close</i></h3>
+					<form id="add-environment-form">
+						<label for="newEnvironmentName">Environment Name</label>
+						<input type="text" name="newEnvironmentName" placeholder="Your environment name">
+
+						<label for="newEnvironmentLocation">Environment Location</label>
+						<input type="text" name="newEnvironmentLocation" placeholder="Your environment location">
+
+						<label for="newEnvironmentDesc">Environment Description</label>
+						<textarea name="newEnvironmentDesc" placeholder="Your environment description"></textarea>
+
+						<input type="submit" value="Add Environment">
+					</form>
+				</section>
+
+				<section id="content-dashboard">
+					<nav id="content-dashboard-nav">
+						<a href="/">Summary</a>
+						<a href="/environments">Environments</a>
+						<a href="/activity">Activity</a>
+						<a href="/placeholder">Placeholder</a>
+					</nav>
+					<!--<div id="content-dashboard-environments">
+						<div class="content-container">
+							<div class="content-environment">
+								<h3>Cool Environment</h3>
+								<section class="card-actions">
+									<a href="#"><i class="material-icons">power_settings_new</i>Shut Down</a>
+									<a href="#"><i class="material-icons">edit</i>Edit</a>
+									<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+								</section>
+							</div>
+							<div class="content-environment">
+								<h3>Kewl Environment</h3>
+								<section class="card-actions">
+									<a href="#"><i class="material-icons">power_settings_new</i>Shut Down</a>
+									<a href="#"><i class="material-icons">edit</i>Edit</a>
+									<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+								</section>
+							</div>
+							<div class="content-environment">
+								<h3>Emo Environment</h3>
+								<section class="card-actions">
+									<a href="#"><i class="material-icons">power_settings_new</i>Shut Down</a>
+									<a href="#"><i class="material-icons">edit</i>Edit</a>
+									<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+								</section>
+							</div>
+							<div class="content-environment">
+								<h3>Great Environment</h3>
+								<section class="card-actions">
+									<a href="#"><i class="material-icons">power_settings_new</i>Shut Down</a>
+									<a href="#"><i class="material-icons">edit</i>Edit</a>
+									<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+								</section>
+							</div>
+							<div class="content-environment">
+								<h3>OK Environment</h3>
+								<section class="card-actions">
+									<a href="#"><i class="material-icons">power_settings_new</i>Shut Down</a>
+									<a href="#"><i class="material-icons">edit</i>Edit</a>
+									<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+								</section>
+							</div>
+							<div class="content-environment">
+								<h3>Uncool Environment</h3>
+								<section class="card-actions">
+									<a href="#"><i class="material-icons">power_settings_new</i>Turn On</a>
+									<a href="#"><i class="material-icons">edit</i>Edit</a>
+									<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+								</section>
+							</div>
+							<div class="content-environment">
+								<h3>Inactive Environment</h3>
+								<section class="card-actions">
+									<a href="#"><i class="material-icons">power_settings_new</i>Turn On</a>
+									<a href="#"><i class="material-icons">edit</i>Edit</a>
+									<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+								</section>
+							</div>
+							<div class="content-environment">
+								<h3>Exiled Environment</h3>
+								<section class="card-actions">
+									<a href="#"><i class="material-icons">power_settings_new</i>Turn On</a>
+									<a href="#"><i class="material-icons">edit</i>Edit</a>
+									<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+								</section>
+							</div>
+							<div class="content-environment">
+								<h3>Placeholder Environment</h3>
+								<section class="card-actions">
+									<a href="#"><i class="material-icons">power_settings_new</i>Turn On</a>
+									<a href="#"><i class="material-icons">edit</i>Edit</a>
+									<a href="#"><i class="material-icons">delete_forever</i>Remove</a>
+								</section>
+							</div>
+						</div>
+					</div>-->
+				</section>
+			</content>
+		</main>
+		<script type="text/javascript" src="./src/js/app.js"></script>
+	</body>
+</html>

@@ -15,15 +15,61 @@ function handleHeaderMenuIcon () {
 
 headerMenuIcon.addEventListener('click', handleHeaderMenuIcon);
 
+// Header User Dropdown
+const headerUserName = document.querySelector('#header-user-name');
+const headerUserDropdown = document.querySelector('#user-dropdown');
+
+function handleUserDropdown (e) {
+	if (e.target.id === 'header-user-name') {
+		const first = headerUserDropdown.getBoundingClientRect();
+
+		headerUserDropdown.classList.add('dropdown-active');
+
+		const last = headerUserDropdown.getBoundingClientRect();
+
+		const invert = first.top - last.top;
+
+		headerUserDropdown.style.transform = `translateY(${invert}px)`;
+	} else if (e.target.id !== 'user-dropdown' && !e.target.classList.contains('user-dropdown-item')) {
+		headerUserDropdown.classList.remove('dropdown-active');
+	}
+}
+
+document.addEventListener('click', handleUserDropdown);
+
+// Header Notification Dropdown
+const notificationIcon = document.querySelector('#header-user-notification');
+const notificationDropdown = document.querySelector('#notification-dropdown');
+
+function handleNotificationDropdown (e) {
+	if (e.target === notificationIcon || e.target === notificationIcon.firstElementChild) {
+		const first = notificationDropdown.getBoundingClientRect();
+
+		notificationDropdown.classList.add('notifications-open');
+		const last = notificationDropdown.getBoundingClientRect();
+
+		const invert = first.top - last.top;
+		notificationDropdown.style.transform = `translateY(${invert}px)`;
+	} else if (e.target !== notificationDropdown && notificationDropdown.classList.contains('notifications-open')) {
+		notificationDropdown.classList.remove('notifications-open');
+	}
+}
+
+document.addEventListener('click', handleNotificationDropdown);
+
 // Environments Heading Tooltip
 const envTooltipIcon = sidebarEnvironments.querySelector('#environments-info-icon');
 const envTooltip = sidebarEnvironments.querySelector('#environments-info-tooltip');
 
-function handleEnvironmentsTooltip () {
-	envTooltip.classList.toggle('tooltip-active');
+function handleEnvironmentsTooltip (e) {
+	if (e.target === envTooltipIcon) {
+		envTooltip.classList.add('tooltip-active');
+	} else if (e.target !== envTooltip && envTooltip.classList.contains('tooltip-active')) {
+		envTooltip.classList.remove('tooltip-active');
+	}
 }
 
-envTooltipIcon.addEventListener('click', handleEnvironmentsTooltip);
+document.addEventListener('click', handleEnvironmentsTooltip);
 
 // Environments Settings
 const envSettingsIcons = sidebarEnvironments.querySelectorAll('.list-settings-icon');
@@ -47,11 +93,13 @@ function showCollapsedSidebarListTooltips (e) {
 	if (e.target.dataset.tooltip) {
 		const tooltip = e.target.dataset.tooltip;
 		const target = e.target.lastChild;
+
 		target.innerText = tooltip;
 		target.classList.add('tooltip-open');
 	} else if (e.target.classList.contains('material-icons')) {
 		const tooltip = e.target.parentElement.dataset.tooltip;
 		const target = e.target.parentElement.lastChild;
+
 		target.innerText = tooltip;
 		target.classList.add('tooltip-open');
 	}

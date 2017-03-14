@@ -1,0 +1,37 @@
+[{
+	"id": 0,
+	"name": "Cool Environment",
+	"status": true
+}, {
+	"id": 1,
+	"name": "Kewl Environment",
+	"status": true
+}, {
+	"id": 2,
+	"name": "Uncool Environment",
+	"status": false
+}, {
+	"id": 3,
+	"name": "Inactive Environment",
+	"status": false
+}, {
+	"id": 4,
+	"name": "Exiled Environment",
+	"status": false
+}, {
+	"id": 5,
+	"name": "Emo Environment",
+	"status": true
+}, {
+	"id": 6,
+	"name": "Great Environment",
+	"status": true
+}, {
+	"id": 7,
+	"name": "OK Environment",
+	"status": true
+}, {
+	"id": 8,
+	"name": "Placeholder Environment",
+	"status": false
+}]
