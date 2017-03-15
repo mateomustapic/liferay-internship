@@ -14,6 +14,6 @@
  */
 --%>
 
-<%@ include file="/init.jsp" %>
+<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 
-This is the <b>Music App</b> portlet.
+<portlet:defineObjects />
