@@ -1,4 +1,4 @@
-#content {
+main > .content {
 	background-color: $secondary;
 	display: flex;
 	flex: 1;
@@ -7,42 +7,8 @@
 	transition: all 0.3s ease;
 }
 
-.sidebar-open #content {
+.sidebar-open .content {
 	margin-left: 64px;
-}
-
-#content-welcome {
-	background-color: #FEFEFE;
-	border-bottom: 1px solid $lightBorder;
-	color: $inactiveDarkText;
-	padding: 24px;
-	width: 100%;
-}
-
-#dashboard-content {
-	background-color: $secondary;
-}
-
-#dashboard-nav {
-	background-color: #FFF;
-	border-bottom: 1px solid $lightBorder;
-	list-style: none;
-	width: 100%;
-
-	li {
-		border-bottom: 1px solid transparent;
-		color: $inactiveDarkText;
-		cursor: pointer;
-		display: inline-block;
-		padding: 16px 32px;
-		text-align: center;
-		text-decoration: none;
-		transition: all .3s ease;
-
-		&:hover, &.active {
-			color: $darkText;
-		}
-	}
 }
 
 #add-environment {
@@ -143,90 +109,6 @@
 		&:hover {
 			color: #FFF;
 			box-shadow: $bigBoxShadow;
-		}
-	}
-}
-
-
-.content-dashboard-content {
-	display: flex;
-	flex-wrap: wrap;
-	height: 0;
-	opacity: 0;
-	margin: 0 auto;
-	max-width: 1280px;
-	transform: translateX(30%);
-	width: 100%;
-	z-index: -1;
-
-	&.active {
-		height: 100%;
-		opacity: 1;
-		padding: 16px;
-		transform: translateX(0);
-		transition: all .2s ease;
-		z-index: 1;
-
-		.content-environment {
-			height: 227px;
-		}
-	}
-}
-
-.content-environment {
-	align-items: center;
-	background-color: #FFF;
-	border-radius: 3px;
-	box-shadow: $smallBoxShadow;
-	color: $inactiveDarkText;
-	display: flex;
-	flex-direction: column;
-	height: 0;
-	justify-content: space-between;
-	width: calc(100% / 3 - 11px);
-
-	&:not(:nth-child(n+7)) {
-		margin-bottom: 16px;
-	}
-
-	&:not(:nth-child(3n)) {
-		margin-right: 16px;
-	}
-
-	h3 {
-		border-bottom: 1px solid $lightBorder;
-		font-family: $fontNormal;
-		font-size: 1.4em;
-		font-weight: 300;
-		padding: 8px 16px;
-		width: 100%;
-	}
-
-	.card-actions {
-		border-top: 1px solid $lightBorder;
-		display: flex;
-		width: 100%;
-			
-		:nth-child(2) {
-			border-left: 1px solid $lightBorder;
-			border-right: 1px solid $lightBorder;
-		}
-
-		a {
-			align-items: center;
-			display: flex;
-			flex: 1;
-			flex-direction: column;
-			font-size: 1em;
-			justify-content: space-around;
-			padding: 8px;
-			text-decoration: none;
-			transition: all .3s ease;
-
-			&:hover {
-				background-color: $secondary;
-				color: $darkText;
-			}
 		}
 	}
 }

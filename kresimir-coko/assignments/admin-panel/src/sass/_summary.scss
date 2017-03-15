@@ -1,0 +1,156 @@
+#content-dashboard-summary {
+	padding: 0;
+}
+
+#summary-list {
+	flex: 1;
+
+	li:not(#summary-filter) {
+		align-items: center;
+		background-color: #FFF;
+		box-shadow: $smallBoxShadow;
+		color: $inactiveDarkText;
+		cursor: pointer;
+		display: flex;
+		padding: 16px 32px;
+		transition: all .3s ease;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid $lightBorder;
+		}
+
+		&:last-child {
+			margin-bottom: 24px;
+		}
+
+		&:hover {
+			background-color: $secondary;
+		}
+
+		span {
+			font-size: 1em;
+			flex: 1;
+		}
+	}
+
+	.summary-indicator {
+		font-size: 14px;
+		padding-right: 32px;
+	}
+
+	.summary-warning .summary-indicator {
+		color: $inactiveWarning;
+	}
+
+	.summary-success .summary-indicator {
+		color: $inactiveSuccess;
+	}
+
+	.summary-danger	.summary-indicator {
+		color: $inactiveDanger;
+	}
+
+	.summary-expand {
+		font-size: 1.6em;
+	}
+}
+
+#summary-filter {
+	border-radius: 30px 3px 3px 30px;
+	box-shadow: $bigBoxShadow;
+	display: flex;
+	margin-bottom: 16px;
+}
+
+#filter-heading {
+	align-items: center;
+	background-color: $primary;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+	display: flex;
+	padding: 0 64px;
+	
+	span {
+		align-items: center;
+		color: $inactiveLightText;
+		display: flex;
+		font-size: 1em;
+		font-family: $fontHeading;
+		font-weight: 700;
+		text-transform: uppercase;
+
+		i {
+			padding-right: 32px;
+		}
+	}
+}
+
+.filter {
+	align-items: center;
+	background-color: $darkText;
+	cursor: pointer;
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	padding: 16px;
+	transition: all .3s ease;
+
+	span {
+		color: $inactiveLightText;
+		font-size: 1em;
+	}
+
+	i {
+		font-size: 14px;
+		padding-right: 32px;
+	}
+
+	&:hover span {
+		color: #FFF;
+	}
+
+	&:last-child {
+		border-top-right-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+}
+
+#filter-success {
+	i {
+		color: $inactiveSuccess;
+
+	}
+	&:hover {
+		i {
+			color: $success;
+		}
+	}
+}
+
+#filter-warning {
+	border-left: 1px solid lighten($darkText, 8%);
+	border-right: 1px solid lighten($darkText, 8%);
+	i {
+		color: $inactiveWarning;
+
+	}
+	&:hover {
+		border-bottom-color: $warning;
+		i {
+			color: $warning;
+		}
+	}
+}
+
+#filter-danger {
+	i {
+		color: $inactiveDanger;
+
+	}
+	&:hover {
+		border-bottom-color: $danger;
+		i {
+			color: $danger;
+		}
+	}
+}

@@ -1,9 +1,9 @@
 'use strict';
 
 const sidebar = document.querySelector('#sidebar');
-const content = document.querySelector('#content');
+const dashboard = document.querySelector('#dashboard');
 const sidebarEnvironments = sidebar.querySelector('#sidebar-environments');
-const contentDashboard = content.querySelector('#content-dashboard');
+const contentDashboard = dashboard.querySelector('#content-dashboard');
 
 // Header Menu
 const headerMenuIcon = document.querySelector('#header-menu-icon');
@@ -50,8 +50,10 @@ function handleNotificationDropdown (e) {
 
 		const invert = first.top - last.top;
 		notificationDropdown.style.transform = `translateY(${invert}px)`;
-	} else if (e.target !== notificationDropdown && notificationDropdown.classList.contains('notifications-open')) {
-		notificationDropdown.classList.remove('notifications-open');
+	} else if (notificationDropdown.classList.contains('notifications-open')) {
+		if (e.target.parentNode.parentNode !== notificationDropdown) {
+			notificationDropdown.classList.remove('notifications-open');
+		}
 	}
 }
 
@@ -118,9 +120,9 @@ collapsedSidebarList.addEventListener('mouseout', hideCollapsedSidebarListToolti
 
 // Add new Environment
 
-const addEnvironmentComponent = content.querySelector('#add-environment');
+const addEnvironmentComponent = dashboard.querySelector('#add-environment');
 const addEnvironmentBtn = sidebar.querySelector('#sidebar-environments-list-new');
-const closeAddEnvironmentBtn = content.querySelector('#add-environment-close');
+const closeAddEnvironmentBtn = dashboard.querySelector('#add-environment-close');
 const addEnvironmentBtnCollapsed = collapsedSidebarList.querySelector('li[data-tooltip="Add Environment"]');
 
 function handleNewEnvironmentComponent () {
@@ -136,13 +138,13 @@ function handleNewEnvironmentComponent () {
 	el.style.transform = `translateY(${invert}px)`;
 	dashboardNav.style.borderTop = '1px solid #ECECEC';
 
-	content.style.willChange = 'transform';
+	dashboard.style.willChange = 'transform';
 }
 
 function closeAddEnvironment () {
 	addEnvironmentComponent.classList.remove('add-environment-open');
 	dashboardNav.style.borderTopWidth = '0';
-	content.style.willChange = '';
+	dashboard.style.willChange = '';
 }
 
 addEnvironmentBtn.addEventListener('click', handleNewEnvironmentComponent);
@@ -214,7 +216,7 @@ environmentsPromise.then(environments => {
 
 // Display Environments On Dashboard
 
-const dashboardNav = content.querySelector('#dashboard-nav');
+const dashboardNav = dashboard.querySelector('#dashboard-nav');
 
 function handleContentNavigation (e) {
 	const linkData = e.target.dataset.link;
@@ -222,7 +224,7 @@ function handleContentNavigation (e) {
 	if (linkData) {
 		// Change content depending on link
 		const currentLink = e.target;
-		const contentTemplates = content.querySelectorAll('.content-dashboard-content');
+		const contentTemplates = dashboard.querySelectorAll('.content-dashboard-content');
 		
 		currentLink.parentElement.querySelectorAll('li').forEach(_ => {
 			if (_.classList.contains('active') && _ !== currentLink) {
@@ -235,19 +237,19 @@ function handleContentNavigation (e) {
 		switch (linkData) {
 			case 'summary':
 				contentTemplates.forEach(_ => { _.classList.remove('active') });
-				content.querySelector('#content-dashboard-summary').classList.add('active');
+				dashboard.querySelector('#content-dashboard-summary').classList.add('active');
 				break;
 			case 'environments':
 				contentTemplates.forEach(_ => { _.classList.remove('active') });
-				content.querySelector('#content-dashboard-environments').classList.add('active');
+				dashboard.querySelector('#content-dashboard-environments').classList.add('active');
 				break;
 			case 'activity':
 				contentTemplates.forEach(_ => { _.classList.remove('active') });
-				content.querySelector('#content-dashboard-activity').classList.add('active');
+				dashboard.querySelector('#content-dashboard-activity').classList.add('active');
 				break;
 			case 'placeholder':
 				contentTemplates.forEach(_ => { _.classList.remove('active') });
-				content.querySelector('#content-dashboard-placeholder').classList.add('active');
+				dashboard.querySelector('#content-dashboard-placeholder').classList.add('active');
 				break;
 			default:
 				console.log(link + 'has failed');
@@ -257,3 +259,6 @@ function handleContentNavigation (e) {
 }
 
 dashboardNav.addEventListener('click', handleContentNavigation);
+
+const users = document.querySelector('#users');
+
