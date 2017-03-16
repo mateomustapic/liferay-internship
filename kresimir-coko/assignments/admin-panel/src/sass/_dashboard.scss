@@ -1,4 +1,12 @@
-#content-welcome {
+#dashboard {
+	display: none;
+
+	&.content-active {
+		display: flex;
+	}
+}
+
+.content-welcome {
 	background-color: #FEFEFE;
 	border-bottom: 1px solid $lightBorder;
 	color: $inactiveDarkText;
@@ -26,28 +34,6 @@
 
 	&::-webkit-scrollbar-thumb {
 		background-color: $lightText;
-	}
-}
-
-#dashboard-nav {
-	background-color: #FFF;
-	border-bottom: 1px solid $lightBorder;
-	list-style: none;
-	width: 100%;
-
-	li {
-		border-bottom: 1px solid transparent;
-		color: $inactiveDarkText;
-		cursor: pointer;
-		display: inline-block;
-		padding: 16px 32px;
-		text-align: center;
-		text-decoration: none;
-		transition: all .3s ease;
-
-		&:hover, &.active {
-			color: $darkText;
-		}
 	}
 }
 

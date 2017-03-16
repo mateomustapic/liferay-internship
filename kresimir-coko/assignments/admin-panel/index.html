@@ -65,10 +65,10 @@
 			<aside id="sidebar">
 				<!-- Dashboard Options -->
 				<ul id="sidebar-list">
-					<a href="/"><i class="material-icons">dashboard</i> Dashboard</a>
-					<a href="/users"><i class="material-icons">people_outline</i> Users</a>
-					<a href="/subscriptions"><i class="material-icons">autorenew</i> Subscriptions</a>
-					<a href="/downloads"><i class="material-icons">cloud_download</i> Downloads</a>
+					<li data-content="dashboard"><i class="material-icons">dashboard</i> Dashboard</li>
+					<li data-content="users"><i class="material-icons">people_outline</i> Users</li>
+					<li data-content="subscriptions"><i class="material-icons">autorenew</i> Subscriptions</li>
+					<a href="https://web.liferay.com/marketplace/-/mp/application/71774947" target="_blank"><i class="material-icons">cloud_download</i> Downloads</a>
 				</ul>
 
 				<section id="sidebar-environments">
@@ -102,10 +102,10 @@
 
 			<aside id="collapsed-sidebar">
 				<ul id="collapsed-sidebar-list">
-					<li data-tooltip="Dashboard"><i class="material-icons">dashboard</i><span class="collapsed-tooltip"></span></li>
-					<li data-tooltip="Users"><i class="material-icons">people_outline</i><span class="collapsed-tooltip"></span></li>
-					<li data-tooltip="Subscriptions"><i class="material-icons">autorenew</i><span class="collapsed-tooltip"></span></li>
-					<li data-tooltip="Downloads"><i class="material-icons">cloud_download</i><span class="collapsed-tooltip"></span></li>
+					<li data-content="dashboard" data-tooltip="Dashboard"><i class="material-icons">dashboard</i><span class="collapsed-tooltip"></span></li>
+					<li data-content="users" data-tooltip="Users"><i class="material-icons">people_outline</i><span class="collapsed-tooltip"></span></li>
+					<li data-content="subscriptions" data-tooltip="Subscriptions"><i class="material-icons">autorenew</i><span class="collapsed-tooltip"></span></li>
+					<li href="https://web.liferay.com/marketplace/-/mp/application/71774947" target="_blank" data-tooltip="Downloads"><i class="material-icons">cloud_download</i><span class="collapsed-tooltip"></span></li>
 					<li data-tooltip="Environments"><i class="material-icons">cloud_circle</i><span class="collapsed-tooltip"></span></li>
 					<li data-tooltip="Add Environment"><i class="material-icons">add</i><span class="collapsed-tooltip"></span></li>
 					<li data-tooltip="Active Environments"><i class="material-icons">cloud</i><span class="collapsed-tooltip"></span></li>
@@ -113,8 +113,8 @@
 				</ul>
 			</aside>
 
-			<content class="content" id="dashboard">
-				<section id="content-welcome">
+			<content class="content content-active" id="dashboard">
+				<section class="content-welcome" id="dashboard-welcome">
 					<h2>Welcome to your Liferay Connected Services Dashboard</h2>
 				</section>
 
@@ -134,7 +134,7 @@
 					</form>
 				</section>
 
-				<nav id="dashboard-nav">
+				<nav class="content-nav" id="dashboard-nav">
 					<li data-link="summary">Summary</li>
 					<li data-link="environments">Environments</li>
 					<li data-link="activity">Activity</li>
@@ -287,9 +287,191 @@
 			</content>
 		
 			<content class="content" id="users">
-				
+				<section id="users-welcome" class="content-welcome">
+					<h2>User management for your Liferay Connected Services License</h2>
+				</section>
+				<ul id="users-list">
+					<li id="user-list-heading">
+						<span>Email Address</span>
+						<span>Full Name</span>
+						<span>Action</span>
+					</li>
+					<li class="users-list-user">
+						<span class="user-email">kresimir.coko@liferay.com.broken</span>
+						<span class="user-name">Krešimir Čoko</span>
+						<span class="user-action"><i class="material-icons">info_outline</i><i class="material-icons">edit</i></span>
+					</li>
+					<li class="users-list-user">
+						<span class="user-email">mladen.cikara@liferay.com.broken</span>
+						<span class="user-name">Mladen Čikara</span>
+						<span class="user-action"><i class="material-icons">info_outline</i><i class="material-icons">edit</i></span>
+					</li>
+					<li class="users-list-user">
+						<span class="user-email">igor.beslic@liferay.com.broken</span>
+						<span class="user-name">Igor Bešlić</span>
+						<span class="user-action"><i class="material-icons">info_outline</i><i class="material-icons">edit</i></span>
+					</li>
+					<li class="users-list-user">
+						<span class="user-email">matea.pjanic@liferay.com.broken</span>
+						<span class="user-name">Matea Pjanić</span>
+						<span class="user-action"><i class="material-icons">info_outline</i><i class="material-icons">edit</i></span>
+					</li>
+					<li class="users-list-user">
+						<span class="user-email">marko.cikos@liferay.com.broken</span>
+						<span class="user-name">Marko Čikoš</span>
+						<span class="user-action"><i class="material-icons">info_outline</i><i class="material-icons">edit</i></span>
+					</li>
+					<li class="users-list-user">
+						<span class="user-email">liferay.qa.cloud@gmail.com</span>
+						<span class="user-name">QA Cloud 1</span>
+						<span class="user-action"><i class="material-icons">info_outline</i><i class="material-icons">edit</i></span>
+					</li>
+					<li class="users-list-user">
+						<span class="user-email">christian.stokes@liferay.com.broken</span>
+						<span class="user-name">Christian Stokes</span>
+						<span class="user-action"><i class="material-icons">info_outline</i><i class="material-icons">edit</i></span>
+					</li>
+					<li class="users-list-user">
+						<span class="user-email">matija.petanjek@liferay.com.broken</span>
+						<span class="user-name">Matija Petanjek</span>
+						<span class="user-action"><i class="material-icons">info_outline</i><i class="material-icons">edit</i></span>
+					</li>
+				</ul>
 			</content>
 		
+			<content class="content" id="subscriptions">
+				<nav class="content-nav" id="subscription-nav">
+					<li>Details</li>
+					<li>Elastic Subscriptions</li>
+				</nav>
+
+				<section id="support">
+					<h3>Messages from Liferay Support</h3>
+					<div class="support-msg">
+						<p class="msg-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum voluptatibus porro quia nihil doloremque nemo, nostrum voluptatem unde ducimus tempore quae, iusto. Eaque, porro, ut? Dignissimos, ex. Dignissimos, ut, earum!</p>
+						<span class="msg-date">Feb 10, 2017 2:49:35 PM</span>
+					</div>
+				</section>
+
+				<section class="subscription-content">
+
+					<div class="subscription-table">
+						<div class="table-heading">
+							<span>Subscription Type</span>
+							<span>Start Date</span>
+							<span>Expiration Date</span>
+							<span>Support End Date</span>
+							<span>Platform</span>
+							<span>Product</span>
+							<span>Processor Cores Allowed</span>
+							<span>Servers Allowed</span>
+							<span>Servers Used</span>
+						</div>
+						<div class="table-row">
+							<span>Developer</span>
+							<span>2016-06-23</span>
+							<span>Indefinite</span>
+							<span>2017-06-23</span>
+							<span>/</span>
+							<span>Portal Development</span>
+							<span>8</span>
+							<span>10000</span>
+							<span>0</span>
+						</div>
+						<div class="table-row">
+							<span>Developer</span>
+							<span>2016-06-23</span>
+							<span>Indefinite</span>
+							<span>2017-06-23</span>
+							<span>/</span>
+							<span>Portal Development</span>
+							<span>8</span>
+							<span>10000</span>
+							<span>0</span>
+						</div>
+						<div class="table-row">
+							<span>Developer</span>
+							<span>2016-06-23</span>
+							<span>Indefinite</span>
+							<span>2017-06-23</span>
+							<span>/</span>
+							<span>Portal Development</span>
+							<span>8</span>
+							<span>10000</span>
+							<span>0</span>
+						</div>
+						<div class="table-row">
+							<span>Developer</span>
+							<span>2016-06-23</span>
+							<span>Indefinite</span>
+							<span>2017-06-23</span>
+							<span>/</span>
+							<span>Portal Development</span>
+							<span>8</span>
+							<span>10000</span>
+							<span>0</span>
+						</div>
+					</div>
+
+					<div class="subscription-table">
+						<div class="table-heading">
+							<span>Subscription Type</span>
+							<span>Start Date</span>
+							<span>Expiration Date</span>
+							<span>Support End Date</span>
+							<span>Platform</span>
+							<span>Product</span>
+							<span>Processor Cores Allowed</span>
+							<span>Servers Allowed</span>
+							<span>Servers Used</span>
+						</div>
+						<div class="table-row">
+							<span>Developer</span>
+							<span>2016-06-23</span>
+							<span>Indefinite</span>
+							<span>2017-06-23</span>
+							<span>/</span>
+							<span>Portal Development</span>
+							<span>8</span>
+							<span>10000</span>
+							<span>0</span>
+						</div>
+						<div class="table-row">
+							<span>Developer</span>
+							<span>2016-06-23</span>
+							<span>Indefinite</span>
+							<span>2017-06-23</span>
+							<span>/</span>
+							<span>Portal Development</span>
+							<span>8</span>
+							<span>10000</span>
+							<span>0</span>
+						</div>
+						<div class="table-row">
+							<span>Developer</span>
+							<span>2016-06-23</span>
+							<span>Indefinite</span>
+							<span>2017-06-23</span>
+							<span>/</span>
+							<span>Portal Development</span>
+							<span>8</span>
+							<span>10000</span>
+							<span>0</span>
+						</div>
+						<div class="table-row">
+							<span>Developer</span>
+							<span>2016-06-23</span>
+							<span>Indefinite</span>
+							<span>2017-06-23</span>
+							<span>/</span>
+							<span>Portal Development</span>
+							<span>8</span>
+							<span>10000</span>
+							<span>0</span>
+						</div>
+					</div>
+				</section>
+			</content>
 		</main>
 		<script type="text/javascript" src="./src/js/app.js"></script>
 	</body>

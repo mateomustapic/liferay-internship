@@ -260,5 +260,23 @@ function handleContentNavigation (e) {
 
 dashboardNav.addEventListener('click', handleContentNavigation);
 
-const users = document.querySelector('#users');
+const contentLinks = document.querySelectorAll('li[data-content]');
 
+const contentArray = [
+	'dashboard', 'users', 'subscriptions'
+];
+
+function handleContentChange () {
+	const contentToShow = this.dataset.content;
+	contentArray.forEach(content => {
+		if (content != contentToShow) {
+			document.querySelector(`#${content}`).classList.remove('content-active');
+		} else {
+			document.querySelector(`#${content}`).classList.add('content-active');
+		}
+	});
+}
+
+contentLinks.forEach(contentLink => {
+	contentLink.addEventListener('click', handleContentChange);
+});

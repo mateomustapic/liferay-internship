@@ -7,6 +7,7 @@ $fontBody: Roboto Slab, serif;
 
 $primary: #1F7AFF;
 $secondary: #F4F8FF;
+$inactivePrimary: rgba($primary, 0.7);
 
 $darkText: #333;
 $inactiveLightText: rgba(#FFF, 0.7);
@@ -36,3 +37,4 @@ $lightBorder: #ECECEC;
 @import 'summary';
 @import 'environments';
 @import 'users';
+@import 'subscriptions';
