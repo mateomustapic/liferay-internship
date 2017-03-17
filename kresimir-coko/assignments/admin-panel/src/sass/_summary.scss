@@ -12,8 +12,10 @@
 		color: $inactiveDarkText;
 		cursor: pointer;
 		display: flex;
+		margin-left: auto;
 		padding: 16px 32px;
 		transition: all .3s ease;
+		width: 98%;
 
 		&:not(:last-child) {
 			border-bottom: 1px solid $lightBorder;
@@ -69,6 +71,11 @@
 	border-bottom-left-radius: 30px;
 	display: flex;
 	padding: 0 64px;
+
+	i {
+		color: $inactiveLightText;
+		padding-right: 32px;
+	}
 	
 	span {
 		align-items: center;
@@ -78,10 +85,6 @@
 		font-family: $fontHeading;
 		font-weight: 700;
 		text-transform: uppercase;
-
-		i {
-			padding-right: 32px;
-		}
 	}
 }
 
@@ -153,4 +156,66 @@
 			color: $danger;
 		}
 	}
+}
+
+@media screen and (max-width: 480px) {
+	#content-dashboard-summary {
+		margin: 0;
+	}
+
+	#filter-heading {
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+		padding: 0;
+
+		i {
+			padding: 0 8px;
+		}
+
+		span {
+			display: none;
+		}
+	}
+
+	.filter {
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		padding: 8px;
+
+		i {
+			padding: 0;
+		}
+
+		span {
+			font-size: 0.9em;
+			font-weight: 300;
+		}
+	}
+
+	#summary-list  {
+		li {
+
+			&:not(#summary-filter) {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.summary-indicator {
+			padding: 8px;
+		}
+
+		.summary-content {
+			font-weight: 300;
+			padding: 8px;
+		}
+
+	}
+	
 }

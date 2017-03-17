@@ -41,14 +41,24 @@
 }
 
 .msg-date {
+	align-items: center;
 	border-top: 1px solid $lightBorder;
 	color: $lightText;
-	display: block;
+	display: flex;
 	font-family: $fontHeading;
 	font-size: 1em;
 	font-weight: 700;
 	padding: 8px 16px;
 	text-transform: uppercase;
+
+	i {
+		color: $inactiveDanger;
+		margin-left: auto;
+
+		&:hover {
+			color: $danger;
+		}
+	}
 }
 
 .subscription-content {
@@ -118,5 +128,113 @@
 	span {
 		font-weight: 300;
 		flex: 1;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#support {
+		padding-top: 8px;
+
+		h3 {
+			font-size: 1.2em;
+			margin: 0;
+			padding-bottom: 8px;
+			text-align: center;
+		}
+	}
+
+	.support-msg {
+		box-shadow: none;
+		border-radius: 0;
+		margin: 0;
+		width: 100%;
+	}
+
+	.msg-content {
+		padding: 8px;
+		font-size: 1.1em;
+		font-weight: 300;
+	}
+
+	.msg-date {
+		padding: 8px;
+	}
+
+	.subscription-content {
+		height: calc(100vh - 58px - 58px);
+		max-height: calc(100vh - 58px - 58px);
+		padding: 8px;
+		overflow-y: overlay;
+
+		&::-webkit-scrollbar {
+			width: 4px;
+		}
+	}
+
+	.subscription-table {
+		display: flex;
+		margin: 0;
+		width: 100%;
+
+		span {
+			font-weight: 300;
+			font-size: 1em;
+			padding: 4px;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+
+	.table-heading {
+		border-top-right-radius: 0;
+		border-bottom-left-radius: 3px;
+		display: block;
+		order: 1;
+
+		span {
+			display: flex;
+			padding: 4px;
+
+			&:nth-child(6) {
+				height: 49px;
+			}
+
+			&:not(:last-child) {
+				border-right-width: 0;
+				border-bottom: 1px solid lighten($darkText, 10%);
+			}
+		}
+	}
+
+	.table-row {
+		border-top-width: 0;
+		display: block;
+		flex-direction: column;
+
+		&:nth-child(2) {
+			order: 2;
+			border-width: 0;
+		}
+
+		&:nth-child(3) {
+			order: 3;
+			border-width: 0;
+		}
+
+		span {
+			&:first-child, &:nth-child(3), &:nth-child(4), &:nth-child(8) {
+				height: 49px;
+			}
+
+			&:nth-child(7) {
+				height: 69px;
+			}
+
+			&:not(:last-child) {
+				border-bottom: 1px solid $lightBorder;
+			}
+		}
 	}
 }

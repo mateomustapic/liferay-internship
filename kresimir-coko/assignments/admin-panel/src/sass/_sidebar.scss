@@ -301,3 +301,18 @@
 		}
 	} 
 }
+
+@media screen and (max-width: 480px) {
+	#sidebar {
+		display: none;
+	}
+
+	#collapsed-sidebar {
+		display: flex;
+		transform: translateY(0);
+	}
+
+	.collapsed-tooltip {
+		display: none;
+	}
+}

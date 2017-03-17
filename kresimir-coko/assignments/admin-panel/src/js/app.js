@@ -18,9 +18,10 @@ headerMenuIcon.addEventListener('click', handleHeaderMenuIcon);
 // Header User Dropdown
 const headerUserName = document.querySelector('#header-user-name');
 const headerUserDropdown = document.querySelector('#user-dropdown');
+const userImg = document.querySelector('#header-user-image');
 
 function handleUserDropdown (e) {
-	if (e.target.id === 'header-user-name') {
+	if (e.target === headerUserName || e.target === userImg) {
 		const first = headerUserDropdown.getBoundingClientRect();
 
 		headerUserDropdown.classList.add('dropdown-active');
@@ -36,6 +37,12 @@ function handleUserDropdown (e) {
 }
 
 document.addEventListener('click', handleUserDropdown);
+
+// User Dropdown on Image
+
+
+
+
 
 // Header Notification Dropdown
 const notificationIcon = document.querySelector('#header-user-notification');
@@ -58,6 +65,8 @@ function handleNotificationDropdown (e) {
 }
 
 document.addEventListener('click', handleNotificationDropdown);
+
+
 
 // Environments Heading Tooltip
 const envTooltipIcon = sidebarEnvironments.querySelector('#environments-info-icon');
@@ -280,3 +289,14 @@ function handleContentChange () {
 contentLinks.forEach(contentLink => {
 	contentLink.addEventListener('click', handleContentChange);
 });
+
+// Support Msg
+
+const support = document.querySelector('#support');
+const supportMsgClose = support.querySelector('.msg-date i');
+
+supportMsgClose.addEventListener('click', _ => {
+	support.style.display = 'none';
+});
+
+

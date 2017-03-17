@@ -69,3 +69,31 @@
 .content-dashboard-content.active .content-environment {
 	height: 264px;
 }
+
+@media screen and (max-width: 480px) {
+	#content-dashboard-environments {
+		margin: 0;
+	}
+
+	.content-dashboard-content.active {
+		.content-environment {
+			height: 200px;
+			margin-right: 0;
+			width: 100%;
+
+			&:nth-child(n+7) {
+				margin-bottom: 16px;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.card-actions {
+		a {
+			font-weight: 300;
+		}
+	}
+}
