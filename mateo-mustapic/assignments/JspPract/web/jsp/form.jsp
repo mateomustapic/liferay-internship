@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/style2.css" />
   </head>
   <body>
-  <h1>FORM</h1>
+  <h1>JSP FORM</h1>
   <table>
     <form action="nextpage.jsp">
     <tbody>
@@ -303,21 +303,15 @@
       </tr>
       <tr>
           <td><b>I OWN: </b></td>
-        <td>
-          <input type="radio" name="vehicle" value="Scooter" checked> I have a scooter
-        </td>
-      </tr>
-      <tr>
-          <td></td>
-        <td>
-          <input type="radio" name="vehicle" value="Bike"> I have a bike
-        </td>
-      </tr>
-      <tr>
-          <td></td>
           <td>
-              <input type="radio" name="vehicle" value="Car"> I have a car
+          <div class="styled-select slate">
+              <select name="vehicle" multiple><option value="" selected disabled>Please select a vehicle...</option>
+                <option value="scooter">I have a scooter</option>
+                <option value="bike">I have a bike</option>
+                <option value="car">I have a car</option>
+            </select>
           </td>
+          </div>
       </tr>
     </tbody>
   </table>

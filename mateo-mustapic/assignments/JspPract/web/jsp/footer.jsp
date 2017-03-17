@@ -11,7 +11,7 @@
     <title>Page Footer</title>
 </head>
 
-<div class="footer">Mateo Mustapic &copy; Liferay 2017 |+ Assignment 2</div>
+<div class="footer">Mateo Mustapic &copy; Liferay 2017 | Assignment 2</div>
 
 </div>
 
