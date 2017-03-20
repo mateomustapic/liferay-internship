@@ -7,8 +7,9 @@
 }
 
 #users-list {
-	margin: 24px auto;
+	margin: 0 auto;
 	max-width: 1280px;
+	padding: 16px;
 	width: 100%;
 
 	li {
@@ -86,51 +87,144 @@
 	}
 }
 
+
+@media screen and (max-width: 1280px) {
+	#users-list {
+    max-height: calc(100vh - 123px - 56px);
+
+		&:hover {
+			overflow-y: overlay;
+		}
+
+		span {
+			font-size: 1em;
+		}
+
+		.users-list-user {
+			
+			.user-email {
+				padding: 16px;
+			}
+
+			.user-name {
+				flex: none;
+				margin-left: auto;
+				padding: 16px;
+			}
+			
+		}
+	}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	#users-list {
+		font-size: 0.9em;
+		margin: 0;
+		max-height: calc(100vh - 77px - 56px);
+		min-height: calc(100vh - 56px);
+		overflow-y: hidden;
+		padding: 16px;
+
+		&:hover {
+			overflow-y: overlay;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#users-list {
+		padding: 16px;
+		margin: 0;
+
+		span:not(:last-child) {
+			flex: none;
+		}
+
+		#user-list-heading {
+			justify-content: space-between;
+
+			span {
+				font-size: 1em;
+				
+				&:first-child {
+					flex: 1;
+				}
+			}
+		}
+
+		.users-list-user {
+			align-items: center;
+			margin: 0 auto 8px auto;
+			width: 94%;
+
+			span {
+				font-weight: 300;
+				padding: 8px 16px;
+			}
+
+			.user-email {
+				margin-right: auto;
+			}
+
+			.user-action {
+				padding: 0;
+
+				i {
+					padding: 16px;
+				}
+			}
+		}
+	}
+}
+
 @media screen and (max-width: 480px) {
 	#users-list {
-		margin-top: 0;
-		padding: 16px 8px;
 		height: calc(100vh - 58px);
+		margin: 0;
+		max-height: 100vh;
 		overflow-y: overlay;
-	}
+		padding: 16px 8px;
 
-	#user-list-heading {
-		justify-content: space-around;
+		#user-list-heading {
+			justify-content: space-around;
 
-		i {
-			color: $inactiveLightText;
-			display: flex;
-			padding: 16px;
-		}
-		
-		span {
-			display: none;
-		}
-	}
-
-	.users-list-user {
-		flex-direction: column;
-		font-size: 1em;
-		width: 100%;
-
-		&:not(:last-child) {
-			margin: 0 0 8px 0;
+			i {
+				color: $inactiveLightText;
+				display: flex;
+				padding: 8px;
+			}
+			
+			span {
+				display: none;
+			}
 		}
 
-		span {
-			font-weight: 300;
-			padding: 8px;
-		}
+		.users-list-user {
+			flex-direction: column;
+			font-size: 1em;
+			width: 100%;
 
-		.user-email {
-			border-bottom: 1px solid $lightBorder;
-		}
+			&:not(:last-child) {
+				margin: 0 0 8px 0;
+			}
 
-		.user-name {
-		}
+			span {
+				font-weight: 300;
+				padding: 8px;
+				width: 100%;
+			}
 
-		.user-action {
-			display: none;
+			.user-email {
+				border-bottom: 1px solid $lightBorder;
+				padding: 8px;
+			}
+
+			.user-name {
+				padding: 8px;
+			}
+			.user-action {
+				display: none;
+			}
 		}
 	}
 }

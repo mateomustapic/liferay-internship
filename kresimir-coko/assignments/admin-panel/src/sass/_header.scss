@@ -214,11 +214,23 @@
 	}
 }
 
-@media screen and (max-width: 480px) {
+
+@media screen and (max-width: 768px) {
 	#header {
 		width: 100vw;
 	}
 
+	#header-menu-icon {
+		display: none;
+	}
+
+	#header-title {
+		padding-left: 24px;
+	}
+}
+
+
+@media screen and (max-width: 480px) {
 	#header-menu-icon {
 		display: none;
 	}

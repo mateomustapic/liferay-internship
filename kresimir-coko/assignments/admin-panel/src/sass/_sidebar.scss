@@ -59,7 +59,7 @@
 	&.tooltip-open {
 		opacity: 1;
 		transform: translateX(0);
-		z-index: 2;
+		z-index: 9;
 	}
 }
 
@@ -110,11 +110,16 @@
 	opacity: 0;
 	position: absolute;
 	text-transform: none;
+	transform: translateX(-130%);
+	transform: scale(0.2);
+	transition: all .15s ease;
 	width: 256px;
-	z-index: -1;
+	z-index: -9;
 
 	&.tooltip-active {
 		opacity: 1;
+		transform: translateX(0);
+		transform: scale(1);
 		z-index: 2;
 	}
 
@@ -302,7 +307,47 @@
 	} 
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	#sidebar {
+		width: 240px;
+		font-size: 1.1em;
+	}
+
+	#sidebar-list {
+		li, a {
+			font-size: inherit;
+
+			i {
+				font-size: 1.3em;
+			}
+		}
+	}
+
+	#sidebar-environments-heading-main {
+		font-size: 1.1em;
+	}
+
+	#sidebar-environments-list-new {
+		font-size: inherit;
+		margin: 8px;
+	}
+
+	#sidebar-environments-scrollable {
+		padding: 0 8px 8px 8px;
+	}
+
+	.sidebar-environments-list {
+		li {
+			font-size: inherit;
+		}
+
+		i {
+			font-size: 1.2em;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
 	#sidebar {
 		display: none;
 	}
@@ -315,4 +360,8 @@
 	.collapsed-tooltip {
 		display: none;
 	}
+}
+
+@media screen and (max-width: 480px) {
+	// Inherits from 768px
 }

@@ -38,12 +38,6 @@ function handleUserDropdown (e) {
 
 document.addEventListener('click', handleUserDropdown);
 
-// User Dropdown on Image
-
-
-
-
-
 // Header Notification Dropdown
 const notificationIcon = document.querySelector('#header-user-notification');
 const notificationDropdown = document.querySelector('#notification-dropdown');
@@ -183,9 +177,14 @@ const environmentsListInactive = sidebar.querySelector('#sidebar-environments-li
 
 environmentsPromise.then(environments => {
 	environments.map(environment => {
+		if (window.screen.width <= 1024) {
+			environment.name = environment.name.substring(0, 13) + '...';
+		}
+		
 		if (environment.name.length > 18) {
 			environment.name = environment.name.substring(0, 18) + '...';
 		}
+
 		if (environment.status) {
 			let output = `
 				<li dataset-id='${environment.id}'>

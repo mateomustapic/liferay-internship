@@ -5,6 +5,7 @@
 		display: flex;
 	}
 }
+
 #add-environment {
 	background-color: $secondary;
 	color: $inactiveDarkText;
@@ -113,6 +114,7 @@
 	flex: 1;
 	overflow-x: hidden;
 	overflow-y: hidden;
+	padding: 16px;
 
 	&:hover {
 		overflow-y: overlay;
@@ -144,7 +146,6 @@
 
 	&.active {
 		max-height: calc(100vh - 58px - 91px - 56px);
-		margin: 24px auto;
 		opacity: 1;
 		transform: translateX(0);
 		transition: all .3s ease;
@@ -152,13 +153,51 @@
 	}
 }
 
-@media screen and (max-width: 480px) {
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
 	#dashboard-content {
-		> div {
-			padding: 8px;
+		padding: 16px;
+	
+		.content-environment {
+			width: calc(50% - 8px);
+			margin-right: 0;
+
+			&:nth-child(odd) {
+				margin-right: 16px;
+			}
 		}
 	}
-	
+
+	.sidebar-open #dashboard-content {
+		.content-environment {
+			width: calc(100% / 3 - 11px);
+			margin-right: 0;
+
+			&:not(:nth-child(3n)) {
+				margin-right: 16px;
+			}
+		}
+	}
+
+	.content-dashboard-content.active {
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#dashboard-content {
+		padding: 16px;
+	}
+
+	.content-dashboard-content.active {
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 480px) {	
+	#dashboard-content {
+		padding: 0;
+	}
 	.content-dashboard-content {
 		display: none;
 		height: auto;
