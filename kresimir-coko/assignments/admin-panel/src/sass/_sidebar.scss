@@ -6,7 +6,7 @@
 	flex-direction: column;
 	min-height: calc(100vh - 56px);
 	position: fixed;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 	width: 320px;
 	will-change: transform;
 	z-index: 1;
@@ -53,7 +53,7 @@
 	padding: 8px;
 	position: absolute;
 	transform: translateX(-130%);
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 	z-index: -9;
 
 	&.tooltip-open {
@@ -94,9 +94,9 @@
 	user-select: none;
 
 	i {
-		padding-left: 8px;
 		color: $lightText;
 		cursor: pointer;
+		padding-left: 8px;
 	}
 }
 
@@ -112,7 +112,7 @@
 	text-transform: none;
 	transform: translateX(-130%);
 	transform: scale(0.2);
-	transition: all .15s ease;
+	transition: all 0.15s ease;
 	width: 256px;
 	z-index: -9;
 
@@ -123,7 +123,7 @@
 		z-index: 2;
 	}
 
-	p {			
+	p {
 		font-family: $fontNormal;
 		font-weight: 600;
 		padding: 16px;
@@ -164,7 +164,7 @@
 .list-settings-icon {
 	align-self: flex-end;
 	cursor: pointer;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 
 	&:hover {
 		color: $darkText;
@@ -175,8 +175,8 @@
 #sidebar-environments-scrollable {
 	border-top: 1px solid #EEE;
 	max-height: calc(100vh - 56px - 356px);
-	padding: 0 16px 16px 16px;
 	overflow: hidden;
+	padding: 0 16px 16px 16px;
 
 	&:hover {
 		overflow-y: overlay;
@@ -205,7 +205,7 @@
 		flex-direction: column;
 		font-weight: 600;
 		margin-bottom: 8px;
-		transition: all .3s ease;
+		transition: all 0.3s ease;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -269,12 +269,13 @@
 		opacity: 0;
 		padding: 0;
 		text-align: center;
-		transition: all .3s ease;
+		transition: all 0.3s ease;
 		z-index: -1;
 	}
 
 	i:first-child {
 		color: $inactiveWarning;
+
 		&:hover {
 			color: $warning;
 		}
@@ -284,6 +285,7 @@
 		border-left: 1px solid $lightBorder;
 		border-right: 1px solid $lightBorder;
 		color: $inactiveDarkText;
+
 		&:hover {
 			color: $darkText;
 		}
@@ -291,6 +293,7 @@
 
 	i:last-child {
 		color: $inactiveDanger;
+
 		&:hover {
 			color: $danger;
 		}
@@ -299,18 +302,18 @@
 
 #sidebar-environments-list-active {
 	color: $darkText;
-	
+
 	li > div {
 		i:first-of-type {
 			color: $success;
 		}
-	} 
+	}
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 	#sidebar {
-		width: 240px;
 		font-size: 1.1em;
+		width: 240px;
 	}
 
 	#sidebar-list {

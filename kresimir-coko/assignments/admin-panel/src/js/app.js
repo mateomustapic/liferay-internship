@@ -60,8 +60,6 @@ function handleNotificationDropdown (e) {
 
 document.addEventListener('click', handleNotificationDropdown);
 
-
-
 // Environments Heading Tooltip
 const envTooltipIcon = sidebarEnvironments.querySelector('#environments-info-icon');
 const envTooltip = sidebarEnvironments.querySelector('#environments-info-tooltip');
@@ -175,52 +173,53 @@ const inactiveEnvironments = [];
 const environmentsListActive = sidebar.querySelector('#sidebar-environments-list-active');
 const environmentsListInactive = sidebar.querySelector('#sidebar-environments-list-inactive');
 
-environmentsPromise.then(environments => {
-	environments.map(environment => {
-		if (window.screen.width <= 1024) {
-			environment.name = environment.name.substring(0, 13) + '...';
-		}
-		
-		if (environment.name.length > 18) {
-			environment.name = environment.name.substring(0, 18) + '...';
-		}
+environmentsPromise.then(
+	environments => {
+		environments.map(
+			environment => {
+				if (window.screen.width <= 1024) {
+					environment.name = environment.name.substring(0, 13) + '...';
+				}
 
-		if (environment.status) {
-			let output = `
-				<li dataset-id='${environment.id}'>
-					<div>
-						<i class="material-icons">cloud</i>
-						${environment.name}
-						<i class="material-icons list-settings-icon">settings</i>
-					</div>
-					<section class="environments-list-settings">
-						<i data-status='${environment.status}' class="material-icons toggle-status">power_settings_new</i>
-						<i class="material-icons edit-environment">edit</i>
-						<i class="material-icons delete-environment">delete_forever</i>
-					</section>
-				</li>
-			`;
-			environmentsListActive.innerHTML += output;
-		} else {
-			let output = `
-				<li>
-					<div>
-						<i class="material-icons">cloud_queue</i>
-						${environment.name}
-						<i class="material-icons list-settings-icon">settings</i>
-					</div>
-					<section class="environments-list-settings">
-						<i data-status='${environment.status}' class="material-icons toggle-status">power_settings_new</i>
-						<i class="material-icons edit-environment">edit</i>
-						<i class="material-icons delete-environment">delete_forever</i>
-					</section>
-				</li>
-			`;
-			environmentsListInactive.innerHTML += output;
-		}
-	});
+				if (environment.name.length > 18) {
+					environment.name = environment.name.substring(0, 18) + '...';
+				}
+
+				if (environment.status) {
+					let output = `
+						<li dataset-id='${environment.id}'>
+							<div>
+								<i class="material-icons">cloud</i>
+								${environment.name}
+								<i class="material-icons list-settings-icon">settings</i>
+							</div>
+							<section class="environments-list-settings">
+								<i data-status='${environment.status}' class="material-icons toggle-status">power_settings_new</i>
+								<i class="material-icons edit-environment">edit</i>
+								<i class="material-icons delete-environment">delete_forever</i>
+							</section>
+						</li>
+					`;
+					environmentsListActive.innerHTML += output;
+				} else {
+					let output = `
+						<li>
+							<div>
+								<i class="material-icons">cloud_queue</i>
+								${environment.name}
+								<i class="material-icons list-settings-icon">settings</i>
+							</div>
+							<section class="environments-list-settings">
+								<i data-status='${environment.status}' class="material-icons toggle-status">power_settings_new</i>
+								<i class="material-icons edit-environment">edit</i>
+								<i class="material-icons delete-environment">delete_forever</i>
+							</section>
+						</li>
+					`;
+					environmentsListInactive.innerHTML += output;
+				}
+			});
 });
-
 
 // Display Environments On Dashboard
 
@@ -233,14 +232,16 @@ function handleContentNavigation (e) {
 		// Change content depending on link
 		const currentLink = e.target;
 		const contentTemplates = dashboard.querySelectorAll('.content-dashboard-content');
-		
-		currentLink.parentElement.querySelectorAll('li').forEach(_ => {
-			if (_.classList.contains('active') && _ !== currentLink) {
-				_.classList.remove('active');
-			} else {
-				currentLink.classList.add('active');
+
+		currentLink.parentElement.querySelectorAll('li').forEach(
+			_ => {
+				if (_.classList.contains('active') && _ !== currentLink) {
+					_.classList.remove('active');
+				} else {
+					currentLink.classList.add('active');
+				}
 			}
-		});
+		);
 
 		switch (linkData) {
 			case 'summary':
@@ -260,7 +261,6 @@ function handleContentNavigation (e) {
 				dashboard.querySelector('#content-dashboard-placeholder').classList.add('active');
 				break;
 			default:
-				console.log(link + 'has failed');
 				break;
 		}
 	}
@@ -276,26 +276,30 @@ const contentArray = [
 
 function handleContentChange () {
 	const contentToShow = this.dataset.content;
-	contentArray.forEach(content => {
-		if (content != contentToShow) {
-			document.querySelector(`#${content}`).classList.remove('content-active');
-		} else {
-			document.querySelector(`#${content}`).classList.add('content-active');
+	contentArray.forEach(
+		content => {
+			if (content != contentToShow) {
+				document.querySelector(`#${content}`).classList.remove('content-active');
+			} else {
+				document.querySelector(`#${content}`).classList.add('content-active');
+			}
 		}
-	});
+	);
 }
 
-contentLinks.forEach(contentLink => {
-	contentLink.addEventListener('click', handleContentChange);
-});
+contentLinks.forEach(
+	contentLink => {
+		contentLink.addEventListener('click', handleContentChange);
+	}
+);
 
 // Support Msg
 
 const support = document.querySelector('#support');
 const supportMsgClose = support.querySelector('.msg-date i');
 
-supportMsgClose.addEventListener('click', _ => {
-	support.style.display = 'none';
-});
-
-
+supportMsgClose.addEventListener(
+	'click', _ => {
+		support.style.display = 'none';
+	}
+);

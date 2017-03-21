@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -50,21 +49,21 @@ p, a, li, span {
 a, li, span, label {
 	font-family: $fontNormal;
 	font-size: 1.2em;
-	line-height: 1.45em;
 	font-weight: 600;
+	line-height: 1.45em;
 }
 
 input, textarea {
 	font-family: $fontNormal;
 	font-size: 1.2em;
-	line-height: 1.45em;
 	font-weight: 300;
+	line-height: 1.45em;
 }
 
 ul {
+	list-style: none;
 	margin: 0;
 	padding: 0;
-	list-style: none;
 }
 
 #main {
@@ -72,7 +71,6 @@ ul {
 	min-height: 100vh;
 	padding-top: 56px;
 }
-
 
 @media screen and (max-width: 768px) {
 	html {

@@ -12,10 +12,10 @@
 	display: flex;
 	flex-direction: column;
 	height: 0;
-	opacity: 0;
 	max-width: 33%;
 	min-width: 480px;
-	transition: all .3s ease;
+	opacity: 0;
+	transition: all 0.3s ease;
 	z-index: -1;
 
 	h3 {
@@ -60,17 +60,17 @@
 	flex-direction: column;
 	opacity: 0;
 	padding: 16px;
-	
+
 	label {
 		padding-bottom: 8px;
 	}
 
 	input, textarea {
-		border: 0;
-		padding: 8px;
+		border-width: 0;
 		outline-width: 0;
+		padding: 8px;
 		resize: vertical;
-		transition: all .15s ease;
+		transition: all 0.15s ease;
 
 		&:not([type="submit"]) {
 			border-bottom: 1px solid $lightBorder;
@@ -98,16 +98,15 @@
 		box-shadow: $smallBoxShadow;
 		color: $inactiveLightText;
 		cursor: pointer;
-		transition: all .3s ease;
+		transition: all 0.3s ease;
 		width: 50%;
 
 		&:hover {
-			color: #FFF;
 			box-shadow: $bigBoxShadow;
+			color: #FFF;
 		}
 	}
 }
-
 
 #dashboard-content {
 	background-color: $secondary;
@@ -137,9 +136,9 @@
 	display: flex;
 	flex-wrap: wrap;
 	height: 0;
-	opacity: 0;
 	margin: 0 auto;
 	max-width: 1280px;
+	opacity: 0;
 	transform: translateX(100%);
 	width: 100%;
 	z-index: -1;
@@ -148,19 +147,18 @@
 		max-height: calc(100vh - 58px - 91px - 56px);
 		opacity: 1;
 		transform: translateX(0);
-		transition: all .3s ease;
+		transition: all 0.3s ease;
 		z-index: 1;
 	}
 }
 
-
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 	#dashboard-content {
 		padding: 16px;
-	
+
 		.content-environment {
-			width: calc(50% - 8px);
 			margin-right: 0;
+			width: calc(50% - 8px);
 
 			&:nth-child(odd) {
 				margin-right: 16px;
@@ -170,8 +168,8 @@
 
 	.sidebar-open #dashboard-content {
 		.content-environment {
-			width: calc(100% / 3 - 11px);
 			margin-right: 0;
+			width: calc(100% / 3 - 11px);
 
 			&:not(:nth-child(3n)) {
 				margin-right: 16px;
@@ -194,10 +192,11 @@
 	}
 }
 
-@media screen and (max-width: 480px) {	
+@media screen and (max-width: 480px) {
 	#dashboard-content {
 		padding: 0;
 	}
+
 	.content-dashboard-content {
 		display: none;
 		height: auto;
@@ -211,28 +210,28 @@
 
 	#add-environment {
 		display: none;
-		width: calc(100vw - 64px);
 		min-width: calc(100vw - 64px);
+		width: calc(100vw - 64px);
 
 		h3 {
-			width: calc(100vw - 64px);
 			font-size: 1.2em;
 			text-align: center;
+			width: calc(100vw - 64px);
 		}
 
 		&.add-environment-open {
-			width: calc(100vw - 64px);
 			display: flex;
+			overflow: hidden;
 			padding: 0;
 			transform: translateY(0) !important;
-			overflow: hidden;
+			width: calc(100vw - 64px);
 		}
 	}
 
 	#add-environment-form {
 		border-radius: 0;
-		padding: 8px;
 		margin-bottom: 8px;
+		padding: 8px;
 		width: calc(100vw - 64px);
 
 		input[type="submit"] {

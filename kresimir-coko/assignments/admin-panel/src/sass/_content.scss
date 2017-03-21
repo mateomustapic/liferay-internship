@@ -33,7 +33,7 @@ main > .content {
 		padding: 16px 32px;
 		text-align: center;
 		text-decoration: none;
-		transition: all .3s ease;
+		transition: all 0.3s ease;
 		z-index: 1;
 
 		&:hover, &.active {
@@ -57,13 +57,13 @@ main > .content {
 	.content-nav {
 		display: flex;
 		max-width: calc(100vw - 64px);
-		overflow-y: hidden;
 		overflow-x: auto;
+		overflow-y: hidden;
 		white-space: nowrap;
 
 		&::-webkit-scrollbar {
-			width: 0;
 			display: none;
+			width: 0;
 		}
 
 		li {

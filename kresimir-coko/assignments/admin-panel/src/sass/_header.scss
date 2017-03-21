@@ -13,7 +13,7 @@
 	cursor: pointer;
 	padding: 16px;
 	transform: rotate(0);
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 	user-select: none;
 
 	&:hover {
@@ -21,8 +21,8 @@
 	}
 
 	&.menu-icon-open {
-		transform: rotate(90deg);
 		margin-left: 4px;
+		transform: rotate(90deg);
 	}
 }
 
@@ -34,8 +34,8 @@
 
 #header-user-notification {
 	cursor: pointer;
-	transition: all .3s ease;
 	position: relative;
+	transition: all 0.3s ease;
 
 	&:hover {
 		color: #FFF;
@@ -71,7 +71,7 @@
 	position: absolute;
 	right: 0;
 	top: 56px;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 	z-index: -1;
 
 	&.notifications-open {
@@ -92,7 +92,7 @@
 		border-bottom: 0 solid lighten($primary, 10%);
 		color: $inactiveLightText;
 		height: 0;
-		
+
 		&:last-child {
 			border-bottom-left-radius: 3px;
 		}
@@ -114,9 +114,9 @@
 .notification-info {
 	align-items: center;
 	display: flex;
+	font-size: 1em;
 	justify-content: space-between;
 	padding: 8px;
-	font-size: 1em;
 
 	i {
 		font-size: inherit;
@@ -135,7 +135,7 @@
 	cursor: pointer;
 	height: 40px;
 	margin: 0 16px;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 	width: 40px;
 
 	&:hover {
@@ -147,7 +147,7 @@
 	align-items: center;
 	cursor: pointer;
 	display: flex;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 
 	i {
 		padding-left: 4px;
@@ -171,13 +171,13 @@
 	position: absolute;
 	right: 16px;
 	top: 72px;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 	z-index: -1;
 
 	li {
 		align-items: center;
-		font-size: 1em;
 		display: flex;
+		font-size: 1em;
 		height: 0;
 		opacity: 0;
 		padding: 16px;
@@ -195,7 +195,7 @@
 				border-radius: 0 0 3px 3px
 			}
 		}
-		
+
 		i {
 			padding-right: 8px;
 		}
@@ -214,7 +214,6 @@
 	}
 }
 
-
 @media screen and (max-width: 768px) {
 	#header {
 		width: 100vw;
@@ -229,15 +228,14 @@
 	}
 }
 
-
 @media screen and (max-width: 480px) {
 	#header-menu-icon {
 		display: none;
 	}
 
 	#header-title {
-		padding: 16px;
 		font-size: 1em;
+		padding: 16px;
 	}
 
 	#header-user {
@@ -264,7 +262,7 @@
 
 	#notification-dropdown {
 		cursor: initial;
-		transition: all .1s ease;
+		transition: all 0.1s ease;
 		width: calc(100vw - 64px);
 	}
 
@@ -282,9 +280,9 @@
 		top: 64px;
 
 		li {
-			padding: 8px;
 			font-size: 1em;
 			font-weight: 300;
+			padding: 8px;
 
 			i {
 				font-size: 1.3em;
