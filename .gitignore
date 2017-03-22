@@ -40,5 +40,7 @@ _sass_cache_*.css
 **/sdk/layouttpl/*.*
 **/sdk/layouttpl/*/*.*
 
+**/classes
+
 **/**/**/node_modules
 .vscode
