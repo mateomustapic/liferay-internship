@@ -3,11 +3,11 @@
 
 <liferay-portlet-app>
 	<portlet>
-		<portlet-name>perzej</portlet-name>
+		<portlet-name>tech-stack</portlet-name>
 		<icon>/icon.png</icon>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
-		<css-class-wrapper>perzej-portlet</css-class-wrapper>
+		<css-class-wrapper>tech-stack-portlet</css-class-wrapper>
 	</portlet>
 	<role-mapper>
 		<role-name>administrator</role-name>
