@@ -1,0 +1,51 @@
+[
+	{
+		"id": "01",
+		"name": "Mesut Ozil",
+		"position": "Central Midfielder"
+
+	},
+
+	{
+		"id": "02",
+		"name": "Harry Kane",
+		"position": "Central Forward"
+
+	},
+	{
+		"id": "03",
+		"name": "Philip Lahm",
+		"position": "Central Midfielder"
+
+	},
+	{
+		"id": "04",
+		"name": "Fernando Torres",
+		"position": "Central Forward"
+	},
+	{
+		"id": "05",
+		"name": "Eden Hazard",
+		"position": "Left Wing"
+	},
+	{
+		"id": "06",
+		"name": "Paulo Dybala",
+		"position": "Central Forward"
+	},
+	{
+		"id": "07",
+		"name": "Diego Costa",
+		"position": "Striker"
+	},
+	{
+		"id": "08",
+		"name": "Jamie Vardy",
+		"position": "Central Forward"
+	},
+	{
+		"id": "09",
+		"name": "Gonzalo Higuain",
+		"position": "Striker"
+	}
+]

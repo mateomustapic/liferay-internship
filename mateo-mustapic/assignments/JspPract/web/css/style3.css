@@ -3,7 +3,31 @@ body{
     font-family: "Palatino Linotype";
 }
 
-#container{
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    width: 100%;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+#container, #mainContainer{
     font-size: 18px;
 }
 
@@ -66,9 +90,47 @@ tr:nth-child(even) {
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 1rem 30px 1rem 1rem;
     background-color: #efefef;
-    float: right;
-    color: black;
     text-align: right;
+    padding: 1rem 30px 1rem 1rem;
+    color: black;
 }
+
+
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+    #main{
+        font-size: 0.9em;
+    }
+    #container {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+
+
+
+
+
+
+
+

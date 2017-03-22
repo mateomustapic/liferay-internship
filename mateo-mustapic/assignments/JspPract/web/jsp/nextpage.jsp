@@ -18,7 +18,7 @@
         String gender = request.getParameter("gender");
         String country = request.getParameter("country");
         String dateOfBirth = request.getParameter("bday");
-        String vehicle [] = request.getParameterValues("vehicle");
+        String player [] = request.getParameterValues("players");
         %>
     <body>
     <h1>RESULTS PAGE</h1>
@@ -55,14 +55,20 @@
             </tr>
             <tr>
                 <td><b>DATE OF BIRTH:</b></td>
-                <td><%=dateOfBirth%></td>
+                <td><%
+                    if(dateOfBirth!=null){
+                    out.println(dateOfBirth);
+                }
+                else {
+                    out.println("Unknown");
+                }%></td>
             </tr>
             <tr>
-                <td><b>OWNED VEHICLES:</b></td>
+                <td><b>FAVORITE PLAYER(S):</b></td>
                 <td><%
-                    if(vehicle!=null){
-                        for (int i=0; i< vehicle.length; i++){
-                            out.println((i+1) + ". " + vehicle[i]);
+                    if(player!=null){
+                        for (int i=0; i< player.length; i++){
+                            out.println((i+1) + ". " + player[i]);
                         }
                     }
                     else {

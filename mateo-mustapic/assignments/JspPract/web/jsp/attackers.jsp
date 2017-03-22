@@ -8,25 +8,29 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Attackers</title>
-    <link rel="stylesheet" href="../css/style4.css" />
+    <title>CHECKBOX</title>
+    <script src="../js/menu.js"></script>
+    <link rel="stylesheet" href="../css/style2.css" />
 </head>
 <body>
 
+<%@ include file="header.jsp"%>
+<h1>CHOOSE YOUR FAVORITE ATTACKERS</h1>
 <div id="container">
-    <h2>CHOOSE YOUR FAVORITE ATTACKERS:</h2>
-    <form method="get">
-        <input type="checkbox" name="player" value="Torres"> Fernando Torres
+    <form method="get" id="checkbox">
+        <input type="checkbox" name="player" value="TORRES"> FERNANDO TORRES
         <br>
-        <input type="checkbox" name="player" value="Hazard"> Eden Hazard
+        <input type="checkbox" name="player" value="HAZARD"> EDEN HAZARD
         <br>
-        <input type="checkbox" name="player" value="Dybala"> Paulo Dybala
+        <input type="checkbox" name="player" value="DYBALA"> PAULO DYBALA
         <br>
-        <input type="checkbox" name="player" value="Costa"> Diego Costa
+        <input type="checkbox" name="player" value="COSTA"> DIEGO COSTA
         <br>
-        <input type="checkbox" name="player" value="Vardy"> Jamie Vardy
+        <input type="checkbox" name="player" value="VARDY"> JAMIE VARDY
         <br>
-        <input type="checkbox" name="player" value="Higuain"> Gonzalo Higuain
+        <input type="checkbox" name="player" value="HIGUAIN"> GONZALO HIGUAIN
+        <br>
+        <input type="checkbox" name="player" value="KANE"> HARRY KANE
         <br>
         <input type="submit" value="SELECT">
         <a href="<%= request.getRequestURI() %>"
@@ -36,7 +40,7 @@
         String[] players = request.getParameterValues("player");
         if (players != null) {
     %>
-    <h2>YOU HAVE SELECTED FOLLOWING PLAYERS:</h2>
+    <b><u>FAVORITES</u></b>
     <ul>
         <%
             for (int i = 0; i< players.length; ++i) {
@@ -51,9 +55,6 @@
     <%
         }
     %>
-    <div id="homeButton">
-        <a href="index.jsp" class="button">BACK TO HOMEPAGE</a>
-    </div>
 </div>
 
 <%@ include file="footer.jsp"%>

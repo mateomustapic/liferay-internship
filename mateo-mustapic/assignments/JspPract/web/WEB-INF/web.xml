@@ -7,27 +7,19 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
     <servlet>
-        <servlet-name>FirstServlet</servlet-name>
-        <servlet-class>com.football.FirstServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>FirstServlet</servlet-name>
-        <url-pattern>/servlets/FirstServlet</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>User</servlet-name>
-        <servlet-class>com.football.User</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>User</servlet-name>
-        <url-pattern>/servlets/User</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.football.LoginServlet</servlet-class>
+        <servlet-class>login.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>PlayersController</servlet-name>
+        <servlet-class>Controllers.PlayersController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PlayersController</servlet-name>
+        <url-pattern>/players</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -10,13 +10,16 @@
 <head>
     <title>Login Page</title>
     <link rel="stylesheet" href="css/style2.css" />
+
 </head>
 <body>
+    <div id="loginContainer">
     <h1> LOGIN </h1>
     <form action="login" method="post">
-        USER ID: <input type="text" name="userId" />
+        USER ID: <input type="text" data-toggle="tooltip" title="Available user names: marko, kreso, matea & mateo" name="userId" />
         PASSWORD: <input type="password" name="password" />
         <input type="submit" value="SUBMIT" name="submit" />
     </form>
+    </div>
 </body>
 </html>

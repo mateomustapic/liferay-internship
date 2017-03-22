@@ -1,4 +1,4 @@
-package com.football;
+package login;
 
 import java.util.HashMap;
 
@@ -17,7 +17,7 @@ public class LoginService {
     }
 
     public boolean authenticate(String userId, String password){
-        if (password == null || password.trim() == ""){
+        if (password == null || password.trim().equals("")){
             return false;
         }
         return true;

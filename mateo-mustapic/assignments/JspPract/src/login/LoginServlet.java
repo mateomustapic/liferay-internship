@@ -1,4 +1,4 @@
-package com.football;
+package login;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -5,32 +5,37 @@
   Time: 12:20 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" import="com.football.Users" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" import="login.Users" %>
 <html>
 <head>
     <title>JSP Home</title>
+    <script src="../js/menu.js"></script>
     <link rel="stylesheet" href="../css/style2.css" />
 </head>
 <body>
-<h1> INDEX PAGE </h1>
-<br>
-<h2> JSP/SERVLETS PRACTICE</h2>
-<%
-    Users user = (Users) session.getAttribute("user");
-%>
-<h2>WELCOME <%
-    if(user.getUserName()!=null){
-        out.println(user.getUserName());
-    }
-    else {
-        out.println(user.getUserName());
-    }
-    %>
-</h2>
-    <a href="form.jsp" class="button">FORM</a>
-    <a href="attackers.jsp" class="button">CHECKBOX</a>
-    <a href="/servlets/FirstServlet" class="button">TEST SERVLET</a>
-    <a href="user.jsp" class="button">USER</a>
+<%@ include file="header.jsp"%>
+
+<div id="main">
+    <h1> INDEX PAGE </h1>
+    <br>
+    <h2> JSP/SERVLETS PRACTICE</h2>
+    <%
+        Users user = (Users) session.getAttribute("user");
+        if(user.getUserName()!=null){
+            %><h2>WELCOME <%
+            out.println(user.getUserName());
+        }
+        else {
+            out.println("NOT LOGGED IN");
+        %>
+        <br><br>
+        <a href="../login.jsp" class="button">LOG IN</a>
+        <%
+            }
+        %>
+    </h2>
+</div>
+
 <%@ include file="footer.jsp"%>
 
 
@@ -41,5 +46,6 @@
         localStorage.setItem('alerted','yes');
     }
 </script>
+
 </body>
 </html>
