@@ -1,4 +1,4 @@
-@import url(https: //fonts.googleapis.com/css?family=Karma:300, 400, 700|Gruppo|Raleway:300, 400, 500, 600, 700, 800, 900&subset=latin-ext);
+@import url('https://fonts.googleapis.com/css?family=Karma:300,400,700|Gruppo|Raleway:300,400,500,600,700,800,900&subset=latin-ext');
 
 // Colors
 $bigShadow: 0 2px 4px rgba(#333, 0.3);
@@ -282,18 +282,18 @@ img {
 &:not(:last-child) {
      padding-right: 48px;
  }
-}
 
-#metaljs {
-    width: 8%;
-}
+&:first-child {
+     width: 16%;
+ }
 
-#freemarker {
-    width: 25%;
-}
+&:nth-child(2) {
+     width: 24%;
+ }
 
-#sass, #java, #gradle {
-    width: 10%;
+&:nth-child(n+3) {
+     width: 10%;
+ }
 }
 }
 
@@ -336,8 +336,9 @@ label {
 
 input, textarea {
     background-color: #FFF;
-    border-bottom: 2px solid $light;
-    border-width: 0;
+    border-color: $light;
+    border-style: solid;
+    border-width: 0 0 2px 0;
     box-shadow: none;
     font-size: 1.5em;
     font-weight: 300;
@@ -452,6 +453,10 @@ a {
 ************************************************************/
 
 @media screen and (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
     #banner, #content, #footer {
         width: 100%;
     }
@@ -485,16 +490,17 @@ a {
 }
 
 #tech-stack.section {
+    padding: 24px;
+
+.container {
+    padding: 0;
+    justify-content: space-around;
+}
+
 img {
-    padding-bottom: 24px;
-    padding-right: 24px;
     width: 20%;
 
-&:nth-child(3n) {
-     padding-right: 0;
- }
-
-&:nth-child(5n) {
+&:not(:last-child) {
      padding-right: 24px;
  }
 }
@@ -591,22 +597,16 @@ textarea {
 }
 
 #about-liferay {
-img {
-    height: 64px;
+svg {
+    height: 104px;
     order: 1;
     padding-bottom: 24px;
-    width: auto !important;
+    width: auto;
 }
 
 .section_column {
     order: 2;
 }
-}
-
-#liferay-img {
-    background-image: url(../images/liferay-logo_img.png);
-    margin-bottom: 24px;
-    width: 26%;
 }
 
 #about-lcs {
@@ -617,15 +617,48 @@ svg {
 }
 }
 
-#tech-stack {
+#tech-stack.section {
 .container {
     flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
 }
 
 img {
-    height: auto;
-    padding-right: 16px;
-    width: 18%;
+    padding-bottom: 0;
+
+
+&:not(:last-child) {
+     padding-right: 24px;
+ }
+
+&:first-child {
+     padding-bottom: 24px;
+     width: 25%;
+ }
+
+&:nth-child(2) {
+     padding-bottom: 24px;
+     width: 40%;
+ }
+
+&:nth-child(3) {
+     padding-bottom: 24px;
+     padding-right: 0;
+     width: 25%;
+ }
+
+&:nth-child(4) {
+     margin-left: 32px;
+     padding-right: 0;
+     width: 15%;
+ }
+
+&:last-child {
+     margin-left: auto;
+     margin-right: 32px;
+     width: 20%;
+ }
 }
 }
 
