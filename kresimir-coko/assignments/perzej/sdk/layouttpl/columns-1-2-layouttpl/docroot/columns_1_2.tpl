@@ -6,11 +6,11 @@
 	</div>
 
 	<div class="portlet-layout row-fluid">
-		<div class="portlet-column portlet-column-first span6 half-width-column" id="column-2">
+		<div class="half-width-column portlet-column portlet-column-first span6" id="column-2">
 			$processor.processColumn("column-2", "portlet-column-content portlet-column-content-first")
 		</div>
 
-		<div class="portlet-column portlet-column-last span6 half-width-column" id="column-3">
+		<div class="half-width-column portlet-column portlet-column-last span6" id="column-3">
 			$processor.processColumn("column-3", "portlet-column-content portlet-column-content-last")
 		</div>
 	</div>

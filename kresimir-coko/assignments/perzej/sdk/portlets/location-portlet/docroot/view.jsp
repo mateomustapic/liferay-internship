@@ -20,8 +20,4 @@
 
 <portlet:defineObjects />
 
-<iframe
-	frameborder="0" style="border:0"
-	src="https://www.google.com/maps/embed/v1/place?key=<%= PortletProps.get("perzej.google.api") %>
-	&q=Zavrtnica+17,Zagreb+Croatia" allowfullscreen>
-</iframe>
+<iframe allowfullscreen frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=<%= PortletProps.get("perzej.google.api") %>&q=Zavrtnica+17,Zagreb+Croatia" style="border:0" />
