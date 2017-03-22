@@ -36,5 +36,9 @@ _sass_cache_*.css
 !**/sdk/hooks/
 **/sdk/hooks/*.*
 
+!**/sdk/layouttpl/
+**/sdk/layouttpl/*.*
+**/sdk/layouttpl/*/*.*
+
 **/**/**/node_modules
 .vscode
