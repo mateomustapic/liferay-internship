@@ -2,7 +2,6 @@
 *-ext.properties
 *.bak
 *.class
-*.iml
 *.ipr
 *.iws
 *.processed
@@ -22,7 +21,6 @@ _sass_cache_*.css
 **/sdk/*
 !**/sdk/themes
 **/sdk/themes/*.*
-**/sdk/themes/*/*.*
 **/sdk/themes/*/docroot/css
 **/sdk/themes/*/docroot/images
 **/sdk/themes/*/docroot/js
@@ -38,7 +36,6 @@ _sass_cache_*.css
 
 !**/sdk/layouttpl/
 **/sdk/layouttpl/*.*
-**/sdk/layouttpl/*/*.*
 
 **/classes
 
