@@ -1,4 +1,4 @@
-<%
+<%--
 /**
  * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
@@ -12,7 +12,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-%>
+--%>
 
 <%@ page import="com.liferay.util.portlet.PortletProps" %>
 
@@ -20,10 +20,8 @@
 
 <portlet:defineObjects />
 
-
-
 <iframe
 	frameborder="0" style="border:0"
 	src="https://www.google.com/maps/embed/v1/place?key=<%= PortletProps.get("perzej.google.api") %>
-    &q=Zavrtnica+17,Zagreb+Croatia" allowfullscreen>
+	&q=Zavrtnica+17,Zagreb+Croatia" allowfullscreen>
 </iframe>

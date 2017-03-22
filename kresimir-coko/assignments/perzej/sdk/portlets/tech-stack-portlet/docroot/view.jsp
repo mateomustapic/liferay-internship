@@ -1,4 +1,4 @@
-<%
+<%--
 /**
  * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
@@ -12,7 +12,7 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
-%>
+--%>
 
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 
@@ -20,10 +20,10 @@
 
 <section class="section" id="tech-stack">
 	<div class="container">
-		<img alt="Image" src="<%= request.getContextPath()%>/images/sass-logo.png" />
-		<img alt="Image" src="<%= request.getContextPath()%>/images/freemarker-logo.png" />
-		<img alt="Image" src="<%= request.getContextPath()%>/images/java-logo.png" />
-		<img alt="Image" src="<%= request.getContextPath()%>/images/metal-logo.png" />
-		<img alt="Image" src="<%= request.getContextPath()%>/images/gradle-logo.png" />
+		<img alt="Image" src="<%= request.getContextPath() %>/images/sass-logo.png" />
+		<img alt="Image" src="<%= request.getContextPath() %>/images/freemarker-logo.png" />
+		<img alt="Image" src="<%= request.getContextPath() %>/images/java-logo.png" />
+		<img alt="Image" src="<%= request.getContextPath() %>/images/metal-logo.png" />
+		<img alt="Image" src="<%= request.getContextPath() %>/images/gradle-logo.png" />
 	</div>
 </section>
