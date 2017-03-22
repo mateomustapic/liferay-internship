@@ -109,6 +109,16 @@ span {
 }
 }
 
+.portlet-layout.row-fluid {
+    display: flex;
+}
+
+.half-width-column {
+    margin-left: 0;
+    padding: 24px;
+    width: 50%;
+}
+
 /* Layout
 ************************************************************/
 
@@ -299,7 +309,7 @@ img {
 
 // Contact Section
 
-   #contact-location.section {
+   .columns-1-2-1:last-child {
        align-items: center;
        background-color: #FFF;
        display: flex;
@@ -307,7 +317,7 @@ img {
        padding: 0;
    }
 
-#contact {
+#column-2 {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -315,13 +325,40 @@ img {
     padding: 64px;
     width: 50%;
 
-#contact-form {
-    align-items: center;
+> div {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-bottom: 0;
+      width: 70%;
+
+> div {
+      width: 100%;
+  }
+}
+
+.fieldset {
+div {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    margin-bottom: 0;
-    width: 70%;
+    justify-content: center;
+}
+
+.alert {
+    align-items: center;
+    background-color: transparent;
+    border-radius: 30px;
+    font-family: Karma;
+    font-size: 1.3em;
+    padding: 16px;
+    width: 100%;
+
+&.alert-success {
+     border-color: $green;
+     color: $green;
+ }
+}
 }
 
 label {
@@ -343,6 +380,7 @@ input, textarea {
     font-size: 1.5em;
     font-weight: 300;
     margin-bottom: 24px;
+    max-width: 100%;
     padding: 16px;
     resize: none;
     width: 100%;
@@ -358,13 +396,17 @@ input[type="email"] {
     height: 48px;
 }
 
-input[type="submit"] {
+button[type="submit"] {
+    align-self: center;
     background: $gradient;
     border: 2px solid #FFF;
     border-radius: 3px;
     color: #FFF;
+    font-family: Raleway;
+    font-size: 1.3em;
     font-weight: 300;
     margin-bottom: 0;
+    padding: 16px 32px;
     text-transform: uppercase;
     transition: all 0.15s ease;
     width: 50%;
@@ -380,13 +422,15 @@ input[type="submit"] {
 }
 }
 
-#location {
+#column-3 {
     align-self: stretch;
-    background-image: url(../images/location.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 50%;
+    background-color: red;
+    padding: 0;
+
+div, iframe, section {
+    height: 100%;
+    width: 100%;
+}
 }
 
 /* Footer
