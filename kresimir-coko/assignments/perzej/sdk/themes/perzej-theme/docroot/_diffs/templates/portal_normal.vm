@@ -2,7 +2,7 @@
 
 	#parse ($init)
 
-<html class="$root_css_class" dir="#language (" id="perzej"lang.dir")" lang="$w3c_language_id">
+<html class="$root_css_class" dir="#language ("lang.dir")" id="perzej" lang="$w3c_language_id">
 
 <head>
 	<title>$the_title - $company_name</title>
@@ -23,6 +23,7 @@
 	#end
 
 <div class="container-fluid" id="wrapper">
+
 	<header id="banner" role="banner">
 		<div id="heading">
 			<h1 class="site-title">
@@ -30,10 +31,6 @@
 					<img alt="$logo_description" src="$site_logo" />
 				</a>
 			</h1>
-
-##            <h2 class="page-title">
-##                <span>$the_title</span>
-##            </h2>
 
 			#if (!$is_signed_in)
 				<a data-redirect="$is_login_redirect_required" href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>
@@ -54,26 +51,17 @@
 	</header>
 
 	<div id="content">
-##        <nav id="breadcrumbs">#breadcrumbs()</nav>
 
-		#if ($selectable)
-			$theme.include($content_include)
-		#else
-			$portletDisplay.recycle()
+		$theme.include($content_include)
 
-			$portletDisplay.setTitle($the_title)
-
-			$theme.wrapPortlet("portlet.vm", $content_include)
-		#end
-
-##        Our content should go here
 	</div>
 
-	<footer id="footer" role="contentinfo">
+	<footer id="footer">
 		<p class="powered-by">
 			#language ("powered-by") <a href="http://www.liferay.com" rel="external">Liferay</a>
 		</p>
 	</footer>
+
 </div>
 
 	$theme.include($body_bottom_include)
