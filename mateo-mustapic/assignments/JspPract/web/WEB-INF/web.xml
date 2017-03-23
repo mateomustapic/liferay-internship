@@ -22,4 +22,15 @@
         <servlet-name>PlayersController</servlet-name>
         <url-pattern>/players</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>newPlayerServlet</servlet-name>
+        <servlet-class>com.football.newPlayerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>newPlayerServlet</servlet-name>
+        <url-pattern>/newPlayer</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>20</session-timeout>
+    </session-config>
 </web-app>

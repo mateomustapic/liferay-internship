@@ -22,7 +22,6 @@
         <div id="result">
         </div>
     </h2>
-
     <table>
         <thead>
         <tr>
@@ -34,6 +33,7 @@
         <tbody>
         </tbody>
     </table>
+    <a href="#" id="addJson" class="button">FILL DATA</a>
     <a href="index.jsp" class="button">BACK TO HOMEPAGE</a>
 </div>
 <%@ include file="footer.jsp"%>

@@ -9,12 +9,12 @@
 <html>
 <head>
     <title>JSP Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../js/menu.js"></script>
     <link rel="stylesheet" href="../css/style2.css" />
 </head>
 <body>
 <%@ include file="header.jsp"%>
-
 <div id="main">
     <h1> INDEX PAGE </h1>
     <br>
@@ -35,9 +35,7 @@
         %>
     </h2>
 </div>
-
 <%@ include file="footer.jsp"%>
-
 
 <script type="text/javascript">
     var alerted = localStorage.getItem('alerted') || '';

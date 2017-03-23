@@ -11,11 +11,10 @@
     <title>JSP Form</title>
     <link rel="stylesheet" href="../css/style2.css" />
   </head>
-  <div>
+  <%@ include file="header.jsp"%>
   <div id="mainForm">
-    <h1>JSP FORM</h1>
     <table>
-      <form action="nextpage.jsp">
+      <form action="nextpage.jsp" method="post">
       <tbody>
         <tr>
             <td><b>FIRST NAME: </b></td>
@@ -41,7 +40,7 @@
           </td>
         </tr>
         <tr>
-            <td><b>COUNTRY: </b></td>
+          <td><b>COUNTRY: </b></td>
           <td>
             <div class="styled-select slate">
             <select name="country"><option value="" selected disabled>Please select a country...</option>

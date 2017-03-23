@@ -1,8 +1,8 @@
 /**
  * Created by Mateo on 3/21/2017.
  */
-$(document).ready(function(){
-function myFunction() {
+
+function menuFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
         x.className += " responsive";
@@ -10,5 +10,3 @@ function myFunction() {
         x.className = "topnav";
     }
 }
-$('[data-toggle="tooltip"]').tooltip();
-});

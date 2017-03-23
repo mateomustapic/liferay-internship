@@ -35,6 +35,9 @@ body{
         float: right;
         display: block;
     }
+    .footer {
+        font-size: 0.9em;
+    }
 }
 
 @media screen and (max-width: 600px) {

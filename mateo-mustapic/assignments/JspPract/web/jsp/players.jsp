@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: Mateo
   Date: 3/20/2017
@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="../css/style3.css" />
 </head>
 <body>
-
 <%@ include file="header.jsp"%>
 <div id="mainContainer">
     <h1>PLAYERS LIST</h1>
@@ -33,6 +32,5 @@
     <a href="index.jsp" class="button">BACK TO HOMEPAGE</a>
 </div>
 <%@ include file="footer.jsp"%>
-
 </body>
 </html>

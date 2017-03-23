@@ -21,66 +21,67 @@
         String player [] = request.getParameterValues("players");
         %>
     <body>
+    <%@ include file="header.jsp"%>
     <h1>RESULTS PAGE</h1>
     <h2>User Information</h2>
-<div id="container">
-    <table border="1" align="center">
-        <tbody>
-            <tr>
-                <td><b>FIRST NAME</b></td>
-                <td><%=firstName%></td>
-            </tr>
-            <tr>
-                <td><b>LAST NAME</b></td>
-                <td><%=lastName%></td>
-            </tr>
-            <tr>
-                <td><b>Email</b></td>
-                <td><%=email%></td>
-            </tr>
-            <tr>
-                <td><b>GENDER</b></td>
-                <td><%=gender%></td>
-            </tr>
-            <tr>
-                <td><b>COUNTRY</b></td>
-                <td><%
-                    if(country!=null){
-                        out.println(country);
+    <div id="container">
+        <table border="1" align="center">
+            <tbody>
+                <tr>
+                    <td><b>FIRST NAME</b></td>
+                    <td><%=firstName%></td>
+                </tr>
+                <tr>
+                    <td><b>LAST NAME</b></td>
+                    <td><%=lastName%></td>
+                </tr>
+                <tr>
+                    <td><b>Email</b></td>
+                    <td><%=email%></td>
+                </tr>
+                <tr>
+                    <td><b>GENDER</b></td>
+                    <td><%=gender%></td>
+                </tr>
+                <tr>
+                    <td><b>COUNTRY</b></td>
+                    <td><%
+                        if(country!=null){
+                            out.println(country);
+                        }
+                        else {
+                            out.println("Unknown");
+                        }
+                    %></td>
+                </tr>
+                <tr>
+                    <td><b>DATE OF BIRTH:</b></td>
+                    <td><%
+                        if(dateOfBirth!=null){
+                        out.println(dateOfBirth);
                     }
                     else {
                         out.println("Unknown");
-                    }
-                %></td>
-            </tr>
-            <tr>
-                <td><b>DATE OF BIRTH:</b></td>
-                <td><%
-                    if(dateOfBirth!=null){
-                    out.println(dateOfBirth);
-                }
-                else {
-                    out.println("Unknown");
-                }%></td>
-            </tr>
-            <tr>
-                <td><b>FAVORITE PLAYER(S):</b></td>
-                <td><%
-                    if(player!=null){
-                        for (int i=0; i< player.length; i++){
-                            out.println((i+1) + ". " + player[i]);
+                    }%></td>
+                </tr>
+                <tr>
+                    <td><b>FAVORITE PLAYER(S):</b></td>
+                    <td><%
+                        if(player!=null){
+                            for (int i=0; i< player.length; i++){
+                                out.println((i+1) + ". " + player[i]);
+                            }
                         }
-                    }
-                    else {
-                        out.println("None");
-                    }
-                %>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-        <a href="index.jsp" class="button">BACK TO HOMEPAGE</a>
+                        else {
+                            out.println("None");
+                        }
+                    %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <a href="index.jsp" class="button">BACK TO HOMEPAGE</a>
     <%@ include file="footer.jsp"%>
     </body>
 </html>
