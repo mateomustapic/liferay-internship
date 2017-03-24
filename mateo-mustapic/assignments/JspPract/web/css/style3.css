@@ -32,6 +32,10 @@ body{
     font-size: 18px;
 }
 
+#bttn2{
+    background-color: red;
+}
+
 form{
     display: inline-block;
     text-align: center;
@@ -71,7 +75,7 @@ h1{
 }
 
 table {
-    margin-top: 25px;
+    margin-top: 0;
     margin-left: 120px;
     border-collapse: collapse;
     width: 86%;
@@ -146,11 +150,11 @@ tr:nth-child(even) {
     }
     .button {
         width: 80%;
-        margin-top: 10px;
     }
-    #bttn {
+
+    #bttn, #test {
         width: 100%;
-        margin-top: 10px;
+
     }
     input[type="text"]{
         width: 100%;
@@ -163,7 +167,8 @@ tr:nth-child(even) {
         font-size: 14px;
         margin-left: 0;
     }
-    #id,#position,#name{
+
+    #id,#position,#name, #bttn2{
         width: 100%;
     }
     .footer {

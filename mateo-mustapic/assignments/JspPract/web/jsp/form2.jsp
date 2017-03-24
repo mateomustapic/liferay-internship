@@ -11,20 +11,24 @@
     <title>FORM 2</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../js/menu.js"></script>
-
     <link rel="stylesheet" href="../css/style3.css" />
 </head>
 <body>
 <%@ include file="header.jsp"%>
     <div id="container">
-    <h1>ADD PLAYER</h1>
-    <form name="loginForm" method="post" action="/newPlayer">
+    <h1>NEW PLAYER</h1>
+    <form name="newPlayerForm" method="post" action="/newPlayer">
         <b>ID:</b> <input type="text" id="id" name="id"/>
         <b>FULL NAME:</b> <input type="text" id="name" name="name"/>
         <b>POSITION:</b><input type="text" id="position" name="position"/>
         <input type="submit" id="bttn" class="button" value="ADD" />
     </form>
-    <table>
+
+        <form name="deletePlayerForm" id="test" method="post" action="/deletePlayer">
+            <input type="submit" id="bttn2" class="button" value="REMOVE" />
+        </form>
+
+        <table>
         <thead>
         <tr>
             <th>ID</th>
@@ -98,6 +102,7 @@
     }
     %>
     </h3>
+
     </div>
     <%@ include file="footer.jsp"%>
 </body>

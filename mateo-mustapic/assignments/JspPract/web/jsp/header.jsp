@@ -13,7 +13,7 @@
     <a href="/jsp/attackers.jsp" >FAVORITES</a>
     <a href="/jsp/players.jsp" >ALL PLAYERS</a>
     <a href="/jsp/players2.jsp" >EXTERNAL JSON</a>
-    <a href="/jsp/form2.jsp" >ADD PLAYER</a>
+    <a href="/jsp/form2.jsp" >NEW PLAYER</a>
     <a href='/jsp/logout.jsp' style="float:right">LOG OUT</a>
     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="menuFunction()">&#9776;</a>
 </div>

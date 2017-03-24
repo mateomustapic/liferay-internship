@@ -30,6 +30,14 @@
         <servlet-name>newPlayerServlet</servlet-name>
         <url-pattern>/newPlayer</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>DeletePlayerServlet</servlet-name>
+        <servlet-class>com.football.DeletePlayerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeletePlayerServlet</servlet-name>
+        <url-pattern>/deletePlayer</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>20</session-timeout>
     </session-config>
