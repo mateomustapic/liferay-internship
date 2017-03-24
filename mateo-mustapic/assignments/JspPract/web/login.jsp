@@ -14,7 +14,7 @@
 <body>
     <div id="loginContainer">
     <h1> LOGIN </h1>
-    <form action="login" method="post">
+    <form action="login" method="post" id="loginForm">
         USER ID: <input type="text" data-toggle="tooltip" title="Available user names: marko, kreso, matea & mateo" name="userId" />
         PASSWORD: <input type="password" name="password" />
         <input type="submit" value="SUBMIT" name="submit" />

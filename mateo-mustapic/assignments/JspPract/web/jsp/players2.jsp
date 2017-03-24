@@ -16,27 +16,26 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
-<div id="container">
-    <h1>PLAYERS LIST</h1>
-    <h2>
-        <div id="result">
-        </div>
-    </h2>
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Position</th>
-        </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-    <a href="#" id="addJson" class="button">FILL DATA</a>
-    <a href="index.jsp" class="button">BACK TO HOMEPAGE</a>
-</div>
+    <div id="container">
+        <h1>PLAYERS LIST</h1>
+        <h2>
+            <div id="result">
+            </div>
+        </h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Position</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <a href="#" id="addJson" class="button">FILL DATA</a>
+        <a href="index.jsp" class="button">BACK TO HOMEPAGE</a>
+    </div>
 <%@ include file="footer.jsp"%>
-
 </body>
 </html>

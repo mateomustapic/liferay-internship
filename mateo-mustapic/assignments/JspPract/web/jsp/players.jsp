@@ -16,7 +16,7 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
-<div id="mainContainer">
+<div id="container">
     <h1>PLAYERS LIST</h1>
     <table>
         <thead>

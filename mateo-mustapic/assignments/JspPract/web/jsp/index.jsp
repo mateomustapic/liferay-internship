@@ -36,7 +36,6 @@
     </h2>
 </div>
 <%@ include file="footer.jsp"%>
-
 <script type="text/javascript">
     var alerted = localStorage.getItem('alerted') || '';
     if (alerted != 'yes') {
@@ -44,6 +43,5 @@
         localStorage.setItem('alerted','yes');
     }
 </script>
-
 </body>
 </html>

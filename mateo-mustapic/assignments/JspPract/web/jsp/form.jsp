@@ -9,6 +9,8 @@
 <html>
   <head>
     <title>JSP Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="../js/menu.js"></script>
     <link rel="stylesheet" href="../css/style2.css" />
   </head>
   <%@ include file="header.jsp"%>

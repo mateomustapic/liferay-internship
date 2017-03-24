@@ -20,6 +20,10 @@ body{
     font-size: 17px;
 }
 
+#loginForm {
+    width: 30%;
+}
+
 .topnav a:hover {
     background-color: #ddd;
     color: black;
@@ -203,7 +207,11 @@ input[type="checkbox"], ul {
         margin-top: 10px;
     }
     .footer {
-        font-size: 0.9rem;
+        font-size: 0.9em;
+    }
+    #loginForm {
+        width: 90%;
+        margin-left: 0;
     }
 }
 

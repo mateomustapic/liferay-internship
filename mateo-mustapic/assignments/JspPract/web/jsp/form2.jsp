@@ -16,7 +16,6 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
-
     <div id="container">
     <h1>ADD PLAYER</h1>
     <form name="loginForm" method="post" action="/newPlayer">
