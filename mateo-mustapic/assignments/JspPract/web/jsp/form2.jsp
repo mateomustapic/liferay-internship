@@ -11,6 +11,7 @@
     <title>FORM 2</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../js/menu.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="../css/style3.css" />
 </head>
 <body>
@@ -18,16 +19,14 @@
     <div id="container">
     <h1>NEW PLAYER</h1>
     <form name="newPlayerForm" method="post" action="/newPlayer">
-        <b>ID:</b> <input type="text" id="id" name="id"/>
-        <b>FULL NAME:</b> <input type="text" id="name" name="name"/>
-        <b>POSITION:</b><input type="text" id="position" name="position"/>
+        <b>ID:</b> <input type="text" id="id" name="id" maxlength="2" />
+        <b>FULL NAME:</b> <input type="text" id="name" name="name" maxlength="30"/>
+        <b>POSITION:</b><input type="text" id="position" name="position" maxlength="20"/>
         <input type="submit" id="bttn" class="button" value="ADD" />
     </form>
-
-        <form name="deletePlayerForm" id="test" method="post" action="/deletePlayer">
+        <form name="deletePlayerForm" id="removeButton" method="post" action="/deletePlayer">
             <input type="submit" id="bttn2" class="button" value="REMOVE" />
         </form>
-
         <table>
         <thead>
         <tr>
@@ -69,9 +68,9 @@
         </tr>
         <tr>
             <td><%
-                request.setCharacterEncoding("UTF-8");
-                String playerId = request.getParameter("id");
-                if (playerId != null && !playerId.isEmpty()) {
+                    request.setCharacterEncoding("UTF-8");
+                    String playerId = request.getParameter("id");
+                    if (playerId != null && !playerId.isEmpty()) {
                     out.println(playerId);
                 }
             %>
@@ -102,8 +101,7 @@
     }
     %>
     </h3>
-
     </div>
-    <%@ include file="footer.jsp"%>
 </body>
+<%@ include file="footer.jsp"%>
 </html>

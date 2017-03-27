@@ -5,6 +5,10 @@ body{
 }
 
 .topnav {
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
     overflow: hidden;
     background-color: #333;
     width: 100%;
@@ -40,12 +44,13 @@ form{
     display: inline-block;
     text-align: center;
     padding-bottom: 10px;
+    margin-top: -30px;
 }
 
 input[type="text"]{
     width: 100%;
     padding: 12px 12px 12px 20px;
-    margin: 8px 28px 8px 12px;
+    margin: 8px 8px 8px 12px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -71,7 +76,7 @@ h1{
     font-weight: bold;
     letter-spacing: -1px;
     line-height: 1;
-    margin-top: 20px;
+    margin-top: 70px;
 }
 
 table {
@@ -113,6 +118,10 @@ tr:nth-child(even) {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
+#homeButton, #homeButton2 {
+    background-color: darkslateblue;
+}
+
 .footer {
     position: fixed;
     right: 0;
@@ -125,6 +134,32 @@ tr:nth-child(even) {
 }
 
 
+@media screen and (max-width: 860px) {
+    h1{
+        margin-top: 120px;
+    }
+
+    table {
+        font-weight: bold;
+        margin-right: 10px;
+        border-collapse: collapse;
+        width: 95%;
+        margin-left: 10px;
+    }
+
+    #id, #position, #name, #bttn, #bttn2, #homeButton, #homeButton2, #addJson{
+        border-radius: 0;
+    }
+
+    #id,#position,#name{
+        width: 95%;
+    }
+
+    #bttn, #bttn2, #removeButton {
+        width: 100%;
+    }
+}
+
 
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}
@@ -135,9 +170,7 @@ tr:nth-child(even) {
     #main{
         font-size: 0.9em;
     }
-    #container {
-        font-size: 1rem;
-    }
+
     table {
         font-weight: bold;
         margin-right: 10px;
@@ -146,16 +179,14 @@ tr:nth-child(even) {
         margin-left: 10px;
     }
     h1 {
-        font-size: 3em;
+        font-size: 2em;
+        margin-top: 60px;
+        margin-bottom: 30px;
     }
     .button {
         width: 80%;
     }
 
-    #bttn, #test {
-        width: 100%;
-
-    }
     input[type="text"]{
         width: 100%;
         padding: 12px 12px 12px 20px;
@@ -168,11 +199,33 @@ tr:nth-child(even) {
         margin-left: 0;
     }
 
-    #id,#position,#name, #bttn2{
+    #id, #position, #name, #bttn, #bttn2, #homeButton, #homeButton2, #addJson{
+        border-radius: 0;
+    }
+
+    #id,#position,#name, #bttn, #bttn2, #removeButton {
         width: 100%;
+    }
+
+    #homeButton, #addJson{
+        width: 80%;
+    }
+
+    #homeButton, #homeButton2 {
+        background-color: darkslateblue;
+        margin-bottom: 20px;
+    }
+
+    #homeButton2{
+        margin-top: -5px;
+    }
+
+    #removeButton{
+        margin-top: -50px;
     }
     .footer {
         font-size: 0.9em;
+        position: fixed;
     }
 }
 

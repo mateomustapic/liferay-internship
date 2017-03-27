@@ -38,6 +38,62 @@
         <servlet-name>DeletePlayerServlet</servlet-name>
         <url-pattern>/deletePlayer</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>indexServlet</servlet-name>
+        <servlet-class>com.football.indexServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>indexServlet</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>favoritesServlet</servlet-name>
+        <servlet-class>com.football.favoritesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>favoritesServlet</servlet-name>
+        <url-pattern>/favorites</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>formServlet</servlet-name>
+        <servlet-class>com.football.formServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>formServlet</servlet-name>
+        <url-pattern>/form</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>resultsServlet</servlet-name>
+        <servlet-class>com.football.resultsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>resultsServlet</servlet-name>
+        <url-pattern>/results</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>playersServlet</servlet-name>
+        <servlet-class>com.football.playersServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>playersServlet</servlet-name>
+        <url-pattern>/playersList</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>players2Servlet</servlet-name>
+        <servlet-class>com.football.players2Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>players2Servlet</servlet-name>
+        <url-pattern>/playersList2</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>addRemoveServlet</servlet-name>
+        <servlet-class>com.football.addRemoveServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addRemoveServlet</servlet-name>
+        <url-pattern>/addRemove</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>20</session-timeout>
     </session-config>

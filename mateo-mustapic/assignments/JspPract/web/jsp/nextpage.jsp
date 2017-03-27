@@ -11,6 +11,7 @@
         <title>Results Page</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="../js/menu.js"></script>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="../css/style3.css" />
     </head>
     <%
@@ -83,7 +84,7 @@
             </tbody>
         </table>
     </div>
-    <a href="index.jsp" class="button">BACK TO HOMEPAGE</a>
+    <a href="/index" id="homeButton" class="button">BACK TO HOMEPAGE</a>
     <%@ include file="footer.jsp"%>
     </body>
 </html>

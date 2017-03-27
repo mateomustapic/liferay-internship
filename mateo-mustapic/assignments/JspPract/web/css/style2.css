@@ -6,6 +6,10 @@ body{
 }
 
 .topnav {
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
     overflow: hidden;
     background-color: #333;
     width: 100%;
@@ -38,7 +42,9 @@ form, table {
     margin: auto;
     padding-bottom: 5px;
     font-size: 1.4em;
+    margin-top: 70px;
 }
+
 .styled-select.slate{
     text-align: center;
 }
@@ -97,14 +103,17 @@ input[type="password"]{
     font-size: 14px;
 }
 
-
 h1{
     color: white; font-family: 'Helvetica Neue', sans-serif;
     font-size: 4.2em;
     font-weight: bold;
     letter-spacing: -1px;
     line-height: 0.8;
-    margin-top: 40px;
+    margin-top: 70px;
+}
+
+#favoritesForm{
+    margin-top: -50px;
 }
 
 .button {
@@ -169,6 +178,7 @@ input[type="checkbox"], ul {
     text-align: center;
     margin-top: 35px;
 }
+
 #loginContainer{
     text-align: center;
 }
@@ -177,41 +187,110 @@ input[type="checkbox"], ul {
     margin-left: 20px;
 }
 
+#favoritesForm{
+    display: block;
+}
+
+#resetButton{
+    background-color: crimson;
+}
+
+@media screen and (max-width: 860px) {
+    h1{
+        margin-top: 120px;
+    }
+
+    table {
+        font-weight: bold;
+        margin-right: 10px;
+        border-collapse: collapse;
+        width: 95%;
+        margin-left: 10px;
+    }
+
+    #mainForm{
+        text-align: center;
+        margin-top: 120px;
+    }
+
+}
+
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
         float: right;
         display: block;
     }
+
     #main{
         font-size: 0.9em;
     }
+
     #container {
         font-size: 1rem;
         display: block;
     }
+
     h1 {
         font-size: 2em;
+        text-align: center;
     }
+
     table td {
         width: 100%;
+        text-align: center;
     }
-    #favoritesForm{
+
+    ul, #favoritesForm, #favoritesList, input[type="reset"], input[type="submit"], table, #mainForm, #loginButton{
         width: 100%;
     }
-    #favoritesList{
-        width: 100%;
-    }
+
     .button {
         width: 80%;
         margin-top: 10px;
     }
+
     .footer {
         font-size: 0.9em;
     }
+
     #loginForm {
         width: 90%;
         margin-left: 0;
+    }
+
+    #mainTable td{
+        display: block;
+        width: 95%;
+        margin-left: -10px;
+    }
+
+    #mainForm{
+        font-size: 12px;
+        margin-top: 0;
+    }
+
+    #loginButton{
+        margin-left: 3%;
+        border-radius: 0;
+    }
+
+    #loginContainer h1 {
+        margin-left: -12%;
+    }
+
+    #resetButton{
+        background-color: crimson;
+        margin-right: 1%;
+    }
+
+    #submitButton{
+        margin-top: -8px;
+    }
+
+    #resetButton, #submitButton{
+        border-radius: 0;
+        width: 99%;
     }
 }
 
@@ -222,6 +301,7 @@ input[type="checkbox"], ul {
         right: 0;
         top: 0;
     }
+
     .topnav.responsive a {
         float: none;
         display: block;

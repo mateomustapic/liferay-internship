@@ -1,5 +1,6 @@
 package login;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,13 +23,18 @@ public class LoginServlet extends HttpServlet {
         if (result) {
             Users user = loginService.getUserDetails(userId);
             request.getSession().setAttribute("user", user);
-            response.sendRedirect("jsp/index.jsp");
+            response.sendRedirect("/index");
             return;
         }
         else {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("/login");
             return;
         }
 
+    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+        RequestDispatcher dispatch = request.getRequestDispatcher("/login.jsp");
+        dispatch.forward(request, response);
     }
 }

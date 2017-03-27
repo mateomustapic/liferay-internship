@@ -12,25 +12,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../js/menu.js"></script>
     <script src="../js/script.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="../css/style3.css" />
 </head>
 <body>
 <%@ include file="header.jsp"%>
-<div id="container">
-    <h1>PLAYERS LIST</h1>
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Position</th>
-        </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-    <a href="index.jsp" class="button">BACK TO HOMEPAGE</a>
-</div>
+    <div id="container">
+        <h1>PLAYERS LIST</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Position</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <a href="index.jsp" id="homeButton" class="button">BACK TO HOMEPAGE</a>
+    </div>
 <%@ include file="footer.jsp"%>
 </body>
 </html>

@@ -11,12 +11,13 @@
     <title>JSP Form</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../js/menu.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="../css/style2.css" />
   </head>
   <%@ include file="header.jsp"%>
   <div id="mainForm">
-    <table>
-      <form action="nextpage.jsp" method="post">
+    <table id="mainTable">
+      <form action="/results" id="formOne" method="post">
       <tbody>
         <tr>
             <td><b>FIRST NAME: </b></td>
@@ -300,12 +301,12 @@
           </td>
         </tr>
         <tr>
-            <td><b>DATE OF BIRTH: </b></td>
+          <td><b>DATE OF BIRTH: </b></td>
           <td><input type="date" name="bday"></td>
         </tr>
         <tr>
-            <td><b>FAVORITE PLAYER(S): </b></td>
-            <td>
+          <td><b>FAVORITE PLAYER(S): </b></td>
+          <td>
             <div id="select2">
                 <select name="players" multiple><option value="" selected disabled>Please select your favorite player(s)...</option>
                   <option value="ozil">Mesut Ozil</option>
@@ -319,13 +320,13 @@
                   <option value="higuain">Gonzalo Higuain</option>
               </select>
             </td>
-            </div>
+          </div>
         </tr>
       </tbody>
     </table>
     <br>
-      <input type="reset" value="RESET" name="reset"/>
-      <input type="submit" value="SUBMIT" name="submit"/>
+    <input type="reset" id="resetButton" value="RESET" name="reset"/>
+    <input type="submit" id="submitButton" value="SUBMIT" name="submit"/>
     </form>
   </div>
   <%@ include file="footer.jsp"%>

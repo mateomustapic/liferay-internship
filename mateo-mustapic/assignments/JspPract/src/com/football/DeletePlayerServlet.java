@@ -15,9 +15,7 @@ import java.util.ArrayList;
  */
 @WebServlet(name = "DeletePlayerServlet", urlPatterns = "/deletePlayer")
 public class DeletePlayerServlet extends HttpServlet {
-
     private ArrayList<String> playerIds = new ArrayList<>();
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
@@ -27,31 +25,24 @@ public class DeletePlayerServlet extends HttpServlet {
         String id = request.getParameter("id");
         String name = request.getParameter("name");
         String position = request.getParameter("position");
-
         HttpSession session = request.getSession();
         session.setAttribute("id", id);
         session.setAttribute("name", name);
         session.setAttribute("position", position);
-
         System.out.println("id: " + id);
         System.out.println("name: " + name);
         System.out.println("position: " + position);
-
         // Variable containing playerId currently in session
         String storedPlayerId = (String)session.getAttribute("id");
         String storedPlayerName = (String)session.getAttribute("name");
         String storedPlayerPosition = (String)session.getAttribute("position");
-
         // Add player ID to our player Ids ArrayList
         playerIds.add(storedPlayerId);
-
-        // Store ids ArrayList into session
+        // Store id, name and position into session
         session.setAttribute("", id);
         session.setAttribute("", name);
         session.setAttribute("", position);
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

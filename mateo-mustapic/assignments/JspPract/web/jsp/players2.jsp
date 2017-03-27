@@ -12,6 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../js/menu.js"></script>
     <script src="../js/script2.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="../css/style3.css" />
 </head>
 <body>
@@ -34,7 +35,7 @@
             </tbody>
         </table>
         <a href="#" id="addJson" class="button">FILL DATA</a>
-        <a href="index.jsp" class="button">BACK TO HOMEPAGE</a>
+        <a href="index.jsp" id="homeButton2" class="button">BACK TO HOMEPAGE</a>
     </div>
 <%@ include file="footer.jsp"%>
 </body>

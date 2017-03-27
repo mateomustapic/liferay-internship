@@ -60,6 +60,7 @@ form, table {
     padding-bottom: 10px;
     font-size: 1.4em;
 }
+
 .styled-select.slate{
     text-align: center;
 }
@@ -107,7 +108,6 @@ input[type="password"]{
     text-align: center;
     font-size: 14px;
 }
-
 
 h1{
     color: white; font-family: 'Helvetica Neue', sans-serif;
