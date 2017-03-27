@@ -18,7 +18,7 @@
 
 <section class="section" id="about-lcs">
 	<div class="container">
-		<img src="<%= PortalUtil.getPathContext(request) %>/images/lcs-logo.svg" alt="Liferay Connected Services">
+		<img alt="Liferay Connected Services" src="<%= PortalUtil.getPathContext(request) %>/images/lcs-logo.svg">
 		<div class="section_column">
 			<h3 class="section-heading">About LCS</h3>
 			<p>

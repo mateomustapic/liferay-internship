@@ -6,12 +6,12 @@
 		<display-name>About Liferay Section</display-name>
 		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
 		<init-param>
-			<name>view-template</name>
-			<value>/liferay-section/view.jsp</value>
-		</init-param>
-		<init-param>
 			<name>template-path</name>
 			<value>/liferay-section/</value>
+		</init-param>
+		<init-param>
+			<name>view-template</name>
+			<value>/liferay-section/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
@@ -40,12 +40,12 @@
 		<display-name>About LCS Section</display-name>
 		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
 		<init-param>
-			<name>view-template</name>
-			<value>/lcs-section/view.jsp</value>
-		</init-param>
-		<init-param>
 			<name>template-path</name>
 			<value>/lcs-section/</value>
+		</init-param>
+		<init-param>
+			<name>view-template</name>
+			<value>/lcs-section/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
@@ -74,12 +74,12 @@
 		<display-name>Tech Stack Section</display-name>
 		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
 		<init-param>
-			<name>view-template</name>
-			<value>/tech-stack/view.jsp</value>
-		</init-param>
-		<init-param>
 			<name>template-path</name>
 			<value>/tech-stack/</value>
+		</init-param>
+		<init-param>
+			<name>view-template</name>
+			<value>/tech-stack/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
@@ -108,12 +108,12 @@
 		<display-name>Location Section</display-name>
 		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
 		<init-param>
-			<name>view-template</name>
-			<value>/location-section/view.jsp</value>
-		</init-param>
-		<init-param>
 			<name>template-path</name>
 			<value>/location-section/</value>
+		</init-param>
+		<init-param>
+			<name>view-template</name>
+			<value>/location-section/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>

@@ -24,6 +24,6 @@
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut esse maiores provident veritatis. Consectetur deleniti ea ex facilis illum natus non nulla obcaecati, praesentium, provident quo quos suscipit ut veritatis!
 			</p>
 		</div>
-		<img src="<%= PortalUtil.getPathContext(request) %>/images/liferay-logo.svg" alt="Liferay">
+		<img alt="Liferay" src="<%= PortalUtil.getPathContext(request) %>/images/liferay-logo.svg">
 	</div>
 </section>
