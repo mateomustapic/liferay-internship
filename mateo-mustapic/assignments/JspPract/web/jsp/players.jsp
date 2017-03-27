@@ -10,8 +10,9 @@
 <head>
     <title>JSON & JSP</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="../js/menu.js"></script>
     <script src="../js/script.js"></script>
+    <script src="../js/menu.js"></script>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="../css/style3.css" />
 </head>
@@ -19,7 +20,7 @@
 <%@ include file="header.jsp"%>
     <div id="container">
         <h1>PLAYERS LIST</h1>
-        <table>
+        <table id="players1">
             <thead>
             <tr>
                 <th>ID</th>
@@ -30,7 +31,7 @@
             <tbody>
             </tbody>
         </table>
-        <a href="index.jsp" id="homeButton" class="button">BACK TO HOMEPAGE</a>
+        <a href="/index" id="homeButton" class="button">BACK TO HOMEPAGE</a>
     </div>
 <%@ include file="footer.jsp"%>
 </body>
