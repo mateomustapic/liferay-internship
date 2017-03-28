@@ -39,10 +39,9 @@ body{
 
 form, table {
     width: 60%;
-    margin: auto;
     padding-bottom: 5px;
     font-size: 1.4em;
-    margin-top: 70px;
+    margin: 70px auto auto;
 }
 
 .styled-select.slate{
@@ -114,6 +113,11 @@ h1{
 
 #favoritesForm{
     margin-top: -50px;
+    width: 100%;
+}
+
+ul{
+    width: 100%;
 }
 
 .button {
@@ -156,8 +160,8 @@ h2{
     margin-left: 15px;
 }
 
-input[type="checkbox"], ul {
-    margin-left: 15px;
+input[type="checkbox"], #favoritesResult {
+    margin-left: 30px;
 }
 
 #container{
@@ -170,8 +174,18 @@ input[type="checkbox"], ul {
 }
 
 #checkbox {
+    width: 100%;
+}
+
+#checkbox, #favoritesResult{
     float: left;
-    font-size: 1em;
+    font-size: 1.5em;
+    margin-top: -5px
+}
+
+#favoritesResult{
+    margin-bottom: 40px;
+    width: 94%;
 }
 
 #mainForm{
@@ -185,10 +199,6 @@ input[type="checkbox"], ul {
 
 #mainContainer{
     margin-left: 20px;
-}
-
-#favoritesForm{
-    display: block;
 }
 
 #resetButton{
@@ -234,6 +244,7 @@ input[type="checkbox"], ul {
     h1 {
         font-size: 2em;
         text-align: center;
+        margin-top: 70px;
     }
 
     table td {
@@ -241,8 +252,12 @@ input[type="checkbox"], ul {
         text-align: center;
     }
 
-    ul, #favoritesForm, #favoritesList, input[type="reset"], input[type="submit"], table, #mainForm, #loginButton{
+    ul, input[type="reset"], input[type="submit"], table, #loginButton{
         width: 100%;
+    }
+
+    #mainForm{
+        width: 98%;
     }
 
     .button {
@@ -256,7 +271,6 @@ input[type="checkbox"], ul {
 
     #loginForm {
         width: 90%;
-        margin-left: 0;
     }
 
     #mainTable td{
@@ -271,26 +285,32 @@ input[type="checkbox"], ul {
     }
 
     #loginButton{
-        margin-left: 3%;
         border-radius: 0;
+        margin-top: 10px;
     }
 
-    #loginContainer h1 {
-        margin-left: -12%;
+    #idInput, #passwordInput{
+        margin: auto;
     }
 
-    #resetButton{
+    #resetButton, #reset1Button{
         background-color: crimson;
         margin-right: 1%;
+        margin-bottom: 20px;
+        width: 90%;
+    }
+
+    #reset1Button, #submit1Button{
+        width: 100%;
     }
 
     #submitButton{
         margin-top: -8px;
+        width: 99%;
     }
 
-    #resetButton, #submitButton{
+    #resetButton, #submitButton, #reset1Button, #submit1Button{
         border-radius: 0;
-        width: 99%;
     }
 }
 

@@ -325,8 +325,8 @@
       </tbody>
     </table>
     <br>
-    <input type="reset" id="resetButton" value="RESET" name="reset"/>
-    <input type="submit" id="submitButton" value="SUBMIT" name="submit"/>
+    <input type="reset" id="reset1Button" value="RESET" name="reset"/>
+    <input type="submit" id="submit1Button" value="SUBMIT" name="submit"/>
     </form>
   </div>
   <%@ include file="footer.jsp"%>

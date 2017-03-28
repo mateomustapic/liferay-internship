@@ -17,46 +17,45 @@
 <body>
 <%@ include file="header.jsp"%>
 <h1>CHOOSE YOUR FAVORITE ATTACKERS</h1>
-    <div id="favoritesForm">
-        <form method="post" id="checkbox">
-            <input type="checkbox" name="player" value="TORRES"> FERNANDO TORRES
-            <br>
-            <input type="checkbox" name="player" value="HAZARD"> EDEN HAZARD
-            <br>
-            <input type="checkbox" name="player" value="DYBALA"> PAULO DYBALA
-            <br>
-            <input type="checkbox" name="player" value="COSTA"> DIEGO COSTA
-            <br>
-            <input type="checkbox" name="player" value="VARDY"> JAMIE VARDY
-            <br>
-            <input type="checkbox" name="player" value="HIGUAIN"> GONZALO HIGUAIN
-            <br>
-            <input type="checkbox" name="player" value="KANE"> HARRY KANE
-            <br><br>
-            <input type="submit" id="submitButton" value="SELECT">
+    <form method="post" id="checkbox">
+
+        <input type="checkbox" name="player" value="Torres"> Fernando Torres
+        <br>
+        <input type="checkbox" name="player" value="Hazard"> Eden Hazard
+        <br>
+        <input type="checkbox" name="player" value="Dybala"> Paulo Dybala
+        <br>
+        <input type="checkbox" name="player" value="Costa"> Diego Costa
+        <br>
+        <input type="checkbox" name="player" value="Vardy"> Jamie Vardy
+        <br>
+        <input type="checkbox" name="player" value="Higuain"> Gonzalo Higuain
+        <br>
+        <input type="checkbox" name="player" value="Kane"> Harry Kane
+        <br><br>
+        <input type="submit" id="submitButton" value="SELECT">
             <a href="<%= request.getRequestURI() %>"
                id="resetButton" class="button">RESET</a>
-        </form>
-        <%
-            String[] players = request.getParameterValues("player");
-            if (players != null) {
-        %>
-        <br><br><br>
-        <b><u>FAVORITES</u></b>
-        <ul>
-            <%
-                for (int i = 0; i< players.length; ++i) {
-            %>
-            <li><%= players[i] %></li>
-            <%
-                }
-            %>
-            <br>
-        </ul>
-        <%
-            }
-        %>
-    </div>
+    </form>
+<%
+    String[] players = request.getParameterValues("player");
+    if (players != null) {
+%>
+<br><br><br>
+<div id="favoritesResult">
+    Favorites
+    <%
+        for (int i = 0; i< players.length; ++i) {
+    %>
+    <li><%= players[i] %></li>
+    <%
+        }
+    %>
+    <br>
+    <%
+        }
+    %>
+</div>
 <%@ include file="footer.jsp"%>
 </body>
 </html>
