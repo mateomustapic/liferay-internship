@@ -1,0 +1,186 @@
+[
+
+  {
+    "bendName": "Azra",
+    "image": "../../img/Azra.jpg",
+    "albums": [
+      {
+        "albumName": "Ravno do dna",
+        "year": 1982,
+        "songs": [
+          {
+            "songName": "Uradi nesto",
+            "mp3": "../../mp3/Azra-RavnoDoDna.mp3"
+          },
+          {
+            "songName": "Poziv na ples",
+            "mp3": "../../mp3/Azra-PozivNaPles.mp3"
+          },
+          {
+            "songName": "Tople usne zene",
+            "mp3": "../../mp3/Azra-TopleUsneZene.mp3"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "bendName": "Santana",
+    "image": "../../img/Santana.jpg",
+    "albums": [
+      {
+        "albumName": "Supernatural",
+        "year": 1999,
+        "songs": [
+          {
+            "songName": "Love Of My Love",
+            "mp3": "../../mp3/Santana-LoveOfMyLife.mp3"
+          },
+          {
+            "songName": "Put Your Lights",
+            "mp3": "../../mp3/Santana-PutYourLights.mp3"
+          }
+        ]
+      },
+      {
+        "albumName": "Moonflower",
+        "year": 1977,
+        "songs": [
+          {
+            "songName": "Dawn",
+            "mp3": "../../mp3/Santana-Dawn.mp3"
+          },
+          {
+            "songName": "Carnaval",
+            "mp3": "../../mp3/Santana-Carnaval.mp3"
+          }
+        ]
+      }
+    ]
+  },
+
+
+  {
+    "bendName": "Creedence Clearwater Revival",
+    "image": "../../img/CreedenceClearwaterRevival.jpg",
+    "albums": [
+      {
+        "albumName": "Mardi Gras",
+        "year": 1972,
+        "songs": [
+          {
+            "songName": "Looking for a reason",
+            "mp3": "../../mp3/CreedenceClearwaterRevival-LookingForAReason.mp3"
+          },
+          {
+            "songName": "Take it like a friend",
+            "mp3": "../../mp3/CreedenceClearwaterRevival-TakeItLikeAFriend.mp3"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "bendName": "Florence and the machine",
+    "image": "../../img/FlorenceAndTheMachine.jpg",
+    "albums": [
+      {
+        "albumName": "Lungs",
+        "year": 2009,
+        "songs": [
+          {
+            "songName": "Dog days are over",
+            "mp3": "../../mp3/FlorenceAndTheMachine-DogDaysAreOver.mp3"
+          },
+          {
+            "songName": "Rabbit heart",
+            "mp3": "../../mp3/FlorenceAndTheMachine-RabbitHeart.mp3"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "bendName": "Hank Williams",
+    "image": "../../img/HankWilliams.jpg",
+    "albums": [
+      {
+        "albumName": "Beyond the sunset",
+        "year": 1953,
+        "songs": [
+          {
+            "songName": "Men with broken hearts",
+            "mp3": "../../mp3/HankWilliams-MenWithBrokenHearts.mp3"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "bendName": "Jayke Orvis",
+    "image": "../../img/JaykeOrvis.jpg",
+    "albums": [
+      {
+        "albumName": "It'a all been said",
+        "year": 2010,
+        "songs": [
+          {
+            "songName": "Crooked smile",
+            "mp3": "../../mp3/JaykeOrvis-CrookedSmile.mp3"
+          },
+          {
+            "songName": "Lead me astray",
+            "mp3": "../../mp3/JaykeOrvis-LeadMeAstray.mp3"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "bendName": "Radiohead",
+    "image": "../../img/Radiohead.jpg",
+    "albums": [
+      {
+        "albumName": "A moon shaped pool",
+        "year": 2016,
+        "songs": [
+          {
+            "songName": "Burn the witch",
+            "mp3": "../../mp3/Radiohead-BurnTheWitch.mp3"
+          },
+          {
+            "songName": "Daydreaming",
+            "mp3": "../../mp3/Radiohead-Daydreaming.mp3"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "bendName": "Tom Waits",
+    "image": "../../img/TomWaits.jpg",
+    "albums": [
+      {
+        "albumName": "Rain dogs",
+        "year": 1985,
+        "songs": [
+          {
+            "songName": "Singapore",
+            "mp3": "../../mp3/TomWaits-Singapore.mp3"
+          },
+          {
+            "songName": "Clap hands",
+            "mp3": "../../mp3/TomWaits-ClapHands.mp3"
+          }
+        ]
+      }
+    ]
+  }
+
+]

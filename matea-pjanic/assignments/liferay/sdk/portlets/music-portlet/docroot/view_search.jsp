@@ -16,10 +16,18 @@
 
 <%@ include file="/init.jsp" %>
 
+<liferay-portlet:renderURL var="viewURL">
+	<portlet:param name="mvcPath" value="/view.jsp" />
+</liferay-portlet:renderURL>
+
 <liferay-portlet:actionURL name="search" var="searchURL"></liferay-portlet:actionURL>
 
 <aui:form action="<%= searchURL %>" name="<portlet:namespace />fm">
 	<aui:fieldset>
+		<liferay-ui:header
+			backURL="<%= viewURL.toString() %>"
+			title="search"
+		/>
 		<aui:input label="" name="bend" placeholder="Search for bends" type="text"></aui:input>
 	</aui:fieldset>
 	<aui:button-row>

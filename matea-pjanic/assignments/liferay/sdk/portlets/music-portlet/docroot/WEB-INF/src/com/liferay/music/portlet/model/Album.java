@@ -1,4 +1,3 @@
-<%--
 /**
  * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
  *
@@ -12,17 +11,38 @@
  * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
  * details.
  */
---%>
 
-<%@ include file="/init.jsp" %>
+package com.liferay.music.portlet.model;
 
-<liferay-portlet:actionURL name="search" var="searchURL"></liferay-portlet:actionURL>
+/**
+ * @author Matea Pjanic
+ */
+public class Album {
 
-<aui:form action="<%= searchURL %>" name="<portlet:namespace />fm">
-	<aui:fieldset>
-		<aui:input label="" name="bend" placeholder="Search for bends" type="text"></aui:input>
-	</aui:fieldset>
-	<aui:button-row>
-		<aui:button icon="icon-search" type="submit" value="search"></aui:button>
-	</aui:button-row>
-</aui:form>
+	public String getAlbumName() {
+		return albumName;
+	}
+
+	public Song[] getSongs() {
+		return songs;
+	}
+
+	public int getYear() { return year; }
+
+	public void setAlbumName(String albumName) {
+		this.albumName = albumName;
+	}
+
+	public void setSongs(Song[] songs) {
+		this.songs = songs;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	private String albumName;
+	private Song[] songs;
+	private int year;
+
+}
