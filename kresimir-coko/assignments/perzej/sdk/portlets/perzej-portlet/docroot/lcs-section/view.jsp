@@ -18,14 +18,21 @@
 
 <section class="section" id="about-lcs">
 	<div class="container">
-		<img alt="Liferay Connected Services" src="<%= PortalUtil.getPathContext(request) %>/images/lcs-logo.svg">
+		<img alt="Liferay Connected Services" src="<%= PortalUtil.getPathContext(request) %>/images/lcs-logo.svg" />
+
 		<div class="section_column">
-			<h3 class="section-heading">About LCS</h3>
+			<h3 class="section-heading">
+				About LCS
+			</h3>
+
 			<p>
-				Liferay Connected Services is a new online platform that offers a set of tools and services that will help our customers succeed on their Liferay projects.
-				<br>
-				<a href="https://www.liferay.com/supporting-products/liferay-connected-services" target="_blank">Liferay Connected Services <i aria-hidden="true" class="icon-angle-right"></i>
-</a>
+				Liferay Connected Services is a new online platform that offers a set of tools and services that will help our customers succeed on their Liferay projects.<br>
+
+				<a href="https://www.liferay.com/supporting-products/liferay-connected-services" target="_blank">
+					Liferay Connected Services
+
+					<i aria-hidden="true" class="icon-angle-right"></i>
+				</a>
 			</p>
 		</div>
 	</div>

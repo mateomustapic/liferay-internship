@@ -1,16 +1,12 @@
-/**
- * Created by kresimircoko on 29/03/2017.
- */
+var fields = document.querySelectorAll('.field');
 
-const fields = document.querySelectorAll('.field');
-
-function labelFocused (e) {
+function labelFocused(e) {
 	var label = e.target.previousSibling.previousSibling;
 
 	label.classList.add('label-active');
 }
 
-function labelBlurred (e) {
+function labelBlurred(e) {
 	var label = e.target.previousSibling.previousSibling;
 
 	label.classList.remove('label-active');
