@@ -26,11 +26,9 @@
 			<p>
 				Liferay is an open source enterprise portal project written in Java for building business solutions that in turn deliver immediate results and long term value. It contains numerous tools with magnificent features.<br>
 
-				<a href="https://www.liferay.com/" target="_blank">
-					Liferay
-
+				<aui:a href="https://www.liferay.com/" label="Liferay" target="_blank">
 					<i aria-hidden="true" class="icon-angle-right"></i>
-				</a>
+				</aui:a>
 			</p>
 		</div>
 
