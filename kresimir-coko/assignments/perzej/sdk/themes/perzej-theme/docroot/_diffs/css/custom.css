@@ -1,4 +1,90 @@
-@import url('https://fonts.googleapis.com/css?family=Karma:300,400,700|Gruppo|Raleway:300,400,500,600,700,800,900&subset=latin-ext');
+@font-face {
+  font-family: 'Karma';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Karma Light'), local('Karma-Light'), url(http://fonts.gstatic.com/s/karma/v5/mfxW-h9FCyLnDLFZKLz-1BTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
+  unicode-range: U+02BC, U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200B-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+
+@font-face {
+  font-family: 'Karma';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Karma Light'), local('Karma-Light'), url(http://fonts.gstatic.com/s/karma/v5/xOMyYHDIUf-JmfVDioKZ3xTbgVql8nDJpwnrE27mub0.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Karma';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Karma Light'), local('Karma-Light'), url(http://fonts.gstatic.com/s/karma/v5/V97bNN9dRrPuQdX3vbehBPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Raleway Light'), local('Raleway-Light'), url(http://fonts.gstatic.com/s/raleway/v11/ZKwULyCG95tk6mOqHQfRBCEAvth_LlrfE80CYdSH47w.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Raleway Light'), local('Raleway-Light'), url(http://fonts.gstatic.com/s/raleway/v11/-_Ctzj9b56b8RgXW8FArifk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(http://fonts.gstatic.com/s/raleway/v11/yQiAaD56cjx1AooMTSghGfY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(http://fonts.gstatic.com/s/raleway/v11/0dTEPzkLWceF7z0koJaX1A.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Montserrat Thin'), local('Montserrat-Thin'), url(http://fonts.gstatic.com/s/montserrat/v10/CdKWaRAal2Bxq9mORLKRRT0LW-43aMEzIO6XUTLjad8.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Montserrat Thin'), local('Montserrat-Thin'), url(http://fonts.gstatic.com/s/montserrat/v10/CdKWaRAal2Bxq9mORLKRRegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(http://fonts.gstatic.com/s/montserrat/v10/IQHow_FEYlDC4Gzy_m8fchHJTnCUrjaAm2S9z52xC3Y.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(http://fonts.gstatic.com/s/montserrat/v10/IQHow_FEYlDC4Gzy_m8fcoWiMMZ7xLd792ULpGE4W_Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
 
 // Colors
 $bigShadow: 0 2px 4px rgba(#333, 0.3);
@@ -34,13 +120,14 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		text-decoration: none;
 	}
 
-	h1, h2, h3, label, input[type="submit"] {
+	h1, h2, h3, input[type="submit"] {
 		color: $grey;
 		font-family: Raleway, sans-serif;
 		font-weight: 300;
 	}
 
 	p, a, li, span {
+		font-family: Raleway, sans-serif;
 		font-weight: 300;
 		line-height: 1.4;
 	}
@@ -96,6 +183,10 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		}
 	}
 
+	&.aui form {
+		margin: 0;
+	}
+
 	.columns-max {
 		margin: 64px auto 128px auto;
 		width: 1280px;
@@ -127,7 +218,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		position: relative;
 	}
 
-	#heading, .powered-by {
+	#heading {
 		align-items: center;
 		display: flex;
 		justify-content: center;
@@ -178,9 +269,13 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 	}
 
 	span.site-name {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
 		color: $light;
-		font-family: 'Gruppo', cursive;
+		font-family: Montserrat, sans-serif;
 		font-size: 5em;
+		font-weight: 100;
+		padding: 32px 64px;
 		text-transform: uppercase;
 	}
 
@@ -190,7 +285,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 	#content {
 		flex: 1;
 		flex-direction: column;
-		margin-bottom: 55px;
+		margin-bottom: 181px;
 
 		.container {
 			align-items: center;
@@ -211,10 +306,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		.section {
 			padding: 64px 0;
 
-			img {
-				width: 30%;
-			}
-
 			.section-heading {
 				color: $green;
 				font-size: 2.5em;
@@ -232,7 +323,26 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		width: 60%;
 
 		p {
+			display: block;
 			font-size: 1.6em;
+		}
+
+		a {
+			background-color: $green;
+			color: $light;
+			display: inline-block;
+			line-height: 1;
+			margin-top: 8px;
+			padding: 8px 16px;
+			transition: all 0.15s ease;
+
+		i {
+			padding-left: 8px;
+		}
+
+			&:hover {
+				background-color: $silver;
+			}
 		}
 	}
 
@@ -251,18 +361,14 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			justify-content: space-between;
 		}
 
+		img {
+			max-width: 200px;
+			width: 30%;
+		}
+
 		.section_column {
 			padding-right: 48px;
 		}
-	}
-
-	#liferay-img {
-		background-image: url(../images/liferay-logo_text.png);
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: contain;
-		height: 100px;
-		width: 32%;
 	}
 
 	// LCS Section
@@ -274,35 +380,84 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			padding-left: 48px;
 			width: 60%;
 		}
+
+		img {
+			max-width: 200px;
+			width: 30%;
+		}
 	}
 
 	// Tech Stack Section
 
-	#tech-stack.section {
-		background: $gradient;
-		padding: 32px 0;
+	#tech-stack {
+		background-color: $silver;
 
 		.container {
-			flex-wrap: wrap;
+			align-items: baseline;
+			justify-content: space-around;
 		}
+	}
+
+	.tech-stack-column {
+		border-radius: 3px;
+		display: flex;
+		flex-direction: column;
+		width: 30%;
+	}
+
+	.tech-stack-column-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tech-stack-heading {
+		color: #FEFEFE;
+		font-family: Montserrat, sans-serif;
+		font-weight: 700;
+		padding: 16px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	.technology {
+		align-items: center;
+		background-color: rgba(#FFF, 0.6);
+		border-radius: 3px;
+		box-shadow: $smallShadow;
+		display: flex;
+		height: 60px;
+		justify-content: space-between;
+		padding: 8px 16px;
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+
+	.technology-image {
+		display: flex;
+		flex: 1;
+		height: 100%;
+		max-height: 100%;
+		max-width: 50%;
 
 		img {
-			width: 20%;
+			height: 100%;
+		}
+	}
 
-			&:not(:last-child) {
-				padding-right: 48px;
-			}
+	.technology-name {
+		font-size: 1.2em;
+		padding: 16px;
+	}
 
-			&:first-child {
-				width: 16%;
-			}
+	#freemarker {
+		.technology-image {
+			align-items: center;
 
-			&:nth-child(2) {
-				width: 24%;
-			}
-
-			&:nth-child(n+3) {
-				width: 10%;
+			img {
+				height: auto;
+				width: 100%;
 			}
 		}
 	}
@@ -356,27 +511,29 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			.alert {
 				align-items: center;
 				background-color: transparent;
-				border-radius: 30px;
+				border-width: 0;
 				font-family: Karma;
 				font-size: 1.3em;
-				padding: 16px;
+				padding: 0;
 				width: 100%;
-
-				&.alert-success {
-					border-color: $green;
-					color: $green;
-				}
 			}
 		}
 
 		label {
-			color: $green;
+			color: $grey;
+			font-family: Montserrat, sans-serif;
 			font-size: 1.2em;
-			font-weight: 300;
+			font-weight: 700;
+			margin-bottom: 0;
 			padding-bottom: 8px;
 			padding-left: 8px;
 			text-transform: uppercase;
+			transition: all 0.15s ease;
 			width: 100%;
+
+			&.label-active {
+				color: $green;
+			}
 		}
 
 		input, textarea {
@@ -394,9 +551,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			width: 100%;
 
 			&:focus {
-				border-color: transparent;
-				border-image: $gradient;
-				border-image-slice: 1;
+				border-color: $green;
 			}
 		}
 
@@ -406,33 +561,36 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 		button[type="submit"] {
 			align-self: center;
-			background: $gradient;
-			border: 2px solid #FFF;
+			background: $green;
 			border-radius: 3px;
-			color: #FFF;
-			font-family: Raleway;
+			border-width: 0;
+			box-shadow: $smallShadow;
+			color: rgba(#FFF, 0.7);
+			font-family: Montserrat, sans-serif;
 			font-size: 1.3em;
-			font-weight: 300;
+			font-weight: 700;
 			margin-bottom: 0;
+			outline-width: 0;
 			padding: 16px 32px;
+			text-shadow: none;
 			text-transform: uppercase;
 			transition: all 0.15s ease;
 			width: 50%;
 
 			&:hover {
-				background: #FFF;
-				border-image: $gradient;
-				border-image-slice: 1;
-				border-radius: 3px;
-				color: $green;
-				transition: all 0.15s ease;
+				background: $silver;
+				color: #FFF;
+			}
+
+			&:active {
+				box-shadow: none;
 			}
 		}
 	}
 
 	#column-3 {
 		align-self: stretch;
-		background-color: red;
+		background-color: $grey;
 		padding: 0;
 
 		div, iframe, section {
@@ -449,25 +607,62 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		background-color: $dark;
 		bottom: 0;
 		display: flex;
-		justify-content: center;
-		padding: 24px 0;
+		flex-wrap: wrap;
+		font-family: Montserrat, sans-serif;
+		justify-content: space-around;
+		padding: 32px 8px;
 		position: absolute;
 		width: 100%;
-	}
 
-	p.powered-by {
-		color: $light;
-		display: block;
-		font-size: 1.2em;
+		.container {
+			align-items: center;
+			display: flex;
+			flex-wrap: wrap;
+			max-width: 1280px;
+			width: 100%;
+		}
 
-		a {
+		span {
 			color: $light;
-			transition: 0.15s ease;
+			display: block;
+			font-family: inherit;
+			font-size: 1.2em;
+			font-weight: 100;
+			text-align: center;
 
-			&:hover {
-				color: #FFF;
-				transition: 0.15s ease;
+			b {
+				font-weight: 700;
+				text-transform: uppercase;
 			}
+
+			a {
+				color: $light;
+				font-family: inherit;
+				transition: all 0.15s ease;
+
+				&:hover {
+					color: $green;
+					transition: 0.15s ease;
+				}
+			}
+
+			i {
+				color: $green;
+				padding-right: 8px;
+			}
+		}
+
+		.location {
+			width: 50%;
+		}
+
+		.oib, .phone {
+			padding: 24px 0;
+			width: 50%;
+		}
+
+		.powered-by {
+			width: 100%;
 		}
 	}
 
@@ -503,6 +698,49 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 				}
 			}
 		}
+
+		#footer {
+			padding: 32px 16px;
+		}
+	}
+
+	/* 1024px
+	************************************************************/
+
+	@media screen and (max-width: 1024px) {
+		#content {
+			margin-bottom: 275px;
+		}
+
+		#tech-stack.section {
+			.container {
+				justify-content: space-around;
+			}
+		}
+
+		#column-2 {
+			padding: 48px 24px;
+
+			> div {
+				width: 100%;
+			}
+		}
+
+		#footer {
+			flex-direction: column;
+			padding: 0;
+
+			span {
+				padding: 16px;
+				text-align: center;
+				width: 100%;
+			}
+
+			.location, .oib, .phone, .powered-by {
+				padding: 16px;
+				width: 100%;
+			}
+		}
 	}
 
 	/* 768px
@@ -513,20 +751,25 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			padding: 0;
 		}
 
-		#banner, #content, #footer {
-			width: 100%;
+		.portlet-boundary.portlet-boundary_145_.portlet-static.portlet-static-end.portlet-dockbar {
+			width: 100vw;
 		}
 
-		#content {
-			margin-bottom: 55px;
+		.navbar-static-top {
+			margin: 0;
+		}
+
+		#banner, #content, #footer {
+			width: 100%;
 		}
 
 		#heading {
 			padding: 16px;
 		}
 
-		.section_column {
-			width: 50%;
+		span.site-name {
+			font-size: 4em;
+			padding: 16px 48px;
 		}
 
 		.container {
@@ -535,7 +778,15 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 		#about-liferay {
 			.section_column {
-				padding-right: 0;
+				padding-right: 8px;
+				width: 70%;
+			}
+		}
+
+		#about-lcs {
+			.section_column {
+				padding-left: 8px;
+				width: 70%;
 			}
 		}
 
@@ -543,23 +794,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			background-image: url(../images/liferay-logo_img.png);
 			height: 200px;
 			width: 28%;
-		}
-
-		#tech-stack.section {
-			padding: 24px;
-
-			.container {
-				padding: 0;
-				justify-content: space-around;
-			}
-
-			img {
-				width: 20%;
-
-				&:not(:last-child) {
-					padding-right: 24px;
-				}
-			}
 		}
 
 		.columns-1-2-1 {
@@ -570,8 +804,30 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			}
 		}
 
+		.technology {
+			flex-direction: column;
+			height: 80px;
+			padding: 0;
+
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+		}
+
+		.technology-image {
+			height: auto;
+			justify-content: center;
+			max-width: 100%;
+			padding: 16px;
+			width: 100%;
+		}
+
+		.technology-name {
+			display: none;
+		}
+
 		#column-2 {
-			padding: 24px;
+			padding: 40px;
 			width: 100%;
 
 			> div {
@@ -591,13 +847,25 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			height: 47vh;
 			width: 100%;
 		}
+	}
 
-		#footer {
-			padding: 16px;
+	/* 660px
+	************************************************************/
 
-			.powered-by {
-				line-height: 1;
+	@media screen and (max-width: 643px) {
+		.tech-stack-heading {
+			line-height: 1.1;
+			word-spacing: 200px;
+		}
+
+		.tech-stack-column:last-child {
+			.tech-stack-heading {
+				margin-bottom: 26px;
 			}
+		}
+
+		#column-2 > div {
+			width: 100%;
 		}
 	}
 
@@ -621,13 +889,16 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			font-size: 0;
 		}
 
+		span.site-name {
+			font-size: 3em;
+			padding: 8px 32px;
+		}
+
 		#hero {
 			height: 80vh;
 		}
 
 		#content {
-			margin-bottom: 55px;
-
 			.section {
 				padding: 32px 16px;
 
@@ -639,6 +910,12 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 						font-weight: 300;
 					}
 				}
+			}
+		}
+
+		.section {
+			.container {
+				padding: 0;
 			}
 		}
 
@@ -659,72 +936,45 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			.container {
 				flex-direction: column;
 			}
+
+			img {
+				margin-bottom: 24px;
+			}
 		}
 
 		#about-liferay {
-			svg {
-				height: 104px;
-				order: 1;
-				padding-bottom: 24px;
-				width: auto;
-			}
-
 			.section_column {
 				order: 2;
 			}
 		}
 
-		#about-lcs {
-			svg {
-				height: 128px;
-				padding-bottom: 24px;
-				width: auto;
+		#tech-stack.section .container {
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+
+		.tech-stack-column {
+			width: 100%;
+
+			&:last-child {
+				.tech-stack-heading {
+					margin-bottom: 0;
+				}
 			}
 		}
 
-		#tech-stack.section {
-			.container {
-				flex-wrap: wrap;
-				justify-content: space-between;
-				padding: 0;
-			}
+		.tech-stack-heading {
+			word-spacing: initial;
+		}
 
-			img {
-				padding-bottom: 0;
+		.tech-stack-column-container {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
 
-
-				&:not(:last-child) {
-					padding-right: 24px;
-				}
-
-				&:first-child {
-					padding-bottom: 24px;
-					width: 25%;
-				}
-
-				&:nth-child(2) {
-					padding-bottom: 24px;
-					width: 40%;
-				}
-
-				&:nth-child(3) {
-					padding-bottom: 24px;
-					padding-right: 0;
-					width: 25%;
-				}
-
-				&:nth-child(4) {
-					margin-left: 32px;
-					padding-right: 0;
-					width: 15%;
-				}
-
-				&:last-child {
-					margin-left: auto;
-					margin-right: 32px;
-					width: 20%;
-				}
-			}
+		.technology {
+			width: calc(50% - 4px);
 		}
 
 		.columns-1-2-1 {
@@ -741,10 +991,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 			> div {
 				width: 100%;
-
-				label {
-					font-weight: 300;
-				}
 
 				input, textarea {
 					border-radius: 0;
@@ -777,12 +1023,20 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 		#column-3 {
 			background-size: 200%;
-			height: 300px;
+			height: 67vh;
 			width: 100%;
+		}
+
+		.location {
+			b {
+				display: block;
+			}
 		}
 	}
 
-	#footer {
-		padding: 16px;
+	@media screen and (max-width: 448px) {
+		#content {
+			margin-bottom: 243px;
+		}
 	}
 }

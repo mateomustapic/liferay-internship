@@ -22,7 +22,10 @@
 		<div class="section_column">
 			<h3 class="section-heading">About LCS</h3>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam atque cumque, delectus dignissimos distinctio enim illum incidunt magni molestiae neque nulla quisquam voluptatem voluptatibus? Animi dolore minima molestias placeat voluptate!
+				Liferay Connected Services is a new online platform that offers a set of tools and services that will help our customers succeed on their Liferay projects.
+				<br>
+				<a href="https://www.liferay.com/supporting-products/liferay-connected-services" target="_blank">Liferay Connected Services <i aria-hidden="true" class="icon-angle-right"></i>
+</a>
 			</p>
 		</div>
 	</div>

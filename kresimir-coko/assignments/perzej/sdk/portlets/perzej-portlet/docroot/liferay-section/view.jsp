@@ -21,7 +21,10 @@
 		<div class="section_column">
 			<h3 class="section-heading">About Liferay</h3>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut esse maiores provident veritatis. Consectetur deleniti ea ex facilis illum natus non nulla obcaecati, praesentium, provident quo quos suscipit ut veritatis!
+				Liferay is an open source enterprise portal project written in Java for building business solutions that in turn deliver immediate results and long term value. It contains numerous tools with magnificent features.
+				<br>
+				<a href="https://www.liferay.com/" target="_blank">Liferay <i aria-hidden="true" class="icon-angle-right"></i>
+</a>
 			</p>
 		</div>
 		<img alt="Liferay" src="<%= PortalUtil.getPathContext(request) %>/images/liferay-logo.svg">

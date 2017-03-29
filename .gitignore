@@ -23,6 +23,7 @@ _sass_cache_*.css
 **/sdk/themes/*.*
 **/sdk/themes/*/docroot/css
 **/sdk/themes/*/docroot/images
+**/sdk/themes/*/docroot/fonts
 **/sdk/themes/*/docroot/js
 **/sdk/themes/*/docroot/templates
 **/sdk/themes/*/docroot/WEB-INF
