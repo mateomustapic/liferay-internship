@@ -16,13 +16,13 @@
 
 <%@ include file="/init.jsp" %>
 
-<liferay-portlet:actionURL name="search" var="searchURL"></liferay-portlet:actionURL>
+<liferay-portlet:actionURL name="search" var="searchURL" />
 
 <aui:form action="<%= searchURL %>" name="<portlet:namespace />fm">
 	<aui:fieldset>
-		<aui:input label="" name="bend" placeholder="Search for bends" type="text"></aui:input>
+		<aui:input label="" name="bend" placeholder="Search for bends" type="text" />
 	</aui:fieldset>
 	<aui:button-row>
-		<aui:button icon="icon-search" type="submit" value="search"></aui:button>
+		<aui:button icon="icon-search" type="submit" value="search" />
 	</aui:button-row>
 </aui:form>

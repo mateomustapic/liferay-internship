@@ -27,7 +27,9 @@ public class Bend {
 		return bendName;
 	}
 
-	public String getImage() { return image; }
+	public String getImage() {
+		return image;
+	}
 
 	public void setAlbums(Album[] albums) {
 		this.albums = albums;
@@ -37,7 +39,9 @@ public class Bend {
 		this.bendName = bendName;
 	}
 
-	public void setImage(String image) { this.image = image; }
+	public void setImage(String image) {
+		this.image = image;
+	}
 
 	private Album[] albums;
 	private String bendName;

@@ -19,10 +19,16 @@ package com.liferay.music.portlet.model;
  */
 public class Song {
 
-	public String getSongName() { return songName; }
+	public String getMp3() {
+		return mp3;
+	}
+
+	public String getSongName() {
+		return songName;
+	}
 
 	public void setMp3(String songDuration) {
-		this.mp3 = songDuration; } public String getMp3() { return mp3; }
+		this.mp3 = songDuration; }
 
 	public void setSongName(String songName) {
 		this.songName = songName;

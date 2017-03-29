@@ -27,7 +27,9 @@ public class Album {
 		return songs;
 	}
 
-	public int getYear() { return year; }
+	public int getYear() {
+		return year;
+	}
 
 	public void setAlbumName(String albumName) {
 		this.albumName = albumName;
