@@ -20,31 +20,31 @@ package com.liferay.music.portlet.model;
 public class Album {
 
 	public String getAlbumName() {
-		return albumName;
+		return _albumName;
 	}
 
 	public Song[] getSongs() {
-		return songs;
+		return _songs;
 	}
 
 	public int getYear() {
-		return year;
+		return _year;
 	}
 
 	public void setAlbumName(String albumName) {
-		this.albumName = albumName;
+		this._albumName = albumName;
 	}
 
 	public void setSongs(Song[] songs) {
-		this.songs = songs;
+		this._songs = songs;
 	}
 
 	public void setYear(int year) {
-		this.year = year;
+		this._year = year;
 	}
 
-	private String albumName;
-	private Song[] songs;
-	private int year;
+	private String _albumName;
+	private Song[] _songs;
+	private int _year;
 
 }

@@ -20,31 +20,31 @@ package com.liferay.music.portlet.model;
 public class Bend {
 
 	public Album[] getAlbums() {
-		return albums;
+		return _albums;
 	}
 
 	public String getBendName() {
-		return bendName;
+		return _bendName;
 	}
 
 	public String getImage() {
-		return image;
+		return _image;
 	}
 
 	public void setAlbums(Album[] albums) {
-		this.albums = albums;
+		this._albums = albums;
 	}
 
 	public void setBendName(String bendName) {
-		this.bendName = bendName;
+		this._bendName = bendName;
 	}
 
 	public void setImage(String image) {
-		this.image = image;
+		this._image = image;
 	}
 
-	private Album[] albums;
-	private String bendName;
-	private String image;
+	private Album[] _albums;
+	private String _bendName;
+	private String _image;
 
 }
