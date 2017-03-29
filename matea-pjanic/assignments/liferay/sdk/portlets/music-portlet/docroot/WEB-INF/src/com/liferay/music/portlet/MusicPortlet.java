@@ -16,6 +16,7 @@ package com.liferay.music.portlet;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
 import com.liferay.music.portlet.model.Bend;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
@@ -23,11 +24,14 @@ import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 
+import java.io.FileReader;
+
+import java.lang.reflect.Type;
+
+import java.util.ArrayList;
+
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
-import java.io.FileReader;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 
 /**
  * @author Matea Pjanic
