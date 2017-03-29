@@ -23,18 +23,19 @@ public class Song {
 		return _mp3;
 	}
 
-	public String getSongName() {
-		return _songName;
+	public String getName() {
+		return _name;
 	}
 
-	public void setMp3(String songDuration) {
-		this._mp3 = songDuration; }
+	public void setMp3(String mp3) {
+		this._mp3 = mp3;
+	}
 
-	public void setSongName(String songName) {
-		this._songName = songName;
+	public void setName(String name) {
+		this._name = name;
 	}
 
 	private String _mp3;
-	private String _songName;
+	private String _name;
 
 }

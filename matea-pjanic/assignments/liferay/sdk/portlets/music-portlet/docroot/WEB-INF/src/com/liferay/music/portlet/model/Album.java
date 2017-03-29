@@ -19,8 +19,8 @@ package com.liferay.music.portlet.model;
  */
 public class Album {
 
-	public String getAlbumName() {
-		return _albumName;
+	public String getName() {
+		return _name;
 	}
 
 	public Song[] getSongs() {
@@ -31,8 +31,8 @@ public class Album {
 		return _year;
 	}
 
-	public void setAlbumName(String albumName) {
-		this._albumName = albumName;
+	public void setName(String name) {
+		this._name = name;
 	}
 
 	public void setSongs(Song[] songs) {
@@ -43,7 +43,7 @@ public class Album {
 		this._year = year;
 	}
 
-	private String _albumName;
+	private String _name;
 	private Song[] _songs;
 	private int _year;
 

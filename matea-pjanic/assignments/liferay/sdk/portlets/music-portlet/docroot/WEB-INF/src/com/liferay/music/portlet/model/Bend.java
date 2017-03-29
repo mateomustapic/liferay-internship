@@ -23,28 +23,28 @@ public class Bend {
 		return _albums;
 	}
 
-	public String getBendName() {
-		return _bendName;
-	}
-
 	public String getImage() {
 		return _image;
+	}
+
+	public String getName() {
+		return _name;
 	}
 
 	public void setAlbums(Album[] albums) {
 		this._albums = albums;
 	}
 
-	public void setBendName(String bendName) {
-		this._bendName = bendName;
-	}
-
 	public void setImage(String image) {
 		this._image = image;
 	}
 
+	public void setName(String name) {
+		this._name = name;
+	}
+
 	private Album[] _albums;
-	private String _bendName;
 	private String _image;
+	private String _name;
 
 }
