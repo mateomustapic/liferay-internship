@@ -59,16 +59,16 @@
 	<footer id="footer">
 		<div class="container">
 			<span class="location">
-				<b><i class="icon-map-marker" aria-hidden="true"></i>Headquarters:</b> Koste Racina 12, 10000 Zagreb
+				<b><i aria-hidden="true" class="icon-map-marker"></i>Headquarters:</b> Koste Racina 12, 10000 Zagreb
 			</span>
 			<span class="location">
-				<b><i class="icon-map-marker" aria-hidden="true"></i>Office:</b> Zavrtnica 17 (Building #8), 10000 Zagreb
+				<b><i aria-hidden="true" class="icon-map-marker"></i>Office:</b> Zavrtnica 17 (Building #8), 10000 Zagreb
 			</span>
 			<span class="oib">
 				<b>OIB:</b> 45627809299
 			</span>
 			<span class="phone">
-				<i class="icon-phone" aria-hidden="true"></i> +385 (1) 6313 540
+				<i aria-hidden="true" class="icon-phone"></i> +385 (1) 6313 540
 			</span>
 			<span class="powered-by">
 				#language ("powered-by") <a href="http://www.liferay.com" rel="external"><b>Liferay</b></a>

@@ -16,7 +16,7 @@ function labelBlurred (e) {
 	label.classList.remove('label-active');
 }
 
-for(var i = 0; i < fields.length; i++) {
+for (var i = 0; i < fields.length; i++) {
 	fields[i].addEventListener('focus', labelFocused);
 	fields[i].addEventListener('blur', labelBlurred);
 }

@@ -88,7 +88,7 @@
 
 				<div class="technology">
 					<div class="technology-image">
-						<img alt="Jenkins" src="<%= PortalUtil.getPathContext(request) %>/images/jenkins.png"/>
+						<img alt="Jenkins" src="<%= PortalUtil.getPathContext(request) %>/images/jenkins.png" />
 					</div>
 					<span class="technology-name">Jenkins</span>
 				</div>
