@@ -50,9 +50,6 @@ public class MusicPortlet extends MVCPortlet {
 
 		Gson gson = new Gson();
 
-		Type list = new TypeToken<ArrayList<Bend>>() {
-		}.getType();
-
 		FileReader file = null;
 
 		try {
@@ -64,6 +61,8 @@ public class MusicPortlet extends MVCPortlet {
 		catch (Exception ex) {
 			_log.error(ex);
 		}
+
+		Type list = new TypeToken<ArrayList<Bend>>(){}.getType();
 
 		ArrayList<Bend> bends = gson.fromJson(file, list);
 
