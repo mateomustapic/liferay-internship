@@ -7,13 +7,17 @@ AUI().use(
 		function labelFocused(e) {
 			var fieldInput = e.currentTarget;
 
-			fieldInput.siblings('label').addClass('label-active');
+			var fieldLabels = fieldInput.siblings('label');
+
+			fieldLabels.addClass('label-active');
 		}
 
 		function labelBlurred(e) {
 			var fieldInput = e.currentTarget;
 
-			fieldInput.siblings('label').removeClass('label-active');
+			var fieldLabels = fieldInput.siblings('label');
+
+			fieldLabels.removeClass('label-active');
 		}
 
 		form.delegate('focus', labelFocused, '.field');
