@@ -1,6 +1,6 @@
 AUI().use(
-	'node',
 	'event',
+	'node',
 	function(A) {
 		function toggleActive(event) {
 			var fieldInput = event.currentTarget;
@@ -12,7 +12,7 @@ AUI().use(
 
 		var form = A.one('.fieldset');
 
-		form.delegate('focus', toggleActive, '.field');
 		form.delegate('blur', toggleActive, '.field');
+		form.delegate('focus', toggleActive, '.field');
 	}
 );
