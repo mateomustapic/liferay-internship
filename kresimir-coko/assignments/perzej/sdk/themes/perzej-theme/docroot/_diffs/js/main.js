@@ -2,8 +2,6 @@ AUI().use(
 	'node',
 	'event',
 	function(A) {
-		var form = A.one('.fieldset');
-
 		function labelFocused(e) {
 			var fieldInput = e.currentTarget;
 
@@ -19,6 +17,8 @@ AUI().use(
 
 			fieldLabels.removeClass('label-active');
 		}
+
+		var form = A.one('.fieldset');
 
 		form.delegate('focus', labelFocused, '.field');
 		form.delegate('blur', labelBlurred, '.field');
