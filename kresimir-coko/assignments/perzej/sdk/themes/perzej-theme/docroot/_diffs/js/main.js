@@ -5,15 +5,15 @@ AUI().use(
 		var form = A.one('.fieldset');
 
 		function labelFocused(e) {
-			var target = e.currentTarget;
+			var fieldInput = e.currentTarget;
 
-			target.siblings('label').addClass('label-active');
+			fieldInput.siblings('label').addClass('label-active');
 		}
 
 		function labelBlurred(e) {
-			var target = e.currentTarget;
+			var fieldInput = e.currentTarget;
 
-			target.siblings('label').removeClass('label-active');
+			fieldInput.siblings('label').removeClass('label-active');
 		}
 
 		form.delegate('focus', labelFocused, '.field');
