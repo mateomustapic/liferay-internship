@@ -1,3 +1,5 @@
+@import "compass";
+
 @font-face {
 	font-family: 'Karma';
 	font-style: normal;
@@ -255,10 +257,10 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 	#hero {
 		align-items: center;
-		background-image: linear-gradient(
-				rgba(#333, 0.5),
-				rgba(#333, 0.5)
-		), url(../images/background.jpg);
+		@include background(linear-gradient(
+			rgba(#333, 0.5),
+			rgba(#333, 0.5)
+		), url(../images/background.jpg));
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -336,13 +338,17 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			padding: 8px 16px;
 			transition: all 0.15s ease;
 
-		i {
-			padding-left: 8px;
-		}
+			i {
+				padding-left: 8px;
+			}
 
 			&:hover {
 				background-color: $silver;
 			}
+		}
+
+		.opens-new-window-accessible {
+			display: none;
 		}
 	}
 
@@ -534,6 +540,10 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			&.label-active {
 				color: $green;
 			}
+		}
+
+		input {
+			height: 56px;
 		}
 
 		input, textarea {

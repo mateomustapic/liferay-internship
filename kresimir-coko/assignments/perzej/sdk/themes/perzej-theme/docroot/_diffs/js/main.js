@@ -1,18 +1,22 @@
-var fields = document.querySelectorAll('.field');
+AUI().use(
+	'node',
+	'event',
+	function(A) {
+		var form = A.one('.fieldset');
 
-function labelFocused(e) {
-	var label = e.target.previousSibling.previousSibling;
+		function labelFocused(e) {
+			var target = e.currentTarget;
 
-	label.classList.add('label-active');
-}
+			target.siblings('label').addClass('label-active');
+		}
 
-function labelBlurred(e) {
-	var label = e.target.previousSibling.previousSibling;
+		function labelBlurred(e) {
+			var target = e.currentTarget;
 
-	label.classList.remove('label-active');
-}
+			target.siblings('label').removeClass('label-active');
+		}
 
-for (var i = 0; i < fields.length; i++) {
-	fields[i].addEventListener('focus', labelFocused);
-	fields[i].addEventListener('blur', labelBlurred);
-}
+		form.delegate('focus', labelFocused, '.field');
+		form.delegate('blur', labelBlurred, '.field');
+	}
+);
