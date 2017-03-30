@@ -101,10 +101,6 @@ $red: #F44336;
 $silver: #009DB7;
 $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
-* {
-	box-sizing: border-box;
-}
-
 #perzej {
 	height: 100%;
 
@@ -257,10 +253,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 	#hero {
 		align-items: center;
-		@include background(linear-gradient(
-			rgba(#333, 0.5),
-			rgba(#333, 0.5)
-		), url(../images/background.jpg));
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -1049,4 +1041,15 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			margin-bottom: 243px;
 		}
 	}
+}
+
+/* Extras
+************************************************************/
+
+* {
+	@include box-sizing(border-box);
+}
+
+#perzej #hero {
+	@include background(linear-gradient(rgba(#333, 0.5), rgba(#333, 0.5)), url(../images/background.jpg));
 }
