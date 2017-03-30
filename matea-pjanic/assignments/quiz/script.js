@@ -1,94 +1,101 @@
-$(document).ready(function() {
+/* global $ */
 
-  var allQuestions = [
-    {question: "What kind of weapon is a falchion?", name:"weapon", choices: ["Sword", "Gun", "Kalashnikov"], correctAnswer:"Sword"},
-    {question: "What does the term 'piano' mean?", name:"piano", choices: ["Softly", "With deep feeling", "Calm, peacefull"], correctAnswer:"Softly"},
-    {question: "Name the actor who starred in 142 films including The Quiet Man, The Shootist, The Searchers and Stagecoach?", name:"actor", choices: ["Morgan Freeman", "John Wayne", "Harrison Ford"], correctAnswer:"John Wayne"},
-    {question: "Which sport does Constantino Rocca play?", name:"sport", choices: ["Football", "Basketball", "Golf"], correctAnswer:"Golf"},
-    {question: "What is the painting 'La Gioconda' more usually known as??", name:"painting", choices: ["Girl with Pearl Earring", "The Artist's Mother", "The Mona Lisa"], correctAnswer:"The Mona Lisa"},
-    {question: "When was the euro introduced as legal currency on the world market?", name:"euro", choices: ["1st January 1999", "1st January 1997", "15th January 1999"], correctAnswer:"1st January 1999"},
-    {question: "What is the oldest surviving printed book in the world?", name:"book", choices: ["Gutenberg Bible", "The Diamond Sutra", "Madrid Codex"], correctAnswer:"The Diamond Sutra"},
-    {question: "Who is Prime Minister of the United Kingdom?", name:"minister", choices: ["David Cameron", "Theresa May", "Tony Blair"], correctAnswer:"Theresa May"},
-    {question: "If you had Lafite-Rothschild on your dinner table, what would it be?", name:"food", choices: ["Wine", "Cheese", "Steak"], correctAnswer:"Wine"},
-    {question: "Name the director of the Lord of the Rings trilogy.", name:"lor", choices: ["George Lucas", "Peter Jackson", "Steven King"], correctAnswer:"Peter Jackson"}
-  ];
+$(document).ready(
+	function() {
 
-  var i = 0, score = 0;
+		var allQuestions = [
+			{choices: ['Sword', 'Gun', 'Kalashnikov'], correctAnswer: 'Sword', name: 'weapon', question: 'What kind of weapon is a falchion?'},
+			{choices: ['Softly', 'With deep feeling', 'Calm, peacefull'], correctAnswer: 'Softly', name: 'piano', question: 'What does the term \'piano\' mean?'},
+			{choices: ['Morgan Freeman', 'John Wayne', 'Harrison Ford'], correctAnswer: 'John Wayne', name: 'actor', question: 'Name the actor who starred in 142 films including The Quiet Man, The Shootist, The Searchers and Stagecoach?'},
+			{choices: ['Football', 'Basketball', 'Golf'], correctAnswer: 'Golf', name: 'sport', question: 'Which sport does Constantino Rocca play?'},
+			{choices: ['Girl with Pearl Earring', 'The Artist\'s Mother', 'The Mona Lisa'], correctAnswer: 'The Mona Lisa', name: 'painting', question: 'What is the painting \'La Gioconda\' more usually known as??'},
+			{choices: ['1st January 1999', '1st January 1997', '15th January 1999'], correctAnswer: '1st January 1999', name: 'euro', question: 'When was the euro introduced as legal currency on the world market?'},
+			{choices: ['Gutenberg Bible', 'The Diamond Sutra', 'Madrid Codex'], correctAnswer: 'The Diamond Sutra', name: 'book', question: 'What is the oldest surviving printed book in the world?'},
+			{choices: ['David Cameron', 'Theresa May', 'Tony Blair'], correctAnswer: 'Theresa May', name: 'minister', question: 'Who is Prime Minister of the United Kingdom?'},
+			{choices: ['Wine', 'Cheese', 'Steak'], correctAnswer: 'Wine', name: 'food', question: 'If you had Lafite-Rothschild on your dinner table, what would it be?'},
+			{choices: ['George Lucas', 'Peter Jackson', 'Steven King'], correctAnswer: 'Peter Jackson', name: 'lor', question: 'Name the director of the Lord of the Rings trilogy.'}
+			];
+		var i = 0;
+		var score = 0;
 
-  $('.answer').click(function() {
+		$('.answer').click(
+			function() {
+				$('.answer').hide();
+				$('.next').show();
+				$('.result').show();
+				var checked = $('input[type="radio"]:checked');
 
-    $('.answer').hide();
+				var answer = checked.next().text();
 
-    $('.next').show();
+				if (answer == '') {
+					$('.result').text('Undefined answer');
+					$('.score').text('Score: ' + score);
+				}
 
-    $('.result').show();
+				else if (answer == allQuestions[i].correctAnswer) {
+					score += 10;
+					$('.result').text(answer + ' is correct answer');
+					$('.score').text('Score: ' + score);
+				}
 
-    var checked = $('input[type="radio"]:checked');
+				else {
+					$('.result').text('Nope,' + answer + ' is not correct answer. Correct answer is ' + allQuestions[i].correctAnswer + '.');
+					$('.score').text('Score: ' + score);
+				}
 
-    var answer = checked.next().text();
+				if (i == (allQuestions.length - 1)) {
+					$('.next').hide();
+					$('.finish').show();
+				}
 
-    if (answer == '') {
-      $('.result').text('Undefined answer');
-      $('.score').text('Score: ' + score);
-    }
+				i++;
+			}
+			);
 
-    else if (answer == allQuestions[i].correctAnswer) {
-      score += 10;
-      $('.result').text(answer + ' is correct answer');
-      $('.score').text('Score: ' + score);
-    }
+		$('.finish').click(
+			function() {
 
-    else {
-      $('.result').text('Nope,' + answer + ' is not correct answer. Correct answer is ' + allQuestions[i].correctAnswer + '.');
-      $('.score').text('Score: ' + score);
-    }
+				$('.question').hide();
+				var radio = $('input[type="radio"]');
 
-    if(i == (allQuestions.length-1)) {
-      $('.next').hide();
-      $('.finish').show();
-    }
+				radio.each(
+					function() {
+						$(this).hide();
+						$(this).next().hide();
+					}
+					);
 
-    i++;
+				$(this).hide();
+				$('.result').text('THE END');
+				$('.score').text('Your score: ' + score);
+			}
+			);
 
-  });
+		$('.next').click(
+			function() {
 
-  $('.finish').click(function() {
+				$('.answer').show();
 
-    $('.question').hide();
-    var radio = $('input[type="radio"]');
+				$('.next').hide();
 
-    radio.each(function() {
-      $(this).hide();
-      $(this).next().hide();
-    });
+				$('.result').hide();
 
-    $(this).hide();
-    $('.result').text('THE END');
-    $('.score').text('Your score: ' + score);
-  });
+				$('.question').text(allQuestions[i].question);
 
-  $('.next').click(function() {
+				var radio = $('input[type="radio"]');
 
-    $('.answer').show();
+				radio.prop('checked', false);
 
-    $('.next').hide();
+				var newName = allQuestions[i].name;
 
-    $('.result').hide();
+				radio.each(
+					function(j) {
+						$(this).attr('name', newName);
 
-    $('.question').text(allQuestions[i].question);
-
-    var radio = $('input[type="radio"]');
-
-    radio.prop('checked', false);
-
-    var newName = allQuestions[i].name;
-
-    radio.each(function(j) {
-        $(this).attr('name', newName);
-
-        $(this).next().text(allQuestions[i].choices[j]);
-    })
-
-  });
-
-});
+						$(this).next().text(allQuestions[i].choices[j]);
+					}
+					);
+			}
+			);
+	}
+	);
