@@ -1,0 +1,11 @@
+.divAnswer {
+  display: inline-block;
+}
+
+.next {
+  display: none;
+}
+
+.finish {
+  display: none;
+}
