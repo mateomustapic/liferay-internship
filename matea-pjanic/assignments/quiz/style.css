@@ -7,10 +7,10 @@ html, body {
 }
 
 body {
-  display: flex;
   align-items: center;
+  background-color: #FCBE32;
+  display: flex;
   justify-content: center;
-  background-color: #fcbe32;
 }
 
 .choice {
@@ -31,29 +31,29 @@ body {
 
 .content {
   display: none;
+  font-family: 'Roboto', sans-serif;
   max-width: 800px;
   width: 100%;
-  font-family: 'Roboto', sans-serif;
 }
 
 .start, .theEnd {
-  padding: 0 100px;
-  background-color: #004e66;
+  background-color: #004E66;
   color: white;
-  font-family: 'Roboto', sans-serif;
   cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 100px;
 }
 
 .endDiv {
+  cursor: auto;
   display: none;
   flex-direction: column;
   max-width: 800px;
   width: 100%;
-  cursor: auto;
 }
 
 .endResult {
-  background-color: #e1eef6;
+  background-color: #E1EEF6;
   margin: 0;
   padding: 20px 100px;
 }
@@ -64,39 +64,39 @@ body {
 }
 
 .question {
+  background-color: #004E66;
+  color: white;
   margin: 0;
   padding: 20px 100px;
-  color: white;
-  background-color: #004e66;
 }
 
 .choicesAndResult {
-  background-color: #e1eef6;
+  background-color: #E1EEF6;
   margin: 0;
   padding: 20px 100px;
 }
 
 button {
-  background-color: #ff5f2e;
+  background-color: #FF5F2E;
+  border-width: 0;
   color: black;
-  border: none;
-  padding: 10px 80px;
   cursor: pointer;
   flex: 1;
   font-family: 'Roboto', sans-serif;
+  padding: 10px 80px;
 }
 
 .score {
-  padding: 10px 30px;
-  margin: 0;
   background-color: white;
+  margin: 0;
+  padding: 10px 30px;
   text-align: right;
 }
 
 .buttonsAndScore {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 @media only screen and (max-width: 500px) {
