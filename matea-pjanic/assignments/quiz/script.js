@@ -18,11 +18,18 @@ $(document).ready(
 		var i = 0;
 		var score = 0;
 
+		$('.start').click(
+			function() {
+				$(this).hide();
+				$('.content').show();
+			}
+			);
+
 		$('.answer').click(
 			function() {
 				$('.answer').hide();
 				$('.next').show();
-				$('.result').show();
+				$('.resultDiv').show();
 				var checked = $('input[type="radio"]:checked');
 
 				var answer = checked.next().text();
@@ -34,12 +41,12 @@ $(document).ready(
 
 				else if (answer == allQuestions[i].correctAnswer) {
 					score += 10;
-					$('.result').text(answer + ' is correct answer');
+					$('.result').text('Yeah!! ' + answer + ' is correct answer');
 					$('.score').text('Score: ' + score);
 				}
 
 				else {
-					$('.result').text('Nope,' + answer + ' is not correct answer. Correct answer is ' + allQuestions[i].correctAnswer + '.');
+					$('.result').text('Nope. ' + answer + ' is not correct answer. Correct answer is ' + allQuestions[i].correctAnswer + '.');
 					$('.score').text('Score: ' + score);
 				}
 
@@ -55,19 +62,25 @@ $(document).ready(
 		$('.finish').click(
 			function() {
 
-				$('.question').hide();
-				var radio = $('input[type="radio"]');
+				$('.content').hide();
 
-				radio.each(
-					function() {
-						$(this).hide();
-						$(this).next().hide();
-					}
-					);
+				$('.endDiv').css('display', 'flex');
 
-				$(this).hide();
-				$('.result').text('THE END');
-				$('.score').text('Your score: ' + score);
+				var end = $('.endResult p');
+
+				end.append(score + '/100.');
+
+				if(score < 40) {
+					end.append('<br>Well.. Why dont you try it all over again??');
+				}
+
+				if(score >= 40 && score < 70) {
+					end.append('<br>Hmm.. sjedi 2');
+				}
+
+				if(score >= 70) {
+					end.append('<br>Not bad! Not bad!');
+				}
 			}
 			);
 
@@ -78,7 +91,7 @@ $(document).ready(
 
 				$('.next').hide();
 
-				$('.result').hide();
+				$('.resultDiv').hide();
 
 				$('.question').text(allQuestions[i].question);
 

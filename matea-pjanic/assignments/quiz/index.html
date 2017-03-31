@@ -3,22 +3,42 @@
   <meta charset="UTF-8" />
   <title>Quiz</title>
   <link href="style.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body>
-<p class="question">What kind of weapon is a falchion?</p>
+<div class="start"><p>Start quiz</p></div>
 
-<input name="weapon" type="radio">
-  <div class="divAnswer">Sword</div><br>
-<input name="weapon" type="radio">
-  <div class="divAnswer">Gun</div><br>
-<input name="weapon" type="radio">
-  <div class="divAnswer">Kalashnikov</div><br>
+<div class="content">
+  <p class="question">What kind of weapon is a falchion?</p>
 
-<button class="answer">Answer</button>
-<p class="result"></p>
-<p class=score></p>
-<button class="next">Next</button>
-<button class="finish">Finish</button>
+  <div class="choicesAndResult">
+    <input type="radio" name="weapon">
+    <div class="choice">Sword</div><br>
+    <input type="radio" name="weapon">
+    <div class="choice">Gun</div><br>
+    <input type="radio" name="weapon">
+    <div class="choice">Kalashnikov</div><br>
+
+    <div class="resultDiv">
+      <hr>
+      <p class="result"></p>
+    </div>
+
+  </div>
+
+  <div class="buttonsAndScore">
+    <button class="answer">Answer</button>
+    <button class="next">Next</button>
+    <button class="finish">Finish</button>
+    <p class=score>Score</p>
+  </div>
+
+</div>
+
+<div class="endDiv">
+  <div class="theEnd"><p>The end</p></div>
+  <div class="endResult"><p>Your score is: </div>
+</div>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="script.js" type="text/javascript"></script>
 </body>
