@@ -21,30 +21,40 @@
 		<span class="location">
 			<b>
 				<i aria-hidden="true" class="icon-map-marker"></i>
+
 				<liferay-ui:message key="headquarters" />
 			</b>
+
 			Koste Racina 12, 10000 Zagreb
 		</span>
 
 		<span class="location">
 			<b>
 				<i aria-hidden="true" class="icon-map-marker"></i>
+
 				<liferay-ui:message key="office" />
 			</b>
 			Zavrtnica 17 (Building 8), 10000 Zagreb
 		</span>
 
 		<span class="oib">
-			<b>OIB:</b> 45627809299
+			<b>OIB:</b>
+
+			45627809299
 		</span>
 
 		<span class="phone">
-			<i aria-hidden="true" class="icon-phone"></i> +385 (1) 6313 540
+			<i aria-hidden="true" class="icon-phone"></i>
+
+			+385 (1) 6313 540
 		</span>
 
 		<span class="powered-by">
 			<liferay-ui:message key="powered-by" />
-			<aui:a href="http://www.liferay.com" label="Liferay Connected Services" target="_blank"><b> Liferay</b></aui:a>
+
+			<aui:a href="http://www.liferay.com" label="Liferay Connected Services" target="_blank">
+				<b> Liferay</b>
+			</aui:a>
 		</span>
 	</div>
 </footer>
