@@ -16,7 +16,9 @@ AUI().use(
 
 		var form = A.one('.fieldset');
 
-		form.delegate('blur', toggleActive, SELECTOR_FIELD);
-		form.delegate(EVENT_FOCUS, toggleActive, SELECTOR_FIELD);
+		if (form) {
+			form.delegate('blur', toggleActive, SELECTOR_FIELD);
+			form.delegate(EVENT_FOCUS, toggleActive, SELECTOR_FIELD);
+		}
 	}
 );
