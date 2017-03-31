@@ -20,16 +20,16 @@
 	<div class="container">
 		<div class="section_column">
 			<h3 class="section-heading">
-				About Liferay
+				<liferay-ui:message key="about-liferay" />
 			</h3>
 
 			<p>
-				Liferay is an open source enterprise portal project written in Java for building business solutions that in turn deliver immediate results and long term value. It contains numerous tools with magnificent features.<br>
-
-				<aui:a href="https://www.liferay.com/" label="Liferay" target="_blank">
-					<i aria-hidden="true" class="icon-angle-right"></i>
-				</aui:a>
+				<liferay-ui:message key="liferay-is-an-open-source-enterprise-portal-project-written-in-java-for-building-business-solutions-that-in-turn-deliver-immediate-results-and-long-term-value" />
 			</p>
+
+			<aui:a href="https://www.liferay.com/" label="Liferay" target="_blank">
+				<i aria-hidden="true" class="icon-angle-right"></i>
+			</aui:a>
 		</div>
 
 		<img alt="Liferay" src="<%= PortalUtil.getPathContext(request) %>/images/liferay-logo.svg">

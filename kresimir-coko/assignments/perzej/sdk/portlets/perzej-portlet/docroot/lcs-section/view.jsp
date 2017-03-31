@@ -22,16 +22,16 @@
 
 		<div class="section_column">
 			<h3 class="section-heading">
-				About LCS
+				<liferay-ui:message key="about-liferay-connected-services" />
 			</h3>
 
 			<p>
-				Liferay Connected Services is a new online platform that offers a set of tools and services that will help our customers succeed on their Liferay projects.<br>
-
-				<aui:a href="https://www.liferay.com/supporting-products/liferay-connected-services" label="Liferay Connected Services" target="_blank">
-					<i aria-hidden="true" class="icon-angle-right"></i>
-				</aui:a>
+				<liferay-ui:message key="liferay-connected-services-is-a-new-online-platform-that-offers-a-set-of-tools-and-services-that-will-help-our-customers-succeed-on-their-liferay-projects" />
 			</p>
+
+			<aui:a href="https://www.liferay.com/supporting-products/liferay-connected-services" label="Liferay Connected Services" target="_blank">
+				<i aria-hidden="true" class="icon-angle-right"></i>
+			</aui:a>
 		</div>
 	</div>
 </section>

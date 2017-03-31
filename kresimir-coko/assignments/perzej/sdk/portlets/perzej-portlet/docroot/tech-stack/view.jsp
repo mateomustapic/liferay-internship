@@ -172,7 +172,7 @@
 
 		<div class="tech-stack-column">
 			<h3 class="tech-stack-heading">
-				Tools
+				<liferay-ui:message key="tools" />
 			</h3>
 
 			<div class="tech-stack-column-container">

@@ -164,6 +164,10 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		}
 	}
 
+	.opens-new-window-accessible {
+		display: none;
+	}
+
 	.lfr-meta-actions {
 		margin: 0 auto;
 		max-width: 1280px;
@@ -279,7 +283,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 	#content {
 		flex: 1;
 		flex-direction: column;
-		margin-bottom: 181px;
 
 		.container {
 			align-items: center;
@@ -302,9 +305,10 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 			.section-heading {
 				color: $green;
+				font-family: Montserrat, sans-serif;
 				font-size: 2.5em;
+				font-weight: 700;
 				padding-bottom: 32px;
-				text-transform: uppercase;
 			}
 		}
 	}
@@ -322,12 +326,14 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		}
 
 		a {
+			align-self: flex-start;
 			background-color: $green;
 			color: $light;
 			display: inline-block;
+			font-size: 1.6em;
 			line-height: 1;
-			margin-top: 8px;
-			padding: 8px 16px;
+			margin-top: 24px;
+			padding: 16px;
 			transition: all 0.15s ease;
 
 			i {
@@ -337,10 +343,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			&:hover {
 				background-color: $silver;
 			}
-		}
-
-		.opens-new-window-accessible {
-			display: none;
 		}
 	}
 
@@ -468,7 +470,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 				flex-direction: column;
 			}
 
-			&:last-child {
+			&:nth-child(2) {
 				align-items: center;
 				background-color: #FFF;
 				display: flex;
@@ -613,7 +615,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		font-family: Montserrat, sans-serif;
 		justify-content: space-around;
 		padding: 32px 8px;
-		position: absolute;
 		width: 100%;
 
 		.container {
@@ -626,7 +627,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 		span {
 			color: $light;
-			display: block;
 			font-family: inherit;
 			font-size: 1.2em;
 			font-weight: 100;
@@ -710,10 +710,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 	************************************************************/
 
 	@media screen and (max-width: 1024px) {
-		#content {
-			margin-bottom: 275px;
-		}
-
 		#tech-stack.section {
 			.container {
 				justify-content: space-around;
@@ -801,7 +797,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		.columns-1-2-1 {
 			flex-direction: column;
 
-			> div:last-child {
+			> div:nth-child(2) {
 				flex-direction: column;
 			}
 		}
@@ -928,6 +924,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 				font-size: 2em;
 				font-weight: 300;
 				padding-bottom: 24px;
+				text-align: center;
 			}
 
 			.section_column {
@@ -980,7 +977,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		}
 
 		.columns-1-2-1 {
-			> div:last-child {
+			> div:nth-child(2) {
 				flex-direction: column;
 				padding: 0;
 			}
@@ -1035,12 +1032,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			}
 		}
 	}
-
-	@media screen and (max-width: 448px) {
-		#content {
-			margin-bottom: 243px;
-		}
-	}
 }
 
 /* Extras
@@ -1051,5 +1042,5 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 }
 
 #perzej #hero {
-	@include background(linear-gradient(rgba(#333, 0.5), rgba(#333, 0.5)), url(../images/background.jpg));
+	@include background-image(linear-gradient(rgba(#333, 0.5), rgba(#333, 0.5)), url(../images/background.jpg));
 }

@@ -17,6 +17,7 @@
 		<supports>
 			<mime-type>text/html</mime-type>
 		</supports>
+		<resource-bundle>content.Language</resource-bundle>
 		<portlet-info>
 			<title>About Liferay Section</title>
 			<short-title>About Liferay Section</short-title>
@@ -51,6 +52,7 @@
 		<supports>
 			<mime-type>text/html</mime-type>
 		</supports>
+		<resource-bundle>content.Language</resource-bundle>
 		<portlet-info>
 			<title>About LCS Section</title>
 			<short-title>About LCS Section</short-title>
@@ -85,6 +87,7 @@
 		<supports>
 			<mime-type>text/html</mime-type>
 		</supports>
+		<resource-bundle>content.Language</resource-bundle>
 		<portlet-info>
 			<title>Tech Stack Section</title>
 			<short-title>Tech Stack Section</short-title>
@@ -119,10 +122,46 @@
 		<supports>
 			<mime-type>text/html</mime-type>
 		</supports>
+		<resource-bundle>content.Language</resource-bundle>
 		<portlet-info>
 			<title>Location Section</title>
 			<short-title>Location Section</short-title>
 			<keywords>Location Section</keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>footer-section</portlet-name>
+		<display-name>Footer</display-name>
+		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
+		<init-param>
+			<name>template-path</name>
+			<value>/footer-section/</value>
+		</init-param>
+		<init-param>
+			<name>view-template</name>
+			<value>/footer-section/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+		</supports>
+		<resource-bundle>content.Language</resource-bundle>
+		<portlet-info>
+			<title>Footer</title>
+			<short-title>Footer</short-title>
+			<keywords>Footer</keywords>
 		</portlet-info>
 		<security-role-ref>
 			<role-name>administrator</role-name>
