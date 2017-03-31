@@ -98,3 +98,29 @@ button {
   justify-content: space-between;
   align-items: center;
 }
+
+@media only screen and (max-width: 500px) {
+  .question {
+    padding: 20px 20px;
+  }
+
+  .choicesAndResult {
+    padding: 20px 20px;
+  }
+
+  button {
+    padding: 10px 40px;
+  }
+
+  .score {
+    padding: 10px 20px;
+  }
+
+  .theEnd {
+    padding: 0 20px;
+  }
+
+  .endResult {
+    padding: 20px 20px;
+  }
+}
