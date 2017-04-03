@@ -2,16 +2,16 @@
 
 <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
 	<portlet>
-		<portlet-name>liferay-section</portlet-name>
-		<display-name>About Liferay Section</display-name>
+		<portlet-name>about-liferay</portlet-name>
+		<display-name>About Liferay</display-name>
 		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
 		<init-param>
 			<name>template-path</name>
-			<value>/liferay-section/</value>
+			<value>/about-liferay/</value>
 		</init-param>
 		<init-param>
 			<name>view-template</name>
-			<value>/liferay-section/view.jsp</value>
+			<value>/about-liferay/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
@@ -19,9 +19,9 @@
 		</supports>
 		<resource-bundle>content.Language</resource-bundle>
 		<portlet-info>
-			<title>About Liferay Section</title>
-			<short-title>About Liferay Section</short-title>
-			<keywords>About Liferay Section</keywords>
+			<title>About Liferay</title>
+			<short-title>About Liferay</short-title>
+			<keywords>About Liferay</keywords>
 		</portlet-info>
 		<security-role-ref>
 			<role-name>administrator</role-name>
@@ -37,16 +37,16 @@
 		</security-role-ref>
 	</portlet>
 	<portlet>
-		<portlet-name>lcs-section</portlet-name>
-		<display-name>About LCS Section</display-name>
+		<portlet-name>about-liferay-connected-services</portlet-name>
+		<display-name>About Liferay Connected Services</display-name>
 		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
 		<init-param>
 			<name>template-path</name>
-			<value>/lcs-section/</value>
+			<value>/about-liferay-connected-services/</value>
 		</init-param>
 		<init-param>
 			<name>view-template</name>
-			<value>/lcs-section/view.jsp</value>
+			<value>/about-liferay-connected-services/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
@@ -54,9 +54,9 @@
 		</supports>
 		<resource-bundle>content.Language</resource-bundle>
 		<portlet-info>
-			<title>About LCS Section</title>
-			<short-title>About LCS Section</short-title>
-			<keywords>About LCS Section</keywords>
+			<title>About Liferay Connected Services</title>
+			<short-title>About LCS</short-title>
+			<keywords>Liferay Connected Services</keywords>
 		</portlet-info>
 		<security-role-ref>
 			<role-name>administrator</role-name>
@@ -72,16 +72,16 @@
 		</security-role-ref>
 	</portlet>
 	<portlet>
-		<portlet-name>tech-stack</portlet-name>
-		<display-name>Tech Stack Section</display-name>
+		<portlet-name>technology-stack</portlet-name>
+		<display-name>Technologies</display-name>
 		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
 		<init-param>
 			<name>template-path</name>
-			<value>/tech-stack/</value>
+			<value>/technology-stack/</value>
 		</init-param>
 		<init-param>
 			<name>view-template</name>
-			<value>/tech-stack/view.jsp</value>
+			<value>/technology-stack/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
@@ -89,9 +89,9 @@
 		</supports>
 		<resource-bundle>content.Language</resource-bundle>
 		<portlet-info>
-			<title>Tech Stack Section</title>
-			<short-title>Tech Stack Section</short-title>
-			<keywords>Tech Stack Section</keywords>
+			<title>Technology Stack</title>
+			<short-title>Technology Stack</short-title>
+			<keywords>Technology Stack</keywords>
 		</portlet-info>
 		<security-role-ref>
 			<role-name>administrator</role-name>
@@ -107,16 +107,16 @@
 		</security-role-ref>
 	</portlet>
 	<portlet>
-		<portlet-name>location-section</portlet-name>
-		<display-name>Location Section</display-name>
+		<portlet-name>google-map</portlet-name>
+		<display-name>Location</display-name>
 		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
 		<init-param>
 			<name>template-path</name>
-			<value>/location-section/</value>
+			<value>/google-map/</value>
 		</init-param>
 		<init-param>
 			<name>view-template</name>
-			<value>/location-section/view.jsp</value>
+			<value>/google-map/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
@@ -124,9 +124,9 @@
 		</supports>
 		<resource-bundle>content.Language</resource-bundle>
 		<portlet-info>
-			<title>Location Section</title>
-			<short-title>Location Section</short-title>
-			<keywords>Location Section</keywords>
+			<title>Location</title>
+			<short-title>Location</short-title>
+			<keywords>Location</keywords>
 		</portlet-info>
 		<security-role-ref>
 			<role-name>administrator</role-name>
@@ -142,16 +142,16 @@
 		</security-role-ref>
 	</portlet>
 	<portlet>
-		<portlet-name>footer-section</portlet-name>
+		<portlet-name>site-footer</portlet-name>
 		<display-name>Footer</display-name>
 		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
 		<init-param>
 			<name>template-path</name>
-			<value>/footer-section/</value>
+			<value>/site-footer/</value>
 		</init-param>
 		<init-param>
 			<name>view-template</name>
-			<value>/footer-section/view.jsp</value>
+			<value>/site-footer/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>

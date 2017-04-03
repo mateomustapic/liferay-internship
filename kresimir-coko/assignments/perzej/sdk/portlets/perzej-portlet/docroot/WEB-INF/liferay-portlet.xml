@@ -3,20 +3,24 @@
 
 <liferay-portlet-app>
 	<portlet>
-		<portlet-name>liferay-section</portlet-name>
+		<portlet-name>about-liferay</portlet-name>
 		<css-class-wrapper>liferay-section-portlet</css-class-wrapper>
 	</portlet>
 	<portlet>
-		<portlet-name>lcs-section</portlet-name>
-		<css-class-wrapper>lcs-section-portlet</css-class-wrapper>
+		<portlet-name>about-liferay-connected-services</portlet-name>
+		<css-class-wrapper>lcs-portlet</css-class-wrapper>
 	</portlet>
 	<portlet>
-		<portlet-name>tech-stack</portlet-name>
+		<portlet-name>technology-stack</portlet-name>
 		<css-class-wrapper>tech-stack-portlet</css-class-wrapper>
 	</portlet>
 	<portlet>
-		<portlet-name>location-section</portlet-name>
-		<css-class-wrapper>location-portlet</css-class-wrapper>
+		<portlet-name>google-map</portlet-name>
+		<css-class-wrapper>google-map-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>site-footer</portlet-name>
+		<css-class-wrapper>footer-portlet</css-class-wrapper>
 	</portlet>
 	<role-mapper>
 		<role-name>administrator</role-name>
