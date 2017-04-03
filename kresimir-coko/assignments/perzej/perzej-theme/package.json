@@ -1,24 +1,23 @@
 {
-  "devDependencies": {
-    "gulp": "^3.8.10",
-    "gulp-sass": "^3.1.0",
-    "liferay-theme-deps-6.2": "*",
-    "liferay-theme-tasks": "*"
-  },
-  "keywords": [
-    "liferay-theme"
-  ],
-  "liferayTheme": {
-    "baseTheme": "styled",
-    "rubySass": false,
-    "screenshot": "",
-    "templateLanguage": "vm",
-    "version": "6.2"
-  },
-  "main": "package.json",
-  "name": "perzej-theme",
-  "publishConfig": {
-    "tag": "6_2_x"
-  },
-  "version": "1.0.0"
+	"devDependencies": {
+		"gulp": "^3.8.10",
+		"liferay-theme-deps-6.2": "*",
+		"liferay-theme-tasks": "*"
+	},
+	"keywords": [
+		"liferay-theme"
+	],
+	"liferayTheme": {
+		"baseTheme": "styled",
+		"rubySass": false,
+		"screenshot": "",
+		"templateLanguage": "vm",
+		"version": "6.2"
+	},
+	"main": "package.json",
+	"name": "perzej-theme",
+	"publishConfig": {
+		"tag": "6_2_x"
+	},
+	"version": "1.0.0"
 }
