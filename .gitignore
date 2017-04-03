@@ -30,6 +30,23 @@ _sass_cache_*.css
 **/sdk/themes/*/docroot/templates
 **/sdk/themes/*/docroot/WEB-INF/lib
 
+**/docroot/WEB-INF/tld/
+.gradle/
+.idea/
+.sass-cache/
+.settings/
+bin/
+build/
+classes/
+lib/
+liferay-hook.xml.processed
+node_modules/
+npm-debug.log
+test-classes/
+test-coverage/
+test-results/
+tmp/
+
 **/sdk/portlets/*/test/integration/arquillian.xml
 
 !**/sdk/portlets/
