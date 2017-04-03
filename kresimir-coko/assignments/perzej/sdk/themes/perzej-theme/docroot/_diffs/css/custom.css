@@ -154,13 +154,14 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		color: rgba(#FFF, 0.7);
 		font-size: 1.3em;
 		padding: 8px 24px;
-		transition: 0.15s ease;
+		@include transition-duration(0.15s);
+		@include transition-property(all);
+		@include transition-timing-function(ease);
 
 		&:hover {
 			background-color: #FFF;
 			border-color: #FFF;
 			color: $blue;
-			transition: 0.15s ease;
 		}
 	}
 
@@ -334,7 +335,9 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			line-height: 1;
 			margin-top: 24px;
 			padding: 16px;
-			transition: all 0.15s ease;
+			@include transition-duration(0.15s);
+			@include transition-property(all);
+			@include transition-timing-function(ease);
 
 			i {
 				padding-left: 8px;
@@ -528,7 +531,9 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			padding-bottom: 8px;
 			padding-left: 8px;
 			text-transform: uppercase;
-			transition: all 0.15s ease;
+			@include transition-duration(0.15s);
+			@include transition-property(all);
+			@include transition-timing-function(ease);
 			width: 100%;
 
 			&.label-active {
@@ -578,7 +583,9 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			padding: 16px 32px;
 			text-shadow: none;
 			text-transform: uppercase;
-			transition: all 0.15s ease;
+			@include transition-duration(0.15s);
+			@include transition-property(all);
+			@include transition-timing-function(ease);
 			width: 50%;
 
 			&:hover {
@@ -640,11 +647,12 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			a {
 				color: $light;
 				font-family: inherit;
-				transition: all 0.15s ease;
+				@include transition-duration(0.15s);
+				@include transition-property(all);
+				@include transition-timing-function(ease);
 
 				&:hover {
 					color: $green;
-					transition: 0.15s ease;
 				}
 			}
 
@@ -1006,7 +1014,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 					&:focus {
 						border-bottom: 2px solid $blue;
-						transition: 0.01s ease;
 					}
 				}
 
