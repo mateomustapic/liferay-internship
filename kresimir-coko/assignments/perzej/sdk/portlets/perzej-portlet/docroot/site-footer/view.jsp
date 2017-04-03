@@ -25,7 +25,8 @@
 				<liferay-ui:message key="headquarters" />
 			</b>
 
-			Koste Racina 12, 10000 Zagreb
+			<%= PortletProps.get("perzej.headquarters.address") %>
+
 		</span>
 
 		<span class="location">
@@ -34,25 +35,26 @@
 
 				<liferay-ui:message key="office" />
 			</b>
-			Zavrtnica 17 (Building 8), 10000 Zagreb
+
+			<%= PortletProps.get("perzej.office.address") %>
 		</span>
 
 		<span class="oib">
 			<b>OIB:</b>
 
-			45627809299
+			<%= PortletProps.get("perzej.oib") %>
 		</span>
 
 		<span class="phone">
 			<i aria-hidden="true" class="icon-phone"></i>
 
-			+385 (1) 6313 540
+			<%= PortletProps.get("perzej.phone") %>
 		</span>
 
 		<span class="powered-by">
 			<liferay-ui:message key="powered-by" />
 
-			<aui:a href="http://www.liferay.com" label="Liferay Connected Services" target="_blank">
+			<aui:a href="http://www.liferay.com" target="_blank">
 				<b> Liferay</b>
 			</aui:a>
 		</span>
