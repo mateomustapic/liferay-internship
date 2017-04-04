@@ -34,13 +34,7 @@
 					</h1>
 
 					<div class="language-picker">
-						<a class="language-en" href="$home_url/en">
-							EN
-						</a>
-
-						<a class="language-hr" href="$home_url/hr">
-							HR
-						</a>
+						$theme.runtime("82")
 					</div>
 				</div>
 
