@@ -20,5 +20,17 @@ AUI().use(
 			form.delegate('blur', toggleActive, SELECTOR_FIELD);
 			form.delegate(EVENT_FOCUS, toggleActive, SELECTOR_FIELD);
 		}
+
+		var languageCroatian = A.one('.language-picker .portlet-body span:first-child a');
+
+		var languageEnglish = A.one('.language-picker .portlet-body span:last-child a');
+
+		if (languageCroatian) {
+			languageCroatian.text('hr');
+		}
+
+		if (languageEnglish) {
+			languageEnglish.text('en');
+		}
 	}
 );
