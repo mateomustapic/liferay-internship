@@ -33,9 +33,15 @@
 						</a>
 					</h1>
 
-					#if (!$is_signed_in)
-						<a data-redirect="$is_login_redirect_required" href="$sign_in_url" id="sign-in" rel="nofollow">$sign_in_text</a>
-					#end
+					<div class="language-picker">
+						<a class="language-en" href="$theme_display.getPortalURL()/en">
+							EN
+						</a>
+						
+						<a class="language-hr" href="$theme_display.getPortalURL()/hr">
+							HR
+						</a>
+					</div>
 				</div>
 
 				#if ($has_navigation || $is_signed_in)

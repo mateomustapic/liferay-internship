@@ -278,6 +278,46 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		text-transform: uppercase;
 	}
 
+	.language-picker {
+		color: #FFF;
+		font-size: 1.2em;
+
+		a {
+			border: 1px solid #FFF;
+			color: inherit;
+			display: none;
+			padding: 8px 16px;
+			@include transition-duration(0.15s);
+			@include transition-property(all);
+			@include transition-timing-function(ease);
+
+			&:hover {
+				background-color: #FFF;
+				color: #333;
+			}
+		}
+	}
+
+	&:lang(en) {
+		.language-hr {
+			display: block;
+		}
+
+		.language-en {
+			display: none;
+		}
+	}
+
+	&:lang(hr) {
+		.language-en {
+			display: block;
+		}
+
+		.language-hr {
+			display: none;
+		}
+	}
+
 	/* Content
 	************************************************************/
 
