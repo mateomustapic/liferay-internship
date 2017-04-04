@@ -34,11 +34,11 @@
 					</h1>
 
 					<div class="language-picker">
-						<a class="language-en" href="$theme_display.getPortalURL()/en">
+						<a class="language-en" href="$home_url/en">
 							EN
 						</a>
-						
-						<a class="language-hr" href="$theme_display.getPortalURL()/hr">
+
+						<a class="language-hr" href="$home_url/hr">
 							HR
 						</a>
 					</div>
