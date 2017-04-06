@@ -50,17 +50,34 @@ YUI().use(
 		}
 	}
 }
-,'aui-modal',
+);
+
+/* modal window */
+YUI().use(
+'aui-modal',
 	function(Y) {
 		var modal = new Y.Modal(
 			{
 				bodyContent: 'In this portlet you can add or delete tasks',
 				centered: true,
-				headerContent: '<h3>TO DO LIST</h3>',
+				headerContent: '<h3>TO DO LIST <span class="icon-check" aria-hidden="true"></span></h3>',
 				modal: true,
 				render: '#modal',
 				width: 450
 			}
 		).render();
+});
+
+/* counter of task characters */
+YUI().use(
+	'aui-char-counter',
+	function(Y) {
+		new Y.CharCounter(
+			{
+				counter: '#myCounter',
+				input: '#myInput',
+				maxLength: 50
+			}
+		);
 	}
 );
