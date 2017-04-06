@@ -5,8 +5,7 @@
 	<custom>
 		<layout-template id="columns_1_2" name="Perzej Layout">
 			<template-path>/columns_1_2.tpl</template-path>
-			<wap-template-path>/columns_1_2.wap.tpl</wap-template-path>
-			<thumbnail-path>/columns_1_2.png</thumbnail-path>
+			<wap-template-path>/columns_1_2.tpl</wap-template-path>
 		</layout-template>
 	</custom>
 </layout-templates>
