@@ -40,7 +40,11 @@
 		</span>
 
 		<span class="oib">
-			<b>OIB:</b>
+			<b>
+				<i aria-hidden="true" class="icon-book"></i>
+
+				OIB:
+			</b>
 
 			<%= PortletProps.get("perzej.oib") %>
 		</span>
@@ -52,6 +56,8 @@
 		</span>
 
 		<span class="powered-by">
+			<i aria-hidden="true" class="icon-rocket"></i>
+
 			<liferay-ui:message key="powered-by" />
 
 			<aui:a href="http://www.liferay.com" target="_blank">
