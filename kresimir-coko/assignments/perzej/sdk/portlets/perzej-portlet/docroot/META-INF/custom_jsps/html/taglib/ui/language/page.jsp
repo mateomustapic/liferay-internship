@@ -129,7 +129,9 @@ for (int i = 0; i < locales.length; i++) {
 			String localeDisplayName = null;
 
 			if (displayStyle == LanguageTag.LIST_SHORT_TEXT) {
-				localeDisplayName = LocaleUtil.getShortDisplayName(locales[i], duplicateLanguages).replace(" [Beta]", "");
+				localeDisplayName = LocaleUtil.getShortDisplayName(locales[i], duplicateLanguages);
+
+				localeDisplayName = localeDisplayName.replace(" [Beta]", "");
 			}
 			else {
 				localeDisplayName = LocaleUtil.getLongDisplayName(locales[i], duplicateLanguages);
