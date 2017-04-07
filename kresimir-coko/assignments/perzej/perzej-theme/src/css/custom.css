@@ -102,11 +102,6 @@ $silver: #009DB7;
 $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 #perzej {
-	height: 100%;
-
-	body {
-		height: 100%;
-	}
 
 	/* Overrides
 	************************************************************/
@@ -209,7 +204,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 	.half-width-column {
 		margin-left: 0;
-		padding: 24px;
 		width: 50%;
 	}
 
@@ -267,7 +261,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		width: 100%;
 	}
 
-	span.site-name {
+	span.hero-title {
 		background-color: rgba(255, 255, 255, 0.2);
 		border: 2px solid white;
 		color: $light;
@@ -289,17 +283,21 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		.portlet-content {
 			padding: 0;
 
-			a {
+			select {
 				background-color: rgba(255, 255, 255, 0.2);
-				border: 1px solid #FFF;
+				border: 1px solid rgba(255, 255, 255, 0.6);
+				border-radius: 0;
 				color: inherit;
 				cursor: pointer;
 				display: block;
-				padding: 8px 16px;
+				font-family: Raleway, sans-serif;
+				height: auto;
+				padding: 8px;
 				text-transform: uppercase;
 				@include transition-duration(0.15s);
 				@include transition-property(all);
 				@include transition-timing-function(ease);
+				width: auto;
 
 				&:hover {
 					background-color: #FFF;
@@ -503,28 +501,27 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 	// Contact Section
 
 	.columns-1-2-1 {
-		> div {
-			&:first-child {
-				flex-direction: column;
-			}
-
-			&:nth-child(2) {
-				align-items: center;
-				background-color: #FFF;
-				display: flex;
-				justify-content: center;
-				padding: 0;
-			}
+		> div:last-child {
+			height: 500px;
 		}
 	}
 
-	#column-2 {
+	.web-form-portlet .portlet {
 		align-items: center;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		padding: 64px;
+		margin: 0 auto;
+		padding: 64px 0;
 		width: 50%;
+
+		.fieldset-legend {
+			border-bottom-width: 0;
+			color: $green;
+			font-size: 3em;
+			margin-bottom: 32px;
+			text-align: center;
+		}
 
 		> div {
 			align-items: center;
@@ -532,7 +529,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			flex-direction: column;
 			justify-content: flex-start;
 			margin-bottom: 0;
-			width: 70%;
+			width: 100%;
 
 			> div {
 				width: 100%;
@@ -634,7 +631,10 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		}
 	}
 
-	#column-3 {
+	/* Footer
+	************************************************************/
+
+	#column-2 {
 		align-self: stretch;
 		background-color: $grey;
 		padding: 0;
@@ -645,8 +645,11 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		}
 	}
 
-	/* Footer
-	************************************************************/
+	#column-3 {
+		div, section, footer {
+			height: 100%;
+		}
+	}
 
 	#footer {
 		align-self: flex-end;
@@ -656,26 +659,33 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		flex-wrap: wrap;
 		font-family: Montserrat, sans-serif;
 		justify-content: space-around;
-		padding: 32px 8px;
 		width: 100%;
 
 		.container {
 			align-items: center;
 			display: flex;
+			flex-direction: column;
 			flex-wrap: wrap;
 			max-width: 1280px;
+			padding: 32px;
 			width: 100%;
 		}
 
-		span {
+		span:not(.opens-new-window-accessible) {
+			align-items: center;
 			color: $light;
+			display: flex;
+			flex: 1;
 			font-family: inherit;
-			font-size: 1.2em;
+			font-size: 1.4em;
 			font-weight: 100;
+			justify-content: center;
 			text-align: center;
+			width: 100%;
 
 			b {
 				font-weight: 700;
+				padding-right: 8px;
 				text-transform: uppercase;
 			}
 
@@ -697,17 +707,9 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			}
 		}
 
-		.location {
-			width: 50%;
-		}
-
-		.oib, .phone {
-			padding: 24px 0;
-			width: 50%;
-		}
-
-		.powered-by {
-			width: 100%;
+		.powered-by b {
+			padding-left: 8px;
+			padding-right: 0;
 		}
 	}
 
@@ -731,21 +733,25 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			max-width: 400px;
 			width: 32%;
 		}
+	}
 
-		#column-2 {
-			padding: 48px;
+	@media screen and (max-width: 1200px) {
+		#footer span {
+			flex-direction: column;
 
-			> div {
-				width: 100%;
+			b {
+				padding-bottom: 8px;
+			}
 
-				> div {
-					width: 100%;
-				}
+			&.powered-by {
+				flex-direction: row;
 			}
 		}
 
-		#footer {
-			padding: 32px 16px;
+		.phone, .powered-by {
+			i {
+				padding-bottom: 8px;
+			}
 		}
 	}
 
@@ -759,27 +765,31 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			}
 		}
 
-		#column-2 {
-			padding: 48px 24px;
+		.columns-1-2-1 > div:last-child {
+			flex-direction: column;
+			height: auto;
 
-			> div {
+			.half-width-column {
 				width: 100%;
 			}
 		}
 
-		#footer {
-			flex-direction: column;
-			padding: 0;
+		#column-2 {
+			height: 500px;
+		}
 
-			span {
-				padding: 16px;
-				text-align: center;
-				width: 100%;
+		#footer {
+			.container {
+				flex-direction: row;
 			}
 
-			.location, .oib, .phone, .powered-by {
-				padding: 16px;
-				width: 100%;
+			span:not(.opens-new-window-accessible) {
+				flex: initial;
+
+				&:not(.powered-by) {
+					margin-bottom: 24px;
+					width: 50%;
+				}
 			}
 		}
 	}
@@ -808,7 +818,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			padding: 16px;
 		}
 
-		span.site-name {
+		span.hero-title {
 			font-size: 4em;
 			padding: 16px 48px;
 		}
@@ -867,7 +877,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			display: none;
 		}
 
-		#column-2 {
+		.web-form-portlet .portlet {
 			padding: 40px;
 			width: 100%;
 
@@ -882,11 +892,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			textarea {
 				height: 150px;
 			}
-		}
-
-		#column-3 {
-			height: 47vh;
-			width: 100%;
 		}
 	}
 
@@ -907,6 +912,19 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 		#column-2 > div {
 			width: 100%;
+		}
+
+		#footer {
+			.container {
+				flex-direction: column;
+			}
+
+			span:not(.opens-new-window-accessible) {
+				&:not(.powered-by) {
+					flex: 1;
+					width: 100%;
+				}
+			}
 		}
 	}
 
@@ -930,7 +948,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			font-size: 0;
 		}
 
-		span.site-name {
+		span.hero-title {
 			font-size: 3em;
 			padding: 8px 32px;
 		}
@@ -1023,58 +1041,11 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			width: calc(50% - 4px);
 		}
 
-		.columns-1-2-1 {
-			> div:nth-child(2) {
-				flex-direction: column;
-				padding: 0;
-			}
-		}
-
-		#column-2 {
-			background-color: #FFF;
-			padding: 32px 16px;
-			width: 100%;
+		.web-form-portlet .portlet {
+			padding: 32px 24px;
 
 			> div {
 				width: 100%;
-
-				input, textarea {
-					border-radius: 0;
-					box-shadow: none;
-					font-weight: 300;
-					max-width: 100% !important;
-					padding: 8px;
-				}
-
-				input[type="email"], textarea {
-					border-bottom: 1px solid $light;
-					font-size: 1.4em;
-					padding: 8px;
-
-					&:focus {
-						border-bottom: 2px solid $blue;
-					}
-				}
-
-				input[type="submit"] {
-					border: 1px solid $light;
-				}
-
-				textarea {
-					height: 128px;
-				}
-			}
-		}
-
-		#column-3 {
-			background-size: 200%;
-			height: 67vh;
-			width: 100%;
-		}
-
-		.location {
-			b {
-				display: block;
 			}
 		}
 	}

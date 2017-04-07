@@ -44,7 +44,7 @@
 
 				<div id="hero">
 					#if ($show_site_name)
-						<span class="site-name" title="#language_format ("go-to-x", [$site_name])">
+						<span class="hero-title" title="#language_format ("go-to-x", [$site_name])">
 							$site_name
 						</span>
 					#end

@@ -85,9 +85,13 @@ for (int i = 0; i < locales.length; i++) {
 
 				<%
 				for (int i = 0; i < locales.length; i++) {
+
+					String dropdownLanguage = LocaleUtil.getShortDisplayName(locales[i], duplicateLanguages);
+
+					dropdownLanguage = dropdownLanguage.replace(" [Beta]", "");
 				%>
 
-					<aui:option cssClass="taglib-language-option" label="<%= LocaleUtil.getLongDisplayName(locales[i], duplicateLanguages) %>" lang="<%= LocaleUtil.toW3cLanguageId(locales[i]) %>" selected="<%= (locale.getLanguage().equals(locales[i].getLanguage()) && locale.getCountry().equals(locales[i].getCountry())) %>" value="<%= LocaleUtil.toLanguageId(locales[i]) %>" />
+					<aui:option cssClass="taglib-language-option" label="<%= dropdownLanguage %>" lang="<%= LocaleUtil.toW3cLanguageId(locales[i]) %>" selected="<%= (locale.getLanguage().equals(locales[i].getLanguage()) && locale.getCountry().equals(locales[i].getCountry())) %>" value="<%= LocaleUtil.toLanguageId(locales[i]) %>" />
 
 				<%
 				}
@@ -130,8 +134,6 @@ for (int i = 0; i < locales.length; i++) {
 
 			if (displayStyle == LanguageTag.LIST_SHORT_TEXT) {
 				localeDisplayName = LocaleUtil.getShortDisplayName(locales[i], duplicateLanguages);
-
-				localeDisplayName = localeDisplayName.replace(" [Beta]", "");
 			}
 			else {
 				localeDisplayName = LocaleUtil.getLongDisplayName(locales[i], duplicateLanguages);
