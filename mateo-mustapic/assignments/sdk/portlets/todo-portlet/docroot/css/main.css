@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+#myUL {
+    margin: 0;
+    padding: 0;
+}
+
+
+#myUL li {
+    cursor: pointer;
+    position: relative;
+    padding: 8px 10px 8px 4px;
+    background: #1a53af;
+    font-size: 16px;
+    transition: 0.2s;
+    color: white;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 10px;
+    list-style-type: none;
+}
+
+#myUL li:nth-child(odd) {
+    background: #93d5ff;
+}
+
+#myUL li:hover {
+    background: #ddd;
+
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px
+}
+
+.close:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+#inputDiv {
+    width: 100%;
+}
+
+#myDIV {
+    margin-bottom: 10px;
+}
+
+#myDIV input {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing : border-box;
+    width: 87%;
+    height: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    float: left;
+    margin: auto;
+}
+
+
+.addBtn {
+    background-color: #008CBA;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 11%;
+    margin-left: 8px;
+}
+
+.addBtn:hover {
+    background-color: #bbb;
+}
+
+@media screen and (max-width: 800px){
+    .addBtn{
+        background-color: #f44336;
+        margin-left: 0;
+    }
+    .addBtn, #myDIV input, #myUL li {
+        width: 100%;
+        border-radius: 0;
+    }
+    #myDIV{
+        margin-bottom: 0;
+    }
+    #modal{
+        width: 400px;
+    }
+}
