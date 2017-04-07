@@ -18,22 +18,22 @@
 
 <%@ include file="/init.jsp" %>
 
-<portlet:defineObjects />
+<portlet:defineObjects/>
 
 <div id="myDIV">
-	<h2>TO DO LIST <span class="icon-check" aria-hidden="true"></span></h2>
-	<div id="inputDiv">
-		<input id="myInput" placeholder="Title of new task..." type="text">
-		<span class="addBtn" id="addItem">Add</span>
-	</div>
-	<span id="myCounter"></span> character(s) remaining
+    <h2>TO DO LIST <span class="icon-check" aria-hidden="true"></span></h2>
+    <div id="inputDiv">
+        <input id="myInput" placeholder="Title of new task..." type="text">
+        <span class="addBtn" id="addItem">Add</span>
+    </div>
+    <span id="myCounter"></span> character(s) remaining
 </div>
 
 <ul id="myUL">
-	<li>Task 1</li>
-	<li>Task 2</li>
+    <li>Task 1</li>
+    <li>Task 2</li>
 </ul>
 
 <div class="yui3-skin-sam">
-	<div id="modal"></div>
+    <div id="modal"></div>
 </div>
