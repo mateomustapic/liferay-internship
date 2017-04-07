@@ -22,13 +22,12 @@ AUI().use(
 		var j;
 
 		for (j = 0; j < close.length; j++) {
+			close[j].onclick = function() {
+				var div = this.parentElement;
 
+				div.style.display = 'none';
+			};
 		}
-		close[j].onclick = function() {
-			var div = this.parentElement;
-
-			div.style.display = 'none';
-		};
 
 		/* Create a new list item when clicking on the "Add" button*/
 		function addItem() {
@@ -52,18 +51,19 @@ AUI().use(
 			myNodeList[i].appendChild(span);
 
 			for (i = 0; i < close.length; i++) {
-			}
-			close[i].onclick = function() {
-				var div = this.parentElement;
+				close[i].onclick = function() {
+					var div = this.parentElement;
 
-				div.style.display = 'none';
-			};
+					div.style.display = 'none';
+				};
+			}
+
 		}
 
 		A.one('#addItem').on('click', addItem);
 
 		/* Modal window */
-		A.Modal(
+		var modal = new A.Modal(
 			{
 				bodyContent: 'In this portlet you can add or delete your tasks',
 				centered: true,
