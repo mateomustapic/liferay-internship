@@ -85,10 +85,10 @@ for (int i = 0; i < locales.length; i++) {
 
 				<%
 				for (int i = 0; i < locales.length; i++) {
-					String dropdownLanguage = LocaleUtil.getShortDisplayName(locales[i], duplicateLanguages);
+					String shortDisplayName = LocaleUtil.getShortDisplayName(locales[i], duplicateLanguages);
 				%>
 
-					<aui:option cssClass="taglib-language-option" label="<%= dropdownLanguage.replace(" [Beta]", "") %>" lang="<%= LocaleUtil.toW3cLanguageId(locales[i]) %>" selected="<%= (locale.getLanguage().equals(locales[i].getLanguage()) && locale.getCountry().equals(locales[i].getCountry())) %>" value="<%= LocaleUtil.toLanguageId(locales[i]) %>" />
+					<aui:option cssClass="taglib-language-option" label="<%= shortDisplayName.replace(" [Beta]", "") %>" lang="<%= LocaleUtil.toW3cLanguageId(locales[i]) %>" selected="<%= (locale.getLanguage().equals(locales[i].getLanguage()) && locale.getCountry().equals(locales[i].getCountry())) %>" value="<%= LocaleUtil.toLanguageId(locales[i]) %>" />
 
 				<%
 				}
