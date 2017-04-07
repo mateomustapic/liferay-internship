@@ -21,7 +21,7 @@
 <portlet:defineObjects/>
 
 <div id="myDIV">
-    <h2>TO DO LIST <span class="icon-check" aria-hidden="true"></span></h2>
+    <h2>TO DO LIST <span aria-hidden="true" class="icon-check"></span></h2>
     <div id="inputDiv">
         <input id="myInput" placeholder="Title of new task..." type="text">
         <span class="addBtn" id="addItem">Add</span>
