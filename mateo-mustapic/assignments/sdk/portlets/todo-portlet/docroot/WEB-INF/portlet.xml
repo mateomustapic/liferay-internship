@@ -2,8 +2,8 @@
 
 <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
 	<portlet>
-		<portlet-name>todoList</portlet-name>
-		<display-name>todoList</display-name>
+		<portlet-name>todo</portlet-name>
+		<display-name>todo</display-name>
 		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
 		<init-param>
 			<name>view-template</name>
@@ -14,9 +14,9 @@
 			<mime-type>text/html</mime-type>
 		</supports>
 		<portlet-info>
-			<title>todoList</title>
-			<short-title>todoList</short-title>
-			<keywords>todoList</keywords>
+			<title>todo</title>
+			<short-title>todo</short-title>
+			<keywords>todo</keywords>
 		</portlet-info>
 		<security-role-ref>
 			<role-name>administrator</role-name>
