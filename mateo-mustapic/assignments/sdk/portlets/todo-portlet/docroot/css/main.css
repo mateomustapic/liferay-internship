@@ -91,7 +91,7 @@
         background-color: #f44336;
         margin-left: 0;
     }
-    .addBtn, #myDIV input, #myUL li {
+    .addBtn, #myDIV input, #myUL li, #tasksTable {
         width: 100%;
         border-radius: 0;
     }

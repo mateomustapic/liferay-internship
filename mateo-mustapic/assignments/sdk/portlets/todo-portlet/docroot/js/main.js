@@ -2,6 +2,7 @@ AUI().use(
 	'aui-node',
 	'aui-modal',
 	'aui-char-counter',
+	'aui-datatable',
 	function(A) {
 
 		/* Adding Close button */
@@ -19,10 +20,10 @@ AUI().use(
 
 		/* Adding click to close button for removing listed items */
 		var close = document.getElementsByClassName('close');
-		var j;
+		var i;
 
-		for (j = 0; j < close.length; j++) {
-			close[j].onclick = function() {
+		for (i = 0; i < close.length; i++) {
+			close[i].onclick = function() {
 				var div = this.parentElement;
 
 				div.style.display = 'none';
@@ -48,7 +49,7 @@ AUI().use(
 
 			span.className = 'close';
 			span.appendChild(txt);
-			myNodeList[i].appendChild(span);
+			li.appendChild(span);
 
 			for (i = 0; i < close.length; i++) {
 				close[i].onclick = function() {
@@ -57,7 +58,6 @@ AUI().use(
 					div.style.display = 'none';
 				};
 			}
-
 		}
 
 		A.one('#addItem').on('click', addItem);
@@ -87,5 +87,28 @@ AUI().use(
 				}
 			}
 		);
+
+		/* creating columns of the table */
+		var columns = ['ID', 'Task', 'description'];
+
+
+		/* data for columns */
+		for(i = 0; i < myNodeList.length; i++){
+			var len = i + 1;
+			var len2 = 'Task ' + (i+1);
+			var desc = myNodeList[i].textContent;
+			var data = [{
+					ID: len, Task: len2, description: desc
+				}];
+			alert(desc);
+		}
+
+		/* Creating new table */
+		new A.DataTable.Base(
+			{
+				columnset: columns,
+				recordset: data
+			}
+		).render('#tasksTable');
 	}
 );

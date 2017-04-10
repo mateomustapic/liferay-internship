@@ -30,10 +30,14 @@
 </div>
 
 <ul id="myUL">
-    <li>Task 1</li>
-    <li>Task 2</li>
+    <li>Monday 17/April - Meeting at 1pm</li>
+    <li>Saturday 9am - Football practice</li>
+    <li>Thursday 9 pm - Dinner with friends</li>
 </ul>
 
 <div class="yui3-skin-sam">
     <div id="modal"></div>
 </div>
+
+<br>
+<div id="tasksTable"></div>
