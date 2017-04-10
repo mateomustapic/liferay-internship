@@ -18,7 +18,7 @@
 
 <footer id="footer">
 	<div class="container">
-		<span class="location">
+		<aui:a cssClass="headquarters location" data-address="racinova 12" href="">
 			<b>
 				<i aria-hidden="true" class="icon-map-marker"></i>
 
@@ -27,9 +27,9 @@
 
 			<%= PortletProps.get("perzej.headquarters.address") %>
 
-		</span>
+		</aui:a>
 
-		<span class="location">
+		<aui:a cssClass="location office" data-address="zavrtnica 17" href="">
 			<b>
 				<i aria-hidden="true" class="icon-map-marker"></i>
 
@@ -37,7 +37,7 @@
 			</b>
 
 			<%= PortletProps.get("perzej.office.address") %>
-		</span>
+		</aui:a>
 
 		<span class="oib">
 			<b>
