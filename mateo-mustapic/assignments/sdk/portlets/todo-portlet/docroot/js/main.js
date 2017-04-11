@@ -20,10 +20,10 @@ AUI().use(
 
 		/* Adding click to close button for removing listed items */
 		var close = document.getElementsByClassName('close');
-		var i;
+		var j;
 
-		for (i = 0; i < close.length; i++) {
-			close[i].onclick = function() {
+		for (j = 0; j < close.length; j++) {
+			close[j].onclick = function() {
 				var div = this.parentElement;
 
 				div.style.display = 'none';
@@ -89,18 +89,18 @@ AUI().use(
 		);
 
 		/* creating columns of the table */
-		var columns = ['ID', 'Task', 'description'];
-
+		var columns = ['ID', 'Task', 'Description'];
 
 		/* data for columns */
-		for(i = 0; i < myNodeList.length; i++){
+		for (i = 0; i < myNodeList.length; i++) {
+			var desc = myNodeList[i].textContent;
 			var len = i + 1;
 			var len2 = 'Task ' + (i+1);
-			var desc = myNodeList[i].textContent;
+
 			var data = [{
-					ID: len, Task: len2, description: desc
+				Description: desc, ID: len, Task: len2
 				}];
-			alert(desc);
+			console.log(desc);
 		}
 
 		/* Creating new table */
