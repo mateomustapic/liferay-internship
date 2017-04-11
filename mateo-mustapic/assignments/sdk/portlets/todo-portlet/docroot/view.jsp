@@ -21,23 +21,38 @@
 <portlet:defineObjects/>
 
 <div id="myDIV">
-    <h2>TO DO LIST <span aria-hidden="true" class="icon-check"></span></h2>
-    <div id="inputDiv">
-        <input id="myInput" placeholder="Title of new task..." type="text">
-        <span class="addBtn" id="addItem">Add</span>
-    </div>
-    <span id="myCounter"></span> character(s) remaining
+	<h2>TO DO LIST <span aria-hidden="true" class="icon-check"></span></h2>
+	<div id="inputDiv">
+		<input id="myInput" placeholder="Title of new task..." type="text">
+		<span class="addBtn" id="addItem">Add</span>
+	</div>
+	<span id="myCounter"></span> character(s) remaining
 </div>
 
 <ul id="myUL">
-    <li>Monday 17/April - Meeting at 1pm</li>
-    <li>Saturday 9am - Football practice</li>
-    <li>Thursday 9 pm - Dinner with friends</li>
+	<li>Monday 17/April - Meeting at 1pm</li>
+	<li>Saturday 9am - Football practice</li>
+	<li>Thursday 9 pm - Dinner with friends</li>
 </ul>
 
 <div class="yui3-skin-sam">
-    <div id="modal"></div>
+	<div id="modal"></div>
 </div>
 
 <br>
-<div id="tasksTable"></div>
+<h2>TASK SUMMARY</h2>
+<a class="button" href="#" id="addList">SHOW ALL DATA</a>
+<br><br>
+<div id="tasksTable">
+	<table class="center" id="toDoTable">
+		<thead>
+		<tr>
+			<th>ID</th>
+			<th>Task</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</div>

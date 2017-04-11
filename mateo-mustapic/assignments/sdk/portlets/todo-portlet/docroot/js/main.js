@@ -2,7 +2,6 @@ AUI().use(
 	'aui-node',
 	'aui-modal',
 	'aui-char-counter',
-	'aui-datatable',
 	function(A) {
 
 		/* Adding Close button */
@@ -88,27 +87,28 @@ AUI().use(
 			}
 		);
 
-		/* creating columns of the table */
-		var columns = ['ID', 'Task', 'Description'];
+		function addList() {
+			var buffer = [];
 
-		/* data for columns */
-		for (i = 0; i < myNodeList.length; i++) {
-			var desc = myNodeList[i].textContent;
-			var len = i + 1;
-			var len2 = 'Task ' + (i+1);
+			/* data for columns */
+			for (i = 0; i < myNodeList.length; i++) {
+				var desc = myNodeList[i].textContent;
+				var len = i + 1;
+				var len2 = 'Task ' + (i + 1);
+				var row = [];
 
-			var data = [{
-				Description: desc, ID: len, Task: len2
-				}];
-			console.log(desc);
+				row.push('<tr>');
+				row.push('<td>' + len + '</td>');
+				row.push('<td>' + len2 + '</td>');
+				row.push('<td>' + desc + '</td>');
+				row.push('<tr/>');
+				buffer.push(row.join(''));
+			}
+
+			A.all('table tbody').html(buffer.join(''));
 		}
 
-		/* Creating new table */
-		new A.DataTable.Base(
-			{
-				columnset: columns,
-				recordset: data
-			}
-		).render('#tasksTable');
+		A.one('#addList').on('click', addList);
 	}
+
 );
