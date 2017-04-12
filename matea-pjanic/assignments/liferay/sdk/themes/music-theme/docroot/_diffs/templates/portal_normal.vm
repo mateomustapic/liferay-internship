@@ -19,23 +19,23 @@
 		<div class="container-fluid" id="wrapper">
 			<header id="banner" role="banner">
 				<nav id="navigation">
-					<a href="">
+					<a href="javascript:;">
 						Home
 					</a>
 
-					<a href="">
+					<a href="javascript:;">
 						Top artists
 					</a>
 
-					<a href="">
+					<a href="javascript:;">
 						Top tracks
 					</a>
 
-					<a href="">
+					<a href="javascript:;">
 						Login
 					</a>
 
-					<a href="">
+					<a href="javascript:;">
 						Join
 					</a>
 				</nav>
