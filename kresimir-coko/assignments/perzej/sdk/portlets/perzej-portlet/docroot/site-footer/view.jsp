@@ -1,3 +1,5 @@
+<%@ page import="com.liferay.portal.kernel.util.HtmlUtil" %>
+
 <%--
 /**
  * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
@@ -17,34 +19,137 @@
 <%@ include file="/init.jsp" %>
 
 <footer id="footer">
-	<div class="container">
-		<aui:a cssClass="headquarters location" data-address="racinova 12" href="">
-			<b>
+	<div class="google-map">
+		<c:choose>
+			<c:when test="<%= Validator.isNotNull(mapAddress) %>">
+				<aui:form name="fm">
+					<aui:fieldset>
+						<aui:layout>
+							<c:choose>
+								<c:when test="<%= mapInputEnabled %>">
+									<aui:field-wrapper inlineField="<%= true %>" label='<%= (directionsInputEnabled || Validator.isNotNull(directionsAddress)) ? "from" : "map-address" %>'>
+										<div class="input-append">
+											<aui:input label="" name="mapAddress" type="text" value="<%= mapAddress %>" />
+
+											<c:if test="<%= !directionsInputEnabled && Validator.isNull(directionsAddress) %>">
+												<aui:button name="getMapButton" value="get-map" />
+											</c:if>
+										</div>
+									</aui:field-wrapper>
+								</c:when>
+								<c:otherwise>
+									<c:if test="<%= Validator.isNotNull(mapAddress) && (Validator.isNotNull(directionsAddress) || directionsInputEnabled) %>">
+										<aui:field-wrapper inlineField="<%= true %>" label="from">
+											<liferay-ui:input-resource url="<%= mapAddress %>" />
+										</aui:field-wrapper>
+									</c:if>
+
+									<aui:input name="mapAddress" type="hidden" value="<%= mapAddress %>" />
+								</c:otherwise>
+							</c:choose>
+						</aui:layout>
+
+						<aui:layout>
+							<c:choose>
+								<c:when test="<%= directionsInputEnabled %>">
+									<aui:input inlineField="<%= true %>" label="to" name="directionsAddress" type="text" value="<%= directionsAddress %>" />
+								</c:when>
+								<c:otherwise>
+									<c:if test="<%= Validator.isNotNull(directionsAddress) %>">
+										<aui:field-wrapper inlineField="<%= true %>" label="to">
+											<liferay-ui:input-resource url="<%= directionsAddress %>" />
+										</aui:field-wrapper>
+									</c:if>
+
+									<aui:input name="directionsAddress" type="hidden" value="<%= directionsAddress %>" />
+								</c:otherwise>
+							</c:choose>
+
+							<c:choose>
+								<c:when test="<%= enableChangingTravelingMode %>">
+									<aui:select inlineField="<%= true %>" label="traveling-mode" name="travelingMode">
+										<aui:option label="driving" value="<%= GoogleMapsConstants.DRIVING %>" />
+										<aui:option label="walking" value="<%= GoogleMapsConstants.WALKING %>" />
+										<aui:option label="bicycling" value="<%= GoogleMapsConstants.BICYCLING %>" />
+									</aui:select>
+								</c:when>
+								<c:otherwise>
+									<aui:input name="travelingMode" type="hidden" value="<%= GoogleMapsConstants.DRIVING %>" />
+								</c:otherwise>
+							</c:choose>
+
+							<c:if test="<%= directionsInputEnabled || (mapInputEnabled && Validator.isNotNull(directionsAddress)) %>">
+								<aui:button cssClass="get-directions" name="getDirectionsButton" value="get-directions" />
+							</c:if>
+						</aui:layout>
+
+						<div style="padding-top: 5px;"></div>
+
+						<div class="maps-content" id="<portlet:namespace />map" style="height: <%= height %>px; width: 100%;"></div>
+
+						<div id="<portlet:namespace />warningsPanel"></div>
+
+						<c:if test="<%= showGoogleMapsLink %>">
+							<div class="google-maps-link">
+								<aui:a href="javascript:;" id="openInGoogleMapsLink" label="open-in-google-maps" target="_blank" />
+							</div>
+						</c:if>
+					</aui:fieldset>
+				</aui:form>
+
+				<aui:script use="liferay-google-maps">
+					new Liferay.Portlet.GoogleMaps(
+						{
+							directionsAddress: '<%= directionsAddress %>',
+
+							<c:if test="<%= PortalUtil.isSecure(request) %>">
+								googleMapsURL: 'https://maps-api-ssl.google.com/maps/api/js',
+							</c:if>
+
+							languageId: '<%= themeDisplay.getLanguageId() %>',
+							mapAddress: '<%= mapAddress %>',
+							mapInputEnabled: <%= mapInputEnabled %>,
+							namespace: '<portlet:namespace />',
+							portletId: '<%= portletDisplay.getId() %>',
+							showDirectionSteps: <%= showDirectionSteps %>
+						}
+					).render();
+				</aui:script>
+			</c:when>
+			<c:otherwise>
+				<liferay-util:include page="/html/portal/portlet_not_setup.jsp" />
+			</c:otherwise>
+		</c:choose>
+	</div>
+
+	<div class="footer-info">
+		<aui:a cssClass="headquarters location" data-address='<%= PortletProps.get("perzej.headquarters.address.short") %>' href="">
+			<span class="bold">
 				<i aria-hidden="true" class="icon-map-marker"></i>
 
 				<liferay-ui:message key="headquarters" />
-			</b>
+			</span>
 
-			<%= PortletProps.get("perzej.headquarters.address") %>
+			<%= HtmlUtil.escape(PortletProps.get("perzej.headquarters.address")) %>
 
 		</aui:a>
 
-		<aui:a cssClass="location office" data-address="zavrtnica 17" href="">
-			<b>
+		<aui:a cssClass="location office" data-address='<%= PortletProps.get("perzej.office.address.short") %>' href="">
+			<span class="bold">
 				<i aria-hidden="true" class="icon-map-marker"></i>
 
 				<liferay-ui:message key="office" />
-			</b>
+			</span>
 
 			<%= PortletProps.get("perzej.office.address") %>
 		</aui:a>
 
 		<span class="oib">
-			<b>
+			<span class="bold">
 				<i aria-hidden="true" class="icon-book"></i>
 
 				OIB:
-			</b>
+			</span>
 
 			<%= PortletProps.get("perzej.oib") %>
 		</span>
@@ -61,7 +166,7 @@
 			<liferay-ui:message key="powered-by" />
 
 			<aui:a href="http://www.liferay.com" target="_blank">
-				<b> Liferay</b>
+				<span class="bold"> Liferay</span>
 			</aui:a>
 		</span>
 	</div>

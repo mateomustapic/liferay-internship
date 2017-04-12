@@ -16,6 +16,7 @@
 	</portlet>
 	<portlet>
 		<portlet-name>site-footer</portlet-name>
+		<configuration-action-class>com.liferay.googlemaps.action.ConfigurationActionImpl</configuration-action-class>
 		<footer-portlet-javascript>/js/google-map.js</footer-portlet-javascript>
 		<css-class-wrapper>footer-portlet</css-class-wrapper>
 	</portlet>

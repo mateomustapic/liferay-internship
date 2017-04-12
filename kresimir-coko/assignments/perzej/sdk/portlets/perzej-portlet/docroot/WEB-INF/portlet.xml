@@ -107,44 +107,13 @@
 		</security-role-ref>
 	</portlet>
 	<portlet>
-		<portlet-name>google-map</portlet-name>
-		<display-name>Location</display-name>
-		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
-		<init-param>
-			<name>template-path</name>
-			<value>/google-map/</value>
-		</init-param>
-		<init-param>
-			<name>view-template</name>
-			<value>/google-map/view.jsp</value>
-		</init-param>
-		<expiration-cache>0</expiration-cache>
-		<supports>
-			<mime-type>text/html</mime-type>
-		</supports>
-		<resource-bundle>content.Language</resource-bundle>
-		<portlet-info>
-			<title>Location</title>
-			<short-title>Location</short-title>
-			<keywords>Location</keywords>
-		</portlet-info>
-		<security-role-ref>
-			<role-name>administrator</role-name>
-		</security-role-ref>
-		<security-role-ref>
-			<role-name>guest</role-name>
-		</security-role-ref>
-		<security-role-ref>
-			<role-name>power-user</role-name>
-		</security-role-ref>
-		<security-role-ref>
-			<role-name>user</role-name>
-		</security-role-ref>
-	</portlet>
-	<portlet>
 		<portlet-name>site-footer</portlet-name>
 		<display-name>Footer</display-name>
 		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
+		<init-param>
+			<name>config-template</name>
+			<value>/site-footer/configuration.jsp</value>
+		</init-param>
 		<init-param>
 			<name>template-path</name>
 			<value>/site-footer/</value>
