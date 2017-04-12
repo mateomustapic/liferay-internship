@@ -1,1 +1,9 @@
-/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
+#navigation {
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.portlet header {
+    display: none;
+}
