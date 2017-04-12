@@ -48,10 +48,6 @@ $theme.include($body_top_include)
 	<div id="content">
 		$theme.include($content_include)
 	</div>
-
-	<footer id="footer">
-
-	</footer>
 </div>
 
 $theme.include($body_bottom_include)
