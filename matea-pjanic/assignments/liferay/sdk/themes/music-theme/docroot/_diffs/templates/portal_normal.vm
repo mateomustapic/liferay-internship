@@ -20,13 +20,13 @@ $theme.include($body_top_include)
 
 	<header id="banner" role="banner">
 
-        <nav id="navigation">
-            <a href=''>Home</a>
-            <a href=''>Top artists</a>
-            <a href=''>Top tracks</a>
-            <a href=''>Login</a>
-            <a href=''>Join</a>
-        </nav>
+		<nav id="navigation">
+			<a href="">Home</a>
+			<a href="">Top artists</a>
+			<a href="">Top tracks</a>
+			<a href="">Login</a>
+			<a href="">Join</a>
+		</nav>
 
 		<div id="heading">
 			<h1 class="site-title">
@@ -45,15 +45,14 @@ $theme.include($body_top_include)
 
 	</header>
 
-    <div id="content">
+	<div id="content">
 		$theme.include($content_include)
-    </div>
+	</div>
 
-    <footer id="footer">
+	<footer id="footer">
 
-    </footer>
+	</footer>
 </div>
-
 
 $theme.include($body_bottom_include)
 
