@@ -125,6 +125,10 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		line-height: 1.4;
 	}
 
+	.bold {
+		font-family: Montserrat, sans-serif;
+	}
+
 	.navbar-inner .dropdown-menu * {
 		color: $dark;
 		font-size: 1em;
@@ -694,7 +698,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 				@include transition-timing-function(ease);
 				width: 100%;
 
-				b {
+				.bold {
 					font-weight: 700;
 					padding-right: 8px;
 					text-transform: uppercase;
@@ -726,7 +730,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			cursor: pointer;
 		}
 
-		.powered-by b {
+		.powered-by .bold {
 			padding-left: 8px;
 			padding-right: 0;
 		}
@@ -759,7 +763,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			.location, span {
 				flex-direction: column;
 
-				b {
+				.bold {
 					padding-bottom: 8px;
 				}
 
