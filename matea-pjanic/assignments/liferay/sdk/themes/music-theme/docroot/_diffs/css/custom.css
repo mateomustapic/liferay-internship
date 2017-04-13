@@ -1,9 +1,0 @@
-#navigation {
-	display: block;
-	position: relative;
-	z-index: 1;
-}
-
-.portlet header {
-	display: none;
-}

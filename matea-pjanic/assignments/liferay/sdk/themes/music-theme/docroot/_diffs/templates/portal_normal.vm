@@ -16,31 +16,11 @@
 	<body class="$css_class">
 		$theme.include($body_top_include)
 
-		<div class="container-fluid" id="wrapper">
-			<header id="banner" role="banner">
-				<nav id="navigation">
-					<a href="javascript:;">
-						Home
-					</a>
+		#dockbar()
 
-					<a href="javascript:;">
-						Top artists
-					</a>
-
-					<a href="javascript:;">
-						Top tracks
-					</a>
-
-					<a href="javascript:;">
-						Login
-					</a>
-
-					<a href="javascript:;">
-						Join
-					</a>
-				</nav>
-
-				<div id="heading">
+		<div class="container-fluid" class="wrapper">
+			<header class="banner" role="banner">
+				<div class="heading">
 					<h1 class="site-title">
 						<a class="$logo_css_class" href="$site_default_url" title="#language_format ("go-to-x", [$site_name])">
 							<img alt="$logo_description" height="$site_logo_height" src="$site_logo" width="$site_logo_width" />
@@ -55,7 +35,7 @@
 				</div>
 			</header>
 
-			<div id="content">
+			<div class="content">
 				$theme.include($content_include)
 			</div>
 		</div>
