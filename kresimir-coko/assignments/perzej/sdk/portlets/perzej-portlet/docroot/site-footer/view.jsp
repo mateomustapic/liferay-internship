@@ -83,8 +83,6 @@
 							</c:if>
 						</aui:layout>
 
-						<div style="padding-top: 5px;"></div>
-
 						<div class="maps-content" id="<portlet:namespace />map" style="height: <%= height %>px; width: 100%;"></div>
 
 						<div id="<portlet:namespace />warningsPanel"></div>
@@ -98,7 +96,7 @@
 				</aui:form>
 
 				<aui:script use="liferay-google-maps">
-					new Liferay.Portlet.GoogleMaps(
+					var googleMaps = new Liferay.Portlet.GoogleMaps(
 						{
 							directionsAddress: '<%= directionsAddress %>',
 
@@ -111,9 +109,12 @@
 							mapInputEnabled: <%= mapInputEnabled %>,
 							namespace: '<portlet:namespace />',
 							portletId: '<%= portletDisplay.getId() %>',
-							showDirectionSteps: <%= showDirectionSteps %>
+							showDirectionSteps: <%= showDirectionSteps %>,
+
 						}
 					).render();
+
+					googleMaps.initializePage();
 				</aui:script>
 			</c:when>
 			<c:otherwise>
@@ -123,7 +124,7 @@
 	</div>
 
 	<div class="footer-info">
-		<aui:a cssClass="headquarters location" data-address='<%= PortletProps.get("perzej.headquarters.address.short") %>' href="">
+		<aui:a cssClass="headquarters location" data-address='<%= PortletProps.get("perzej.headquarters.address.short") %>' data-lat='<%= PortletProps.get("perzej.headquarters.lat") %>' data-lng='<%= PortletProps.get("perzej.headquarters.lng") %>' href="javascript:;">
 			<span class="bold">
 				<i aria-hidden="true" class="icon-map-marker"></i>
 
@@ -134,7 +135,7 @@
 
 		</aui:a>
 
-		<aui:a cssClass="location office" data-address='<%= PortletProps.get("perzej.office.address.short") %>' href="">
+		<aui:a cssClass="location office" data-address='<%= PortletProps.get("perzej.office.address.short") %>' data-lat='<%= PortletProps.get("perzej.office.lat") %>' data-lng='<%= PortletProps.get("perzej.office.lng") %>' href="javascript:;">
 			<span class="bold">
 				<i aria-hidden="true" class="icon-map-marker"></i>
 

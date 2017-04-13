@@ -1,30 +1,3 @@
-// AUI().use(
-// 	'event',
-// 	'node',
-// 	'node-event-simulate',
-// 	function(A) {
-// 		var footer = A.one('#footer');
-//
-// 		var mapAddressInputField = A.one('#column-2 .field');
-//
-// 		var mapAddressSubmitBtn = A.one('#column-2 .btn');
-//
-// 		function switchAddress(event) {
-// 			var target = event.currentTarget;
-//
-// 			var dataAddress = target.attr('data-address');
-//
-// 			mapAddressInputField.val(dataAddress);
-//
-// 			mapAddressSubmitBtn.simulate('click');
-//
-// 			event.preventDefault();
-// 		}
-//
-// 		footer.delegate('click', switchAddress, '.location');
-// 	}
-// );
-
 AUI.add(
 	'liferay-google-maps',
 	function(A) {
@@ -82,7 +55,7 @@ AUI.add(
 						validator: Lang.isObject,
 						value: {
 							mapTypeId: MAP_TYPE_ROADMAP,
-							zoom: 8
+							zoom: 14
 						}
 					},
 
@@ -186,6 +159,10 @@ AUI.add(
 						else {
 							instance._initGoogleMaps();
 						}
+					},
+
+					initializePage: function() {
+						var instance = this;
 					},
 
 					_attachInstructionText: function(marker, text) {
@@ -459,6 +436,59 @@ AUI.add(
 						else {
 							instance._getAddress(instance.get(STR_MAP_ADDRESS));
 						}
+
+						var instancedMap = instance._map;
+
+						var footerInfo = A.one('.footer-info');
+
+						var markers = instance._markersArray;
+
+						function setMapOnAll(instancedMap) {
+							for (var i = 0; i < markers.length; i++) {
+								markers[i].setMap(instancedMap);
+							}
+						}
+
+						function _changeAddress(event) {
+							var locationLink = event.currentTarget;
+
+							var latitude = parseFloat(locationLink.attr('data-lat')).toFixed(7);
+
+							var longitude = parseFloat(locationLink.attr('data-lng')).toFixed(7);
+
+							var shortAddress = locationLink.attr('data-address');
+
+							if (!instance._infoWindow) {
+								instance._infoWindow = new googleMaps.InfoWindow(
+									{
+										content: shortAddress
+									}
+								);
+							}
+							else {
+								instance._infoWindow.setContent(shortAddress);
+							}
+
+							instance._removeMarkers();
+
+							var marker = new googleMaps.Marker(
+									{
+										position: new googleMaps.LatLng(latitude, longitude),
+										title: shortAddress,
+										map: instancedMap
+									}
+							);
+
+							instance._infoWindow.open(instancedMap, marker);
+
+							markers.push(marker);
+
+							instancedMap.panTo(marker.getPosition());
+						}
+
+						setMapOnAll(instancedMap);
+
+						footerInfo.delegate('click', _changeAddress, '.location');
 					},
 
 					_showSteps: function(directionResult) {
