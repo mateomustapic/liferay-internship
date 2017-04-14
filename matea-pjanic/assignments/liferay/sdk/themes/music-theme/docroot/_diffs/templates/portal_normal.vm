@@ -33,6 +33,9 @@
 						#end
 					</h1>
 				</div>
+
+				#parse ("$full_templates_path/navigation.vm")
+
 			</header>
 
 			<div class="content">

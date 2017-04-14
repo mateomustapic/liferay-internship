@@ -1,0 +1,10 @@
+.navigation {
+	display: block;
+	position: relative;
+	z-index: 1;
+
+	ul li {
+	display: inline-block;
+	margin: 5px 50px 5px 0;
+}
+}
