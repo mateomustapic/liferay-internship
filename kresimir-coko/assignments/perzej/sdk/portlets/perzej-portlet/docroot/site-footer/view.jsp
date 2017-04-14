@@ -105,7 +105,7 @@
 							</c:if>
 
 							languageId: '<%= themeDisplay.getLanguageId() %>',
-							mapAddress: '<%= mapAddress %>',
+							mapAddress: 'Zavrtnica 17, Zagreb',
 							mapInputEnabled: <%= mapInputEnabled %>,
 							namespace: '<portlet:namespace />',
 							portletId: '<%= portletDisplay.getId() %>',
