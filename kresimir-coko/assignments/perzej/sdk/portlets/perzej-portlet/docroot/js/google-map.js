@@ -313,6 +313,8 @@ AUI.add(
 								instance._infoWindow.setContent(address);
 							}
 
+							instance._replaceInfoWindowContent();
+
 							instance._infoWindow.setPosition(location);
 
 							instance._infoWindow.open(instance._map, instance._marker);
@@ -428,7 +430,9 @@ AUI.add(
 							}
 						);
 
-						instance._stepDisplay = new googleMaps.InfoWindow();
+						instance._infoWindow = new googleMaps.InfoWindow();
+
+						var infoWindow = instance._infoWindow;
 
 						if (instance._isDirectionFilled()) {
 							instance._getDirections();
@@ -458,15 +462,15 @@ AUI.add(
 
 							var shortAddress = locationLink.attr('data-address');
 
-							if (!instance._infoWindow) {
-								instance._infoWindow = new googleMaps.InfoWindow(
+							if (!infoWindow) {
+								infoWindow = new googleMaps.InfoWindow(
 									{
 										content: shortAddress
 									}
 								);
 							}
 							else {
-								instance._infoWindow.setContent(shortAddress);
+								infoWindow.setContent(shortAddress);
 							}
 
 							instance._removeMarkers();
@@ -479,7 +483,9 @@ AUI.add(
 									}
 							);
 
-							instance._infoWindow.open(instancedMap, marker);
+							infoWindow.open(instancedMap, marker);
+
+							instance._replaceInfoWindowContent();
 
 							markers.push(marker);
 
@@ -489,6 +495,18 @@ AUI.add(
 						setMapOnAll(instancedMap);
 
 						footerInfo.delegate('click', _changeAddress, '.location');
+					},
+
+					_replaceInfoWindowContent: function() {
+						var instance = this;
+
+						var infoWindow = instance._infoWindow;
+
+						var infoWindowContent = infoWindow.getContent();
+
+						infoWindowContent = infoWindowContent.replace(',', ', ');
+
+						infoWindow.setContent(infoWindowContent);
 					},
 
 					_showSteps: function(directionResult) {
