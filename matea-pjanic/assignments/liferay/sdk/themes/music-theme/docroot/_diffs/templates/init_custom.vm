@@ -1,5 +1,5 @@
 #if (($company.getLogoId() == 0) && $use_company_logo)
 	#set ($site_logo = "${images_folder}/custom/logo.png")
-	#set ($site_logo_height = 32)
-	#set ($site_logo_width = 106)
+	#set ($site_logo_height = 14)
+	#set ($site_logo_width = 50)
 #end

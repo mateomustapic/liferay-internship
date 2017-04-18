@@ -1,10 +1,70 @@
 .navigation {
-	display: block;
+	border: 1px solid darkgray;
+	border-width: 1px 0;
 	position: relative;
+	text-align: center;
 	z-index: 1;
 
 	ul li {
 		display: inline-block;
-		margin: 5px 50px 5px 0;
+		margin: 10px 40px;
+	}
+}
+
+.site-name {
+	color: darkgray;
+	font-size: 18px;
+}
+
+.aui {
+	a {
+		color: darkgray;
+	}
+
+	a:hover {
+		color: dimgray;
+		text-decoration: none;
+	}
+
+	ul {
+		margin: 0;
+	}
+}
+
+.container-fluid {
+	margin: 20px 80px;
+}
+
+@media only screen and (max-width: 1200px) {
+	.navigation ul li {
+		margin: 10px 30px;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.navigation ul li {
+		margin: 10px 20px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.navigation ul li {
+		margin: 10px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.container-fluid {
+		margin: 20px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.container-fluid {
+		margin: 10px;
+	}
+
+	.navigation ul li {
+		margin: 10px 6px;
 	}
 }
