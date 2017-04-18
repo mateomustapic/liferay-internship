@@ -161,8 +161,16 @@ AUI.add(
 						}
 					},
 
-					initializePage: function() {
+					initializePage: function(config) {
 						var instance = this;
+
+						instance._headquartersAddressShort = config.headquartersAddressShort;
+						instance._headquartersLat = config.headquartersLat;
+						instance._headquartersLng = config.headquartersLng;
+
+						instance._officeAddressShort = config.officeAddressShort;
+						instance._officeLat = config.officeLat;
+						instance._officeLng = config.officeLng;
 					},
 
 					_attachInstructionText: function(marker, text) {
@@ -443,7 +451,9 @@ AUI.add(
 
 						var instancedMap = instance._map;
 
-						var footerInfo = A.one('.footer-info');
+						var officeLink = A.one('.footer-info .office');
+
+						var headquartersLink = A.one('.footer-info .headquarters');
 
 						var markers = instance._markersArray;
 
@@ -453,14 +463,20 @@ AUI.add(
 							}
 						}
 
-						function _changeAddress(event) {
-							var locationLink = event.currentTarget;
+						function _changeAddress() {
+							var shortAddress;
+							var latitude;
+							var longitude;
 
-							var latitude = parseFloat(locationLink.attr('data-lat')).toFixed(7);
-
-							var longitude = parseFloat(locationLink.attr('data-lng')).toFixed(7);
-
-							var shortAddress = locationLink.attr('data-address');
+							if (this.hasClass('headquarters')) {
+								shortAddress = instance._headquartersAddressShort;
+								latitude = instance._headquartersLat;
+								longitude = instance._headquartersLng;
+							} else {
+								shortAddress = instance._officeAddressShort;
+								latitude = instance._officeLat;
+								longitude = instance._officeLng;
+							}
 
 							if (!infoWindow) {
 								infoWindow = new googleMaps.InfoWindow(
@@ -476,11 +492,11 @@ AUI.add(
 							instance._removeMarkers();
 
 							var marker = new googleMaps.Marker(
-									{
-										position: new googleMaps.LatLng(latitude, longitude),
-										title: shortAddress,
-										map: instancedMap
-									}
+								{
+									position: new googleMaps.LatLng(latitude, longitude),
+									title: shortAddress,
+									map: instancedMap
+								}
 							);
 
 							infoWindow.open(instancedMap, marker);
@@ -494,7 +510,8 @@ AUI.add(
 
 						setMapOnAll(instancedMap);
 
-						footerInfo.delegate('click', _changeAddress, '.location');
+						officeLink.on('click', _changeAddress);
+						headquartersLink.on('click', _changeAddress);
 					},
 
 					_replaceInfoWindowContent: function() {

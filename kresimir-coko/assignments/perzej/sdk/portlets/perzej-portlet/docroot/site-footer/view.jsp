@@ -111,7 +111,14 @@
 						}
 					).render();
 
-					googleMaps.initializePage();
+					googleMaps.initializePage({
+						headquartersAddressShort: '<%= PortletProps.get("perzej.headquarters.address.short") %>',
+						headquartersLat: '<%= PortletProps.get("perzej.headquarters.lat") %>',
+						headquartersLng: '<%= PortletProps.get("perzej.headquarters.lng") %>',
+						officeAddressShort: '<%= PortletProps.get("perzej.office.address.short") %>',
+						officeLat: '<%= PortletProps.get("perzej.office.lat") %>',
+						officeLng: '<%= PortletProps.get("perzej.office.lng") %>'
+					});
 				</aui:script>
 			</c:when>
 			<c:otherwise>
@@ -121,7 +128,7 @@
 	</div>
 
 	<div class="footer-info">
-		<aui:a cssClass="headquarters location" data-address='<%= PortletProps.get("perzej.headquarters.address.short") %>' data-lat='<%= PortletProps.get("perzej.headquarters.lat") %>' data-lng='<%= PortletProps.get("perzej.headquarters.lng") %>' href="javascript:;">
+		<span class="headquarters location">
 			<span class="bold">
 				<i aria-hidden="true" class="icon-map-marker"></i>
 
@@ -130,9 +137,9 @@
 
 			<%= PortletProps.get("perzej.headquarters.address") %>
 
-		</aui:a>
+		</span>
 
-		<aui:a cssClass="location office" data-address='<%= PortletProps.get("perzej.office.address.short") %>' data-lat='<%= PortletProps.get("perzej.office.lat") %>' data-lng='<%= PortletProps.get("perzej.office.lng") %>' href="javascript:;">
+		<span class="location office">
 			<span class="bold">
 				<i aria-hidden="true" class="icon-map-marker"></i>
 
@@ -140,7 +147,7 @@
 			</span>
 
 			<%= PortletProps.get("perzej.office.address") %>
-		</aui:a>
+		</span>
 
 		<span class="oib">
 			<span class="bold">
