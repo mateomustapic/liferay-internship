@@ -80,7 +80,7 @@ public class MusicPortlet extends MVCPortlet {
 				}
 			}
 
-			actionResponse.setRenderParameter("jspPage", "/view_search.jsp");
+			actionResponse.setRenderParameter("jspPage", "/view.jsp");
 		}
 	}
 

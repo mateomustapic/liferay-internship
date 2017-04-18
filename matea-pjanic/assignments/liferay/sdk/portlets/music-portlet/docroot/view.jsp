@@ -22,7 +22,5 @@
 	<aui:fieldset>
 		<aui:input label="" name="bend" placeholder="Search for bends" type="text" />
 	</aui:fieldset>
-	<aui:button-row>
-		<aui:button icon="icon-search" type="submit" value="search" />
-	</aui:button-row>
+	<aui:button type="submit" value="Search" />
 </aui:form>
