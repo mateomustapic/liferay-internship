@@ -20,8 +20,8 @@
 
 <aui:form action="<%= searchURL %>" name="fm">
 	<aui:fieldset>
-		<aui:input name="bend" placeholder="Search for bends" type="text" />
+		<aui:input name="bend" placeholder="search-for-bends" type="text" />
 	</aui:fieldset>
 
-	<aui:button type="submit" value="Search" />
+	<aui:button type="submit" value="search" />
 </aui:form>
