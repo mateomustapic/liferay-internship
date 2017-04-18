@@ -5,6 +5,13 @@
 		justify-content: center;
 	}
 
+	.btn {
+		font-size: 14px;
+		margin: 0;
+		padding: 4px 12px;
+		width: 100px;
+	}
+
 	.fieldset {
 		width: 300px;
 
@@ -15,23 +22,14 @@
 			width: 287px;
 		}
 	}
-
-	.btn {
-		font-size: 14px;
-		margin: 0;
-		padding: 4px 12px;
-		width: 100px;
-	}
 }
 
 @media only screen and (max-width: 450px) {
-	.aui {
-		.fieldset {
-			width: 220px;
+	.aui .fieldset {
+		width: 220px;
 
-			input {
-				width: 207px;
-			}
+		input {
+			width: 207px;
 		}
 	}
 }

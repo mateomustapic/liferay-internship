@@ -18,9 +18,10 @@
 
 <liferay-portlet:actionURL name="search" var="searchURL" />
 
-<aui:form action="<%= searchURL %>" name="<portlet:namespace />fm">
+<aui:form action="<%= searchURL %>" name="fm">
 	<aui:fieldset>
-		<aui:input label="" name="bend" placeholder="Search for bends" type="text" />
+		<aui:input name="bend" placeholder="Search for bends" type="text" />
 	</aui:fieldset>
+
 	<aui:button type="submit" value="Search" />
 </aui:form>
