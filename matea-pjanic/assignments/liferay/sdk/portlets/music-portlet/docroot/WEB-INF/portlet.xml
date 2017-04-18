@@ -6,6 +6,10 @@
 		<display-name>Music App</display-name>
 		<portlet-class>com.liferay.music.portlet.MusicPortlet</portlet-class>
 		<init-param>
+			<name>add-process-action-success-action</name>
+			<value>false</value>
+		</init-param>
+		<init-param>
 			<name>view-template</name>
 			<value>/view.jsp</value>
 		</init-param>
