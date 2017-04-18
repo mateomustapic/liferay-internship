@@ -464,18 +464,19 @@ AUI.add(
 						}
 
 						function _changeAddress() {
-							var shortAddress;
 							var latitude;
 							var longitude;
+							var shortAddress;
 
 							if (this.hasClass('headquarters')) {
-								shortAddress = instance._headquartersAddressShort;
 								latitude = instance._headquartersLat;
 								longitude = instance._headquartersLng;
-							} else {
-								shortAddress = instance._officeAddressShort;
+								shortAddress = instance._headquartersAddressShort;
+							}
+							else {
 								latitude = instance._officeLat;
 								longitude = instance._officeLng;
+								shortAddress = instance._officeAddressShort;
 							}
 
 							if (!infoWindow) {
@@ -493,9 +494,9 @@ AUI.add(
 
 							var marker = new googleMaps.Marker(
 								{
+									map: instancedMap,
 									position: new googleMaps.LatLng(latitude, longitude),
-									title: shortAddress,
-									map: instancedMap
+									title: shortAddress
 								}
 							);
 
