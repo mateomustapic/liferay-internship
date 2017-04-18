@@ -111,14 +111,16 @@
 						}
 					).render();
 
-					googleMaps.initializePage({
-						headquartersAddressShort: '<%= PortletProps.get("perzej.headquarters.address.short") %>',
-						headquartersLat: '<%= PortletProps.get("perzej.headquarters.lat") %>',
-						headquartersLng: '<%= PortletProps.get("perzej.headquarters.lng") %>',
-						officeAddressShort: '<%= PortletProps.get("perzej.office.address.short") %>',
-						officeLat: '<%= PortletProps.get("perzej.office.lat") %>',
-						officeLng: '<%= PortletProps.get("perzej.office.lng") %>'
-					});
+					googleMaps.initializePage(
+						{
+							headquartersAddressShort: '<%= PortletProps.get("perzej.headquarters.address.short") %>',
+							headquartersLat: '<%= PortletProps.get("perzej.headquarters.lat") %>',
+							headquartersLng: '<%= PortletProps.get("perzej.headquarters.lng") %>',
+							officeAddressShort: '<%= PortletProps.get("perzej.office.address.short") %>',
+							officeLat: '<%= PortletProps.get("perzej.office.lat") %>',
+							officeLng: '<%= PortletProps.get("perzej.office.lng") %>'
+						}
+					);
 				</aui:script>
 			</c:when>
 			<c:otherwise>
