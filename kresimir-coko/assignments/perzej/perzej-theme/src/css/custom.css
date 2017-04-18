@@ -638,101 +638,64 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 	/* Footer
 	************************************************************/
 
-	#column-2 {
-		align-self: stretch;
-		background-color: $grey;
-		padding: 0;
-
-		.layout-content {
-			display: none;
-		}
-
-		.fieldset > div > div {
-			padding-top: 0 !important;
-		}
-
-		.gm-style-iw div {
-			text-transform: capitalize;
-		}
-	}
-
-	#column-3 {
-		div, section, footer {
-			height: 100%;
-		}
-	}
-
 	#footer {
-		align-self: flex-end;
 		background-color: $dark;
-		bottom: 0;
 		display: flex;
-		flex-wrap: wrap;
-		font-family: Montserrat, sans-serif;
-		justify-content: space-around;
-		width: 100%;
+		height: 500px;
 
-		.container {
-			align-items: center;
-			display: flex;
-			flex-direction: column;
-			flex-wrap: wrap;
-			max-width: 1280px;
-			padding: 32px;
-			width: 100%;
+		> div {
+			width: 50%;
+		}
+	}
+
+	.footer-info {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		font-size: 1.5em;
+		justify-content: center;
+
+		span {
+			color: rgba(#FFF, 0.7);
+			font-family: Montserrat, sans-serif;
+			padding: 16px;
+			@include transition-duration(0.15s);
+			@include transition-property(all);
+			@include transition-timing-function(ease);
 		}
 
-		.container {
-			> span:not(.opens-new-window-accessible), .location {
-				align-items: center;
-				color: $light;
-				display: flex;
-				flex: 1;
-				font-family: inherit;
-				font-size: 1.4em;
-				font-weight: 100;
-				justify-content: center;
-				text-align: center;
-				@include transition-duration(0.15s);
-				@include transition-property(all);
-				@include transition-timing-function(ease);
-				width: 100%;
+		i {
+			color: $green;
+			padding-right: 8px;
+		}
 
-				.bold {
-					font-weight: 700;
-					padding-right: 8px;
-					text-transform: uppercase;
-				}
+		.bold {
+			font-weight: 700;
+			padding: 0;
+			text-transform: uppercase;
+		}
+	}
 
-				a {
-					color: $light;
-					font-family: inherit;
-					@include transition-duration(0.15s);
-					@include transition-property(all);
-					@include transition-timing-function(ease);
+	.location {
+		cursor: pointer;
 
-					&:hover {
-						color: $green;
-					}
-				}
+		&:hover {
+			color: #FFF;
 
-				i {
-					color: $green;
-					padding-right: 8px;
-				}
+			.bold {
+				color: #FFF;
 			}
 		}
+	}
 
-		.location:hover {
-			background-color: #555;
-			border-radius: 3px;
-			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-			cursor: pointer;
-		}
+	.powered-by {
+		.bold {
+			text-decoration: underline !important;
+			text-transform: none;
 
-		.powered-by .bold {
-			padding-left: 8px;
-			padding-right: 0;
+			&:hover {
+				color: #FFF;
+			}
 		}
 	}
 
@@ -756,26 +719,17 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			max-width: 400px;
 			width: 32%;
 		}
-	}
 
-	@media screen and (max-width: 1200px) {
-		#footer {
-			.location, span {
-				flex-direction: column;
+		.footer-info {
+			font-size: 1.3em;
 
-				.bold {
-					padding-bottom: 8px;
-				}
-
-				&.powered-by {
-					flex-direction: row;
-				}
+			span {
+				text-align: center;
+				width: 100%;
 			}
-		}
 
-		.phone, .powered-by {
-			i {
-				padding-bottom: 8px;
+			.bold {
+				display: block;
 			}
 		}
 	}
@@ -801,23 +755,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 		#column-2 {
 			height: 500px;
-		}
-
-		#footer {
-			.container {
-				flex-direction: row;
-				padding: 16px;
-
-				span:not(.opens-new-window-accessible), .location {
-					flex: initial;
-					padding: 16px;
-
-					&:not(.powered-by) {
-						margin-bottom: 24px;
-						width: 50%;
-					}
-				}
-			}
 		}
 	}
 
@@ -920,6 +857,27 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 				height: 150px;
 			}
 		}
+
+		#footer {
+			flex-direction: column;
+			height: auto;
+
+			.google-map {
+				height: 50vh;
+			}
+
+			> div {
+				width: 100%;
+			}
+
+			.bold {
+				padding-bottom: 8px;
+			}
+
+			.maps-content {
+				height: 50vh !important;
+			}
+		}
 	}
 
 	/* 643px
@@ -939,19 +897,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 		#column-2 > div {
 			width: 100%;
-		}
-
-		#footer {
-			.container {
-				flex-direction: column;
-
-				span:not(.opens-new-window-accessible), .location {
-					&:not(.powered-by) {
-						flex: 1;
-						width: 100%;
-					}
-				}
-			}
 		}
 	}
 
