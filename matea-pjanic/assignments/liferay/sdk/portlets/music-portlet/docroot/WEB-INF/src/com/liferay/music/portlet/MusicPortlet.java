@@ -50,17 +50,10 @@ public class MusicPortlet extends MVCPortlet {
 
 		Gson gson = new Gson();
 
-		FileReader file = null;
-
-		try {
-			file = new FileReader(
-				"C:\\Users\\Matea Pjanic\\Git\\matea-pjanic\\assignments\\" +
-					"liferay\\sdk\\portlets\\music-portlet\\docroot\\" +
-						"json\\bends.json");
-		}
-		catch (Exception ex) {
-			_log.error(ex);
-		}
+		FileReader file = new FileReader(
+			"C:\\Users\\Matea Pjanic\\Git\\matea-pjanic\\assignments\\" +
+				"liferay\\sdk\\portlets\\music-portlet\\docroot\\json\\" +
+					"bends.json");
 
 		Type list = new TypeToken<ArrayList<Bend>>(){}.getType();
 
