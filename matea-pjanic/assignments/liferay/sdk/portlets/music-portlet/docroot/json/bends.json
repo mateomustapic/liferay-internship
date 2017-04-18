@@ -1,24 +1,24 @@
 [
 
   {
-    "bendName": "Azra",
-    "image": "../../img/Azra.jpg",
-    "albums": [
+    "_name": "Azra",
+    "_image": "../../img/Azra.jpg",
+    "_albums": [
       {
-        "albumName": "Ravno do dna",
-        "year": 1982,
-        "songs": [
+        "_name": "Ravno do dna",
+        "_year": 1982,
+        "_songs": [
           {
-            "songName": "Uradi nesto",
-            "mp3": "../../mp3/Azra-RavnoDoDna.mp3"
+            "_name": "Uradi nesto",
+            "_mp3": "../../mp3/Azra-RavnoDoDna.mp3"
           },
           {
-            "songName": "Poziv na ples",
-            "mp3": "../../mp3/Azra-PozivNaPles.mp3"
+            "_name": "Poziv na ples",
+            "_mp3": "../../mp3/Azra-PozivNaPles.mp3"
           },
           {
-            "songName": "Tople usne zene",
-            "mp3": "../../mp3/Azra-TopleUsneZene.mp3"
+            "_name": "Tople usne zene",
+            "_mp3": "../../mp3/Azra-TopleUsneZene.mp3"
           }
         ]
       }
@@ -26,34 +26,34 @@
   },
 
   {
-    "bendName": "Santana",
-    "image": "../../img/Santana.jpg",
-    "albums": [
+    "_name": "Santana",
+    "_image": "../../img/Santana.jpg",
+    "_albums": [
       {
-        "albumName": "Supernatural",
-        "year": 1999,
-        "songs": [
+        "_name": "Supernatural",
+        "_year": 1999,
+        "_songs": [
           {
-            "songName": "Love Of My Love",
-            "mp3": "../../mp3/Santana-LoveOfMyLife.mp3"
+            "_name": "Love Of My Love",
+            "_mp3": "../../mp3/Santana-LoveOfMyLife.mp3"
           },
           {
-            "songName": "Put Your Lights",
-            "mp3": "../../mp3/Santana-PutYourLights.mp3"
+            "_name": "Put Your Lights",
+            "_mp3": "../../mp3/Santana-PutYourLights.mp3"
           }
         ]
       },
       {
-        "albumName": "Moonflower",
-        "year": 1977,
-        "songs": [
+        "_name": "Moonflower",
+        "_year": 1977,
+        "_songs": [
           {
-            "songName": "Dawn",
-            "mp3": "../../mp3/Santana-Dawn.mp3"
+            "_name": "Dawn",
+            "_mp3": "../../mp3/Santana-Dawn.mp3"
           },
           {
-            "songName": "Carnaval",
-            "mp3": "../../mp3/Santana-Carnaval.mp3"
+            "_name": "Carnaval",
+            "_mp3": "../../mp3/Santana-Carnaval.mp3"
           }
         ]
       }
@@ -62,20 +62,20 @@
 
 
   {
-    "bendName": "Creedence Clearwater Revival",
-    "image": "../../img/CreedenceClearwaterRevival.jpg",
-    "albums": [
+    "_name": "Creedence Clearwater Revival",
+    "_image": "../../img/CreedenceClearwaterRevival.jpg",
+    "_albums": [
       {
-        "albumName": "Mardi Gras",
-        "year": 1972,
-        "songs": [
+        "_name": "Mardi Gras",
+        "_year": 1972,
+        "_songs": [
           {
-            "songName": "Looking for a reason",
-            "mp3": "../../mp3/CreedenceClearwaterRevival-LookingForAReason.mp3"
+            "_name": "Looking for a reason",
+            "_mp3": "../../mp3/CreedenceClearwaterRevival-LookingForAReason.mp3"
           },
           {
-            "songName": "Take it like a friend",
-            "mp3": "../../mp3/CreedenceClearwaterRevival-TakeItLikeAFriend.mp3"
+            "_name": "Take it like a friend",
+            "_mp3": "../../mp3/CreedenceClearwaterRevival-TakeItLikeAFriend.mp3"
           }
         ]
       }
@@ -83,20 +83,20 @@
   },
 
   {
-    "bendName": "Florence and the machine",
-    "image": "../../img/FlorenceAndTheMachine.jpg",
-    "albums": [
+    "_name": "Florence and the machine",
+    "_image": "../../img/FlorenceAndTheMachine.jpg",
+    "_albums": [
       {
-        "albumName": "Lungs",
-        "year": 2009,
-        "songs": [
+        "_name": "Lungs",
+        "_year": 2009,
+        "_songs": [
           {
-            "songName": "Dog days are over",
-            "mp3": "../../mp3/FlorenceAndTheMachine-DogDaysAreOver.mp3"
+            "_name": "Dog days are over",
+            "_mp3": "../../mp3/FlorenceAndTheMachine-DogDaysAreOver.mp3"
           },
           {
-            "songName": "Rabbit heart",
-            "mp3": "../../mp3/FlorenceAndTheMachine-RabbitHeart.mp3"
+            "_name": "Rabbit heart",
+            "_mp3": "../../mp3/FlorenceAndTheMachine-RabbitHeart.mp3"
           }
         ]
       }
@@ -104,16 +104,16 @@
   },
 
   {
-    "bendName": "Hank Williams",
-    "image": "../../img/HankWilliams.jpg",
-    "albums": [
+    "_name": "Hank Williams",
+    "_image": "../../img/HankWilliams.jpg",
+    "_albums": [
       {
-        "albumName": "Beyond the sunset",
-        "year": 1953,
-        "songs": [
+        "_name": "Beyond the sunset",
+        "_year": 1953,
+        "_songs": [
           {
-            "songName": "Men with broken hearts",
-            "mp3": "../../mp3/HankWilliams-MenWithBrokenHearts.mp3"
+            "_name": "Men with broken hearts",
+            "_mp3": "../../mp3/HankWilliams-MenWithBrokenHearts.mp3"
           }
         ]
       }
@@ -121,20 +121,20 @@
   },
 
   {
-    "bendName": "Jayke Orvis",
-    "image": "../../img/JaykeOrvis.jpg",
-    "albums": [
+    "_name": "Jayke Orvis",
+    "_image": "../../img/JaykeOrvis.jpg",
+    "_albums": [
       {
-        "albumName": "It'a all been said",
-        "year": 2010,
-        "songs": [
+        "_name": "It'a all been said",
+        "_year": 2010,
+        "_songs": [
           {
-            "songName": "Crooked smile",
-            "mp3": "../../mp3/JaykeOrvis-CrookedSmile.mp3"
+            "_name": "Crooked smile",
+            "_mp3": "../../mp3/JaykeOrvis-CrookedSmile.mp3"
           },
           {
-            "songName": "Lead me astray",
-            "mp3": "../../mp3/JaykeOrvis-LeadMeAstray.mp3"
+            "_name": "Lead me astray",
+            "_mp3": "../../mp3/JaykeOrvis-LeadMeAstray.mp3"
           }
         ]
       }
@@ -142,20 +142,20 @@
   },
 
   {
-    "bendName": "Radiohead",
-    "image": "../../img/Radiohead.jpg",
-    "albums": [
+    "_name": "Radiohead",
+    "_image": "../../img/Radiohead.jpg",
+    "_albums": [
       {
-        "albumName": "A moon shaped pool",
-        "year": 2016,
-        "songs": [
+        "_name": "A moon shaped pool",
+        "_year": 2016,
+        "_songs": [
           {
-            "songName": "Burn the witch",
-            "mp3": "../../mp3/Radiohead-BurnTheWitch.mp3"
+            "_name": "Burn the witch",
+            "_mp3": "../../mp3/Radiohead-BurnTheWitch.mp3"
           },
           {
-            "songName": "Daydreaming",
-            "mp3": "../../mp3/Radiohead-Daydreaming.mp3"
+            "_name": "Daydreaming",
+            "_mp3": "../../mp3/Radiohead-Daydreaming.mp3"
           }
         ]
       }
@@ -163,20 +163,20 @@
   },
 
   {
-    "bendName": "Tom Waits",
-    "image": "../../img/TomWaits.jpg",
-    "albums": [
+    "_name": "Tom Waits",
+    "_image": "../../img/TomWaits.jpg",
+    "_albums": [
       {
-        "albumName": "Rain dogs",
-        "year": 1985,
-        "songs": [
+        "_name": "Rain dogs",
+        "_year": 1985,
+        "_songs": [
           {
-            "songName": "Singapore",
-            "mp3": "../../mp3/TomWaits-Singapore.mp3"
+            "_name": "Singapore",
+            "_mp3": "../../mp3/TomWaits-Singapore.mp3"
           },
           {
-            "songName": "Clap hands",
-            "mp3": "../../mp3/TomWaits-ClapHands.mp3"
+            "_name": "Clap hands",
+            "_mp3": "../../mp3/TomWaits-ClapHands.mp3"
           }
         ]
       }
