@@ -1,5 +1,3 @@
-<%@ page import="com.liferay.portal.kernel.util.HtmlUtil" %>
-
 <%--
 /**
  * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
@@ -105,12 +103,11 @@
 							</c:if>
 
 							languageId: '<%= themeDisplay.getLanguageId() %>',
-							mapAddress: 'Zavrtnica 17, Zagreb',
+							mapAddress: '<%= PortletProps.get("perzej.office.address.short") %>',
 							mapInputEnabled: <%= mapInputEnabled %>,
 							namespace: '<portlet:namespace />',
 							portletId: '<%= portletDisplay.getId() %>',
-							showDirectionSteps: <%= showDirectionSteps %>,
-
+							showDirectionSteps: <%= showDirectionSteps %>
 						}
 					).render();
 
@@ -131,7 +128,7 @@
 				<liferay-ui:message key="headquarters" />
 			</span>
 
-			<%= HtmlUtil.escape(PortletProps.get("perzej.headquarters.address")) %>
+			<%= PortletProps.get("perzej.headquarters.address") %>
 
 		</aui:a>
 
