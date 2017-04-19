@@ -52,7 +52,7 @@ public class MusicPortlet extends MVCPortlet {
 
 		FileReader file = new FileReader(
 			"C:\\Users\\Matea Pjanic\\Git\\matea-pjanic\\assignments\\" +
-				"liferay\\sdk\\portlets\\music-portlet\\docroot\\json\\" +
+				"liferay-app\\sdk\\portlets\\music-portlet\\docroot\\json\\" +
 					"bends.json");
 
 		Type list = new TypeToken<ArrayList<Bend>>(){}.getType();
