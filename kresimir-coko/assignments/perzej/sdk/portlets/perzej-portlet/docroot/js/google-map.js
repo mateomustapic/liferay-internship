@@ -25,15 +25,9 @@ AUI.add(
 
 		var STR_TRAVELING_MODE = 'travelingMode';
 
-		var WIN = A.config.win;
-
 		var GoogleMaps = A.Component.create(
 			{
 				ATTRS: {
-					directionsAddress: {
-						validator: Lang.isString
-					},
-
 					googleMapsURL: {
 						validator: Lang.isString,
 						value: 'http://maps.google.com/maps/api/js'
@@ -46,11 +40,6 @@ AUI.add(
 					mapAddress: {
 						getter: '_getMapAddress',
 						validator: Lang.isString
-					},
-
-					mapInputEnabled: {
-						validator: Lang.isBoolean,
-						value: false
 					},
 
 					mapParams: {
@@ -67,11 +56,6 @@ AUI.add(
 
 					portletId: {
 						validator: Lang.isNumber
-					},
-
-					showDirectionSteps: {
-						validator: Lang.isBoolean,
-						value: false
 					}
 				},
 
@@ -192,26 +176,6 @@ AUI.add(
 						);
 					},
 
-					_getDirections: function() {
-						var instance = this;
-
-						var mapAddress = instance.get(STR_MAP_ADDRESS);
-
-						var directionsAddress = instance.byId(STR_DIRECTION_ADDRESS).val();
-
-						var travelingMode = instance.byId(STR_TRAVELING_MODE).val();
-
-						var request = {
-							destination: directionsAddress,
-							origin: mapAddress,
-							travelMode: google.maps.TravelMode[travelingMode.toUpperCase()]
-						};
-
-						instance._removeMarkers();
-
-						instance._directionsService.route(request, A.rbind(instance._onRoute, instance, directionsAddress));
-					},
-
 					_getGoogleMapType: function(type) {
 						var mapType = google.maps.MapTypeId;
 
@@ -328,73 +292,6 @@ AUI.add(
 							instance._infoWindow.setPosition(location);
 
 							instance._infoWindow.open(instance._map, instance._marker);
-						}
-					},
-
-					_onDirectionsAddressKeyDown: function(event) {
-						var instance = this;
-
-						event.preventDefault();
-
-						instance._getDirections();
-					},
-
-					_onMapAddressKeyDown: function(event) {
-						var instance = this;
-
-						event.preventDefault();
-
-						if (instance._isDirectionFilled()) {
-							instance._getDirections();
-						}
-						else {
-							instance._getMap();
-						}
-					},
-
-					_onMarkerClick: function(event, marker, text) {
-						var instance = this;
-
-						var stepDisplay = instance._stepDisplay;
-
-						stepDisplay.setContent(text);
-
-						stepDisplay.open(instance._map, marker);
-					},
-
-					_onOpenInGoogleMapsClick: function(event) {
-						var instance = this;
-
-						event.preventDefault();
-
-						var mapAddress = instance.get(STR_MAP_ADDRESS);
-
-						var directionsAddress = instance.byId(STR_DIRECTION_ADDRESS).val();
-
-						var encodedMapAddress = encodeURIComponent(mapAddress);
-
-						var url = 'http://maps.google.com/maps?q=' + encodedMapAddress;
-
-						if (directionsAddress) {
-							url = 'http://maps.google.com/maps?f=q&hl=en&q=' + encodedMapAddress + '+to+' + encodeURIComponent(directionsAddress);
-						}
-
-						WIN.open(url);
-					},
-
-					_onRoute: function(response, status, directionsAddress) {
-						var instance = this;
-
-						if (status == google.maps.DirectionsStatus.OK) {
-							var warnings = instance.byId('warningsPanel');
-
-							warnings.html(response.routes[0].warnings);
-
-							instance._directionsDisplay.setDirections(response);
-
-							if (instance.get('showDirectionSteps')) {
-								instance._showSteps(response);
-							}
 						}
 					},
 
@@ -527,33 +424,6 @@ AUI.add(
 						infoWindowContent = infoWindowContent.replace(',', ', ');
 
 						infoWindow.setContent(infoWindowContent);
-					},
-
-					_showSteps: function(directionResult) {
-						var instance = this;
-
-						var markersArray = instance._markersArray;
-
-						// For each step, place a marker, and add the text to the marker's info window.
-
-						var myRoute = directionResult.routes[0].legs[0];
-
-						var stepsCount = myRoute.steps.length;
-
-						var googleMaps = google.maps;
-
-						for (var i = 0; i < stepsCount; i++) {
-							var marker = new googleMaps.Marker(
-								{
-									map: instance._map,
-									position: myRoute.steps[i].start_point
-								}
-							);
-
-							instance._attachInstructionText(marker, myRoute.steps[i].instructions);
-
-							markersArray.push(marker);
-						}
 					}
 				}
 			}
