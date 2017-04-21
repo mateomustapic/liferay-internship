@@ -20,9 +20,16 @@
 	<div class="google-map">
 		<div class="maps-content" id="<portlet:namespace />map" style="height: <%= height %>px; width: 100%;"></div>
 
-		<aui:script use="liferay-google-maps">
-			var googleMaps = new Liferay.Portlet.GoogleMaps(
+		<aui:script use="perzej-site-footer">
+			var perzejSiteFooter = new Liferay.Portlet.PerzejSiteFooter(
 				{
+					headquartersAddressShort: '<%= PortletProps.get("perzej.headquarters.address.short") %>',
+					headquartersLat: '<%= PortletProps.get("perzej.headquarters.lat") %>',
+					headquartersLng: '<%= PortletProps.get("perzej.headquarters.lng") %>',
+					officeAddressShort: '<%= PortletProps.get("perzej.office.address.short") %>',
+					officeLat: '<%= PortletProps.get("perzej.office.lat") %>',
+					officeLng: '<%= PortletProps.get("perzej.office.lng") %>',
+
 					<c:if test="<%= PortalUtil.isSecure(request) %>">
 						googleMapsURL: 'https://maps-api-ssl.google.com/maps/api/js',
 					</c:if>
@@ -31,17 +38,6 @@
 					mapAddress: '<%= PortletProps.get("perzej.office.address.short") %>',
 					namespace: '<portlet:namespace />',
 					portletId: '<%= portletDisplay.getId() %>'
-				}
-			).render();
-
-			googleMaps.initializePage(
-				{
-					headquartersAddressShort: '<%= PortletProps.get("perzej.headquarters.address.short") %>',
-					headquartersLat: '<%= PortletProps.get("perzej.headquarters.lat") %>',
-					headquartersLng: '<%= PortletProps.get("perzej.headquarters.lng") %>',
-					officeAddressShort: '<%= PortletProps.get("perzej.office.address.short") %>',
-					officeLat: '<%= PortletProps.get("perzej.office.lat") %>',
-					officeLng: '<%= PortletProps.get("perzej.office.lng") %>'
 				}
 			);
 		</aui:script>
