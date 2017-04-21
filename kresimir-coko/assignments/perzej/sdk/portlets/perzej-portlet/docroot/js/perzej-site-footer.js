@@ -14,10 +14,6 @@ AUI.add(
 					prototype: {
 						initializer: function(config) {
 							var instance = this;
-							var latitude;
-							var longitude;
-							var markers = [];
-							var shortAddress;
 
 							instance._headquartersAddressShort = config.headquartersAddressShort;
 							instance._headquartersLat = config.headquartersLat;
@@ -30,7 +26,7 @@ AUI.add(
 							instance._officeLink = A.one('.footer-info .office');
 							instance._headquartersLink = A.one('.footer-info .headquarters');
 
-							var GoogleMaps = new Liferay.Portlet.GoogleMaps(
+							var googleMapsWidget = new Liferay.Portlet.GoogleMaps(
 								{
 									googleMapsURL: config.googleMapsURL,
 									languageId: config.languageId,
@@ -40,78 +36,73 @@ AUI.add(
 								}
 							).render();
 
-							GoogleMaps.set('mapParams.zoom', 14);
+							googleMapsWidget.set('mapParams.zoom', 14);
 
-							function _changeAddress() {
-								var googleMaps = google.maps;
+							instance._googleMapsWidget = googleMapsWidget;
 
-								var map = GoogleMaps._map;
-
-								if (this.hasClass('headquarters')) {
-									latitude = instance._headquartersLat;
-									longitude = instance._headquartersLng;
-									shortAddress = instance._headquartersAddressShort;
-								}
-								else {
-									latitude = instance._officeLat;
-									longitude = instance._officeLng;
-									shortAddress = instance._officeAddressShort;
-								}
-
-								GoogleMaps._infoWindow = new googleMaps.InfoWindow();
-
-								var infoWindow = GoogleMaps._infoWindow;
-
-								if (!infoWindow) {
-									infoWindow = new googleMaps.InfoWindow(
-										{
-											content: shortAddress
-										}
-									);
-								}
-								else {
-									infoWindow.setContent(shortAddress);
-								}
-
-								for (var i = 0; i < markers.length; i++) {
-									markers[i].setMap(null);
-								}
-
-								if (GoogleMaps._marker) {
-									GoogleMaps._marker.setMap(null);
-								}
-
-								var marker = new googleMaps.Marker(
-									{
-										map: map,
-										position: new googleMaps.LatLng(latitude, longitude),
-										title: shortAddress
-									}
-								);
-
-								markers.push(marker);
-
-								infoWindow.open(map, marker);
-
-								instance._replaceInfoWindowContent(GoogleMaps);
-
-								var markers = [];
-
-								for (var i = 0; i < markers.length; i++) {
-									markers[i].setMap(GoogleMaps);
-								}
-
-								map.panTo(marker.getPosition());
-							}
-
-							instance._officeLink.on('click', _changeAddress);
-							instance._headquartersLink.on('click', _changeAddress);
+							instance._officeLink.on('click', A.bind('_changeAddress', instance));
+							instance._headquartersLink.on('click', A.bind('_changeAddress', instance));
 						},
 
-						_replaceInfoWindowContent: function(GoogleMaps) {
+						_changeAddress: function(event) {
 							var instance = this;
 
+							var googleMaps = google.maps;
+
+							var googleMapsWidget = instance._googleMapsWidget;
+
+							var map = googleMapsWidget._map;
+
+							var latitude = instance._officeLat;
+							var longitude = instance._officeLng;
+							var shortAddress = instance._officeAddressShort;
+
+							if (event.currentTarget.hasClass('headquarters')) {
+								latitude = instance._headquartersLat;
+								longitude = instance._headquartersLng;
+								shortAddress = instance._headquartersAddressShort;
+							}
+
+							googleMapsWidget._infoWindow = new googleMaps.InfoWindow();
+
 							var infoWindow = GoogleMaps._infoWindow;
+
+							if (!infoWindow) {
+								infoWindow = new googleMaps.InfoWindow(
+									{
+										content: shortAddress
+									}
+								);
+							}
+							else {
+								infoWindow.setContent(shortAddress);
+							}
+
+							if (googleMapsWidget._marker) {
+								googleMapsWidget._marker.setMap(null);
+							}
+
+							var marker = new googleMaps.Marker(
+								{
+									map: map,
+									position: new googleMaps.LatLng(latitude, longitude),
+									title: shortAddress
+								}
+							);
+
+							marker.setMap(googleMapsWidget);
+
+							infoWindow.open(map, marker);
+
+							instance._replaceInfoWindowContent();
+
+							map.panTo(marker.getPosition());
+						},
+
+						_replaceInfoWindowContent: function() {
+							var instance = this;
+
+							var infoWindow = instance._googleMapsWidget._infoWindow;
 
 							var infoWindowContent = infoWindow.getContent();
 
