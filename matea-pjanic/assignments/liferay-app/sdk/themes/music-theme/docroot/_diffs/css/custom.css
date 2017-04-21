@@ -1,20 +1,41 @@
 .aui {
 	a {
 		color: darkgray;
+
+		&:hover {
+			color: dimgray;
+			text-decoration: none;
+		}
 	}
 
-	a:hover {
-		color: dimgray;
-		text-decoration: none;
+	h1 {
+		margin: 0;
+		margin-bottom: 50px;
 	}
 
 	ul {
+		margin: 0;
+	}
+
+	.dockbar .navbar-inner {
+		background: transparent;
+	}
+
+	.nav {
+		margin: 0;
+	}
+
+	.nav-collapse .nav {
 		margin: 0;
 	}
 }
 
 .container-fluid {
 	margin: 20px 80px;
+}
+
+.navbar-inner {
+	background-color: transparent;
 }
 
 .navigation {
@@ -30,14 +51,41 @@
 	}
 }
 
+.portlet-dockbar {
+	background: white;
+	float: right;
+	margin-right: 100px;
+	width: 200px;
+}
+
 .site-name {
 	color: darkgray;
 	font-size: 18px;
 }
 
+.user-avatar-link {
+	width: 100px;
+}
+
+#_145_navSiteNavigationNavbarBtn {
+	display: none;
+}
+
 @media only screen and (max-width: 1200px) {
 	.navigation ul li {
 		margin: 10px 30px;
+	}
+}
+
+@media only screen and (max-width: 979px) {
+	.aui .dockbar .navbar-inner {
+		float: right;
+		padding: 0;
+		width: 50px;
+
+		.container .nav-account-controls {
+			background: gainsboro;
+		}
 	}
 }
 
@@ -56,6 +104,10 @@
 @media only screen and (max-width: 500px) {
 	.container-fluid {
 		margin: 20px;
+	}
+
+	.portlet-dockbar {
+		margin-right: 40px;
 	}
 }
 
