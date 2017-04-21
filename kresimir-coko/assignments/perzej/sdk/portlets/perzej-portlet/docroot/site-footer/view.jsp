@@ -21,7 +21,7 @@
 		<div class="maps-content" id="<portlet:namespace />map" style="height: <%= height %>px; width: 100%;"></div>
 
 		<aui:script use="perzej-site-footer">
-			var perzejSiteFooter = new Liferay.Portlet.PerzejSiteFooter(
+			new Liferay.Portlet.PerzejSiteFooter(
 				{
 					headquartersAddressShort: '<%= PortletProps.get("perzej.headquarters.address.short") %>',
 					headquartersLat: '<%= PortletProps.get("perzej.headquarters.lat") %>',
@@ -52,7 +52,6 @@
 			</span>
 
 			<%= PortletProps.get("perzej.headquarters.address") %>
-
 		</span>
 
 		<span class="location office">
