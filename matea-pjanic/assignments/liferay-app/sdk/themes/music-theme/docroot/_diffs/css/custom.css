@@ -67,10 +67,6 @@
 	width: 100px;
 }
 
-#_145_navSiteNavigationNavbarBtn {
-	display: none;
-}
-
 @media only screen and (max-width: 1200px) {
 	.navigation ul li {
 		margin: 10px 30px;
