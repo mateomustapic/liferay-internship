@@ -15,6 +15,5 @@
 --%>
 
 <aui:nav collapsible="<%= true %>" cssClass='<%= portalMessageUseAnimation ? "nav-account-controls" : "nav-account-controls nav-account-controls-notice" %>' icon="user" id="navAccountControls">
-
 	<%@ include file="/html/portlet/dockbar/view_user_account.jspf" %>
 </aui:nav>
