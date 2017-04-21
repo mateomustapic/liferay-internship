@@ -95,17 +95,13 @@ AUI.add(
 
 								instance._replaceInfoWindowContent(GoogleMaps);
 
-								setMapOnAll(GoogleMaps);
-
-								map.panTo(marker.getPosition());
-							}
-
-							function setMapOnAll(map) {
 								var markers = [];
 
 								for (var i = 0; i < markers.length; i++) {
-									markers[i].setMap(map);
+									markers[i].setMap(GoogleMaps);
 								}
+
+								map.panTo(marker.getPosition());
 							}
 
 							instance._officeLink.on('click', _changeAddress);
