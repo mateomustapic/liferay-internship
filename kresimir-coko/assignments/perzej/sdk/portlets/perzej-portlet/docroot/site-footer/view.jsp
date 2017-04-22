@@ -18,7 +18,7 @@
 
 <footer id="footer">
 	<div class="google-map">
-		<div class="maps-content" id="<portlet:namespace />map" style="height: <%= height %>px; width: 100%;"></div>
+		<div class="maps-content" id="<portlet:namespace />map" style="height: 400px; width: 100%;"></div>
 
 		<aui:script use="perzej-site-footer">
 			new Liferay.Portlet.PerzejSiteFooter(
@@ -29,11 +29,6 @@
 					officeAddressShort: '<%= PortletProps.get("perzej.office.address.short") %>',
 					officeLat: '<%= PortletProps.get("perzej.office.lat") %>',
 					officeLng: '<%= PortletProps.get("perzej.office.lng") %>',
-
-					<c:if test="<%= PortalUtil.isSecure(request) %>">
-						googleMapsURL: 'https://maps-api-ssl.google.com/maps/api/js',
-					</c:if>
-
 					languageId: '<%= themeDisplay.getLanguageId() %>',
 					mapAddress: '<%= PortletProps.get("perzej.office.address.short") %>',
 					namespace: '<portlet:namespace />',

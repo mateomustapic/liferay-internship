@@ -31,20 +31,3 @@ page import="com.liferay.util.portlet.PortletProps" %>
 <portlet:defineObjects />
 
 <liferay-theme:defineObjects />
-
-<%
-String directionsAddress = GetterUtil.getString(portletPreferences.getValue("directionsAddress", null));
-boolean directionsInputEnabled = GetterUtil.getBoolean(portletPreferences.getValue("directionsInputEnabled", null));
-String mapAddress = GetterUtil.getString(portletPreferences.getValue("mapAddress", null));
-boolean mapInputEnabled = GetterUtil.getBoolean(portletPreferences.getValue("mapInputEnabled", null));
-
-boolean enableChangingTravelingMode = false;
-
-if (directionsInputEnabled) {
-	enableChangingTravelingMode = GetterUtil.getBoolean(portletPreferences.getValue("enableChangingTravelingMode", null));
-}
-
-int height = GetterUtil.getInteger(portletPreferences.getValue("height", null), 400);
-boolean showDirectionSteps = GetterUtil.getBoolean(portletPreferences.getValue("showDirectionSteps", null));
-boolean showGoogleMapsLink = GetterUtil.getBoolean(portletPreferences.getValue("showGoogleMapsLink", null));
-%>
