@@ -63,9 +63,9 @@ AUI.add(
 								shortAddress = instance._headquartersAddressShort;
 							}
 
-							googleMapsWidget._infoWindow = new googleMaps.InfoWindow();
+							var infoWindow = new googleMaps.InfoWindow();
 
-							var infoWindow = GoogleMaps._infoWindow;
+							googleMapsWidget._infoWindow = infoWindow;
 
 							if (!infoWindow) {
 								infoWindow = new googleMaps.InfoWindow(
@@ -78,11 +78,13 @@ AUI.add(
 								infoWindow.setContent(shortAddress);
 							}
 
-							if (googleMapsWidget._marker) {
-								googleMapsWidget._marker.setMap(null);
+							var marker = googleMapsWidget._marker;
+
+							if (marker) {
+								marker.setMap(null);
 							}
 
-							var marker = new googleMaps.Marker(
+							marker = new googleMaps.Marker(
 								{
 									map: map,
 									position: new googleMaps.LatLng(latitude, longitude),
@@ -93,6 +95,8 @@ AUI.add(
 							marker.setMap(googleMapsWidget);
 
 							infoWindow.open(map, marker);
+
+							googleMapsWidget._marker = marker;
 
 							instance._replaceInfoWindowContent();
 
