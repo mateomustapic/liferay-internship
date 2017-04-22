@@ -3,6 +3,8 @@
 AUI.add(
 	'perzej-site-footer',
 	function(A) {
+		var EVENT_CLICK = 'click';
+
 		var PerzejSiteFooter = A.Component.create(
 				{
 					AUGMENTS: [Liferay.PortletBase],
@@ -15,22 +17,20 @@ AUI.add(
 						initializer: function(config) {
 							var instance = this;
 
+							var officeAddressShort = config.officeAddressShort;
+
 							instance._headquartersAddressShort = config.headquartersAddressShort;
 							instance._headquartersLat = config.headquartersLat;
 							instance._headquartersLng = config.headquartersLng;
-
-							instance._officeAddressShort = config.officeAddressShort;
+							instance._officeAddressShort = officeAddressShort;
 							instance._officeLat = config.officeLat;
 							instance._officeLng = config.officeLng;
-
-							instance._officeLink = A.one('.footer-info .office');
-							instance._headquartersLink = A.one('.footer-info .headquarters');
 
 							var googleMapsWidget = new Liferay.Portlet.GoogleMaps(
 								{
 									googleMapsURL: config.googleMapsURL,
 									languageId: config.languageId,
-									mapAddress: config.mapAddress,
+									mapAddress: officeAddressShort,
 									namespace: config.namespace,
 									portletId: config.portletId
 								}
@@ -40,18 +40,21 @@ AUI.add(
 
 							instance._googleMapsWidget = googleMapsWidget;
 
-							instance._officeLink.on('click', A.bind('_changeAddress', instance));
-							instance._headquartersLink.on('click', A.bind('_changeAddress', instance));
+							var headquartersLink = A.one('.footer-info .headquarters');
+
+							if (headquartersLink) {
+								headquartersLink.on(EVENT_CLICK, A.bind('_changeAddress', instance));
+							}
+
+							var officeLink = A.one('.footer-info .office');
+
+							if (officeLink) {
+								officeLink.on(EVENT_CLICK, A.bind('_changeAddress', instance));
+							}
 						},
 
 						_changeAddress: function(event) {
 							var instance = this;
-
-							var googleMaps = google.maps;
-
-							var googleMapsWidget = instance._googleMapsWidget;
-
-							var map = googleMapsWidget._map;
 
 							var latitude = instance._officeLat;
 							var longitude = instance._officeLng;
@@ -63,7 +66,11 @@ AUI.add(
 								shortAddress = instance._headquartersAddressShort;
 							}
 
+							var googleMaps = google.maps;
+
 							var infoWindow = new googleMaps.InfoWindow();
+
+							var googleMapsWidget = instance._googleMapsWidget;
 
 							googleMapsWidget._infoWindow = infoWindow;
 
@@ -83,6 +90,8 @@ AUI.add(
 							if (marker) {
 								marker.setMap(null);
 							}
+
+							var map = googleMapsWidget._map;
 
 							marker = new googleMaps.Marker(
 								{

@@ -19,23 +19,6 @@
 <footer id="footer">
 	<div class="google-map">
 		<div class="maps-content" id="<portlet:namespace />map" style="height: 400px; width: 100%;"></div>
-
-		<aui:script use="perzej-site-footer">
-			new Liferay.Portlet.PerzejSiteFooter(
-				{
-					headquartersAddressShort: '<%= PortletProps.get("perzej.headquarters.address.short") %>',
-					headquartersLat: '<%= PortletProps.get("perzej.headquarters.lat") %>',
-					headquartersLng: '<%= PortletProps.get("perzej.headquarters.lng") %>',
-					officeAddressShort: '<%= PortletProps.get("perzej.office.address.short") %>',
-					officeLat: '<%= PortletProps.get("perzej.office.lat") %>',
-					officeLng: '<%= PortletProps.get("perzej.office.lng") %>',
-					languageId: '<%= themeDisplay.getLanguageId() %>',
-					mapAddress: '<%= PortletProps.get("perzej.office.address.short") %>',
-					namespace: '<portlet:namespace />',
-					portletId: '<%= portletDisplay.getId() %>'
-				}
-			);
-		</aui:script>
 	</div>
 
 	<div class="footer-info">
@@ -81,8 +64,26 @@
 			<liferay-ui:message key="powered-by" />
 
 			<aui:a href="http://www.liferay.com" target="_blank">
-				<span class="bold"> Liferay</span>
+				<span class="bold">
+					Liferay
+				</span>
 			</aui:a>
 		</span>
 	</div>
 </footer>
+
+<aui:script use="perzej-site-footer">
+	new Liferay.Portlet.PerzejSiteFooter(
+		{
+			headquartersAddressShort: '<%= PortletProps.get("perzej.headquarters.address.short") %>',
+			headquartersLat: '<%= PortletProps.get("perzej.headquarters.lat") %>',
+			headquartersLng: '<%= PortletProps.get("perzej.headquarters.lng") %>',
+			languageId: '<%= themeDisplay.getLanguageId() %>',
+			namespace: '<portlet:namespace />',
+			officeAddressShort: '<%= PortletProps.get("perzej.office.address.short") %>',
+			officeLat: '<%= PortletProps.get("perzej.office.lat") %>',
+			officeLng: '<%= PortletProps.get("perzej.office.lng") %>',
+			portletId: '<%= portletDisplay.getId() %>'
+		}
+	);
+</aui:script>
