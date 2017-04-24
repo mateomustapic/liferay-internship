@@ -20,7 +20,7 @@
 	<h2>
 		To do list
 
-		<span aria-hidden="true" class="icon-check"></span>
+		<i class="icon-check"></i>
 	</h2>
 
 	<div>
