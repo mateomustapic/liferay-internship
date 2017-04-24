@@ -24,7 +24,7 @@
 	</h2>
 
 	<div>
-		<input placeholder="Title of new task..." type="text" />
+		<aui:input placeholder="Title of new task..." type="text" />
 
 		<span>
 			Add
