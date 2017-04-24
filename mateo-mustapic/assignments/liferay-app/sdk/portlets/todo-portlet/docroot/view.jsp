@@ -24,7 +24,7 @@
 	</h2>
 
 	<div>
-		<aui:input placeholder="title-of-new-task" type="text" />
+		<aui:input placeholder="title-of-the-new-task" type="text" />
 
 		<span>
 			<liferay-ui:message key="add" />
