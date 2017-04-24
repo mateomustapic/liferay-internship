@@ -18,7 +18,7 @@
 
 <footer id="footer">
 	<div class="google-map">
-		<div class="maps-content" id="<portlet:namespace />map" style="height: 400px; width: 100%;"></div>
+		<div class="maps-content" id="<portlet:namespace />map" style="height: 500px; width: 100%;"></div>
 	</div>
 
 	<div class="footer-info">
