@@ -19,6 +19,8 @@ AUI.add(
 
 							var officeAddressShort = config.officeAddressShort;
 
+							officeAddressShort = officeAddressShort.replace(',', ', ');
+
 							instance._headquartersAddressShort = config.headquartersAddressShort;
 							instance._headquartersLat = config.headquartersLat;
 							instance._headquartersLng = config.headquartersLng;
@@ -100,8 +102,6 @@ AUI.add(
 									title: shortAddress
 								}
 							);
-
-							marker.setMap(googleMapsWidget);
 
 							infoWindow.open(map, marker);
 
