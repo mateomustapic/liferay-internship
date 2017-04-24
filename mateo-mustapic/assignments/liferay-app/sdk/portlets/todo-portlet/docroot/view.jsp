@@ -18,16 +18,16 @@
 
 <div>
 	<h2>
-		To do list
+		<liferay-ui:message key="to-do-list" />
 
 		<i class="icon-check"></i>
 	</h2>
 
 	<div>
-		<aui:input placeholder="Title of new task..." type="text" />
+		<aui:input placeholder="title-of-new-task" type="text" />
 
 		<span>
-			Add
+			<liferay-ui:message key="add" />
 		</span>
 	</div>
 </div>
