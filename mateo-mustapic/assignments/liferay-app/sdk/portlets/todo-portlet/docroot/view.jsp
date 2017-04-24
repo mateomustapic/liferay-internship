@@ -17,9 +17,17 @@
 <%@ include file="/init.jsp" %>
 
 <div class="myDIV">
-	<h2>To do list <span aria-hidden="true" class="icon-check"></span></h2>
+	<h2>
+		To do list
+
+		<span aria-hidden="true" class="icon-check"></span>
+	</h2>
+
 	<div class="inputDiv">
-		<input class="myInput" placeholder="Title of new task..." type="text">
-		<span class="addItem">Add</span>
+		<input class="myInput" placeholder="Title of new task..." type="text" />
+
+		<span class="addItem">
+			Add
+		</span>
 	</div>
 </div>
