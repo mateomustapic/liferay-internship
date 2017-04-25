@@ -29,6 +29,7 @@ import java.io.InputStream;
 import java.lang.reflect.Type;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
@@ -56,7 +57,7 @@ public class MusicPortlet extends MVCPortlet {
 
 		Type list = new TypeToken<ArrayList<Bend>>(){}.getType();
 
-		ArrayList<Bend> bends = gson.fromJson(jsonTxt, list);
+		List<Bend> bends = gson.fromJson(jsonTxt, list);
 
 		int size = bends.size();
 
