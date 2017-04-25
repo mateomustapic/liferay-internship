@@ -128,6 +128,18 @@ AUI.add(
 		);
 
 		Liferay.Portlet.PerzejSiteFooter = PerzejSiteFooter;
+
+		var locations = A.all('.location');
+
+		locations.each(
+			function(location) {
+				var contentNode = location.one('.content');
+
+				var contentNodeText = contentNode.text();
+
+				contentNode.set('text', contentNodeText.replace(',', ', '));
+			}
+		);
 	},
 	'',
 	{

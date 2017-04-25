@@ -29,7 +29,9 @@
 				<liferay-ui:message key="headquarters" />
 			</span>
 
-			<%= PortletProps.get("perzej.headquarters.address") %>
+			<span class="content">
+				<%= PortletProps.get("perzej.headquarters.address") %>
+			</span>
 		</span>
 
 		<span class="location office">
@@ -39,7 +41,9 @@
 				<liferay-ui:message key="office" />
 			</span>
 
-			<%= PortletProps.get("perzej.office.address") %>
+			<span class="content">
+				<%= PortletProps.get("perzej.office.address") %>
+			</span>
 		</span>
 
 		<span class="oib">
