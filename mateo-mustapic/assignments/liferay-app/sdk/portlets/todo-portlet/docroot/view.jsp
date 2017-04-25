@@ -16,7 +16,7 @@
 
 <%@ include file="/init.jsp" %>
 
-<div class="list-container">
+<div>
 	<h2>
 		<liferay-ui:message key="to-do-list" />
 
@@ -35,7 +35,3 @@
 <span class="counter"></span>
 
 <liferay-ui:message key="characters-remaining" />
-
-<div class="yui3-skin-sam">
-	<div id="modal"></div>
-</div>
