@@ -34,7 +34,7 @@
 
 <span class="myCounter"></span>
 
-character(s) remaining
+<liferay-ui:message key="characters-remaining" />
 
 <div class="yui3-skin-sam">
 	<div id="modal"></div>
