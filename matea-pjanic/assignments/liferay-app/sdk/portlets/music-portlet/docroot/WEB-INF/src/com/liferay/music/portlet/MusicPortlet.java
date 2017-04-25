@@ -59,28 +59,29 @@ public class MusicPortlet extends MVCPortlet {
 
 		List<Bend> bends = gson.fromJson(jsonTxt, list);
 
-		int size = bends.size();
-
-		if (size != 0) {
-			for (int i = 0; i < size; i++) {
-				if (StringUtil.equalsIgnoreCase(
-						music, bends.get(i).getName())) {
-
-					if (_log.isInfoEnabled()) {
-						_log.info(music + " was found.");
-					}
-
-					break;
-				}
-				else if (i == (size - 1)) {
-					if (_log.isInfoEnabled()) {
-						_log.info(music + " was not found.");
-					}
-				}
-			}
-
-			actionResponse.setRenderParameter("jspPage", "/view.jsp");
+		if (bends.isEmpty()) {
+			return;
 		}
+
+		boolean found = false;
+
+		for (Bend bend : bends) {
+			if (StringUtil.equalsIgnoreCase(music, bend.getName())) {
+				if (_log.isInfoEnabled()) {
+					_log.info(music + " was found.");
+				}
+
+				found = true;
+
+				break;
+			}
+		}
+
+		if (!found && _log.isInfoEnabled()) {
+			_log.info(music + " was not found.");
+		}
+
+		actionResponse.setRenderParameter("jspPage", "/view.jsp");
 	}
 
 	private static Log _log = LogFactoryUtil.getLog(MusicPortlet.class);
