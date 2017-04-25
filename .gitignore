@@ -4,6 +4,7 @@
 *.class
 *.ipr
 *.iws
+*.log
 *.processed
 *.swp
 *.idea
