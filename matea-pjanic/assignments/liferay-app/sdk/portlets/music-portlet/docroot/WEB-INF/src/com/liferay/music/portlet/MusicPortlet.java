@@ -62,7 +62,9 @@ public class MusicPortlet extends MVCPortlet {
 
 		if ((size != 0) && _log.isInfoEnabled()) {
 			for (int i = 0; i < size; i++) {
-				if (StringUtil.equalsIgnoreCase(music, bends.get(i).getName())) {
+				if (StringUtil.equalsIgnoreCase(
+						music, bends.get(i).getName())) {
+
 					_log.info(music + " found");
 
 					break;

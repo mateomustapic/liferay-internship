@@ -3,9 +3,9 @@
 		color: darkgray;
 
 		&:hover {
-			 color: dimgray;
-			 text-decoration: none;
-		 }
+			color: dimgray;
+			text-decoration: none;
+		}
 	}
 
 	h1 {
