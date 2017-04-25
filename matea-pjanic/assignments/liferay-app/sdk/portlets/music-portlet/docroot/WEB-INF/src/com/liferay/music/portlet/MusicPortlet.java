@@ -24,7 +24,7 @@ import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 
-import java.io.FileReader;
+import java.io.InputStream;
 
 import java.lang.reflect.Type;
 
@@ -48,16 +48,15 @@ public class MusicPortlet extends MVCPortlet {
 			return;
 		}
 
-		Gson gson = new Gson();
+		InputStream is = MusicPortlet.class.getResourceAsStream("bends.json");
 
-		FileReader file = new FileReader(
-			"C:\\Users\\Matea Pjanic\\Git\\matea-pjanic\\assignments\\" +
-				"liferay-app\\sdk\\portlets\\music-portlet\\docroot\\json\\" +
-					"bends.json");
+		String jsonTxt = StringUtil.read(is);
+
+		Gson gson = new Gson();
 
 		Type list = new TypeToken<ArrayList<Bend>>(){}.getType();
 
-		ArrayList<Bend> bends = gson.fromJson(file, list);
+		ArrayList<Bend> bends = gson.fromJson(jsonTxt, list);
 
 		int size = bends.size();
 
