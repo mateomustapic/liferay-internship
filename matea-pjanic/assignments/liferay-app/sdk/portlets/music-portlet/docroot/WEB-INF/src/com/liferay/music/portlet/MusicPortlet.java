@@ -60,17 +60,21 @@ public class MusicPortlet extends MVCPortlet {
 
 		int size = bends.size();
 
-		if ((size != 0) && _log.isInfoEnabled()) {
+		if (size != 0) {
 			for (int i = 0; i < size; i++) {
 				if (StringUtil.equalsIgnoreCase(
 						music, bends.get(i).getName())) {
 
-					_log.info(music + " found");
+					if (_log.isInfoEnabled()) {
+						_log.info(music + " was found.");
+					}
 
 					break;
 				}
 				else if (i == (size - 1)) {
-					_log.info("Not found");
+					if (_log.isInfoEnabled()) {
+						_log.info(music + " was not found.");
+					}
 				}
 			}
 
