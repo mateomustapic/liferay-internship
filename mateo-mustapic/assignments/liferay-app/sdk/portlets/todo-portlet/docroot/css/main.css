@@ -13,12 +13,13 @@
 	margin: auto;
 	padding-bottom: 20px;
 	padding-top: 20px;
-	width: 87%; }
+	width: 87%;
+}
 
 .task-label {
 	background-color: #008CBA;
 	border-radius: 10px;
-	color: white;
+	color: #FFF;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 16px;
@@ -27,7 +28,9 @@
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
-	width: 7%; }
+	width: 7%;
+}
 
 .task-label:hover {
-	background-color: #BBB; }
+	background-color: #BBB;
+}
