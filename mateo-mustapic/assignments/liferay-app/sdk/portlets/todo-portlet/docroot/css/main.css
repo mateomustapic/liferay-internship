@@ -29,8 +29,8 @@
 	text-decoration: none;
 	text-transform: uppercase;
 	width: 7%;
-}
 
-.task-label:hover {
-	background-color: #BBB;
+	&:hover {
+		background-color: #BBB;
+	}
 }
