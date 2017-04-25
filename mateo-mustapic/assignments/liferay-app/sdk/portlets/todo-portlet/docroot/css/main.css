@@ -28,6 +28,6 @@ span.addItem {
     text-decoration: none;
     text-transform: uppercase;
     width: 7%; }
+
 span.addItem:hover {
     background-color: #BBB; }
-

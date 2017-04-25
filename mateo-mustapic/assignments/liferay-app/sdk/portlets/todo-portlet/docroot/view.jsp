@@ -24,7 +24,7 @@
 	</h2>
 
 	<div class="inputDiv">
-		<input placeholder="title-of-the-new-task" name="new-task" class="myInput" type="text" />
+		<input class="myInput" name="new-task" placeholder="title-of-the-new-task" type="text" />
 		<span class="addItem">
 			<liferay-ui:message key="add" />
 		</span>
