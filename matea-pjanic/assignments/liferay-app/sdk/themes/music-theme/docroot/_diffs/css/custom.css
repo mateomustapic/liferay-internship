@@ -1,9 +1,14 @@
+$darkgray: #A9A9A9;
+$dimgray: #696969;
+$gainsboro: #DCDCDC;
+$white: #FFF;
+
 .aui {
 	a {
-		color: darkgray;
+		color: $darkgray;
 
 		&:hover {
-			color: dimgray;
+			color: $dimgray;
 			text-decoration: none;
 		}
 	}
@@ -18,7 +23,7 @@
 	}
 
 	.dockbar .navbar-inner {
-		background: transparent;
+		background-color: transparent;
 	}
 
 	.nav {
@@ -39,7 +44,7 @@
 }
 
 .navigation {
-	border: 1px solid darkgray;
+	border: 1px solid $darkgray;
 	border-width: 1px 0;
 	position: relative;
 	text-align: center;
@@ -52,14 +57,14 @@
 }
 
 .portlet-dockbar {
-	background: white;
+	background-color: $white;
 	float: right;
 	margin-right: 100px;
 	width: 200px;
 }
 
 .site-name {
-	color: darkgray;
+	color: $darkgray;
 	font-size: 18px;
 }
 
@@ -81,7 +86,7 @@
 
 		.container {
 			.nav-account-controls {
-				background: gainsboro;
+				background-color: $gainsboro;
 			}
 
 			.btn.btn-navbar:first-child {
