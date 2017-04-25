@@ -25,13 +25,16 @@
 
 	<div class="inputDiv">
 		<input class="myInput" name="new-task" placeholder="title-of-the-new-task" type="text" />
+
 		<span class="addItem">
 			<liferay-ui:message key="add" />
 		</span>
 	</div>
 </div>
 
-<span class="myCounter"></span> character(s) remaining
+<span class="myCounter"></span>
+
+character(s) remaining
 
 <div class="yui3-skin-sam">
 	<div id="modal"></div>
