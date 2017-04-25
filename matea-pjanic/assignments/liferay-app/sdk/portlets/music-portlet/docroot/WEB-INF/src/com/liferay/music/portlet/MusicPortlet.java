@@ -42,9 +42,9 @@ public class MusicPortlet extends MVCPortlet {
 			ActionRequest actionRequest, ActionResponse actionResponse)
 		throws Exception {
 
-		String bend = ParamUtil.getString(actionRequest, "bend");
+		String music = ParamUtil.getString(actionRequest, "music");
 
-		if (bend == null) {
+		if (music == null) {
 			return;
 		}
 
@@ -62,13 +62,13 @@ public class MusicPortlet extends MVCPortlet {
 
 		if ((size != 0) && _log.isInfoEnabled()) {
 			for (int i = 0; i < size; i++) {
-				if (StringUtil.equalsIgnoreCase(bend, bends.get(i).getName())) {
-					_log.info(bend + " found");
+				if (StringUtil.equalsIgnoreCase(music, bends.get(i).getName())) {
+					_log.info(music + " found");
 
 					break;
 				}
 				else if (i == (size - 1)) {
-					_log.info("Bend not found");
+					_log.info("Not found");
 				}
 			}
 
