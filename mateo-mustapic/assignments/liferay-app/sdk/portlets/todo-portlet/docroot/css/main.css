@@ -1,9 +1,9 @@
-span.myCounter {
+span.counter {
 	font-weight: bold;
 	margin-left: 1%;
 }
 
-div.inputDiv input.myInput {
+div.task-container input.task {
 	border: 1px solid #CCC;
 	border-radius: 10px;
 	box-sizing: border-box;
@@ -15,7 +15,7 @@ div.inputDiv input.myInput {
 	padding-top: 20px;
 	width: 87%; }
 
-span.addItem {
+span.task-label {
 	background-color: #008CBA;
 	border-radius: 10px;
 	color: white;
@@ -29,5 +29,5 @@ span.addItem {
 	text-transform: uppercase;
 	width: 7%; }
 
-span.addItem:hover {
+span.task-label:hover {
 	background-color: #BBB; }
