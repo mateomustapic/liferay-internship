@@ -3,9 +3,9 @@
 		color: darkgray;
 
 		&:hover {
-			color: dimgray;
-			text-decoration: none;
-		}
+			 color: dimgray;
+			 text-decoration: none;
+		 }
 	}
 
 	h1 {
@@ -79,8 +79,14 @@
 		padding: 0;
 		width: 50px;
 
-		.container .nav-account-controls {
-			background: gainsboro;
+		.container {
+			.nav-account-controls {
+				background: gainsboro;
+			}
+
+			.btn.btn-navbar:first-child {
+				display: none;
+			}
 		}
 	}
 }
