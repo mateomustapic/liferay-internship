@@ -1,0 +1,33 @@
+span.myCounter {
+    font-weight: bold;
+    margin-left: 1%;
+}
+
+div.inputDiv input.myInput {
+    border: 1px solid #CCC;
+    border-radius: 10px;
+    box-sizing: border-box;
+    float: left;
+    font-size: 16px;
+    height: 18px;
+    margin: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 87%; }
+
+span.addItem {
+    background-color: #008CBA;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 8px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 7%; }
+span.addItem:hover {
+    background-color: #BBB; }
+

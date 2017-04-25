@@ -16,18 +16,23 @@
 
 <%@ include file="/init.jsp" %>
 
-<div>
+<div class="myDiv">
 	<h2>
 		<liferay-ui:message key="to-do-list" />
 
 		<i class="icon-check"></i>
 	</h2>
 
-	<div>
-		<aui:input placeholder="title-of-the-new-task" type="text" />
-
-		<span>
+	<div class="inputDiv">
+		<input placeholder="title-of-the-new-task" name="new-task" class="myInput" type="text" />
+		<span class="addItem">
 			<liferay-ui:message key="add" />
 		</span>
 	</div>
+</div>
+
+<span class="myCounter"></span> character(s) remaining
+
+<div class="yui3-skin-sam">
+	<div id="modal"></div>
 </div>
