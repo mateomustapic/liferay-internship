@@ -220,4 +220,10 @@
 	</div>
 </section>
 
-<aui:script use="perzej-technology-stack"></aui:script>
+<aui:script use="perzej-technology-stack">
+	new Liferay.Portlet.PerzejTechnologyStack(
+		{
+			namespace: '<portlet:namespace />'
+		}
+	);
+</aui:script>

@@ -3,28 +3,46 @@
 AUI().add(
 	'perzej-technology-stack',
 	function(A) {
-		if (!Modernizr.objectfit) {
-			var techStackContainer = A.one('#tech-stack');
+		var PerzejTechnologyStack = A.Component.create(
+			{
+				AUGMENTS: [Liferay.PortletBase],
 
-			var technologyImages = techStackContainer.all('.technology-image');
+				EXTENDS: A.Base,
 
-			technologyImages.each(
-				function(technologyImageNode) {
-					var technologyImage = technologyImageNode.one('img');
+				NAME: 'perzej-technology-stack',
 
-					var imageUrl = technologyImage.getAttribute('src');
+				prototype: {
+					initializer: function(config) {
+						var instance = this;
 
-					if (imageUrl) {
-						technologyImageNode.setStyle('backgroundImage', 'url(' + imageUrl + ')');
+						if (!Modernizr.objectfit) {
+							var techStackContainer = A.one('#tech-stack');
 
-						technologyImageNode.addClass('compat-object-fit');
+							var technologyImages = techStackContainer.all('.technology-image');
+
+							technologyImages.each(
+								function(technologyImageNode) {
+									var technologyImage = technologyImageNode.one('img');
+
+									var imageUrl = technologyImage.getAttribute('src');
+
+									if (imageUrl) {
+										technologyImageNode.setStyle('backgroundImage', 'url(' + imageUrl + ')');
+
+										technologyImageNode.addClass('compat-object-fit');
+									}
+								}
+							);
+						}
 					}
 				}
-			);
-		}
+			}
+		);
+
+		Liferay.Portlet.PerzejTechnologyStack = PerzejTechnologyStack;
 	},
 	'',
 	{
-		requires: ['aui-node']
+		requires: ['aui-node', 'liferay-portlet-base']
 	}
 );
