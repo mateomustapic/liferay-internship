@@ -16,13 +16,7 @@
 
 <%@ include file="/init.jsp" %>
 
-<%!
-	public String PerzejPortletProps(String key) {
-		String prop = PortletProps.get(key);
-
-		return prop.replace(",", ", ");
-	}
-%>
+<%@ page import="com.liferay.perzej.PerzejPortletProps" %>
 
 <footer id="footer">
 	<div class="google-map">
@@ -37,7 +31,7 @@
 				<liferay-ui:message key="headquarters" />
 			</span>
 
-			<%= PerzejPortletProps("perzej.headquarters.address") %>
+			<%= PerzejPortletProps.get("perzej.headquarters.address") %>
 		</span>
 
 		<span class="location office">
@@ -47,7 +41,7 @@
 				<liferay-ui:message key="office" />
 			</span>
 
-			<%= PerzejPortletProps("perzej.office.address") %>
+			<%= PerzejPortletProps.get("perzej.office.address") %>
 		</span>
 
 		<span class="oib">
@@ -83,12 +77,12 @@
 <aui:script use="perzej-site-footer">
 	new Liferay.Portlet.PerzejSiteFooter(
 		{
-			headquartersAddressShort: '<%= PerzejPortletProps("perzej.headquarters.address.short") %>',
+			headquartersAddressShort: '<%= PerzejPortletProps.get("perzej.headquarters.address.short") %>',
 			headquartersLat: '<%= PortletProps.get("perzej.headquarters.lat") %>',
 			headquartersLng: '<%= PortletProps.get("perzej.headquarters.lng") %>',
 			languageId: '<%= themeDisplay.getLanguageId() %>',
 			namespace: '<portlet:namespace />',
-			officeAddressShort: '<%= PerzejPortletProps("perzej.office.address.short") %>',
+			officeAddressShort: '<%= PerzejPortletProps.get("perzej.office.address.short") %>',
 			officeLat: '<%= PortletProps.get("perzej.office.lat") %>',
 			officeLng: '<%= PortletProps.get("perzej.office.lng") %>',
 			portletId: '<%= portletDisplay.getId() %>'
