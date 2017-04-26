@@ -1,9 +1,11 @@
 /* global Modernizr */
 
-AUI().use(
-	'node',
+AUI().add(
+	'perzej-technology-stack',
 	function(A) {
-		if (!Modernizr.objectfit) {
+		var mediaQuery = window.matchMedia('(max-width: 768px)');
+
+		if (!Modernizr.objectfit && mediaQuery.matches) {
 			var techStackContainer = A.one('#tech-stack');
 
 			var technologyImages = techStackContainer.all('.technology-image');
@@ -21,5 +23,9 @@ AUI().use(
 				}
 			);
 		}
+	},
+	'',
+	{
+		requires: ['aui-node']
 	}
 );

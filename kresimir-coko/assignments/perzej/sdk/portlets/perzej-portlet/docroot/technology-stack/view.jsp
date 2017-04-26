@@ -219,3 +219,5 @@
 		</div>
 	</div>
 </section>
+
+<aui:script use="perzej-technology-stack"></aui:script>
