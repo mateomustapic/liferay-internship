@@ -3,9 +3,7 @@
 AUI().add(
 	'perzej-technology-stack',
 	function(A) {
-		var mediaQuery = window.matchMedia('(max-width: 768px)');
-
-		if (!Modernizr.objectfit && mediaQuery.matches) {
+		if (!Modernizr.objectfit) {
 			var techStackContainer = A.one('#tech-stack');
 
 			var technologyImages = techStackContainer.all('.technology-image');
@@ -18,6 +16,7 @@ AUI().add(
 
 					if (imageUrl) {
 						technologyImageNode.setStyle('backgroundImage', 'url(' + imageUrl + ')');
+
 						technologyImageNode.addClass('compat-object-fit');
 					}
 				}
