@@ -26,7 +26,8 @@
 
 <%@ page import="com.liferay.portal.kernel.util.GetterUtil" %><%@
 page import="com.liferay.portal.util.PortalUtil" %><%@
-page import="com.liferay.util.portlet.PortletProps" %>
+page import="com.liferay.util.portlet.PortletProps" %><%@
+page import="com.liferay.perzej.PerzejPortletProps" %>
 
 <portlet:defineObjects />
 

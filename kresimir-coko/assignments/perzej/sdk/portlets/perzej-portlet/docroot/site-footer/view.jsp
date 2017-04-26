@@ -16,8 +16,6 @@
 
 <%@ include file="/init.jsp" %>
 
-<%@ page import="com.liferay.perzej.PerzejPortletProps" %>
-
 <footer id="footer">
 	<div class="google-map">
 		<div class="maps-content" id="<portlet:namespace />map"></div>
