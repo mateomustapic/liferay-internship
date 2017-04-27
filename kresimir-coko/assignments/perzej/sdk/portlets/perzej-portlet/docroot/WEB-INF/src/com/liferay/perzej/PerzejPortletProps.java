@@ -24,7 +24,7 @@ public class PerzejPortletProps {
 	public static String get(String key) {
 		String value = PortletProps.get(key);
 
-		return value.replaceAll(",(?! )", ", ");
+		return value.replaceAll(",(\\S)", ", $1");
 	}
 
 }
