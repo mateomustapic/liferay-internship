@@ -26,7 +26,7 @@ AUI().add(
 										var technologyImage = item.one('img');
 
 										if (technologyImage) {
-											var imageUrl = technologyImage.getAttribute('src');
+											var imageUrl = technologyImage.attr('src');
 
 											if (imageUrl) {
 												item.setStyle('backgroundImage', 'url(' + imageUrl + ')');
