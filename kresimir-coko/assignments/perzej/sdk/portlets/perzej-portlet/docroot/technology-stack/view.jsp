@@ -16,7 +16,7 @@
 
 <%@ include file="/init.jsp" %>
 
-<section class="section" id="tech-stack">
+<section class="section" id="<portlet:namespace />tech-stack">
 	<div class="container">
 		<div class="tech-stack-column">
 			<h3 class="tech-stack-heading">

@@ -16,7 +16,7 @@ AUI().add(
 						var instance = this;
 
 						if (!Modernizr.objectfit) {
-							var techStackContainer = A.one('#tech-stack');
+							var techStackContainer = instance.byId('tech-stack');
 
 							var technologyImages = techStackContainer.all('.technology-image');
 
