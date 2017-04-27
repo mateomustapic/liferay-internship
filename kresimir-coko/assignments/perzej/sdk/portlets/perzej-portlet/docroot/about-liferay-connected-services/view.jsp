@@ -16,7 +16,7 @@
 
 <%@ include file="/init.jsp" %>
 
-<section class="section" id="about-lcs">
+<section class="section about-lcs" id="<portlet:namespace />about-lcs">
 	<div class="container">
 		<img alt="Liferay Connected Services" src="<%= PortalUtil.getPathContext(request) %>/images/lcs-logo.svg" />
 
