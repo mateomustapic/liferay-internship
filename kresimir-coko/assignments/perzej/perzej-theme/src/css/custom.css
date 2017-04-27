@@ -101,7 +101,7 @@ $red: #F44336;
 $silver: #009DB7;
 $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
-#perzej {
+.perzej {
 
 	/* Overrides
 	************************************************************/
@@ -214,12 +214,12 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 	/* Layout
 	************************************************************/
 
-	#wrapper {
+	.wrapper {
 		padding: 0;
 		position: relative;
 	}
 
-	#heading {
+	.heading {
 		align-items: center;
 		display: flex;
 		justify-content: center;
@@ -231,7 +231,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 	/* Header
 	************************************************************/
 
-	#banner {
+	.banner {
 		background-color: transparent;
 		border-image: $gradient;
 		border-image-slice: 1;
@@ -241,7 +241,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 		width: 100%;
 	}
 
-	#heading {
+	.heading {
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
@@ -254,7 +254,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 	/* Hero
 	************************************************************/
 
-	#hero {
+	.hero {
 		align-items: center;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -318,7 +318,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 	/* Content
 	************************************************************/
 
-	#content {
+	.content {
 		flex: 1;
 		flex-direction: column;
 
@@ -396,7 +396,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 	// Liferay Section
 
-	#about-liferay {
+	.about-liferay {
 		.container {
 			justify-content: space-between;
 		}
@@ -413,7 +413,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 	// LCS Section
 
-	#about-lcs {
+	.about-lcs {
 		background-color: $light;
 
 		.section_column {
@@ -429,7 +429,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 
 	// Tech Stack Section
 
-	#tech-stack {
+	.tech-stack {
 		background-color: $silver;
 
 		.container {
@@ -502,17 +502,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 	.technology-name {
 		font-size: 1.2em;
 		padding: 16px;
-	}
-
-	#freemarker {
-		.technology-image {
-			align-items: center;
-
-			img {
-				height: auto;
-				width: 100%;
-			}
-		}
 	}
 
 	// Contact Section
@@ -651,7 +640,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 	/* Footer
 	************************************************************/
 
-	#footer {
+	.site-footer {
 		background-color: $dark;
 		display: flex;
 		height: 500px;
@@ -723,15 +712,15 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 	************************************************************/
 
 	@media screen and (max-width: 1280px) {
-		#banner, #content, #footer {
+		.banner, .content, .site-footer {
 			width: 100%;
 		}
 
-		#heading {
+		.heading {
 			padding: 24px;
 		}
 
-		#liferay-img {
+		.about-liferay img {
 			display: flex;
 			height: 200px;
 			max-width: 400px;
@@ -756,7 +745,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 	************************************************************/
 
 	@media screen and (max-width: 1024px) {
-		#tech-stack.section {
+		.tech-stack.section {
 			.container {
 				justify-content: space-around;
 			}
@@ -769,10 +758,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			.half-width-column {
 				width: 100%;
 			}
-		}
-
-		#column-2 {
-			height: 500px;
 		}
 	}
 
@@ -792,11 +777,11 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			margin: 0;
 		}
 
-		#banner, #content, #footer {
+		.banner, .content, .site-footer {
 			width: 100%;
 		}
 
-		#heading {
+		.heading {
 			padding: 16px;
 		}
 
@@ -809,24 +794,24 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			padding: 0 24px;
 		}
 
-		#about-liferay {
+		.about-liferay {
 			.section_column {
 				padding-right: 8px;
 				width: 70%;
 			}
+
+			img {
+				background-image: url(../images/liferay-logo_img.png);
+				height: 200px;
+				width: 28%;
+			}
 		}
 
-		#about-lcs {
+		.about-lcs {
 			.section_column {
 				padding-left: 8px;
 				width: 70%;
 			}
-		}
-
-		#liferay-img {
-			background-image: url(../images/liferay-logo_img.png);
-			height: 200px;
-			width: 28%;
 		}
 
 		.columns-1-2-1 {
@@ -890,7 +875,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			}
 		}
 
-		#footer {
+		.site-footer {
 			flex-direction: column;
 			height: auto;
 
@@ -926,10 +911,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 				margin-bottom: 26px;
 			}
 		}
-
-		#column-2 > div {
-			width: 100%;
-		}
 	}
 
 	/*480px
@@ -940,7 +921,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			padding: 0;
 		}
 
-		#heading {
+		.heading {
 			padding: 16px;
 		}
 
@@ -957,11 +938,11 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			padding: 8px 32px;
 		}
 
-		#hero {
+		.hero {
 			height: 80vh;
 		}
 
-		#content {
+		.content {
 			.section {
 				padding: 32px 16px;
 
@@ -986,7 +967,7 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			}
 		}
 
-		#about-liferay, #about-lcs {
+		.about-liferay, .about-lcs {
 			position: relative;
 
 			.section-heading {
@@ -1010,13 +991,13 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 			}
 		}
 
-		#about-liferay {
+		.about-liferay {
 			.section_column {
 				order: 2;
 			}
 		}
 
-		#tech-stack.section .container {
+		.tech-stack.section .container {
 			flex-direction: column;
 			justify-content: flex-start;
 		}
@@ -1062,6 +1043,6 @@ $smallShadow: 0 1px 2px rgba(#333, 0.3);
 	@include box-sizing(border-box);
 }
 
-#perzej #hero {
+.perzej .hero {
 	@include background-image(linear-gradient(rgba(#333, 0.5), rgba(#333, 0.5)), url(../images/background.jpg));
 }
