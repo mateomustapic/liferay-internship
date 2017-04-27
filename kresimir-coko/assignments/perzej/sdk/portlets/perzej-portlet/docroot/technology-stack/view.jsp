@@ -16,7 +16,7 @@
 
 <%@ include file="/init.jsp" %>
 
-<section class="section" id="<portlet:namespace />tech-stack">
+<section class="section tech-stack" id="<portlet:namespace />tech-stack">
 	<div class="container">
 		<div class="tech-stack-column">
 			<h3 class="tech-stack-heading">
@@ -44,7 +44,7 @@
 					</span>
 				</div>
 
-				<div class="technology" id="freemarker">
+				<div class="technology">
 					<div class="technology-image">
 						<img alt="Freemarker" src="<%= PortalUtil.getPathContext(request) %>/images/freemarker-logo.png" />
 					</div>
@@ -52,7 +52,7 @@
 					<span class="technology-name">Freemarker</span>
 				</div>
 
-				<div class="technology" id="npm">
+				<div class="technology">
 					<div class="technology-image">
 						<img alt="npm" src="<%= PortalUtil.getPathContext(request) %>/images/npm.png" />
 					</div>
@@ -60,7 +60,7 @@
 					<span class="technology-name">npm</span>
 				</div>
 
-				<div class="technology" id="gulp">
+				<div class="technology">
 					<div class="technology-image">
 						<img alt="Gulp" src="<%= PortalUtil.getPathContext(request) %>/images/gulp.svg" />
 					</div>
