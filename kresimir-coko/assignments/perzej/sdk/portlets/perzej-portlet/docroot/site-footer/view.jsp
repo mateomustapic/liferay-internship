@@ -16,13 +16,13 @@
 
 <%@ include file="/init.jsp" %>
 
-<footer id="footer">
+<footer class="site-footer">
 	<div class="google-map">
 		<div class="maps-content" id="<portlet:namespace />map"></div>
 	</div>
 
 	<div class="footer-info">
-		<span class="headquarters location">
+		<span class="location" id="<portlet:namespace />headquarters">
 			<span class="bold">
 				<i aria-hidden="true" class="icon-map-marker"></i>
 
@@ -32,7 +32,7 @@
 			<%= PerzejPortletProps.get("perzej.headquarters.address") %>
 		</span>
 
-		<span class="location office">
+		<span class="location" id="<portlet:namespace />office">
 			<span class="bold">
 				<i aria-hidden="true" class="icon-map-marker"></i>
 

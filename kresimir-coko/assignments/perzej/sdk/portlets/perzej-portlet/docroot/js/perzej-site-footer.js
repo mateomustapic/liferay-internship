@@ -5,6 +5,8 @@ AUI.add(
 	function(A) {
 		var EVENT_CLICK = 'click';
 
+		var HEADQUARTERS = 'headquarters';
+
 		var PerzejSiteFooter = A.Component.create(
 			{
 				AUGMENTS: [Liferay.PortletBase],
@@ -40,13 +42,13 @@ AUI.add(
 
 						instance._googleMapsWidget = googleMapsWidget;
 
-						var headquartersLink = A.one('.footer-info .headquarters');
+						var headquartersLink = instance.byId(HEADQUARTERS);
 
 						if (headquartersLink) {
 							headquartersLink.on(EVENT_CLICK, A.bind('_changeAddress', instance));
 						}
 
-						var officeLink = A.one('.footer-info .office');
+						var officeLink = instance.byId('office');
 
 						if (officeLink) {
 							officeLink.on(EVENT_CLICK, A.bind('_changeAddress', instance));
@@ -60,7 +62,7 @@ AUI.add(
 						var longitude = instance._officeLng;
 						var shortAddress = instance._officeAddressShort;
 
-						if (event.currentTarget.hasClass('headquarters')) {
+						if (event.currentTarget === instance.byId(HEADQUARTERS)) {
 							latitude = instance._headquartersLat;
 							longitude = instance._headquartersLng;
 							shortAddress = instance._headquartersAddressShort;
