@@ -18,21 +18,25 @@ AUI().add(
 						if (!Modernizr.objectfit) {
 							var techStackContainer = instance.byId('tech-stack');
 
-							var technologyImages = techStackContainer.all('.technology-image');
+							if (techStackContainer) {
+								var technologyImages = techStackContainer.all('.technology-image');
 
-							technologyImages.each(
-								function(technologyImageNode) {
-									var technologyImage = technologyImageNode.one('img');
+								technologyImages.each(
+									function(technologyImageNode) {
+										var technologyImage = technologyImageNode.one('img');
 
-									var imageUrl = technologyImage.getAttribute('src');
+										if (technologyImage) {
+											var imageUrl = technologyImage.getAttribute('src');
 
-									if (imageUrl) {
-										technologyImageNode.setStyle('backgroundImage', 'url(' + imageUrl + ')');
+											if (imageUrl) {
+												technologyImageNode.setStyle('backgroundImage', 'url(' + imageUrl + ')');
 
-										technologyImageNode.addClass('compat-object-fit');
+												technologyImageNode.addClass('compat-object-fit');
+											}
+										}
 									}
-								}
-							);
+								);
+							}
 						}
 					}
 				}
