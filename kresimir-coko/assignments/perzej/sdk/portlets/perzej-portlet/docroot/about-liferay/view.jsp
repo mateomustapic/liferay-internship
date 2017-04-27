@@ -16,7 +16,7 @@
 
 <%@ include file="/init.jsp" %>
 
-<section class="section" id="about-liferay">
+<section class="section about-liferay" id="<portlet:namespace />about-liferay">
 	<div class="container">
 		<div class="section_column">
 			<h3 class="section-heading">
