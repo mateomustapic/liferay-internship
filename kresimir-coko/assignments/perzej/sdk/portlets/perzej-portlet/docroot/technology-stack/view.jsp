@@ -160,7 +160,7 @@
 
 				<div class="technology">
 					<div class="technology-image">
-						<img alt="Amazon Web Services" src="<%= PortalUtil.getPathContext(request) %>/images/aws.svg" />
+						<img alt='<%= "Amazon Web Services" %>' src="<%= PortalUtil.getPathContext(request) %>/images/aws.svg" />
 					</div>
 
 					<span class="technology-name">
