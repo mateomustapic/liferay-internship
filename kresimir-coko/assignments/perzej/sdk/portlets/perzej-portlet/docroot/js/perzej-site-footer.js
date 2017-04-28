@@ -43,11 +43,10 @@ AUI.add(
 
 						instance._googleMapsWidget = googleMapsWidget;
 
-						instance._googleMapsWidget.set('mapParams.zoom', 14);
+						googleMapsWidget.set('googleMapsApiKey', googleMapsApiKey);
+						googleMapsWidget.set('mapParams.zoom', 14);
 
-						instance._googleMapsWidget.set('googleMapsApiKey', instance._googleMapsApiKey);
-
-						instance._googleMapsWidget.render();
+						googleMapsWidget.render();
 
 						var headquartersLink = instance.byId(HEADQUARTERS);
 
