@@ -34,7 +34,6 @@ AUI.add(
 						var googleMapsWidget = new Liferay.Portlet.GoogleMaps(
 							{
 								googleMapsApiKey: googleMapsApiKey,
-								googleMapsURL: config.googleMapsURL,
 								languageId: config.languageId,
 								mapAddress: officeAddressShort,
 								namespace: config.namespace,
@@ -51,6 +50,8 @@ AUI.add(
 						var googleMapsURL = instance._googleMapsWidget.get('googleMapsURL');
 
 						googleMapsURL = googleMapsURL + '?sensor=true&language=' + instance.get('languageId') + '&callback=Liferay.GOOGLE_MAPS.onGoogleMapsLoaded' + '&key=' + googleMapsApiKey;
+
+						googleMapsWidget.set('googleMapsURL', googleMapsURL);
 
 						var headquartersLink = instance.byId(HEADQUARTERS);
 
