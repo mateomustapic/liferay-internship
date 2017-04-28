@@ -34,6 +34,10 @@ AUI.add(
 						validator: Lang.isString
 					},
 
+					googleMapsApiKey: {
+						validator: Lang.isString
+					},
+
 					googleMapsURL: {
 						validator: Lang.isString,
 						value: 'http://maps.google.com/maps/api/js'

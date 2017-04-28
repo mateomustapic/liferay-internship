@@ -19,11 +19,8 @@ AUI.add(
 					initializer: function(config) {
 						var instance = this;
 
-						var googleMapsApiKey = config.googleMapsApiKey;
-
 						var officeAddressShort = config.officeAddressShort;
 
-						instance._googleMapsApiKey = googleMapsApiKey;
 						instance._headquartersAddressShort = config.headquartersAddressShort;
 						instance._headquartersLat = config.headquartersLat;
 						instance._headquartersLng = config.headquartersLng;
@@ -33,7 +30,7 @@ AUI.add(
 
 						var googleMapsWidget = new Liferay.Portlet.GoogleMaps(
 							{
-								googleMapsApiKey: googleMapsApiKey,
+								googleMapsApiKey: config.googleMapsApiKey,
 								languageId: config.languageId,
 								mapAddress: officeAddressShort,
 								namespace: config.namespace,
@@ -43,7 +40,6 @@ AUI.add(
 
 						instance._googleMapsWidget = googleMapsWidget;
 
-						googleMapsWidget.set('googleMapsApiKey', googleMapsApiKey);
 						googleMapsWidget.set('mapParams.zoom', 14);
 
 						googleMapsWidget.render();
