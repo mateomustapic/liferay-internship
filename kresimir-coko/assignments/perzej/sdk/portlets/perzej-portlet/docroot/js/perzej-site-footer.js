@@ -39,19 +39,15 @@ AUI.add(
 								namespace: config.namespace,
 								portletId: config.portletId
 							}
-						).render();
-
-						googleMapsWidget.set('mapParams.zoom', 14);
-
-						googleMapsWidget.set('googleMapsApiKey', googleMapsApiKey);
+						);
 
 						instance._googleMapsWidget = googleMapsWidget;
 
-						var googleMapsURL = instance._googleMapsWidget.get('googleMapsURL');
+						instance._googleMapsWidget.set('mapParams.zoom', 14);
 
-						googleMapsURL = googleMapsURL + '?sensor=true&language=' + instance.get('languageId') + '&callback=Liferay.GOOGLE_MAPS.onGoogleMapsLoaded' + '&key=' + googleMapsApiKey;
+						instance._googleMapsWidget.set('googleMapsApiKey', instance._googleMapsApiKey);
 
-						googleMapsWidget.set('googleMapsURL', googleMapsURL);
+						instance._googleMapsWidget.render();
 
 						var headquartersLink = instance.byId(HEADQUARTERS);
 

@@ -253,7 +253,7 @@ AUI.add(
 
 						var googleMapsURL = instance.get('googleMapsURL');
 
-						googleMapsURL = googleMapsURL + '?sensor=true&language=' + instance.get('languageId') + '&callback=Liferay.GOOGLE_MAPS.onGoogleMapsLoaded';
+						googleMapsURL = googleMapsURL + '?language=' + instance.get('languageId') + '&callback=Liferay.GOOGLE_MAPS.onGoogleMapsLoaded&key=' + instance.get('googleMapsApiKey');
 
 						A.Get.script(googleMapsURL);
 					},
