@@ -75,6 +75,7 @@
 <aui:script use="perzej-site-footer">
 	new Liferay.Portlet.PerzejSiteFooter(
 		{
+			googleMapsApiKey: '<%= PortletProps.get("perzej.google.api") %>',
 			headquartersAddressShort: '<%= PerzejPortletProps.get("perzej.headquarters.address.short") %>',
 			headquartersLat: '<%= PortletProps.get("perzej.headquarters.lat") %>',
 			headquartersLng: '<%= PortletProps.get("perzej.headquarters.lng") %>',
