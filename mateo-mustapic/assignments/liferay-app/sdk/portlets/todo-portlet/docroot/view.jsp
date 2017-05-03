@@ -16,7 +16,7 @@
 
 <%@ include file="/init.jsp" %>
 
-<div>
+<div class="list-container">
 	<h2>
 		<liferay-ui:message key="to-do-list" />
 
