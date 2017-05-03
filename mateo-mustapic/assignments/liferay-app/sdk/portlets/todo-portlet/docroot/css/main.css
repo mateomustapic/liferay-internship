@@ -1,8 +1,9 @@
 .todo-portlet {
-	.list-container h2{
+	.list-container h2 {
 		font-size: 40px;
 		text-transform: uppercase;
 	}
+
 	.counter {
 		font-weight: bold;
 		margin-left: 1%;
