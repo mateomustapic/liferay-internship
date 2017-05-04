@@ -17,8 +17,12 @@ AUI.add(
 
 						todoList.delegate(
 							'click',
-							function() {
-								this.ancestor('li').remove();
+							function(event) {
+								var currentTarget = event.currentTarget;
+
+								var listItem = currentTarget.ancestor('li');
+
+								listItem.remove();
 							},
 							'button'
 						);
