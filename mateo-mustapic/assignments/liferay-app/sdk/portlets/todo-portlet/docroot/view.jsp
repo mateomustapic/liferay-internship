@@ -24,7 +24,6 @@
 	</h2>
 
 	<div class="task-container">
-
 		<input class="input-item" name="task" />
 
 		<button class="add-item" type="button">
@@ -32,6 +31,7 @@
 		</button>
 
 		<span class="counter"></span>
+
 		<liferay-ui:message key="characters-remaining" />
 
 		<ul class="task-list">
@@ -44,8 +44,8 @@
 
 <aui:script use="todo">
 	new Liferay.Portlet.Todo(
-	{
-	namespace: '<portlet:namespace />'
-	}
+		{
+			namespace: '<portlet:namespace />'
+		}
 	);
 </aui:script>

@@ -12,19 +12,26 @@ AUI.add(
 				prototype: {
 					initializer: function(config) {
 						var instance = this;
+
 						var newTask = A.one('.input-item');
 						var todoList = A.one('.task-container ul');
 
-						todoList.delegate('click', function() {
-							this.ancestor('li').remove();
-						}, 'button');
+						todoList.delegate(
+							'click',
+							function() {
+								this.ancestor('li').remove();
+							},
+							'button'
+						);
 
 						function addTodo() {
 							todoList.append('<li>' + newTask.get('value') + ' ' + '<button class="delete-todo">X</button></li>');
+
 							newTask.set('value', '');
 						}
 
 						A.one('.add-item').on('click', addTodo);
+
 						newTask.on('key', addTodo, 'enter');
 					}
 				}

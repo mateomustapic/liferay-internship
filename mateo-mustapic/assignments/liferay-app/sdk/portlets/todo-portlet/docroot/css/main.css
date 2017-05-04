@@ -38,8 +38,8 @@
 
 		&:hover {
 			background-color: #BBB;
-			}
 		}
+	}
 
 	.task-list {
 		margin-left: 0;
@@ -61,7 +61,7 @@
 		user-select: none;
 
 		&:nth-child(odd) {
-		background: #93D5FF;
+			background: #93D5FF;
 		}
 	}
 
@@ -75,7 +75,7 @@
 		top: 0;
 
 		&:hover {
-		background-color: #757C87;
+			background-color: #757C87;
 		}
 	}
 }
