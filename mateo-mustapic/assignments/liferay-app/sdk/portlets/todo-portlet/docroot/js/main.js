@@ -15,29 +15,35 @@ AUI.add(
 
 						var todoList = instance.one('.task-container ul');
 
-						todoList.delegate(
-							'click',
-							function(event) {
-								var currentTarget = event.currentTarget;
+						if (todoList) {
+							todoList.delegate(
+								'click',
+								function(event) {
+									var currentTarget = event.currentTarget;
 
-								var listItem = currentTarget.ancestor('li');
+									var listItem = currentTarget.ancestor('li');
 
-								listItem.remove();
-							},
-							'button'
-						);
+									listItem.remove();
+								},
+								'button'
+							);
 
-						instance._todoList = todoList;
+							instance._todoList = todoList;
+						}
 
 						var addButton = instance.byId('add');
 
-						addButton.on('click', A.bind('_appendTodoList', instance));
+						if (addButton) {
+							addButton.on('click', A.bind('_appendTodoList', instance));
+						}
 
 						var taskInput = instance.byId('task');
 
-						taskInput.on('key', A.bind('_appendTodoList', instance), 'enter');
+						if (taskInput) {
+							taskInput.on('key', A.bind('_appendTodoList', instance), 'enter');
 
-						instance._taskInput = taskInput;
+							instance._taskInput = taskInput;
+						}
 					},
 
 					_appendTodoList: function(event) {
@@ -46,9 +52,11 @@ AUI.add(
 						var taskInput = instance._taskInput;
 						var todoList = instance._todoList;
 
-						todoList.append('<li>' + taskInput.val() + ' ' + '<button class="delete-todo">X</button></li>');
+						if (taskInput && todoList) {
+							todoList.append('<li>' + taskInput.val() + ' ' + '<button class="delete-todo">X</button></li>');
 
-						taskInput.val('');
+							taskInput.val('');
+						}
 					}
 				}
 			}
