@@ -42,8 +42,8 @@
 	</div>
 </div>
 
-<aui:script use="todo-list-add-remove">
-	new Liferay.Portlet.addRemove(
+<aui:script use="todo">
+	new Liferay.Portlet.Todo(
 	{
 	namespace: '<portlet:namespace />'
 	}

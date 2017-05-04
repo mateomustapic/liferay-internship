@@ -1,13 +1,13 @@
 AUI.add(
-	'todo-list-add-remove',
+	'todo',
 	function(A) {
-		var addRemove = A.Component.create(
+		var Todo = A.Component.create(
 			{
 				AUGMENTS: [Liferay.PortletBase],
 
 				EXTENDS: A.Base,
 
-				NAME: 'addRemove',
+				NAME: 'todo',
 
 				prototype: {
 					initializer: function(config) {
@@ -33,7 +33,7 @@ AUI.add(
 			}
 		);
 
-		Liferay.Portlet.addRemove = addRemove;
+		Liferay.Portlet.Todo = Todo;
 	},
 
 	'',
