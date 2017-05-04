@@ -1,6 +1,8 @@
 AUI.add(
 	'todo',
 	function(A) {
+		var EVENT_CLICK = 'click';
+
 		var TPL_TASK = '<li>' +
 				'{task}' +
 				'<button class="delete-todo">X</button>' +
@@ -22,7 +24,7 @@ AUI.add(
 
 						if (todoList) {
 							todoList.delegate(
-								'click',
+								EVENT_CLICK,
 								function(event) {
 									var currentTarget = event.currentTarget;
 
@@ -39,7 +41,7 @@ AUI.add(
 						var addButton = instance.byId('add');
 
 						if (addButton) {
-							addButton.on('click', A.bind('_appendTodoList', instance));
+							addButton.on(EVENT_CLICK, A.bind('_appendTodoList', instance));
 						}
 
 						var taskInput = instance.byId('task');
