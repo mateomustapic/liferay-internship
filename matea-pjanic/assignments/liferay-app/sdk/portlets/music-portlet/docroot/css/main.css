@@ -1,35 +1,178 @@
-.aui {
-	form {
-		align-items: flex-start;
-		display: flex;
-		justify-content: center;
-	}
+$darkyellow: #FFBC42;
+$gray: #BDBDBD;
 
-	.btn {
-		font-size: 14px;
-		margin: 0;
-		padding: 4px 12px;
-		width: 100px;
-	}
+.adelephoto {
+	background-image: url(../images/adele.jpg);
+}
 
-	.fieldset {
-		width: 300px;
+.alicephoebephoto {
+	background-image: url(../images/alicephoebe.jpg);
+}
 
-		input {
-			font-size: 14px;
-			height: 20px;
-			margin: 0;
-			width: 287px;
+.artist {
+	display: inline-block;
+	margin: 10px;
+	margin-bottom: 0;
+}
+
+.artistname {
+	text-transform: uppercase;
+}
+
+.artistname, .artistsong {
+	font-size: 12px;
+	text-align: left;
+}
+
+.artistphoto {
+	background-position: top;
+	background-size: cover;
+	height: 150px;
+	position: relative;
+	width: 150px;
+
+	&:hover {
+		opacity: 0.7;
+
+		.playbutton {
+			display: block;
 		}
 	}
 }
 
-@media only screen and (max-width: 450px) {
-	.aui .fieldset {
-		width: 220px;
+.block {
+	border-top: 1px solid $gray;
+}
 
-		input {
-			width: 207px;
+.chainsmokersphoto {
+	background-image: url(../images/chainsmokers.jpg);
+}
+
+.chrisphoto {
+	background-image: url(../images/chris.jpg);
+}
+
+.container-fluid {
+	background-image: url(../images/front.jpg);
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 800px;
+}
+
+.date {
+	padding: 0 80px;
+}
+
+.deadmausphoto {
+	background-image: url(../images/deadmau5.jpg);
+}
+
+.frontpagecontent {
+	margin-top: 300px;
+}
+
+.josephoto {
+	background-image: url(../images/jose.jpg);
+}
+
+.kodakblackphoto {
+	background-image: url(../images/tunelvision.jpg);
+}
+
+.leraphoto {
+	background-image: url(../images/lera.jpg);
+}
+
+.omamphoto {
+	background-image: url(../images/omam.jpg);
+}
+
+.playbutton {
+	bottom: 0;
+	display: none;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 40px;
+}
+
+.sturgillphoto {
+	background-image: url(../images/sturgill.jpg);
+}
+
+.tracksinner {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1000px;
+}
+
+@media only screen and (max-width: 1200px) {
+	.container-fluid {
+		height: 600px;
+	}
+
+	.frontpagecontent {
+		margin-top: 200px;
+	}
+}
+
+@media only screen and (max-width: 1040px) {
+	.artistphoto {
+		height: 120px;
+		width: 120px;
+	}
+
+	.frontpagecontent {
+		margin-top: 150px;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.accountwrapper {
+		border-color: $darkyellow;
+
+		&:hover {
+            opacity: 0.8;
 		}
+	}
+
+	.content {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.date {
+		padding: 0 40px;
+	}
+
+	.frontpagecontent {
+		margin-top: 120px;
+	}
+
+	.moreinfowrapper {
+		width: 80px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.container-fluid {
+		height: 370px;
+	}
+
+	.frontpagecontent {
+		margin-top: 0;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.frontpagecontent {
+		margin-top: 60px;
+	}
+
+	.artist {
+		margin: 0;
 	}
 }
