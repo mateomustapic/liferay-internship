@@ -13,7 +13,6 @@ AUI.add(
 					initializer: function(config) {
 						var instance = this;
 
-						var newTask = A.one('.input-item');
 						var todoList = A.one('.task-container ul');
 
 						todoList.delegate(
@@ -28,17 +27,22 @@ AUI.add(
 
 						A.one('.add-item').on('click', A.bind('_appendTodoList', instance));
 
-						newTask.on('key', A.bind('_appendTodoList', instance), 'enter');
+						var taskInput = instance.byId('task');
+
+						taskInput.on('key', A.bind('_appendTodoList', instance), 'enter');
+
+						instance._taskInput = taskInput;
 					},
 
 					_appendTodoList: function(event) {
 						var instance = this;
 
+						var taskInput = instance._taskInput;
 						var todoList = instance._todoList;
 
-						todoList.append('<li>' + newTask.get('value') + ' ' + '<button class="delete-todo">X</button></li>');
+						todoList.append('<li>' + taskInput.get('value') + ' ' + '<button class="delete-todo">X</button></li>');
 
-						newTask.set('value', '');
+						taskInput.set('value', '');
 					}
 				}
 			}
