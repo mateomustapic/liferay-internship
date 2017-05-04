@@ -34,11 +34,7 @@
 
 		<liferay-ui:message key="characters-remaining" />
 
-		<ul class="task-list">
-			<li>Task 1 <button class="delete-todo">X</button></li>
-			<li>Task 2 <button class="delete-todo">X</button></li>
-			<li>Task 3 <button class="delete-todo">X</button></li>
-		</ul>
+		<ul class="task-list" />
 	</div>
 </div>
 
