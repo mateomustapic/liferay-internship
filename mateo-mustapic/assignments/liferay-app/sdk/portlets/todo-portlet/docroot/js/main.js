@@ -24,15 +24,21 @@ AUI.add(
 							'button'
 						);
 
-						function addTodo() {
-							todoList.append('<li>' + newTask.get('value') + ' ' + '<button class="delete-todo">X</button></li>');
+						instance._todoList = todoList;
 
-							newTask.set('value', '');
-						}
+						A.one('.add-item').on('click', A.bind('_appendTodoList', instance));
 
-						A.one('.add-item').on('click', addTodo);
+						newTask.on('key', A.bind('_appendTodoList', instance), 'enter');
+					},
 
-						newTask.on('key', addTodo, 'enter');
+					_appendTodoList: function(event) {
+						var instance = this;
+
+						var todoList = instance._todoList;
+
+						todoList.append('<li>' + newTask.get('value') + ' ' + '<button class="delete-todo">X</button></li>');
+
+						newTask.set('value', '');
 					}
 				}
 			}
