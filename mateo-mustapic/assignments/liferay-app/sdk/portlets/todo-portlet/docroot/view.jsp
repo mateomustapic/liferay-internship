@@ -25,7 +25,7 @@
 
 	<div class="task-container">
 
-		<input class="input-item" name="task"/>
+		<input class="input-item" name="task" />
 
 		<button class="add-item" type="button">
 			<liferay-ui:message key="add" />
