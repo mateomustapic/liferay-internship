@@ -40,9 +40,9 @@ AUI.add(
 						var taskInput = instance._taskInput;
 						var todoList = instance._todoList;
 
-						todoList.append('<li>' + taskInput.get('value') + ' ' + '<button class="delete-todo">X</button></li>');
+						todoList.append('<li>' + taskInput.val() + ' ' + '<button class="delete-todo">X</button></li>');
 
-						taskInput.set('value', '');
+						taskInput.val('');
 					}
 				}
 			}
