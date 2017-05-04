@@ -13,7 +13,7 @@ AUI.add(
 					initializer: function(config) {
 						var instance = this;
 
-						var todoList = A.one('.task-container ul');
+						var todoList = instance.one('.task-container ul');
 
 						todoList.delegate(
 							'click',
@@ -29,7 +29,7 @@ AUI.add(
 
 						instance._todoList = todoList;
 
-						A.one('.add-item').on('click', A.bind('_appendTodoList', instance));
+						instance.one('.add-item').on('click', A.bind('_appendTodoList', instance));
 
 						var taskInput = instance.byId('task');
 
