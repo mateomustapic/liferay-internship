@@ -15,12 +15,10 @@ AUI.add(
 						var newTask = A.one('.input-item');
 						var todoList = A.one('.task-container ul');
 
-						// button's containing <li> to be removed
 						todoList.delegate('click', function() {
 							this.ancestor('li').remove();
 						}, 'button');
 
-						// Adding a new task is only appending a list item
 						function addTodo() {
 							todoList.append('<li>' + newTask.get('value') + ' ' + '<button class="delete-todo">X</button></li>');
 							newTask.set('value', '');
