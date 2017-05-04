@@ -1,15 +1,15 @@
 .todo-portlet {
-	.counter {
-		font-weight: bold;
-		margin-left: 1%;
-	}
-
 	.list-container h2 {
 		font-size: 40px;
 		text-transform: uppercase;
 	}
 
-	.task-container .task {
+	.counter {
+		font-weight: bold;
+		margin-left: 1%;
+	}
+
+	.input-item {
 		border: 1px solid #CCC;
 		border-radius: 10px;
 		box-sizing: border-box;
@@ -22,22 +22,60 @@
 		width: 87%;
 	}
 
-	.task-label {
-		background-color: #008CBA;
+	.add-item {
+		background-color: #1A75FF;
 		border-radius: 10px;
-		color: #FFF;
+		border-width: 0;
+		color: white;
 		cursor: pointer;
 		display: inline-block;
 		font-size: 16px;
-		margin-left: 8px;
+		margin: 4px 2px;
 		padding: 15px 32px;
 		text-align: center;
 		text-decoration: none;
-		text-transform: uppercase;
-		width: 7%;
+		width: 11%;
 
 		&:hover {
 			background-color: #BBB;
+			}
+		}
+
+	.task-list {
+		margin-left: 0;
+	}
+
+	.task-list li {
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-webkit-user-select: none;
+		background: #1A53AF;
+		border-radius: 10px;
+		color: white;
+		cursor: pointer;
+		font-size: 16px;
+		list-style-type: none;
+		padding: 8px 10px 8px 4px;
+		position: relative;
+		transition: 0.2s;
+		user-select: none;
+
+		&:nth-child(odd) {
+		background: #93D5FF;
+		}
+	}
+
+	.delete-todo {
+		background: #E1E6EF;
+		border-width: 0;
+		color: white;
+		margin: auto;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		&:hover {
+		background-color: #757C87;
 		}
 	}
 }
