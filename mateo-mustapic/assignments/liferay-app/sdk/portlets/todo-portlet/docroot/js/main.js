@@ -29,7 +29,9 @@ AUI.add(
 
 						instance._todoList = todoList;
 
-						instance.one('.add-item').on('click', A.bind('_appendTodoList', instance));
+						var addButton = instance.byId('add');
+
+						addButton.on('click', A.bind('_appendTodoList', instance));
 
 						var taskInput = instance.byId('task');
 

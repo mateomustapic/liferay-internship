@@ -26,9 +26,7 @@
 	<div class="task-container">
 		<aui:input class="input-item" name="task" />
 
-		<button class="add-item" type="button">
-			<liferay-ui:message key="add" />
-		</button>
+		<aui:button cssClass="add-task" name="add" type="button" />
 
 		<span class="counter"></span>
 
