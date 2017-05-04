@@ -1,27 +1,4 @@
 .todo-portlet {
-	.list-container h2 {
-		font-size: 40px;
-		text-transform: uppercase;
-	}
-
-	.counter {
-		font-weight: bold;
-		margin-left: 1%;
-	}
-
-	.input-item {
-		border: 1px solid #CCC;
-		border-radius: 10px;
-		box-sizing: border-box;
-		float: left;
-		font-size: 16px;
-		height: 18px;
-		margin: auto;
-		padding-bottom: 20px;
-		padding-top: 20px;
-		width: 87%;
-	}
-
 	.add-item {
 		background-color: #1A75FF;
 		border-radius: 10px;
@@ -39,6 +16,43 @@
 		&:hover {
 			background-color: #BBB;
 		}
+	}
+
+	.counter {
+		font-weight: bold;
+		margin-left: 1%;
+	}
+
+	.delete-todo {
+		background: #E1E6EF;
+		border-width: 0;
+		color: white;
+		margin: auto;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		&:hover {
+			background-color: #757C87;
+		}
+	}
+
+	.input-item {
+		border: 1px solid #CCC;
+		border-radius: 10px;
+		box-sizing: border-box;
+		float: left;
+		font-size: 16px;
+		height: 18px;
+		margin: auto;
+		padding-bottom: 20px;
+		padding-top: 20px;
+		width: 87%;
+	}
+
+	.list-container h2 {
+		font-size: 40px;
+		text-transform: uppercase;
 	}
 
 	.task-list {
@@ -62,20 +76,6 @@
 
 		&:nth-child(odd) {
 			background: #93D5FF;
-		}
-	}
-
-	.delete-todo {
-		background: #E1E6EF;
-		border-width: 0;
-		color: white;
-		margin: auto;
-		position: absolute;
-		right: 0;
-		top: 0;
-
-		&:hover {
-			background-color: #757C87;
 		}
 	}
 }
