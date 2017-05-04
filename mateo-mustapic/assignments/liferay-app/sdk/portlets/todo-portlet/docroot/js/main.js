@@ -1,6 +1,11 @@
 AUI.add(
 	'todo',
 	function(A) {
+		var TPL_TASK = '<li>' +
+				'{task}' +
+				'<button class="delete-todo">X</button>' +
+			'</li>';
+
 		var Todo = A.Component.create(
 			{
 				AUGMENTS: [Liferay.PortletBase],
@@ -53,7 +58,14 @@ AUI.add(
 						var todoList = instance._todoList;
 
 						if (taskInput && todoList) {
-							todoList.append('<li>' + taskInput.val() + ' ' + '<button class="delete-todo">X</button></li>');
+							var taskHtml = A.Lang.sub(
+								TPL_TASK,
+								{
+									task: taskInput.val()
+								}
+							);
+
+							todoList.append(taskHtml);
 
 							taskInput.val('');
 						}
