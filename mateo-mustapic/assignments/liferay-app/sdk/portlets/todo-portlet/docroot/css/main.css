@@ -57,25 +57,25 @@
 
 	.task-list {
 		margin-left: 0;
-	}
 
-	.task-list li {
-		-moz-user-select: none;
-		-ms-user-select: none;
-		-webkit-user-select: none;
-		background: #1A53AF;
-		border-radius: 10px;
-		color: white;
-		cursor: pointer;
-		font-size: 16px;
-		list-style-type: none;
-		padding: 8px 10px 8px 4px;
-		position: relative;
-		transition: 0.2s;
-		user-select: none;
+		li {
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-webkit-user-select: none;
+			background: #1A53AF;
+			border-radius: 10px;
+			color: white;
+			cursor: pointer;
+			font-size: 16px;
+			list-style-type: none;
+			padding: 8px 10px 8px 4px;
+			position: relative;
+			transition: 0.2s;
+			user-select: none;
 
-		&:nth-child(odd) {
-			background: #93D5FF;
+			&:nth-child(odd) {
+				background: #93D5FF;
+			}
 		}
 	}
 }
