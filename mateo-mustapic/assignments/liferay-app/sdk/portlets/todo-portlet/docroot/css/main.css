@@ -46,13 +46,19 @@
 		height: 18px;
 		margin: auto;
 		padding-bottom: 20px;
+		padding-left: 2%;
 		padding-top: 20px;
 		width: 87%;
 	}
 
-	.list-container h2 {
-		font-size: 40px;
-		text-transform: uppercase;
+	.list-container {
+		margin: auto;
+		max-width: 900px;
+
+		h2 {
+			font-size: 40px;
+			text-transform: uppercase;
+		}
 	}
 
 	.task-list {
@@ -75,6 +81,31 @@
 
 			&:nth-child(odd) {
 				background: #93D5FF;
+			}
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		.list-container h2 {
+			text-align: center;
+		}
+
+		.task-list {
+			margin-right: 3%;
+		}
+
+		.task-list li, .add-item, .input-item {
+			border-radius: 0;
+			width: 100%;
+		}
+
+		.delete-todo {
+			border-radius: 0;
+		}
+
+		span {
+		&.counter {
+			font-weight: bold;
 			}
 		}
 	}

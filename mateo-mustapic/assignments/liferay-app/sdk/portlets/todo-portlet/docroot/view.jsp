@@ -24,22 +24,27 @@
 	</h2>
 
 	<div class="task-container">
-		<aui:input class="input-item" name="task" />
+		<aui:input class="input-item" cssClass="input-item" name="task" />
 
 		<aui:button cssClass="add-task" name="add" type="button" />
 
-		<span class="counter"></span>
+		<span class="counter">30</span>
 
 		<liferay-ui:message key="characters-remaining" />
 
-		<ul class="task-list" />
+		<ul class="task-list">
+			<li>
+				Task 1
+				<button class="delete-todo">X</button>
+			</li>
+		</ul>
 	</div>
 </div>
 
 <aui:script use="todo">
 	new Liferay.Portlet.Todo(
 		{
-			namespace: '<portlet:namespace />'
+			namespace: '<portlet:namespace />',
 		}
 	);
 </aui:script>
