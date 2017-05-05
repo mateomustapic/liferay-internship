@@ -1,7 +1,7 @@
 $darkyellow: #FFBC42;
 $gray: #BDBDBD;
 
-.adelephoto {
+.adele {
 	background-image: url(../images/adele.jpg);
 }
 
@@ -15,16 +15,16 @@ $gray: #BDBDBD;
 	margin-bottom: 0;
 }
 
-.artistname {
+.artist-name {
 	text-transform: uppercase;
 }
 
-.artistname, .artistsong {
+.artist-name, .artist-song {
 	font-size: 12px;
 	text-align: left;
 }
 
-.artistphoto {
+.artist-photo {
 	background-position: top;
 	background-size: cover;
 	height: 150px;
@@ -44,7 +44,7 @@ $gray: #BDBDBD;
 	border-top: 1px solid $gray;
 }
 
-.chainsmokersphoto {
+.chainsmokers {
 	background-image: url(../images/chainsmokers.jpg);
 }
 
@@ -68,7 +68,7 @@ $gray: #BDBDBD;
 	background-image: url(../images/deadmau5.jpg);
 }
 
-.frontpagecontent {
+.front-page-content {
 	margin-top: 300px;
 }
 
@@ -103,7 +103,7 @@ $gray: #BDBDBD;
 	background-image: url(../images/sturgill.jpg);
 }
 
-.tracksinner {
+.tracks-inner {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1000px;
@@ -114,24 +114,24 @@ $gray: #BDBDBD;
 		height: 600px;
 	}
 
-	.frontpagecontent {
+	.front-page-content {
 		margin-top: 200px;
 	}
 }
 
 @media only screen and (max-width: 1040px) {
-	.artistphoto {
+	.artist-photo {
 		height: 120px;
 		width: 120px;
 	}
 
-	.frontpagecontent {
+	.front-page-content {
 		margin-top: 150px;
 	}
 }
 
 @media only screen and (max-width: 800px) {
-	.accountwrapper {
+	.account-wrapper {
 		border-color: $darkyellow;
 
 		&:hover {
@@ -148,11 +148,11 @@ $gray: #BDBDBD;
 		padding: 0 40px;
 	}
 
-	.frontpagecontent {
+	.front-page-content {
 		margin-top: 120px;
 	}
 
-	.moreinfowrapper {
+	.more-info-wrapper {
 		width: 80px;
 	}
 }
@@ -162,13 +162,13 @@ $gray: #BDBDBD;
 		height: 370px;
 	}
 
-	.frontpagecontent {
+	.front-page-content {
 		margin-top: 0;
 	}
 }
 
 @media only screen and (max-width: 400px) {
-	.frontpagecontent {
+	.front-page-content {
 		margin-top: 60px;
 	}
 

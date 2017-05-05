@@ -79,17 +79,17 @@ tr {
 	}
 }
 
-.accountdiv {
+.account-div {
 	display: flex;
 	justify-content: flex-end;
 	margin: 10px 0;
 }
 
-.accountlink {
+.account-link {
 	position: relative;
 }
 
-.accountwrapper, .moreinfowrapper {
+.account-wrapper, .more-info-wrapper {
 	border-radius: 3px;
 	border-style: solid;
 	display: inline-block;

@@ -16,9 +16,9 @@
 
 <%@ include file="/init.jsp" %>
 
-<div class="accountdiv">
-	<div class="accountwrapper">
-		<aui:a cssClass="accountlink" href="javascript:;">
+<div class="account-div">
+	<div class="account-wrapper">
+		<aui:a cssClass="account-link" href="javascript:;">
 			<%= themeDisplay.getUser().getFirstName() %>
 		</aui:a>
 	</div>
@@ -38,149 +38,149 @@
 	<aui:button type="submit" value="search" />
 </aui:form>
 
-<div class="frontpagecontent">
+<div class="front-page-content">
 	<div class="block tracks">
 		<h3>
 			<liferay-ui:message key="what-is-new-on-soundsgood" />
 		</h3>
 
-		<div class="tracksinner">
+		<div class="tracks-inner">
 			<div class="artist">
-				<div class="adelephoto artistphoto">
+				<div class="adele artist-photo">
 					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
 				</div>
 
-				<div class="artistname">
+				<div class="artist-name">
 					<liferay-ui:message key="adele" />
 				</div>
 
-				<div class="artistsong">
+				<div class="artist-song">
 					<liferay-ui:message key="send-my-love" />
 				</div>
 			</div>
 
 			<div class="artist">
-				<div class="artistphoto chainsmokersphoto">
+				<div class="artist-photo chainsmokers">
 					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
 				</div>
 
-				<div class="artistname">
+				<div class="artist-name">
 					<liferay-ui:message key="chainsmokers" />
 				</div>
 
-				<div class="artistsong">
+				<div class="artist-song">
 					<liferay-ui:message key="something-just-like-this" />
 				</div>
 			</div>
 
 			<div class="artist">
-				<div class="artistphoto deadmausphoto">
+				<div class="artist-photo deadmausphoto">
 					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
 				</div>
 
-				<div class="artistname">
+				<div class="artist-name">
 					<liferay-ui:message key="deadmaus" />
 				</div>
 
-				<div class="artistsong">
+				<div class="artist-song">
 					<liferay-ui:message key="saved" />
 				</div>
 			</div>
 
 			<div class="artist">
-				<div class="artistphoto kodakblackphoto">
+				<div class="artist-photo kodakblackphoto">
 					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
 				</div>
 
-				<div class="artistname">
+				<div class="artist-name">
 					<liferay-ui:message key="kodak-black" />
 				</div>
 
-				<div class="artistsong">
+				<div class="artist-song">
 					<liferay-ui:message key="tunnel-vision" />
 				</div>
 			</div>
 
 			<div class="artist">
-				<div class="artistphoto chrisphoto">
+				<div class="artist-photo chrisphoto">
 					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
 				</div>
 
-				<div class="artistname">
+				<div class="artist-name">
 					<liferay-ui:message key="chris-stapleton" />
 				</div>
 
-				<div class="artistsong">
+				<div class="artist-song">
 					<liferay-ui:message key="broken-halos" />
 				</div>
 			</div>
 
 			<div class="artist">
-				<div class="artistphoto sturgillphoto">
+				<div class="artist-photo sturgillphoto">
 					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
 				</div>
 
-				<div class="artistname">
+				<div class="artist-name">
 					<liferay-ui:message key="sturgill-simpson" />
 				</div>
 
-				<div class="artistsong">
+				<div class="artist-song">
 					<liferay-ui:message key="in-bloom" />
 				</div>
 			</div>
 
 			<div class="artist">
-				<div class="artistphoto leraphoto">
+				<div class="artist-photo leraphoto">
 					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
 				</div>
 
-				<div class="artistname">
+				<div class="artist-name">
 					<liferay-ui:message key="lera-lynn" />
 				</div>
 
-				<div class="artistsong">
+				<div class="artist-song">
 					<liferay-ui:message key="my-least-favorite-life" />
 				</div>
 			</div>
 
 			<div class="artist">
-				<div class="artistphoto omamphoto">
+				<div class="artist-photo omamphoto">
 					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
 				</div>
 
-				<div class="artistname">
+				<div class="artist-name">
 					<liferay-ui:message key="of-monsters-and-man" />
 				</div>
 
-				<div class="artistsong">
+				<div class="artist-song">
 					<liferay-ui:message key="crystals" />
 				</div>
 			</div>
 
 			<div class="artist">
-				<div class="artistphoto josephoto">
+				<div class="artist-photo josephoto">
 					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
 				</div>
 
-				<div class="artistname">
+				<div class="artist-name">
 					<liferay-ui:message key="jose-gonzales" />
 				</div>
 
-				<div class="artistsong">
+				<div class="artist-song">
 					<liferay-ui:message key="every-age" />
 				</div>
 			</div>
 
 			<div class="artist">
-				<div class="alicephoebephoto artistphoto">
+				<div class="alicephoebephoto artist-photo">
 					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
 				</div>
 
-				<div class="artistname">
+				<div class="artist-name">
 					<liferay-ui:message key="alice-phoebe-lou" />
 				</div>
 
-				<div class="artistsong">
+				<div class="artist-song">
 					<liferay-ui:message key="orbit" />
 				</div>
 			</div>
@@ -192,7 +192,7 @@
 			<liferay-ui:message key="events-and-tickets" />
 		</h3>
 
-		<div class="eventsinner">
+		<div class="events-inner">
 			<table>
 				<tr>
 					<td>
@@ -200,8 +200,8 @@
 					</td>
 
 					<td>
-						<div class="moreinfowrapper">
-							<aui:a cssClass="moreinfo" href="javascript:;">
+						<div class="more-info-wrapper">
+							<aui:a cssClass="more-info" href="javascript:;">
 								<liferay-ui:message key="more-info" />
 							</aui:a>
 						</div>
@@ -214,8 +214,8 @@
 					</td>
 
 					<td>
-						<div class="moreinfowrapper">
-							<aui:a cssClass="moreinfo" href="javascript:;">
+						<div class="more-info-wrapper">
+							<aui:a cssClass="more-info" href="javascript:;">
 								<liferay-ui:message key="more-info" />
 							</aui:a>
 						</div>
@@ -228,8 +228,8 @@
 					</td>
 
 					<td>
-						<div class="moreinfowrapper">
-							<aui:a cssClass="moreinfo" href="javascript:;">
+						<div class="more-info-wrapper">
+							<aui:a cssClass="more-info" href="javascript:;">
 								<liferay-ui:message key="more-info" />
 							</aui:a>
 						</div>
