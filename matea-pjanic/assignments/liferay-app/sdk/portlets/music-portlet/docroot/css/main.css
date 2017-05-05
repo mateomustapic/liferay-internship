@@ -135,7 +135,7 @@ $gray: #BDBDBD;
 		border-color: $darkyellow;
 
 		&:hover {
-            opacity: 0.8;
+			opacity: 0.8;
 		}
 	}
 
