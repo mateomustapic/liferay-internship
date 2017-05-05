@@ -199,10 +199,6 @@
 						<liferay-ui:message key="jason-isbell-and-the-400-unit" />
 					</td>
 
-					<td class="date">
-						<liferay-ui:message key="fri-05-05-2017" />
-					</td>
-
 					<td>
 						<div class="moreinfowrapper">
 							<aui:a class="moreinfo" href="javascript:;">
@@ -217,10 +213,6 @@
 						<liferay-ui:message key="janet-jackson-state-of-the-world-tour" />
 					</td>
 
-					<td class="date">
-						<liferay-ui:message key="fri-05-05-2017" />
-					</td>
-
 					<td>
 						<div class="moreinfowrapper">
 							<aui:a class="moreinfo" href="javascript:;">
@@ -233,10 +225,6 @@
 				<tr>
 					<td>
 						<liferay-ui:message key="the-cramberries-something-else-tour" />
-					</td>
-
-					<td class="date">
-						<liferay-ui:message key="fri-05-05-2017" />
 					</td>
 
 					<td>
