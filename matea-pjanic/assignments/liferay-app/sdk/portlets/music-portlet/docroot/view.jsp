@@ -39,7 +39,6 @@
 </aui:form>
 
 <div class="frontpagecontent">
-
 	<div class="block tracks">
 		<h3>
 			<liferay-ui:message key="what-is-new-on-soundsgood" />
@@ -254,6 +253,7 @@
 
 	<div class="block footer">
 		<liferay-ui:message key="sounsgood" />
+
 		<liferay-ui:message key="contact" />
 	</div>
 </div>
