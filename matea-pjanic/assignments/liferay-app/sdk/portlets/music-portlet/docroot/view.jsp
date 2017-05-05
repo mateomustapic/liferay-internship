@@ -240,7 +240,7 @@
 	</div>
 
 	<div class="block footer">
-		<liferay-ui:message key="sounsgood" />
+		<liferay-ui:message key="soundsgood" />
 
 		<liferay-ui:message key="contact" />
 	</div>
