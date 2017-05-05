@@ -18,7 +18,7 @@
 
 <div class="accountdiv">
 	<div class="accountwrapper">
-		<aui:a class="accountlink" href="javascript:;">
+		<aui:a cssClass="accountlink" href="javascript:;">
 			<%= themeDisplay.getUser().getFirstName() %>
 		</aui:a>
 	</div>
@@ -201,7 +201,7 @@
 
 					<td>
 						<div class="moreinfowrapper">
-							<aui:a class="moreinfo" href="javascript:;">
+							<aui:a cssClass="moreinfo" href="javascript:;">
 								<liferay-ui:message key="more-info" />
 							</aui:a>
 						</div>
@@ -215,7 +215,7 @@
 
 					<td>
 						<div class="moreinfowrapper">
-							<aui:a class="moreinfo" href="javascript:;">
+							<aui:a cssClass="moreinfo" href="javascript:;">
 								<liferay-ui:message key="more-info" />
 							</aui:a>
 						</div>
@@ -229,7 +229,7 @@
 
 					<td>
 						<div class="moreinfowrapper">
-							<aui:a class="moreinfo" href="javascript:;">
+							<aui:a cssClass="moreinfo" href="javascript:;">
 								<liferay-ui:message key="more-info" />
 							</aui:a>
 						</div>
