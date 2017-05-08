@@ -34,7 +34,8 @@
 
 		<ul class="task-list">
 			<li>
-				Task 1
+				<liferay-ui:message key="sample-task" />
+
 				<button class="delete-todo">X</button>
 			</li>
 		</ul>
