@@ -23,20 +23,6 @@
 		margin-left: 1%;
 	}
 
-	.delete-todo {
-		background: #E1E6EF;
-		border-width: 0;
-		color: white;
-		margin: auto;
-		position: absolute;
-		right: 0;
-		top: 0;
-
-		&:hover {
-			background-color: #757C87;
-		}
-	}
-
 	.input-item {
 		border: 1px solid #CCC;
 		border-radius: 10px;

@@ -5,7 +5,7 @@ AUI.add(
 
 		var TPL_TASK = '<li>' +
 				'{task}' +
-				'<button class="delete-todo">X</button>' +
+				'<i class="icon-remove"></i>' +
 			'</li>';
 
 		var Todo = A.Component.create(

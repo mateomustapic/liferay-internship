@@ -36,7 +36,7 @@
 			<li>
 				<liferay-ui:message key="sample-task" />
 
-				<button class="delete-todo">X</button>
+				<i class="icon-remove"></i>
 			</li>
 		</ul>
 	</div>
