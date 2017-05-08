@@ -72,6 +72,10 @@
 	}
 
 	@media screen and (max-width: 600px) {
+		.counter {
+			font-weight: bold;
+		}
+
 		.list-container h2 {
 			text-align: center;
 		}
@@ -83,14 +87,6 @@
 		.task-list li, .add-item, .input-item {
 			border-radius: 0;
 			width: 100%;
-		}
-
-		.delete-todo {
-			border-radius: 0;
-		}
-
-		.counter {
-			font-weight: bold;
 		}
 	}
 }
