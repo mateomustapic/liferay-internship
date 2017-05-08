@@ -45,7 +45,7 @@
 <aui:script use="todo">
 	new Liferay.Portlet.Todo(
 		{
-			namespace: '<portlet:namespace />',
+			namespace: '<portlet:namespace />'
 		}
 	);
 </aui:script>
