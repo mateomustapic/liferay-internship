@@ -24,7 +24,7 @@
 	</h2>
 
 	<div class="task-container">
-		<aui:input class="input-item" cssClass="input-item" name="task" />
+		<aui:input cssClass="input-item" name="task" />
 
 		<aui:button cssClass="add-task" name="add" type="button" />
 
