@@ -26,7 +26,7 @@
 	<div class="task-container">
 		<aui:input cssClass="input-item" name="task" />
 
-		<aui:button cssClass="add-task" name="add" type="button" />
+		<aui:button cssClass="add-task" name="add" />
 
 		<span class="counter">30</span>
 
