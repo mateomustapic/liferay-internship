@@ -1,0 +1,6 @@
+Bundle-Name: Liferay Random Thingy Web
+Bundle-SymbolicName: com.liferay.random.thingy.web
+Bundle-Version: 1.0.6
+Require-Capability:\
+	soy;\
+		filter:="(type=metal)"
