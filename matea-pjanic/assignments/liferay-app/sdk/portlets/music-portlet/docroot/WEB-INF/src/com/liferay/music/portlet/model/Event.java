@@ -17,43 +17,62 @@ package com.liferay.music.portlet.model;
 /**
  * @author Matea Pjanic
  */
-public class Album {
+public class Event {
 
-	public String getImage() {
-		return _image;
+	public String getArtist() {
+
+		return _artist;
+	}
+
+	public String getCity() {
+
+		return _city;
+	}
+
+	public String getCountry() {
+
+		return _country;
+	}
+
+	public long getDate() {
+
+		return _date;
 	}
 
 	public String getName() {
+
 		return _name;
 	}
 
-	public Song[] getSongs() {
-		return _songs;
+	public void setArtist(String artist) {
+
+		this._artist = artist;
 	}
 
-	public int getYear() {
-		return _year;
+	public void setCity(String city) {
+
+		this._city = city;
 	}
 
-	public void setImage(String _image) {
-		this._image = _image;
+	public void setCountry(String country) {
+
+		this._country = country;
+	}
+
+	public void setDate(long date) {
+
+		this._date = date;
 	}
 
 	public void setName(String name) {
+
 		this._name = name;
 	}
 
-	public void setSongs(Song[] songs) {
-		this._songs = songs;
-	}
-
-	public void setYear(int year) {
-		this._year = year;
-	}
-
-	private String _image;
+	private String _artist;
+	private String _city;
+	private String _country;
+	private long _date;
 	private String _name;
-	private Song[] _songs;
-	private int _year;
 
 }
