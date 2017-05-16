@@ -1,30 +1,20 @@
 $darkyellow: #FFBC42;
-$gray: #BDBDBD;
-
-.adele {
-	background-image: url(../images/adele.jpg);
-}
-
-.alicephoebephoto {
-	background-image: url(../images/alicephoebe.jpg);
-}
 
 .artist {
 	display: inline-block;
-	margin: 10px;
-	margin-bottom: 0;
+	margin: 10px 10px 0 10px;
 }
 
 .artist-name {
 	text-transform: uppercase;
 }
 
-.artist-name, .artist-song {
+.artist-album, .artist-name {
 	font-size: 12px;
 	text-align: left;
 }
 
-.artist-photo {
+.artist-picture {
 	background-position: top;
 	background-size: cover;
 	height: 150px;
@@ -34,61 +24,47 @@ $gray: #BDBDBD;
 	&:hover {
 		opacity: 0.7;
 
-		.playbutton {
+		.play-button {
 			display: block;
 		}
 	}
 }
 
-.block {
-	border-top: 1px solid $gray;
-}
-
-.chainsmokers {
-	background-image: url(../images/chainsmokers.jpg);
-}
-
-.chrisphoto {
-	background-image: url(../images/chris.jpg);
-}
-
 .container-fluid {
-	background-image: url(../images/front.jpg);
-	background-position: center top;
-	background-repeat: no-repeat;
+	background: url(../images/front.jpg) no-repeat center top;
 	background-size: cover;
 	height: 800px;
 }
 
-.date {
-	padding: 0 80px;
+.front-div {
+	margin: 300px auto 0 auto;
+	max-width: 1000px;
 }
 
-.deadmausphoto {
-	background-image: url(../images/deadmau5.jpg);
+.front-page-content-hide {
+	display: none;
 }
 
-.front-page-content {
-	margin-top: 300px;
+.more-info-td {
+	padding: 0;
 }
 
-.josephoto {
-	background-image: url(../images/jose.jpg);
+.more-info-wrapper {
+	border-radius: 3px;
+	border-style: solid;
+	display: inline-block;
+	height: auto;
+	margin: 10px 0;
+	padding: 3px;
+	text-align: center;
+	width: 80px;
+
+	&:hover {
+		opacity: 0.7;
+	}
 }
 
-.kodakblackphoto {
-	background-image: url(../images/tunelvision.jpg);
-}
-
-.leraphoto {
-	background-image: url(../images/lera.jpg);
-}
-
-.omamphoto {
-	background-image: url(../images/omam.jpg);
-}
-
-.playbutton {
+.play-button {
 	bottom: 0;
 	display: none;
 	left: 0;
@@ -99,14 +75,19 @@ $gray: #BDBDBD;
 	width: 40px;
 }
 
-.sturgillphoto {
-	background-image: url(../images/sturgill.jpg);
+.search-container {
+	align-items: flex-start;
+	display: flex;
+	margin: 50px 0;
+}
+
+.search-result-hide {
+	min-height: 500px;
 }
 
 .tracks-inner {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 1000px;
+	margin-bottom: 20px;
+	text-align: center;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -114,19 +95,8 @@ $gray: #BDBDBD;
 		height: 600px;
 	}
 
-	.front-page-content {
-		margin-top: 200px;
-	}
-}
-
-@media only screen and (max-width: 1040px) {
-	.artist-photo {
-		height: 120px;
-		width: 120px;
-	}
-
-	.front-page-content {
-		margin-top: 150px;
+	.front-div {
+		margin-top: 120px;
 	}
 }
 
@@ -139,40 +109,44 @@ $gray: #BDBDBD;
 		}
 	}
 
+	.artist-picture {
+		height: 120px;
+		width: 120px;
+	}
+
 	.content {
-		margin-left: 10px;
-		margin-right: 10px;
+		margin: 0 10px;
 	}
 
-	.date {
-		padding: 0 40px;
-	}
-
-	.front-page-content {
+	.front-div {
 		margin-top: 120px;
-	}
-
-	.more-info-wrapper {
-		width: 80px;
 	}
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
 	.container-fluid {
-		height: 370px;
+		height: 400px;
 	}
 
-	.front-page-content {
-		margin-top: 0;
+	.front-div {
+		margin-top: 80px;
+	}
+
+	.more-info-wrapper {
+		width: 50px;
 	}
 }
 
 @media only screen and (max-width: 400px) {
-	.front-page-content {
-		margin-top: 60px;
+	.artist {
+		margin: 5px 5px 0 5px;
 	}
 
-	.artist {
-		margin: 0;
+	.container-fluid {
+		height: 350px;
+	}
+
+	.tour-name {
+		display: none;
 	}
 }
