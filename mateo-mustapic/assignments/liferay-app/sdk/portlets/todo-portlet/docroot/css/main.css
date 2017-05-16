@@ -11,7 +11,12 @@
 		height: 18px;
 		margin: auto;
 		padding: 10px 0 10px 1%;
+		transition: font-size 1s;
 		width: 85%;
+
+		&:hover {
+			font-size: 18px;
+		}
 	}
 
 	.btn.add-task {
@@ -23,23 +28,41 @@
 		cursor: pointer;
 		display: inline-block;
 		font-size: 16px;
-		margin-bottom: 5px;
+		margin-bottom: 10px;
 		margin-left: 3px;
 		margin-top: -25px;
 		padding-bottom: 10px;
 		padding-top: 10px;
 		text-align: center;
 		text-decoration: none;
+		transition: font-size 1s;
 		width: 11%;
 
 		&:hover {
 			background-color: #BBB;
+			font-size: 18px;
 		}
 	}
 }
 
 /* Responsive overridden aui tags
 	************************************************************/
+
+/* Max width 768px
+	************************************************************/
+
+@media screen and (max-width: 768px) {
+	.aui .todo-portlet {
+		input[type="text"].input-item {
+			width: 84%;
+		}
+
+		.btn.add-task {
+			width: 14%;
+		}
+	}
+}
+
 /* 600px
 ************************************************************/
 
@@ -47,13 +70,35 @@
 	.aui .todo-portlet {
 		input[type="text"].input-item {
 			border-radius: 0;
+			transition: none;
 			width: 98.5%;
+
+			&:hover {
+				font-size: 16px;
+			}
 		}
 
 		.btn.add-task {
 			border-radius: 0;
-			margin: 0;
+			margin: 0 0 10px 0;
+			transition: none;
 			width: 100%;
+
+			&:hover {
+				font-size: 16px;
+			}
+		}
+	}
+}
+
+/* 400px
+************************************************************/
+
+@media screen and (max-width: 400px) {
+	.aui .todo-portlet {
+		.btn.add-task {
+			font-weight: bold;
+			text-transform: uppercase;
 		}
 	}
 }
@@ -62,11 +107,77 @@
 
 .todo-portlet {
 	.counter {
+		background-color: royalblue;
+		border-radius: 50%;
+		color: #E1E6EF;
 		font-weight: bold;
-		margin-left: 1%;
+		margin: 8px 0 3px 3px;
+		padding: 8px 8px 8px 8px;
+		transition: font-size 1s;
+
+		&:hover {
+			font-size: 20px;
+		}
+	}
+
+	.delete-task {
+		background-color: #E1E6EF;
+		border-width: 0;
+		color: white;
+		margin: auto;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		&:hover {
+			background-color: #757C87;
+		}
+	}
+
+	.list-container {
+		margin: auto;
+		max-width: 900px;
+
+		.header {
+			background-color: royalblue;
+			border-radius: 10px;
+			color: white;
+			padding: 20px 40px;
+			text-align: center;
+		}
+
+		h2 {
+			font-size: 60px;
+			font-weight: 900;
+			text-align: center;
+			text-transform: uppercase;
+		}
+	}
+
+	.task-list {
+		margin-left: 0;
+		margin-top: 8px;
+
+		li {
+			background-color: #1A53AF;
+			border-radius: 10px;
+			color: white;
+			cursor: pointer;
+			font-size: 16px;
+			list-style-type: none;
+			padding: 8px 0 8px 8px;
+			position: relative;
+			transition: 1s;
+			user-select: none;
+
+			&:nth-child(odd) {
+				background-color: #93D5FF;
+			}
+		}
 	}
 
 	.finished-task {
+		border-top: 1px solid #C7CED8;
 		li {
 			background-color: #FF6B68;
 			border-radius: 10px;
@@ -78,71 +189,15 @@
 		}
 
 		button {
-			background: #FF6B68;
-			border-radius: 5px;
+			background-color: #FF6B68;
+			border-radius: 50%;
 			border-width: 0;
 			color: white;
 			float: right;
-			padding: 0 4px 4px 4px;
-			top: 0;
+			padding: 6px 10px 6px 10px;
 
 			&:hover {
 				background-color: #757C87;
-			}
-		}
-	}
-
-	.delete-task {
-		background: #E1E6EF;
-		border-width: 0;
-		color: white;
-		margin: auto;
-		position: absolute;
-		right: 0;
-		top: 0;
-
-		&:hover {
-			background-color: #757C87;
-			}
-		}
-
-	.list-container {
-		margin: auto;
-		max-width: 900px;
-
-		h2 {
-			font-size: 60px;
-			font-weight: 900;
-			text-align: center;
-			text-transform: uppercase;
-		}
-	}
-
-	.line-separator {
-		background: #C7CED8;
-		height: 1px;
-		margin-bottom: 8px;
-		overflow: hidden;
-		width: 100%;
-	}
-
-	.task-list {
-		margin-left: 0;
-
-		li {
-			background: #1A53AF;
-			border-radius: 10px;
-			color: white;
-			cursor: pointer;
-			font-size: 16px;
-			list-style-type: none;
-			padding: 8px 0 8px 8px;
-			position: relative;
-			transition: 0.2s;
-			user-select: none;
-
-			&:nth-child(odd) {
-				background: #93D5FF;
 			}
 		}
 	}
@@ -156,8 +211,14 @@
 		.delete-task {
 			border-radius: 10px;
 			font-size: 17.5px;
-			padding: 11px 12px;
+			padding: 11px 11px;
 			width: 7%;
+		}
+
+		.list-container {
+			.header {
+				padding: 20px 15px;
+			}
 		}
 	}
 
@@ -168,6 +229,12 @@
 		.delete-task {
 			width: 7%;
 		}
+
+		.list-container {
+			.header {
+				padding: 20px 10px;
+			}
+		}
 	}
 
 	/* 600px
@@ -177,6 +244,11 @@
 		.list-container {
 			h2 {
 				font-size: 40px;
+			}
+
+			.header {
+				border-radius: 0;
+				padding: 15px 0;
 			}
 		}
 
@@ -192,21 +264,63 @@
 			width: 100%;
 		}
 
-		.task-list li, .finished-task li, .delete-task {
+		.task-list li, .finished-task li, .finished-task button, .delete-task {
 			border-radius: 0;
 		}
 
+		.finished-task button {
+			padding: 4px 12px 10px 8px;
+		}
+
 		.counter {
+			border-radius: 0;
 			font-weight: bold;
+			margin: 0;
+			transition: none;
+
+			&:hover {
+				font-size: 14px;
+			}
 		}
 	}
 
-	/* Max width 400px
+	/* Max width 406px
 	************************************************************/
 
-	@media screen and (max-width: 400px) {
+	@media screen and (max-width: 406px) {
+		.list-container {
+			.header {
+				padding: 10px 0;
+			}
+		}
+
 		.delete-task {
-			padding-right: 3%;
+			font-size: 16px;
+			padding-right: 10px;
+		}
+
+		.list-container {
+			h2 {
+				font-size: 30px;
+			}
+		}
+	}
+
+	/* Max width 320px
+	************************************************************/
+
+	@media screen and (max-width: 320px) {
+		.delete-task {
+			font-size: 16px;
+			padding-right: 15px;
+		}
+
+		.list-container {
+			font-size: 16px;
+
+			h2 {
+				font-size: 25px;
+			}
 		}
 	}
 }
