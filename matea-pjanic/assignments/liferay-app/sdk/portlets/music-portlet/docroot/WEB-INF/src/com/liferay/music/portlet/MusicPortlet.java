@@ -15,73 +15,80 @@
 package com.liferay.music.portlet;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import com.liferay.music.portlet.model.Bend;
+import com.liferay.music.portlet.util.MusicUtil;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 
-import java.io.InputStream;
+import java.io.IOException;
 
-import java.lang.reflect.Type;
-
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-import javax.portlet.ActionRequest;
-import javax.portlet.ActionResponse;
+import javax.portlet.PortletException;
+import javax.portlet.ResourceRequest;
+import javax.portlet.ResourceResponse;
 
 /**
  * @author Matea Pjanic
  */
 public class MusicPortlet extends MVCPortlet {
 
-	public void search(
-			ActionRequest actionRequest, ActionResponse actionResponse)
-		throws Exception {
+	@Override
+	public void serveResource(
+			ResourceRequest resourceRequest, ResourceResponse resourceResponse)
+		throws IOException, PortletException {
 
-		String music = ParamUtil.getString(actionRequest, "music");
+		if (resourceRequest.getResourceID().equals("search-resource")) {
+			String music = ParamUtil.getString(resourceRequest, "music");
 
-		if (music == null) {
-			return;
-		}
-
-		InputStream is = MusicPortlet.class.getResourceAsStream("bends.json");
-
-		String jsonTxt = StringUtil.read(is);
-
-		Gson gson = new Gson();
-
-		Type list = new TypeToken<ArrayList<Bend>>(){}.getType();
-
-		List<Bend> bends = gson.fromJson(jsonTxt, list);
-
-		if (bends.isEmpty()) {
-			return;
-		}
-
-		boolean found = false;
-
-		for (Bend bend : bends) {
-			if (StringUtil.equalsIgnoreCase(music, bend.getName())) {
-				if (_log.isInfoEnabled()) {
-					_log.info(music + " was found.");
-				}
-
-				found = true;
-
-				break;
+			if (music == null) {
+				return;
 			}
-		}
 
-		if (!found && _log.isInfoEnabled()) {
-			_log.info(music + " was not found.");
-		}
+			List<Bend> bends = MusicUtil.getBends();
 
-		actionResponse.setRenderParameter("jspPage", "/view.jsp");
+			if (bends.isEmpty()) {
+				return;
+			}
+
+			boolean found = false;
+
+			for (Bend bend : bends) {
+				if (StringUtil.equalsIgnoreCase(music, bend.getName())) {
+					if (_log.isInfoEnabled()) {
+						_log.info(music + " was found.");
+					}
+
+					found = true;
+
+					String json_found = new Gson().toJson(bend);
+
+					resourceResponse.getWriter().write(json_found);
+
+					break;
+				}
+			}
+
+			if (!found && _log.isInfoEnabled()) {
+				_log.info(music + " was not found.");
+
+				Map not_found = new HashMap();
+
+				not_found.put("not_found", "nope. dont have that");
+
+				String json_not_found = new Gson().toJson(not_found);
+
+				resourceResponse.getWriter().write(json_not_found);
+			}
+
+			super.serveResource(resourceRequest, resourceResponse);
+		}
 	}
 
 	private static Log _log = LogFactoryUtil.getLog(MusicPortlet.class);

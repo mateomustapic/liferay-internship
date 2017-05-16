@@ -28,162 +28,53 @@
 	<liferay-ui:message key="discovers-stream-and-share-music" />
 </h2>
 
-<liferay-portlet:actionURL name="search" var="searchURL" />
+<portlet:resourceURL id="search-resource" var="resourceURL" />
 
-<aui:form action="<%= searchURL %>" name="fm">
+<div class="search-container">
 	<aui:fieldset>
-		<aui:input label="" name="music" placeholder="search-for-music" type="text" />
+		<aui:input label="" name="music-input" placeholder="search-for-music" type="text" />
 	</aui:fieldset>
 
-	<aui:button type="submit" value="search" />
-</aui:form>
+	<aui:input cssClass="search-button" data-resourceURL="<%= resourceURL.toString() %>" label="" name="search" type="button" value="Search" />
+</div>
 
-<div class="front-page-content">
+<div class="front-div front-page-content-show">
 	<div class="block tracks">
 		<h3>
 			<liferay-ui:message key="what-is-new-on-soundsgood" />
 		</h3>
 
 		<div class="tracks-inner">
+
+			<%
+				List<Bend> bends = MusicUtil.getBends();
+
+				for (Bend bend : bends) {
+					for (Album album : bend.getAlbums()) {
+						if (album.getYear() == new DateTime().getYear()) {
+			%>
+
 			<div class="artist">
-				<div class="adele artist-photo">
-					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
+				<div class="artist-picture" style="background-image: url(<%= PortalUtil.getPathContext(request) %>/<%= album.getImage() %>)">
+					<img class="play-button" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
 				</div>
 
 				<div class="artist-name">
-					<liferay-ui:message key="adele" />
+					<%= bend.getName() %>
 				</div>
 
-				<div class="artist-song">
-					<liferay-ui:message key="send-my-love" />
+				<div class="artist-album">
+					<%= album.getName() %>
 				</div>
+
 			</div>
 
-			<div class="artist">
-				<div class="artist-photo chainsmokers">
-					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
-				</div>
+			<%
+						}
+					}
+				}
+			%>
 
-				<div class="artist-name">
-					<liferay-ui:message key="chainsmokers" />
-				</div>
-
-				<div class="artist-song">
-					<liferay-ui:message key="something-just-like-this" />
-				</div>
-			</div>
-
-			<div class="artist">
-				<div class="artist-photo deadmausphoto">
-					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
-				</div>
-
-				<div class="artist-name">
-					<liferay-ui:message key="deadmaus" />
-				</div>
-
-				<div class="artist-song">
-					<liferay-ui:message key="saved" />
-				</div>
-			</div>
-
-			<div class="artist">
-				<div class="artist-photo kodakblackphoto">
-					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
-				</div>
-
-				<div class="artist-name">
-					<liferay-ui:message key="kodak-black" />
-				</div>
-
-				<div class="artist-song">
-					<liferay-ui:message key="tunnel-vision" />
-				</div>
-			</div>
-
-			<div class="artist">
-				<div class="artist-photo chrisphoto">
-					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
-				</div>
-
-				<div class="artist-name">
-					<liferay-ui:message key="chris-stapleton" />
-				</div>
-
-				<div class="artist-song">
-					<liferay-ui:message key="broken-halos" />
-				</div>
-			</div>
-
-			<div class="artist">
-				<div class="artist-photo sturgillphoto">
-					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
-				</div>
-
-				<div class="artist-name">
-					<liferay-ui:message key="sturgill-simpson" />
-				</div>
-
-				<div class="artist-song">
-					<liferay-ui:message key="in-bloom" />
-				</div>
-			</div>
-
-			<div class="artist">
-				<div class="artist-photo leraphoto">
-					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
-				</div>
-
-				<div class="artist-name">
-					<liferay-ui:message key="lera-lynn" />
-				</div>
-
-				<div class="artist-song">
-					<liferay-ui:message key="my-least-favorite-life" />
-				</div>
-			</div>
-
-			<div class="artist">
-				<div class="artist-photo omamphoto">
-					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
-				</div>
-
-				<div class="artist-name">
-					<liferay-ui:message key="of-monsters-and-man" />
-				</div>
-
-				<div class="artist-song">
-					<liferay-ui:message key="crystals" />
-				</div>
-			</div>
-
-			<div class="artist">
-				<div class="artist-photo josephoto">
-					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
-				</div>
-
-				<div class="artist-name">
-					<liferay-ui:message key="jose-gonzales" />
-				</div>
-
-				<div class="artist-song">
-					<liferay-ui:message key="every-age" />
-				</div>
-			</div>
-
-			<div class="artist">
-				<div class="alicephoebephoto artist-photo">
-					<img class="playbutton" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
-				</div>
-
-				<div class="artist-name">
-					<liferay-ui:message key="alice-phoebe-lou" />
-				</div>
-
-				<div class="artist-song">
-					<liferay-ui:message key="orbit" />
-				</div>
-			</div>
 		</div>
 	</div>
 
@@ -193,13 +84,50 @@
 		</h3>
 
 		<div class="events-inner">
+
+			<%
+				List<Event> events = MusicUtil.getEvents();
+
+				Collections.sort(events, new Comparator<Event>() {
+					@Override
+					public int compare(Event o1, Event o2) {
+						return new DateTime(o1.getDate()).compareTo(new DateTime(o2.getDate()));
+					}
+				});
+			%>
+
 			<table>
+
+				<%
+					for (Event event : events) {
+				%>
+
 				<tr>
 					<td>
-						<liferay-ui:message key="jason-isbell-and-the-400-unit" />
+						<%= event.getArtist() %>
+					</td>
+
+					<td class="tour-name">
+						<liferay-ui:message key="<%= event.getName() %>" />
 					</td>
 
 					<td>
+						<liferay-ui:message key="<%= event.getCity() %>" />,
+
+						<liferay-ui:message key="<%= event.getCountry() %>" />
+					</td>
+
+					<td>
+
+						<%
+							DateTime date = new DateTime(event.getDate()*1000);
+							DateTimeFormatter userDateFormat = DateTimeFormat.forPattern("dd.MM.yyyy HH:mm");
+						%>
+
+							<%= date.toString(userDateFormat) %>
+					</td>
+
+					<td class="more-info-td">
 						<div class="more-info-wrapper">
 							<aui:a cssClass="more-info" href="javascript:;">
 								<liferay-ui:message key="more-info" />
@@ -208,40 +136,31 @@
 					</td>
 				</tr>
 
-				<tr>
-					<td>
-						<liferay-ui:message key="janet-jackson-state-of-the-world-tour" />
-					</td>
+				<%
+					}
+				%>
 
-					<td>
-						<div class="more-info-wrapper">
-							<aui:a cssClass="more-info" href="javascript:;">
-								<liferay-ui:message key="more-info" />
-							</aui:a>
-						</div>
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-						<liferay-ui:message key="the-cramberries-something-else-tour" />
-					</td>
-
-					<td>
-						<div class="more-info-wrapper">
-							<aui:a cssClass="more-info" href="javascript:;">
-								<liferay-ui:message key="more-info" />
-							</aui:a>
-						</div>
-					</td>
-				</tr>
 			</table>
 		</div>
 	</div>
-
-	<div class="block footer">
-		<liferay-ui:message key="soundsgood" />
-
-		<liferay-ui:message key="contact" />
-	</div>
 </div>
+
+<div class="block front-div search-result-hide">
+	<div class="search-result-title"></div>
+
+	<div class="search-result-artist"></div>
+</div>
+
+<div class="block footer">
+	<liferay-ui:message key="soundsgood" />
+
+	<liferay-ui:message key="contact" />
+</div>
+
+<aui:script use="music">
+	new Liferay.Portlet.Music(
+		{
+			namespace: '<portlet:namespace />'
+		}
+	);
+</aui:script>

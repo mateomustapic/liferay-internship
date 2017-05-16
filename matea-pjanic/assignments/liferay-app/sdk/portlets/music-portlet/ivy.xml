@@ -11,6 +11,9 @@
 	</info>
 
 	<dependencies defaultconf="default">
+		<dependency org="com.google.code.gson" name="gson" rev="2.8.0" />
+		<dependency org="com.google.guava" name="guava" rev="19.0" />
+		<dependency org="joda-time" name="joda-time" rev="2.9.9" />
 		<dependency conf="test->default" name="arquillian-junit-container" org="org.jboss.arquillian.junit" rev="1.1.6.Final" />
 		<dependency conf="test->default" name="arquillian-tomcat-remote-7" org="org.jboss.arquillian.container" rev="1.0.0.CR6" />
 		<dependency conf="test->default" name="com.liferay.ant.arquillian" org="com.liferay" rev="1.0.0-SNAPSHOT" />

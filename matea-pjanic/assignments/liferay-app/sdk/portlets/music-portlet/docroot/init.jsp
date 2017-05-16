@@ -21,7 +21,18 @@
 <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
 
-<%@ page import="com.liferay.portal.util.PortalUtil" %>
+<%@ page import="com.liferay.music.portlet.model.Album" %><%@
+page import="com.liferay.music.portlet.model.Bend" %><%@
+page import="com.liferay.music.portlet.model.Event" %><%@
+page import="com.liferay.music.portlet.util.MusicUtil" %><%@
+page import="com.liferay.portal.util.PortalUtil" %>
+
+<%@ page import="java.util.*" %><%@
+page import="java.util.List" %>
+
+<%@ page import="org.joda.time.DateTime" %><%@
+page import="org.joda.time.format.DateTimeFormat" %><%@
+page import="org.joda.time.format.DateTimeFormatter" %>
 
 <liferay-theme:defineObjects />
 
