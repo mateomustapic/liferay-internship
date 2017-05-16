@@ -1,11 +1,13 @@
 $black: #000;
 $darkyellow: #FFBC42;
+$gray: #D3D3D3;
 
 table {
-	margin-bottom: 30px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 30px;
+	margin: 30px auto;
+}
+
+td {
+	padding-right: 40px;
 }
 
 tr {
@@ -27,12 +29,6 @@ tr {
 		padding: 0;
 	}
 
-	form {
-		align-items: flex-start;
-		display: flex;
-		margin: 50px 0;
-	}
-
 	input[type="text"] {
 		font-size: 14px;
 		height: 20px;
@@ -51,27 +47,14 @@ tr {
 	}
 
 	h2 {
-		font-size: 60px;
+		color: $black;
+		font-size: 50px;
 		line-height: 60px;
 		margin: 350px 0 20px 0;
 	}
 
 	h3 {
 		text-align: center;
-	}
-
-	.btn {
-		background: $darkyellow;
-		font-size: 14px;
-		margin: 0;
-		opacity: 0.9;
-		padding: 8px;
-		width: 100px;
-
-		&:hover {
-			background: $darkyellow;
-			opacity: 1;
-		}
 	}
 
 	.fieldset {
@@ -89,7 +72,7 @@ tr {
 	position: relative;
 }
 
-.account-wrapper, .more-info-wrapper {
+.account-wrapper {
 	border-radius: 3px;
 	border-style: solid;
 	display: inline-block;
@@ -103,12 +86,52 @@ tr {
 	}
 }
 
+.block {
+	border-top: 1px solid $gray;
+}
+
 .footer {
 	font-size: 12px;
+	min-height: 100px;
 }
 
 .logo {
 	width: 20px;
+}
+
+.search-button {
+	background-color: $darkyellow;
+	font-size: 14px;
+	margin: 0;
+	opacity: 0.9;
+	padding: 8px 16px;
+	width: 100px;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.search-result-artist {
+	width: 250px;
+
+	p {
+		margin: 10px auto;
+	}
+}
+
+.search-result-hide {
+	display: none;
+}
+
+.search-result-show {
+	display: block;
+}
+
+.search-result-title {
+	margin: 10px auto;
+	text-transform: uppercase;
+	width: 200px;
 }
 
 .site-name {
@@ -125,51 +148,55 @@ tr {
 			width: 300px;
 		}
 
-		input[type="text"] {
-			width: 287px;
+		h2 {
+			margin-top: 250px;
+			width: 700px;
 		}
 
-		h2 {
-			font-size: 50px;
-			margin-top: 250px;
+		input[type="text"] {
+			width: 287px;
 		}
 	}
 }
 
-@media only screen and (max-width: 1040px) {
+@media only screen and (max-width: 1000px) {
+	td {
+		padding-right: 30px;
+	}
+
 	.aui h2 {
-		width: 700px;
+		font-size: 45px;
+		width: 500px;
 	}
 }
 
 @media only screen and (max-width: 800px) {
-	.aui {
-		a {
-			color: $darkyellow;
-		}
+	td {
+		padding-right: 20px;
+	}
 
-		h2 {
-			font-size: 45px;
-			width: 500px;
-		}
+	.account-link {
+		color: $darkyellow;
 	}
 }
 
-@media only screen and (max-width: 500px) {
-	.aui {
-		h2 {
-			font-size: 40px;
-			margin-top: 100px;
-			width: 360px;
-		}
-	}
-}
-
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
 	td {
 		font-size: 12px;
 	}
 
+	.aui h2 {
+		font-size: 40px;
+		margin-top: 100px;
+		width: 360px;
+	}
+
+	.search-result-artist {
+		width: 180px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
 	.aui {
 		h2 {
 			font-size: 30px;
@@ -177,7 +204,7 @@ tr {
 			width: 300px;
 		}
 
-		input {
+		input[type="text"] {
 			width: 207px;
 		}
 
