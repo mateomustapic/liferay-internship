@@ -13,45 +13,44 @@ AUI().add(
 					initializer: function(config) {
 						var instance = this;
 
-						var button = instance.byId('search');
+						var searchButton = instance.byId('search');
 
-						if (button) {
-							button.on('click', A.bind('_getMusic', instance));
+						if (searchButton) {
+							searchButton.on('click', A.bind('_getMusic', instance));
 
-							instance._button = button;
+							instance._searchButton = searchButton;
 						}
 
-						var input = instance.byId('music-input');
+						var searchInput = instance.byId('music-input');
 
-						if (input) {
-							input.on('key', A.bind('_getMusic', instance), 'enter');
+						if (searchInput) {
+							searchInput.on('key', A.bind('_getMusic', instance), 'enter');
 
-							instance._input = input;
+							instance._searchInput = searchInput;
 						}
 					},
 
 					_getMusic: function(event) {
 						var instance = this;
 
-						var button = instance._button;
+						var searchButton = instance._searchButton;
+						var searchInput = instance._searchInput;
 
-						var input = instance._input;
+						var music = searchInput.val();
 
-						var music = input.val();
+						var resourceURL = searchButton.attr('data-resourceURL');
 
-						var resourceURL = button.attr('data-resourceURL');
+						var frontPageContentContainer = A.one('.front-page-content-show');
 
-						var frontPageContent = A.one('.front-page-content-show');
+						frontPageContentContainer.addClass('front-page-content-hide');
 
-						frontPageContent.addClass('front-page-content-hide');
+						var searchResultContainer = A.one('.search-result-hide');
 
-						var searchResult = A.one('.search-result-hide');
+						searchResultContainer.addClass('search-result-show');
 
-						searchResult.addClass('search-result-show');
+						var searchResultArtistContainer = A.one('.search-result-artist');
 
-						var searchResultArtist = A.one('.search-result-artist');
-
-						var searchResultTitle = A.one('.search-result-title');
+						var searchResultTitleContainer = A.one('.search-result-title');
 
 						if (music && resourceURL) {
 							A.io.request(
@@ -71,11 +70,11 @@ AUI().add(
 											var count = Object.keys(object).length;
 
 											if (count > 1) {
-												searchResultTitle.html(object._name);
+												searchResultTitleContainer.html(object._name);
 
-												searchResultArtist.removeClass('search-result-hide');
+												searchResultArtistContainer.removeClass('search-result-hide');
 
-												searchResultArtist.empty();
+												searchResultArtistContainer.empty();
 
 												for (var i = 0; i < object._albums.length; i++) {
 													var albumPicture = '<img src=' + '/music-portlet' + object._albums[i]._image + ' />';
@@ -90,15 +89,15 @@ AUI().add(
 
 													albumText += '</p>';
 
-													searchResultArtist.append(albumPicture);
+													searchResultArtistContainer.append(albumPicture);
 
-													searchResultArtist.append(albumText);
+													searchResultArtistContainer.append(albumText);
 												}
 											}
 											else {
-												searchResultTitle.html(object.not_found);
+												searchResultTitleContainer.html(object.not_found);
 
-												searchResultArtist.addClass('search-result-hide');
+												searchResultArtistContainer.addClass('search-result-hide');
 											}
 										}
 									}
@@ -106,7 +105,7 @@ AUI().add(
 							);
 						}
 
-						input.val('');
+						searchInput.val('');
 					}
 				}
 			}
