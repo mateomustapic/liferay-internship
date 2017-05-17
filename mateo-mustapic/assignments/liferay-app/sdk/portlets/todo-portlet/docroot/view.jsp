@@ -39,12 +39,6 @@
 				<aui:button cssClass="delete-task" icon="icon-remove" size="large" />
 			</li>
 		</ul>
-		<div class="remaining-tasks-count">
-		</div>
-		<div class="finished-task">
-			<ul class="finished-task-list">
-			</ul>
-		</div>
 	</div>
 </div>
 
