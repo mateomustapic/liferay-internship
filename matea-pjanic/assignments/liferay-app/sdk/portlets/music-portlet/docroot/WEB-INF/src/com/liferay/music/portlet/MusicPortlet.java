@@ -69,7 +69,7 @@ public class MusicPortlet extends MVCPortlet {
 
 					String json = new Gson().toJson(bend);
 
-					resourceResponse.getWriter().write(json);
+					writeJSON(resourceRequest, resourceResponse, json);
 
 					break;
 				}
@@ -84,10 +84,8 @@ public class MusicPortlet extends MVCPortlet {
 
 				String json = new Gson().toJson(map);
 
-				resourceResponse.getWriter().write(json);
+				writeJSON(resourceRequest, resourceResponse, json);
 			}
-
-			super.serveResource(resourceRequest, resourceResponse);
 		}
 	}
 
