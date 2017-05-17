@@ -42,17 +42,20 @@ AUI().add(
 
 						var frontPageContentContainer = A.one('.front-page-content-show');
 
-						frontPageContentContainer.addClass('front-page-content-hide');
+						if (frontPageContentContainer) {
+							frontPageContentContainer.addClass('front-page-content-hide');
+						}
 
 						var searchResultContainer = A.one('.search-result-hide');
 
-						searchResultContainer.addClass('search-result-show');
+						if (searchResultContainer) {
+							searchResultContainer.addClass('search-result-show');
+						}
 
 						var searchResultArtistContainer = A.one('.search-result-artist');
-
 						var searchResultTitleContainer = A.one('.search-result-title');
 
-						if (music && resourceURL) {
+						if (music && resourceURL && searchResultArtistContainer && searchResultTitleContainer) {
 							A.io.request(
 								resourceURL,
 								{
