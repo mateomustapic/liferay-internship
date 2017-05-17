@@ -35,8 +35,8 @@ public class Album {
 		return _year;
 	}
 
-	public void setImage(String _image) {
-		this._image = _image;
+	public void setImage(String image) {
+		this._image = image;
 	}
 
 	public void setName(String name) {
