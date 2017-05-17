@@ -75,7 +75,7 @@ AUI().add(
 
 												searchResultArtist.removeClass('search-result-hide');
 
-												searchResultArtist.html('');
+												searchResultArtist.empty();
 
 												for (var i = 0; i < object._albums.length; i++) {
 													var albumPicture = '<img src=' + '/music-portlet' + object._albums[i]._image + ' />';
