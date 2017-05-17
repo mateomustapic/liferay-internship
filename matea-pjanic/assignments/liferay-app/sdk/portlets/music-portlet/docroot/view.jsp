@@ -83,22 +83,10 @@
 		</h3>
 
 		<div class="events-inner">
-
-			<%
-			List<Event> events = MusicUtil.getEvents();
-
-			Collections.sort(events, new Comparator<Event>() {
-				@Override
-				public int compare(Event o1, Event o2) {
-					return new DateTime(o1.getDate()).compareTo(new DateTime(o2.getDate()));
-				}
-			});
-			%>
-
 			<table>
 
 				<%
-				for (Event event : events) {
+				for (Event event : MusicUtil.getEvents()) {
 				%>
 
 				<tr>

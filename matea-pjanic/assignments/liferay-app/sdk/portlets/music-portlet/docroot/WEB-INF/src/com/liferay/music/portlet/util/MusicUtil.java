@@ -28,7 +28,11 @@ import java.io.InputStream;
 import java.lang.reflect.Type;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+
+import org.joda.time.DateTime;
 
 /**
  * @author Matea Pjanic
@@ -40,7 +44,21 @@ public class MusicUtil {
 	}
 
 	public static List<Event> getEvents() throws IOException {
-		return getList("../../../../../../../json/events.json", Event.class);
+		List<Event> events = getList(
+			"../../../../../../../json/events.json", Event.class);
+
+		Collections.sort(
+			events, new Comparator<Event>() {
+
+				@Override
+				public int compare(Event o1, Event o2) {
+					return new DateTime(
+						o1.getDate()).compareTo(new DateTime(o2.getDate()));
+				}
+			}
+		);
+
+		return events;
 	}
 
 	private static <T> List<T> getList(String filename, Class<T> type)
