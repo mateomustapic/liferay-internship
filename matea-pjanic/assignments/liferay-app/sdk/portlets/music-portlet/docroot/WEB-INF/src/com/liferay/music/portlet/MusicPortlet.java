@@ -75,8 +75,10 @@ public class MusicPortlet extends MVCPortlet {
 				}
 			}
 
-			if (!found && _log.isInfoEnabled()) {
-				_log.info(music + " was not found.");
+			if (!found) {
+				if (_log.isInfoEnabled()) {
+					_log.info(music + " was not found.");
+				}
 
 				JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
 
