@@ -24,6 +24,7 @@
 			<i class="icon-check"></i>
 		</h2>
 	</div>
+
 	<div class="task-container">
 		<aui:input cssClass="input-item" name="task" placeholder="Enter your task.." />
 
@@ -36,6 +37,7 @@
 		<ul class="task-list">
 			<li>
 				<liferay-ui:message key="sample-task" />
+
 				<aui:button cssClass="delete-task" icon="icon-remove" size="large" />
 			</li>
 		</ul>
