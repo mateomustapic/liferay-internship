@@ -47,32 +47,31 @@
 		<div class="tracks-inner">
 
 			<%
-				List<Bend> bends = MusicUtil.getBends();
+			List<Bend> bends = MusicUtil.getBends();
 
-				for (Bend bend : bends) {
-					for (Album album : bend.getAlbums()) {
-						if (album.getYear() == new DateTime().getYear()) {
+			for (Bend bend : bends) {
+				for (Album album : bend.getAlbums()) {
+					if (album.getYear() == new DateTime().getYear()) {
 			%>
 
-			<div class="artist">
-				<div class="artist-picture" style="background-image: url(<%= PortalUtil.getPathContext(request) %>/<%= album.getImage() %>)">
-					<img class="play-button" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
-				</div>
+				<div class="artist">
+					<div class="artist-picture" style="background-image: url(<%= PortalUtil.getPathContext(request) %>/<%= album.getImage() %>)">
+						<img class="play-button" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
+					</div>
 
-				<div class="artist-name">
-					<%= bend.getName() %>
-				</div>
+					<div class="artist-name">
+						<%= bend.getName() %>
+					</div>
 
-				<div class="artist-album">
-					<%= album.getName() %>
+					<div class="artist-album">
+						<%= album.getName() %>
+					</div>
 				</div>
-
-			</div>
 
 			<%
-						}
 					}
 				}
+			}
 			%>
 
 		</div>
@@ -86,20 +85,20 @@
 		<div class="events-inner">
 
 			<%
-				List<Event> events = MusicUtil.getEvents();
+			List<Event> events = MusicUtil.getEvents();
 
-				Collections.sort(events, new Comparator<Event>() {
-					@Override
-					public int compare(Event o1, Event o2) {
-						return new DateTime(o1.getDate()).compareTo(new DateTime(o2.getDate()));
-					}
-				});
+			Collections.sort(events, new Comparator<Event>() {
+				@Override
+				public int compare(Event o1, Event o2) {
+					return new DateTime(o1.getDate()).compareTo(new DateTime(o2.getDate()));
+				}
+			});
 			%>
 
 			<table>
 
 				<%
-					for (Event event : events) {
+				for (Event event : events) {
 				%>
 
 				<tr>
@@ -120,11 +119,12 @@
 					<td>
 
 						<%
-							DateTime date = new DateTime(event.getDate()*1000);
-							DateTimeFormatter userDateFormat = DateTimeFormat.forPattern("dd.MM.yyyy HH:mm");
+						DateTime date = new DateTime(event.getDate()*1000);
+
+						DateTimeFormatter userDateFormat = DateTimeFormat.forPattern("dd.MM.yyyy HH:mm");
 						%>
 
-							<%= date.toString(userDateFormat) %>
+						<%= date.toString(userDateFormat) %>
 					</td>
 
 					<td class="more-info-td">
@@ -137,7 +137,7 @@
 				</tr>
 
 				<%
-					}
+				}
 				%>
 
 			</table>

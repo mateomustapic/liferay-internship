@@ -20,22 +20,18 @@ package com.liferay.music.portlet.model;
 public class Bend {
 
 	public Album[] getAlbums() {
-
 		return _albums;
 	}
 
 	public String getName() {
-
 		return _name;
 	}
 
 	public void setAlbums(Album[] albums) {
-
 		this._albums = albums;
 	}
 
 	public void setName(String name) {
-
 		this._name = name;
 	}
 

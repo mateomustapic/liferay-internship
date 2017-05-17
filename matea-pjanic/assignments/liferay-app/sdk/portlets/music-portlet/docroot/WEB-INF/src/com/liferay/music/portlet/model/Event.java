@@ -20,52 +20,42 @@ package com.liferay.music.portlet.model;
 public class Event {
 
 	public String getArtist() {
-
 		return _artist;
 	}
 
 	public String getCity() {
-
 		return _city;
 	}
 
 	public String getCountry() {
-
 		return _country;
 	}
 
 	public long getDate() {
-
 		return _date;
 	}
 
 	public String getName() {
-
 		return _name;
 	}
 
 	public void setArtist(String artist) {
-
 		this._artist = artist;
 	}
 
 	public void setCity(String city) {
-
 		this._city = city;
 	}
 
 	public void setCountry(String country) {
-
 		this._country = country;
 	}
 
 	public void setDate(long date) {
-
 		this._date = date;
 	}
 
 	public void setName(String name) {
-
 		this._name = name;
 	}
 

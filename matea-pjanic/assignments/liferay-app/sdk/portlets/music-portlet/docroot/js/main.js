@@ -59,7 +59,7 @@ AUI().add(
 								{
 									data: instance.ns(
 										{
-										music: music
+											music: music
 										}
 									),
 									dataType: 'json',
@@ -78,7 +78,6 @@ AUI().add(
 												searchResultArtist.html('');
 
 												for (var i = 0; i < object._albums.length; i++) {
-
 													var albumPicture = '<img src=' + '/music-portlet' + object._albums[i]._image + ' />';
 
 													var albumText = '<p><br>Album: ' + object._albums[i]._name + '<br>';
@@ -96,7 +95,6 @@ AUI().add(
 													searchResultArtist.append(albumText);
 												}
 											}
-
 											else {
 												searchResultTitle.html(object.not_found);
 
