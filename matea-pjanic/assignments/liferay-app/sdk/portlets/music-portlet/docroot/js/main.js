@@ -41,17 +41,17 @@ AUI().add(
 
 						var resourceURL = button.attr('data-resourceURL');
 
-						var front_page_content = A.one('.front-page-content-show');
+						var frontPageContent = A.one('.front-page-content-show');
 
-						front_page_content.addClass('front-page-content-hide');
+						frontPageContent.addClass('front-page-content-hide');
 
-						var search_result = A.one('.search-result-hide');
+						var searchResult = A.one('.search-result-hide');
 
-						search_result.addClass('search-result-show');
+						searchResult.addClass('search-result-show');
 
-						var search_result_artist = A.one('.search-result-artist');
+						var searchResultArtist = A.one('.search-result-artist');
 
-						var search_result_title = A.one('.search-result-title');
+						var searchResultTitle = A.one('.search-result-title');
 
 						if (music && resourceURL) {
 							A.io.request(
@@ -71,36 +71,36 @@ AUI().add(
 											var count = Object.keys(object).length;
 
 											if (count > 1) {
-												search_result_title.html(object._name);
+												searchResultTitle.html(object._name);
 
-												search_result_artist.removeClass('search-result-hide');
+												searchResultArtist.removeClass('search-result-hide');
 
-												search_result_artist.html('');
+												searchResultArtist.html('');
 
 												for (var i = 0; i < object._albums.length; i++) {
 
-													var album_picture = '<img src=' + '/music-portlet' + object._albums[i]._image + ' />';
+													var albumPicture = '<img src=' + '/music-portlet' + object._albums[i]._image + ' />';
 
-													var album_text = '<p><br>Album: ' + object._albums[i]._name + '<br>';
+													var albumText = '<p><br>Album: ' + object._albums[i]._name + '<br>';
 
-													album_text += 'Year: ' + object._albums[i]._year + '<br>';
+													albumText += 'Year: ' + object._albums[i]._year + '<br>';
 
 													for (var j = 0; j < object._albums[i]._songs.length; j++) {
-														album_text += 'Song: ' + object._albums[i]._songs[j]._name + '<br>';
+														albumText += 'Song: ' + object._albums[i]._songs[j]._name + '<br>';
 													}
 
-													album_text += '</p>';
+													albumText += '</p>';
 
-													search_result_artist.append(album_picture);
+													searchResultArtist.append(albumPicture);
 
-													search_result_artist.append(album_text);
+													searchResultArtist.append(albumText);
 												}
 											}
 
 											else {
-												search_result_title.html(object.not_found);
+												searchResultTitle.html(object.not_found);
 
-												search_result_artist.addClass('search-result-hide');
+												searchResultArtist.addClass('search-result-hide');
 											}
 										}
 									}

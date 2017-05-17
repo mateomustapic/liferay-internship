@@ -67,9 +67,9 @@ public class MusicPortlet extends MVCPortlet {
 
 					found = true;
 
-					String json_found = new Gson().toJson(bend);
+					String json = new Gson().toJson(bend);
 
-					resourceResponse.getWriter().write(json_found);
+					resourceResponse.getWriter().write(json);
 
 					break;
 				}
@@ -78,13 +78,13 @@ public class MusicPortlet extends MVCPortlet {
 			if (!found && _log.isInfoEnabled()) {
 				_log.info(music + " was not found.");
 
-				Map not_found = new HashMap();
+				Map map = new HashMap();
 
-				not_found.put("not_found", "nope. dont have that");
+				map.put("not_found", "nope. dont have that");
 
-				String json_not_found = new Gson().toJson(not_found);
+				String json = new Gson().toJson(map);
 
-				resourceResponse.getWriter().write(json_not_found);
+				resourceResponse.getWriter().write(json);
 			}
 
 			super.serveResource(resourceRequest, resourceResponse);
