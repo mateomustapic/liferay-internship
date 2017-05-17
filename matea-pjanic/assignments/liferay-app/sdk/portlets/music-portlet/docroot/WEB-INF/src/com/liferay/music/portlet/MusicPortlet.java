@@ -18,6 +18,8 @@ import com.google.gson.Gson;
 
 import com.liferay.music.portlet.model.Bend;
 import com.liferay.music.portlet.util.MusicUtil;
+import com.liferay.portal.kernel.json.JSONFactoryUtil;
+import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.ParamUtil;
@@ -26,9 +28,7 @@ import com.liferay.util.bridges.mvc.MVCPortlet;
 
 import java.io.IOException;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.portlet.PortletException;
 import javax.portlet.ResourceRequest;
@@ -78,13 +78,11 @@ public class MusicPortlet extends MVCPortlet {
 			if (!found && _log.isInfoEnabled()) {
 				_log.info(music + " was not found.");
 
-				Map map = new HashMap();
+				JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
 
-				map.put("not_found", "nope. dont have that");
+				jsonObject.put("not_found", "nope. dont have that");
 
-				String json = new Gson().toJson(map);
-
-				writeJSON(resourceRequest, resourceResponse, json);
+				writeJSON(resourceRequest, resourceResponse, jsonObject);
 			}
 		}
 	}
