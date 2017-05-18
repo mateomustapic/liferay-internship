@@ -1,0 +1,6 @@
+Bundle-Name: Liferay Monitor Singular Web
+Bundle-SymbolicName: com.liferay.monitor.singular.web
+Bundle-Version: 1.0.0
+Require-Capability:\
+	soy;\
+		filter:="(type=metal)"
