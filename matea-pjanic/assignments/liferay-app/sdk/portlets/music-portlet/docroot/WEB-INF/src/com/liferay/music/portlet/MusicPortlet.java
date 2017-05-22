@@ -14,12 +14,11 @@
 
 package com.liferay.music.portlet;
 
-import com.google.gson.Gson;
-
 import com.liferay.music.portlet.model.Bend;
 import com.liferay.music.portlet.util.MusicUtil;
 import com.liferay.portal.kernel.json.JSONFactoryUtil;
 import com.liferay.portal.kernel.json.JSONObject;
+import com.liferay.portal.kernel.language.LanguageUtil;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.ParamUtil;
@@ -33,6 +32,8 @@ import java.util.List;
 import javax.portlet.PortletException;
 import javax.portlet.ResourceRequest;
 import javax.portlet.ResourceResponse;
+
+import static com.liferay.music.portlet.util.MusicUtil.getNamingStrategyGson;
 
 /**
  * @author Matea Pjanic
@@ -67,7 +68,7 @@ public class MusicPortlet extends MVCPortlet {
 
 					found = true;
 
-					String json = new Gson().toJson(bend);
+					String json = getNamingStrategyGson().toJson(bend);
 
 					writeJSON(resourceRequest, resourceResponse, json);
 
@@ -82,7 +83,11 @@ public class MusicPortlet extends MVCPortlet {
 
 				JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
 
-				jsonObject.put("not_found", "nope. dont have that");
+				String message = LanguageUtil.get(
+					getPortletConfig(), resourceRequest.getLocale(),
+					"sorry-we-currently-dont-have-that-in-our-base");
+
+				jsonObject.put("not_found", message);
 
 				writeJSON(resourceRequest, resourceResponse, jsonObject);
 			}

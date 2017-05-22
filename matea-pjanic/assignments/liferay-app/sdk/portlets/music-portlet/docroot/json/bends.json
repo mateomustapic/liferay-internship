@@ -1,21 +1,21 @@
 [
 
   {
-    "_name": "Adele",
-    "_albums": [
+    "name": "Adele",
+    "albums": [
       {
-        "_name": "25",
-        "_image": "/images/adele_25.jpg",
-        "_year": 2015,
-        "_songs": [
+        "name": "25",
+        "image": "/images/adele_25.jpg",
+        "year": 2015,
+        "songs": [
           {
-            "_name": "Hello"
+            "name": "Hello"
           },
           {
-            "_name": "Send My Love"
+            "name": "Send My Love"
           },
           {
-            "_name": "I miss You"
+            "name": "I miss You"
           }
         ]
       }
@@ -23,21 +23,21 @@
   },
 
   {
-    "_name": "Alice Phoebe Lou",
-    "_albums": [
+    "name": "Alice Phoebe Lou",
+    "albums": [
       {
-        "_name": "Orbit",
-        "_image": "/images/alice_orbit.jpg",
-        "_year": 2016,
-        "_songs": [
+        "name": "Orbit",
+        "image": "/images/alice_orbit.jpg",
+        "year": 2016,
+        "songs": [
           {
-            "_name": "Society"
+            "name": "Society"
           },
           {
-            "_name": "Red"
+            "name": "Red"
           },
           {
-            "_name": "Take Flight"
+            "name": "Take Flight"
           }
         ]
       }
@@ -45,21 +45,21 @@
   },
 
   {
-    "_name": "Azra",
-    "_albums": [
+    "name": "Azra",
+    "albums": [
       {
-        "_name": "Ravno do dna",
-        "_image": "/images/azra_ravno_do_dna.jpg",
-        "_year": 1982,
-        "_songs": [
+        "name": "Ravno do dna",
+        "image": "/images/azra_ravno_do_dna.jpg",
+        "year": 1982,
+        "songs": [
           {
-            "_name": "Uradi nesto"
+            "name": "Uradi nesto"
           },
           {
-            "_name": "Poziv na ples"
+            "name": "Poziv na ples"
           },
           {
-            "_name": "Tople usne zene"
+            "name": "Tople usne zene"
           }
         ]
       }
@@ -67,21 +67,21 @@
   },
 
   {
-    "_name": "Chainsmokers",
-    "_albums": [
+    "name": "Chainsmokers",
+    "albums": [
       {
-        "_name": "Memories..Do Not Open",
-        "_image": "/images/chainsmokers_memories.jpg",
-        "_year": 2017,
-        "_songs": [
+        "name": "Memories..Do Not Open",
+        "image": "/images/chainsmokers_memories.jpg",
+        "year": 2017,
+        "songs": [
           {
-            "_name": "The One"
+            "name": "The One"
           },
           {
-            "_name": "Break Up Every Night"
+            "name": "Break Up Every Night"
           },
           {
-            "_name": "Bloodstream"
+            "name": "Bloodstream"
           }
         ]
       }
@@ -89,21 +89,21 @@
   },
 
   {
-    "_name": "Chris Stapleton",
-    "_albums": [
+    "name": "Chris Stapleton",
+    "albums": [
       {
-        "_name": "From a Room: Volume 1",
-        "_image": "/images/chris_stapleton_from_a_room.jpg",
-        "_year": 2017,
-        "_songs": [
+        "name": "From a Room: Volume 1",
+        "image": "/images/chris_stapleton_from_a_room.jpg",
+        "year": 2017,
+        "songs": [
           {
-            "_name": "Broken Halos"
+            "name": "Broken Halos"
           },
           {
-            "_name": "Last Thing I Needed, First Thing This Morning"
+            "name": "Last Thing I Needed, First Thing This Morning"
           },
           {
-            "_name": "Second One to Know"
+            "name": "Second One to Know"
           }
         ]
       }
@@ -111,18 +111,18 @@
   },
 
   {
-    "_name": "Creedence",
-    "_albums": [
+    "name": "Creedence",
+    "albums": [
       {
-        "_name": "Mardi Gras",
-        "_image": "/images/creedence_mardi_gras.jpg",
-        "_year": 1972,
-        "_songs": [
+        "name": "Mardi Gras",
+        "image": "/images/creedence_mardi_gras.jpg",
+        "year": 1972,
+        "songs": [
           {
-            "_name": "Looking for a reason"
+            "name": "Looking for a reason"
           },
           {
-            "_name": "Take it like a friend"
+            "name": "Take it like a friend"
           }
         ]
       }
@@ -130,21 +130,21 @@
   },
 
   {
-    "_name": "Deadmau5",
-    "_albums": [
+    "name": "Deadmau5",
+    "albums": [
       {
-        "_name": "W:/2016ALBUM/",
-        "_image": "/images/deadmau5_w2016album.jpg",
-        "_year": 2016,
-        "_songs": [
+        "name": "W:/2016album/",
+        "image": "/images/deadmau5_w2016album.jpg",
+        "year": 2016,
+        "songs": [
           {
-            "_name": "4ware"
+            "name": "4ware"
           },
           {
-            "_name": "2448"
+            "name": "2448"
           },
           {
-            "_name": "Cat Thruster"
+            "name": "Cat Thruster"
           }
         ]
       }
@@ -152,15 +152,15 @@
   },
 
   {
-    "_name": "Hank Williams",
-    "_albums": [
+    "name": "Hank Williams",
+    "albums": [
       {
-        "_name": "Beyond the sunset",
-        "_image": "/images/hank_williams_beyond_the_sunset.jpg",
-        "_year": 1953,
-        "_songs": [
+        "name": "Beyond the sunset",
+        "image": "/images/hank_williams_beyond_the_sunset.jpg",
+        "year": 1953,
+        "songs": [
           {
-            "_name": "Men with broken hearts"
+            "name": "Men with broken hearts"
           }
         ]
       }
@@ -168,18 +168,18 @@
   },
 
   {
-    "_name": "Jayke Orvis",
-    "_albums": [
+    "name": "Jayke Orvis",
+    "albums": [
       {
-        "_name": "It'a all been said",
-        "_image": "/images/jayke_orvis_its_all_been_said.jpg",
-        "_year": 2010,
-        "_songs": [
+        "name": "It'a all been said",
+        "image": "/images/jayke_orvis_its_all_been_said.jpg",
+        "year": 2010,
+        "songs": [
           {
-            "_name": "Crooked smile"
+            "name": "Crooked smile"
           },
           {
-            "_name": "Lead me astray"
+            "name": "Lead me astray"
           }
         ]
       }
@@ -187,21 +187,21 @@
   },
 
   {
-    "_name": "Jose Gonzalez",
-    "_albums": [
+    "name": "Jose Gonzalez",
+    "albums": [
       {
-        "_name": "El Presi-Exitos",
-        "_image": "/images/jose_gonzalez_el_presi_exitos.jpg",
-        "_year": 2017,
-        "_songs": [
+        "name": "El Presi-Exitos",
+        "image": "/images/jose_gonzalez_el_presi_exitos.jpg",
+        "year": 2017,
+        "songs": [
           {
-            "_name": "Cuando Sali de Asturias"
+            "name": "Cuando Sali de Asturias"
           },
           {
-            "_name": "De Covadonga"
+            "name": "De Covadonga"
           },
           {
-            "_name": "Dos Cosas Hay en Asturias"
+            "name": "Dos Cosas Hay en Asturias"
           }
         ]
       }
@@ -209,21 +209,21 @@
   },
 
   {
-    "_name": "Kodak Black",
-    "_albums": [
+    "name": "Kodak Black",
+    "albums": [
       {
-        "_name": "Painting Pictures",
-        "_image": "/images/kodak_black_painting_pictures.jpg",
-        "_year": 2017,
-        "_songs": [
+        "name": "Painting Pictures",
+        "image": "/images/kodak_black_painting_pictures.jpg",
+        "year": 2017,
+        "songs": [
           {
-            "_name": "Day for Day"
+            "name": "Day for Day"
           },
           {
-            "_name": "Coolin and Booted"
+            "name": "Coolin and Booted"
           },
           {
-            "_name": "Candy Paint"
+            "name": "Candy Paint"
           }
         ]
       }
@@ -231,21 +231,21 @@
   },
 
   {
-    "_name": "Lera Lynn",
-    "_albums": [
+    "name": "Lera Lynn",
+    "albums": [
       {
-        "_name": "Resistor",
-        "_image": "/images/lera_lynn_resistor.jpg",
-        "_year": 2016,
-        "_songs": [
+        "name": "Resistor",
+        "image": "/images/lera_lynn_resistor.jpg",
+        "year": 2016,
+        "songs": [
           {
-            "_name": "Shape Shifter"
+            "name": "Shape Shifter"
           },
           {
-            "_name": "What You Done"
+            "name": "What You Done"
           },
           {
-            "_name": "Drive"
+            "name": "Drive"
           }
         ]
       }
@@ -253,21 +253,21 @@
   },
 
   {
-    "_name": "Of Monsters and Man",
-    "_albums": [
+    "name": "Of Monsters and Man",
+    "albums": [
       {
-        "_name": "Beneath the Skin",
-        "_image": "/images/omam_beneath_the_skin.jpg",
-        "_year": 2015,
-        "_songs": [
+        "name": "Beneath the Skin",
+        "image": "/images/omam_beneath_the_skin.jpg",
+        "year": 2015,
+        "songs": [
           {
-            "_name": "Crystals"
+            "name": "Crystals"
           },
           {
-            "_name": "Human"
+            "name": "Human"
           },
           {
-            "_name": "Hunger"
+            "name": "Hunger"
           }
         ]
       }
@@ -275,18 +275,18 @@
   },
 
   {
-    "_name": "Radiohead",
-    "_albums": [
+    "name": "Radiohead",
+    "albums": [
       {
-        "_name": "A moon shaped pool",
-        "_image": "/images/radiohead_a_moon_shaped_pool.jpg",
-        "_year": 2016,
-        "_songs": [
+        "name": "A moon shaped pool",
+        "image": "/images/radiohead_a_moon_shaped_pool.jpg",
+        "year": 2016,
+        "songs": [
           {
-            "_name": "Burn the witch"
+            "name": "Burn the witch"
           },
           {
-            "_name": "Daydreaming"
+            "name": "Daydreaming"
           }
         ]
       }
@@ -294,31 +294,31 @@
   },
 
   {
-    "_name": "Santana",
-    "_albums": [
+    "name": "Santana",
+    "albums": [
       {
-        "_name": "Supernatural",
-        "_image": "/images/santana_supernatural.jpg",
-        "_year": 1999,
-        "_songs": [
+        "name": "Supernatural",
+        "image": "/images/santana_supernatural.jpg",
+        "year": 1999,
+        "songs": [
           {
-            "_name": "Love Of My Love"
+            "name": "Love Of My Love"
           },
           {
-            "_name": "Put Your Lights"
+            "name": "Put Your Lights"
           }
         ]
       },
       {
-        "_name": "Moonflower",
-        "_image": "/images/santana_moonflower.jpg",
-        "_year": 1977,
-        "_songs": [
+        "name": "Moonflower",
+        "image": "/images/santana_moonflower.jpg",
+        "year": 1977,
+        "songs": [
           {
-            "_name": "Dawn"
+            "name": "Dawn"
           },
           {
-            "_name": "Carnaval"
+            "name": "Carnaval"
           }
         ]
       }
@@ -326,21 +326,21 @@
   },
 
   {
-    "_name": "Sturgill Simpson",
-    "_albums": [
+    "name": "Sturgill Simpson",
+    "albums": [
       {
-        "_name": "A Sailor's Guide to Earth",
-        "_image": "/images/sturgill_simpson_a_sailors_guide_to_earth.jpg",
-        "_year": 2016,
-        "_songs": [
+        "name": "A Sailor's Guide to Earth",
+        "image": "/images/sturgill_simpson_a_sailors_guide_to_earth.jpg",
+        "year": 2016,
+        "songs": [
           {
-            "_name": "Welcome to Earth"
+            "name": "Welcome to Earth"
           },
           {
-            "_name": "Breakers Roar"
+            "name": "Breakers Roar"
           },
           {
-            "_name": "Keep It Between the Lines"
+            "name": "Keep It Between the Lines"
           }
         ]
       }
@@ -348,18 +348,18 @@
   },
 
   {
-    "_name": "Tom Waits",
-    "_albums": [
+    "name": "Tom Waits",
+    "albums": [
       {
-        "_name": "Rain dogs",
-        "_image": "/images/tom_waits_rain_dogs.jpg",
-        "_year": 1985,
-        "_songs": [
+        "name": "Rain dogs",
+        "image": "/images/tom_waits_rain_dogs.jpg",
+        "year": 1985,
+        "songs": [
           {
-            "_name": "Singapore"
+            "name": "Singapore"
           },
           {
-            "_name": "Clap hands"
+            "name": "Clap hands"
           }
         ]
       }
