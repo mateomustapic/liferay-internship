@@ -38,7 +38,7 @@
 	<aui:input cssClass="search-button" data-resourceURL="<%= resourceURL.toString() %>" label="" name="search" type="button" value="Search" />
 </div>
 
-<div class="front-div front-page-content-show">
+<div class="home-div" id="<portlet:namespace />home-page-content">
 	<div class="block tracks">
 		<h3>
 			<liferay-ui:message key="what-is-new-on-soundsgood" />
@@ -133,11 +133,7 @@
 	</div>
 </div>
 
-<div class="block front-div search-result-hide">
-	<div class="search-result-title"></div>
-
-	<div class="search-result-artist"></div>
-</div>
+<div class="block hide home-div search-result" id="<portlet:namespace />home-search-result"></div>
 
 <div class="block footer">
 	<liferay-ui:message key="soundsgood" />

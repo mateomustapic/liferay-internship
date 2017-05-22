@@ -1,6 +1,14 @@
 AUI().add(
 	'music',
 	function(A) {
+		var TPL_ALBUM = '<img class="search-result-picture" src=' + '/music-portlet' + '{picture}' + ' />' +
+
+						'<div class="search-result-album-name">{album}</div>';
+
+		var TPL_ARTIST = '<div class="search-result-artist-name">{name}</div>';
+
+		var TPL_SONG = '<div class="search-result-song">{song}</div>';
+
 		var Music = A.Component.create(
 			{
 				AUGMENTS: [Liferay.PortletBase],
@@ -40,22 +48,19 @@ AUI().add(
 
 						var resourceURL = searchButton.attr('data-resourceURL');
 
-						var frontPageContentContainer = A.one('.front-page-content-show');
+						var homePageContentContainer = instance.byId('home-page-content');
 
-						if (frontPageContentContainer) {
-							frontPageContentContainer.addClass('front-page-content-hide');
+						if (homePageContentContainer) {
+							homePageContentContainer.hide();
 						}
 
-						var searchResultContainer = A.one('.search-result-hide');
+						var homeSearchResultContainer = instance.byId('home-search-result');
 
-						if (searchResultContainer) {
-							searchResultContainer.addClass('search-result-show');
+						if (homeSearchResultContainer) {
+							homeSearchResultContainer.show();
 						}
 
-						var searchResultArtistContainer = A.one('.search-result-artist');
-						var searchResultTitleContainer = A.one('.search-result-title');
-
-						if (music && resourceURL && searchResultArtistContainer && searchResultTitleContainer) {
+						if (music && resourceURL) {
 							A.io.request(
 								resourceURL,
 								{
@@ -73,34 +78,50 @@ AUI().add(
 											var count = Object.keys(object).length;
 
 											if (count > 1) {
-												searchResultTitleContainer.html(object._name);
+												homeSearchResultContainer.empty();
 
-												searchResultArtistContainer.removeClass('search-result-hide');
+												var artistNode = A.Node.create(
+													A.Lang.sub(
+														TPL_ARTIST,
+														{
+															name: object.name
+														}
+													)
+												);
 
-												searchResultArtistContainer.empty();
+												homeSearchResultContainer.append(artistNode);
 
-												for (var i = 0; i < object._albums.length; i++) {
-													var albumPicture = '<img src=' + '/music-portlet' + object._albums[i]._image + ' />';
+												for (var i = 0; i < object.albums.length; i++) {
 
-													var albumText = '<p><br>Album: ' + object._albums[i]._name + '<br>';
+													var albumNode = A.Node.create(
+														A.Lang.sub(
+															TPL_ALBUM,
+															{
+																album: object.albums[i].name,
+																picture: object.albums[i].image
+															}
+														)
+													);
 
-													albumText += 'Year: ' + object._albums[i]._year + '<br>';
+													homeSearchResultContainer.append(albumNode);
 
-													for (var j = 0; j < object._albums[i]._songs.length; j++) {
-														albumText += 'Song: ' + object._albums[i]._songs[j]._name + '<br>';
+													for (var j = 0; j < object.albums[i].songs.length; j++) {
+														var songNode = A.Node.create(
+															A.Lang.sub(
+																TPL_SONG,
+																{
+																	song: object.albums[i].songs[j].name
+																}
+															)
+														);
+
+														homeSearchResultContainer.append(songNode);
 													}
-
-													albumText += '</p>';
-
-													searchResultArtistContainer.append(albumPicture);
-
-													searchResultArtistContainer.append(albumText);
 												}
+
 											}
 											else {
-												searchResultTitleContainer.html(object.not_found);
-
-												searchResultArtistContainer.addClass('search-result-hide');
+												homeSearchResultContainer.html(object.not_found);
 											}
 										}
 									}
