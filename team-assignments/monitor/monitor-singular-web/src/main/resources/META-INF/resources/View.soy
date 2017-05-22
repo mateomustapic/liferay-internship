@@ -2,7 +2,19 @@
 
 /**
  * Prints the Monitor Singular Web portlet View.
+ *
+ * @param id
+ * @param onlineServerCount
+ * @param serverCountDifference
  */
 {template .render}
-	<h1>View</h1>
+	<div id="{$id}">
+		<h1>{$onlineServerCount ? $onlineServerCount : 0}</h1>
+		<small>{$serverCountDifference ? $serverCountDifference : 0}</small>
+		{if $serverCountDifference > 0}
+			<span class="icon-monospaced icon-arrow-up"></span>
+		{elseif $serverCountDifference < 0}
+			<span class="icon-monospaced icon-arrow-down"></span>
+		{/if}
+	</div>
 {/template}
