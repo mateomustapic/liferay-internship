@@ -8,13 +8,29 @@
  * @param serverCountDifference
  */
 {template .render}
-	<div id="{$id}">
-		<h1>{$onlineServerCount ? $onlineServerCount : 0}</h1>
-		<small>{$serverCountDifference ? $serverCountDifference : 0}</small>
-		{if $serverCountDifference > 0}
-			<span class="icon-monospaced icon-arrow-up"></span>
-		{elseif $serverCountDifference < 0}
-			<span class="icon-monospaced icon-arrow-down"></span>
-		{/if}
+	<div class="monitor-singular-web" id="{$id}">
+		<h1 class="online-server-count">{$onlineServerCount}</h1>
+
+		<div class="server-count-difference">
+			{if $serverCountDifference > 0}
+				<h4 class="difference-amount difference-positive">
+					{$serverCountDifference}
+				</h4>
+
+				<span class="difference-arrow icon-monospaced icon-2x icon-long-arrow-up"></span>
+			{elseif $serverCountDifference < 0}
+				<h4 class="difference-amount difference-negative">
+					{$serverCountDifference}
+				</h4>
+
+				<span class="difference-arrow icon-monospaced icon-2x icon-long-arrow-down"></span>
+			{else}
+				<h4 class="difference-amount difference-zero">
+					{$serverCountDifference}
+				</h4>
+
+				<span>•</span>
+			{/if}
+		</div>
 	</div>
 {/template}

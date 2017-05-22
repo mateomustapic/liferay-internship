@@ -8,7 +8,7 @@ class View extends Component {
 	};
 
 	setServerCountDifference() {
-		return 3;
+		return -3;
 	}
 }
 

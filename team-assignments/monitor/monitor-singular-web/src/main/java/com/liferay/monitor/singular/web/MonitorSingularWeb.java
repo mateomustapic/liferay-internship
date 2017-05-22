@@ -38,6 +38,7 @@ import org.osgi.service.component.annotations.Component;
 		"com.liferay.portlet.application-type=widget",
 		"com.liferay.portlet.css-class-wrapper=monitor",
 		"com.liferay.portlet.display-category=category.monitor",
+		"com.liferay.portlet.header-portlet-css=/View.css",
 		"com.liferay.portlet.layout-cacheable=true",
 		"com.liferay.portlet.preferences-owned-by-group=true",
 		"com.liferay.portlet.private-request-attributes=false",
