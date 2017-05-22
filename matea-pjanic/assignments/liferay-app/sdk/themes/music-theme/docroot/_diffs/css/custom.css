@@ -1,3 +1,5 @@
+@import "mixins";
+
 $black: #000;
 $darkyellow: #FFBC42;
 $gray: #D3D3D3;
@@ -112,28 +114,6 @@ tr {
 	}
 }
 
-.search-result-artist {
-	width: 250px;
-
-	p {
-		margin: 10px auto;
-	}
-}
-
-.search-result-hide {
-	display: none;
-}
-
-.search-result-show {
-	display: block;
-}
-
-.search-result-title {
-	margin: 10px auto;
-	text-transform: uppercase;
-	width: 200px;
-}
-
 .site-name {
 	font-size: 16px;
 }
@@ -142,15 +122,20 @@ tr {
 	position: absolute;
 }
 
-@media only screen and (max-width: 1200px) {
+@include respond-to(phone, tablet) {
+	td {
+		padding-right: 30px;
+	}
+
 	.aui {
 		.fieldset {
 			width: 300px;
 		}
 
 		h2 {
+			font-size: 45px;
 			margin-top: 250px;
-			width: 700px;
+			width: 500px;
 		}
 
 		input[type="text"] {
@@ -159,57 +144,19 @@ tr {
 	}
 }
 
-@media only screen and (max-width: 1000px) {
+@include respond-to(phone) {
 	td {
-		padding-right: 30px;
-	}
-
-	.aui h2 {
-		font-size: 45px;
-		width: 500px;
-	}
-}
-
-@media only screen and (max-width: 800px) {
-	td {
+		font-size: 12px;
 		padding-right: 20px;
 	}
 
 	.account-link {
 		color: $darkyellow;
 	}
-}
-
-@media only screen and (max-width: 600px) {
-	td {
-		font-size: 12px;
-	}
 
 	.aui h2 {
 		font-size: 40px;
 		margin-top: 100px;
 		width: 360px;
-	}
-
-	.search-result-artist {
-		width: 180px;
-	}
-}
-
-@media only screen and (max-width: 400px) {
-	.aui {
-		h2 {
-			font-size: 30px;
-			line-height: 40px;
-			width: 300px;
-		}
-
-		input[type="text"] {
-			width: 207px;
-		}
-
-		.fieldset {
-			width: 220px;
-		}
 	}
 }

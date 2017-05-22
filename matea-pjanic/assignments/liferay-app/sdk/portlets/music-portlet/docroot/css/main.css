@@ -1,3 +1,5 @@
+@import "mixins";
+
 $darkyellow: #FFBC42;
 
 .artist {
@@ -33,16 +35,12 @@ $darkyellow: #FFBC42;
 .container-fluid {
 	background: url(../images/front.jpg) no-repeat center top;
 	background-size: cover;
-	height: 800px;
+	height: 700px;
 }
 
-.front-div {
-	margin: 300px auto 0 auto;
+.home-div {
+	margin: 200px auto 0 auto;
 	max-width: 1000px;
-}
-
-.front-page-content-hide {
-	display: none;
 }
 
 .more-info-td {
@@ -81,8 +79,25 @@ $darkyellow: #FFBC42;
 	margin: 50px 0;
 }
 
-.search-result-hide {
+.search-result {
 	min-height: 500px;
+}
+
+.search-result-album-name {
+	margin: 20px;
+}
+
+.search-result-artist-name {
+	margin: 20px 40px;
+	text-transform: uppercase;
+}
+
+.search-result-picture {
+	width: 250px;
+}
+
+.search-result-song {
+	margin: 5px 0;
 }
 
 .tracks-inner {
@@ -90,23 +105,23 @@ $darkyellow: #FFBC42;
 	text-align: center;
 }
 
-@media only screen and (max-width: 1200px) {
+@include respond-to(phone, tablet) {
 	.container-fluid {
 		height: 600px;
 	}
 
-	.front-div {
+	.home-div {
 		margin-top: 120px;
 	}
 }
 
-@media only screen and (max-width: 800px) {
+@include respond-to(phone) {
 	.account-wrapper {
 		border-color: $darkyellow;
 
 		&:hover {
 			opacity: 0.8;
-		}
+			}
 	}
 
 	.artist-picture {
@@ -114,39 +129,19 @@ $darkyellow: #FFBC42;
 		width: 120px;
 	}
 
-	.content {
-		margin: 0 10px;
-	}
-
-	.front-div {
-		margin-top: 120px;
-	}
-}
-
-@media only screen and (max-width: 600px) {
 	.container-fluid {
 		height: 400px;
 	}
 
-	.front-div {
+	.content {
+		margin: 0 10px;
+	}
+
+	.home-div {
 		margin-top: 80px;
 	}
 
-	.more-info-wrapper {
-		width: 50px;
-	}
-}
-
-@media only screen and (max-width: 400px) {
-	.artist {
-		margin: 5px 5px 0 5px;
-	}
-
-	.container-fluid {
-		height: 350px;
-	}
-
-	.tour-name {
-		display: none;
+	.search-result-picture {
+		width: 200px;
 	}
 }
