@@ -14,7 +14,6 @@
 
 package com.liferay.monitor.singular.web;
 
-import com.liferay.portal.kernel.template.Template;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.portlet.bridge.soy.SoyPortlet;
 
@@ -65,11 +64,13 @@ public class MonitorSingularWeb extends SoyPortlet {
 			RenderRequest renderRequest, RenderResponse renderResponse)
 		throws IOException, PortletException {
 
-		Integer onlineServerCount = ParamUtil.getInteger(renderRequest, "onlineServerCount");
+		Integer onlineServerCount = ParamUtil.getInteger(
+			renderRequest, "onlineServerCount");
 
 		template.put("onlineServerCount", onlineServerCount);
 
-		Integer serverCountDifference = ParamUtil.getInteger(renderRequest, "serverCountDifference");
+		Integer serverCountDifference = ParamUtil.getInteger(
+			renderRequest, "serverCountDifference");
 
 		template.put("serverCountDifference", serverCountDifference);
 
