@@ -79,9 +79,7 @@ public class MusicUtil {
 
 		gsonBuilder.setFieldNamingStrategy(customPolicy);
 
-		Gson gson = gsonBuilder.create();
-
-		return gson;
+		return gsonBuilder.create();
 	}
 
 	private static <T> List<T> getList(String filename, Class<T> type)
