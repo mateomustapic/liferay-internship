@@ -35,8 +35,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import org.joda.time.DateTime;
-
 /**
  * @author Matea Pjanic
  */
@@ -54,9 +52,11 @@ public class MusicUtil {
 			events, new Comparator<Event>() {
 
 				@Override
-				public int compare(Event o1, Event o2) {
-					return new DateTime(
-						o1.getDate()).compareTo(new DateTime(o2.getDate()));
+				public int compare(Event event1, Event event2) {
+					Long date1 = event1.getDate();
+					Long date2 = event2.getDate();
+
+					return date1.compareTo(date2);
 				}
 			}
 		);
@@ -68,8 +68,10 @@ public class MusicUtil {
 		FieldNamingStrategy customPolicy = new FieldNamingStrategy() {
 
 			@Override
-			public String translateName(Field f) {
-				return f.getName().substring(1);
+			public String translateName(Field field) {
+				String name = field.getName();
+
+				return name.substring(1);
 			}
 		};
 
@@ -92,7 +94,9 @@ public class MusicUtil {
 		Type typeList = new TypeToken<ArrayList<T>>(){}.where(
 			new TypeParameter<T>(){}, type).getType();
 
-		List<T> list = getNamingStrategyGson().fromJson(jsonText, typeList);
+		Gson gson = getNamingStrategyGson();
+
+		List<T> list = gson.fromJson(jsonText, typeList);
 
 		return list;
 	}

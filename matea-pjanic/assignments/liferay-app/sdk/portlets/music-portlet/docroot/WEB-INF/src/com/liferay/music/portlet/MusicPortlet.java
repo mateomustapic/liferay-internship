@@ -14,6 +14,8 @@
 
 package com.liferay.music.portlet;
 
+import com.google.gson.Gson;
+
 import com.liferay.music.portlet.model.Bend;
 import com.liferay.music.portlet.util.MusicUtil;
 import com.liferay.portal.kernel.json.JSONFactoryUtil;
@@ -68,7 +70,9 @@ public class MusicPortlet extends MVCPortlet {
 
 					found = true;
 
-					String json = getNamingStrategyGson().toJson(bend);
+					Gson gson = getNamingStrategyGson();
+
+					String json = gson.toJson(bend);
 
 					writeJSON(resourceRequest, resourceResponse, json);
 
