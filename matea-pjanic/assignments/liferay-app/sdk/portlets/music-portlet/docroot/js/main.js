@@ -1,6 +1,8 @@
 AUI().add(
 	'music',
 	function(A) {
+		var Lang = A.Lang;
+
 		var TPL_ALBUM = '<img class="search-result-picture" src="/music-portlet{picture}" />' +
 			'<div class="search-result-album-name">{album}</div>';
 
@@ -80,7 +82,7 @@ AUI().add(
 												homeSearchResultContainer.empty();
 
 												var artistNode = A.Node.create(
-													A.Lang.sub(
+													Lang.sub(
 														TPL_ARTIST,
 														{
 															name: object.name
@@ -91,9 +93,8 @@ AUI().add(
 												homeSearchResultContainer.append(artistNode);
 
 												for (var i = 0; i < object.albums.length; i++) {
-
 													var albumNode = A.Node.create(
-														A.Lang.sub(
+														Lang.sub(
 															TPL_ALBUM,
 															{
 																album: object.albums[i].name,
@@ -106,7 +107,7 @@ AUI().add(
 
 													for (var j = 0; j < object.albums[i].songs.length; j++) {
 														var songNode = A.Node.create(
-															A.Lang.sub(
+															Lang.sub(
 																TPL_SONG,
 																{
 																	song: object.albums[i].songs[j].name
