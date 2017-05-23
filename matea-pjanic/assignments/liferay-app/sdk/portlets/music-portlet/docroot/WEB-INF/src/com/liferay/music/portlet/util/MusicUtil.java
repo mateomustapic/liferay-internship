@@ -64,7 +64,7 @@ public class MusicUtil {
 		return events;
 	}
 
-	public static Gson getNamingStrategyGson() {
+	public static Gson getGson() {
 		FieldNamingStrategy customPolicy = new FieldNamingStrategy() {
 
 			@Override
@@ -94,7 +94,7 @@ public class MusicUtil {
 		Type typeList = new TypeToken<ArrayList<T>>(){}.where(
 			new TypeParameter<T>(){}, type).getType();
 
-		Gson gson = getNamingStrategyGson();
+		Gson gson = getGson();
 
 		List<T> list = gson.fromJson(jsonText, typeList);
 

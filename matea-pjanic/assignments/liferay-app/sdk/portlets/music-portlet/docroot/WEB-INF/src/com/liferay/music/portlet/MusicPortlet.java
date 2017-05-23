@@ -35,7 +35,7 @@ import javax.portlet.PortletException;
 import javax.portlet.ResourceRequest;
 import javax.portlet.ResourceResponse;
 
-import static com.liferay.music.portlet.util.MusicUtil.getNamingStrategyGson;
+import static com.liferay.music.portlet.util.MusicUtil.getGson;
 
 /**
  * @author Matea Pjanic
@@ -70,7 +70,7 @@ public class MusicPortlet extends MVCPortlet {
 
 					found = true;
 
-					Gson gson = getNamingStrategyGson();
+					Gson gson = getGson();
 
 					String json = gson.toJson(bend);
 
