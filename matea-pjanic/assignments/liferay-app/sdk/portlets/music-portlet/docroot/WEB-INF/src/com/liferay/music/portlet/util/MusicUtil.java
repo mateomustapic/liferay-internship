@@ -66,6 +66,7 @@ public class MusicUtil {
 
 	public static Gson getNamingStrategyGson() {
 		FieldNamingStrategy customPolicy = new FieldNamingStrategy() {
+
 			@Override
 			public String translateName(Field f) {
 				return f.getName().substring(1);

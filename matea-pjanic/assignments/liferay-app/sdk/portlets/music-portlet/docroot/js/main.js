@@ -2,8 +2,7 @@ AUI().add(
 	'music',
 	function(A) {
 		var TPL_ALBUM = '<img class="search-result-picture" src=' + '/music-portlet' + '{picture}' + ' />' +
-
-						'<div class="search-result-album-name">{album}</div>';
+			'<div class="search-result-album-name">{album}</div>';
 
 		var TPL_ARTIST = '<div class="search-result-artist-name">{name}</div>';
 
