@@ -5,6 +5,10 @@
 
 /* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
 
+html, body {
+	background-color: #333;
+}
+
 .portlet-barebone.monitor {
 	.portlet-title-text {
 		display: none;
