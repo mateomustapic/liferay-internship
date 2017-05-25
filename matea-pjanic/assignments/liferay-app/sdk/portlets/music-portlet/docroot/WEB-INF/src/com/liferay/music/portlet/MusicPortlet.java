@@ -17,7 +17,7 @@ package com.liferay.music.portlet;
 import com.google.gson.Gson;
 
 import com.liferay.music.portlet.model.Bend;
-import com.liferay.music.portlet.util.MusicUtil;
+import com.liferay.music.portlet.util.MusicSingleton;
 import com.liferay.portal.kernel.json.JSONFactoryUtil;
 import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.language.LanguageUtil;
@@ -34,8 +34,6 @@ import java.util.List;
 import javax.portlet.PortletException;
 import javax.portlet.ResourceRequest;
 import javax.portlet.ResourceResponse;
-
-import static com.liferay.music.portlet.util.MusicUtil.getGson;
 
 /**
  * @author Matea Pjanic
@@ -54,7 +52,7 @@ public class MusicPortlet extends MVCPortlet {
 				return;
 			}
 
-			List<Bend> bends = MusicUtil.getBends();
+			List<Bend> bends = MusicSingleton.getInstance().getBendList();
 
 			if (bends.isEmpty()) {
 				return;
@@ -70,7 +68,7 @@ public class MusicPortlet extends MVCPortlet {
 
 					found = true;
 
-					Gson gson = getGson();
+					Gson gson = MusicSingleton.getGson();
 
 					String json = gson.toJson(bend);
 

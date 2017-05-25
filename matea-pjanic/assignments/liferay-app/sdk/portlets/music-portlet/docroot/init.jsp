@@ -24,7 +24,7 @@
 <%@ page import="com.liferay.music.portlet.model.Album" %><%@
 page import="com.liferay.music.portlet.model.Bend" %><%@
 page import="com.liferay.music.portlet.model.Event" %><%@
-page import="com.liferay.music.portlet.util.MusicUtil" %><%@
+page import="com.liferay.music.portlet.util.MusicSingleton" %><%@
 page import="com.liferay.portal.util.PortalUtil" %>
 
 <%@ page import="java.util.*" %><%@
