@@ -79,45 +79,51 @@ AUI().add(
 											var count = Object.keys(object).length;
 
 											if (count > 1) {
-												homeSearchResultContainer.empty();
 
-												var artistNode = A.Node.create(
-													Lang.sub(
-														TPL_ARTIST,
-														{
-															name: object.name
-														}
-													)
+												var albums = [];
+
+												var artist = [];
+
+												var artistHtml = Lang.sub(
+													TPL_ARTIST,
+													{
+														name: object.name
+													}
 												);
 
-												homeSearchResultContainer.append(artistNode);
+												artist.push(artistHtml);
 
 												for (var i = 0; i < object.albums.length; i++) {
-													var albumNode = A.Node.create(
-														Lang.sub(
-															TPL_ALBUM,
-															{
-																album: object.albums[i].name,
-																picture: object.albums[i].image
-															}
-														)
+													var albumHtml = Lang.sub(
+														TPL_ALBUM,
+														{
+															album: object.albums[i].name,
+															picture: object.albums[i].image
+														}
 													);
 
-													homeSearchResultContainer.append(albumNode);
+													albums.push(albumHtml);
+
+													var songs = [];
 
 													for (var j = 0; j < object.albums[i].songs.length; j++) {
-														var songNode = A.Node.create(
-															Lang.sub(
-																TPL_SONG,
-																{
-																	song: object.albums[i].songs[j].name
-																}
-															)
+														var songHtml = Lang.sub(
+															TPL_SONG,
+															{
+																song: object.albums[i].songs[j].name
+															}
 														);
 
-														homeSearchResultContainer.append(songNode);
+														songs.push(songHtml);
+
 													}
+
+													albums.push(songs.join(''));
 												}
+
+												artist.push(albums.join(''));
+
+												homeSearchResultContainer.html(artist);
 
 											}
 											else {
