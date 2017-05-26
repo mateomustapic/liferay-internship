@@ -79,9 +79,7 @@ AUI().add(
 											var count = Object.keys(object).length;
 
 											if (count > 1) {
-
 												var albums = [];
-
 												var artist = [];
 
 												var artistHtml = Lang.sub(

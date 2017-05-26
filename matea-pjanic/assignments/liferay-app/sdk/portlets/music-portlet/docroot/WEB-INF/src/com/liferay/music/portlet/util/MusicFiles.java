@@ -88,7 +88,6 @@ public class MusicFiles {
 	}
 
 	private MusicFiles() throws IOException {
-
 		InputStream is = getInputStream("../../../../../../../json/bends.json");
 
 		_bends = getList(is, Bend.class);
