@@ -38,10 +38,6 @@ import java.util.List;
  */
 public class MusicFiles {
 
-	List<Bend> bends;
-
-	List<Event> events;
-
 	public static Gson getGson() {
 		FieldNamingStrategy customPolicy = new FieldNamingStrategy() {
 
@@ -61,19 +57,19 @@ public class MusicFiles {
 	}
 
 	public static synchronized MusicFiles getInstance() throws IOException {
-		if (instance == null) {
-			instance = new MusicFiles();
+		if (_instance == null) {
+			_instance = new MusicFiles();
 		}
 
-		return instance;
+		return _instance;
 	}
 
 	public List<Bend> getBends() {
-		return bends;
+		return _bends;
 	}
 
 	public List<Event> getEvents() {
-		return events;
+		return _events;
 	}
 
 	private static <T> List<T> getList(InputStream is, Class<T> type)
@@ -95,13 +91,13 @@ public class MusicFiles {
 
 		InputStream is = getInputStream("../../../../../../../json/bends.json");
 
-		bends = getList(is, Bend.class);
+		_bends = getList(is, Bend.class);
 
 		is.close();
 
 		is = getInputStream("../../../../../../../json/events.json");
 
-		events = getList(is, Event.class);
+		_events = getList(is, Event.class);
 
 		is.close();
 	}
@@ -110,6 +106,9 @@ public class MusicFiles {
 		return MusicFiles.class.getResourceAsStream(filename);
 	}
 
-	private static MusicFiles instance = null;
+	private static MusicFiles _instance = null;
+
+	private static List<Bend> _bends;
+	private static List<Event> _events;
 
 }
