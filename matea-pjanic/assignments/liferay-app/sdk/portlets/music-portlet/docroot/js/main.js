@@ -79,8 +79,7 @@ AUI().add(
 											var count = Object.keys(object).length;
 
 											if (count > 1) {
-												var albums = [];
-												var artist = [];
+												var html = [];
 
 												var artistHtml = Lang.sub(
 													TPL_ARTIST,
@@ -89,7 +88,9 @@ AUI().add(
 													}
 												);
 
-												artist.push(artistHtml);
+												html.push(artistHtml);
+
+												var albums = [];
 
 												for (var i = 0; i < object.albums.length; i++) {
 													var albumHtml = Lang.sub(
@@ -119,9 +120,9 @@ AUI().add(
 													albums.push(songs.join(''));
 												}
 
-												artist.push(albums.join(''));
+												html.push(albums.join(''));
 
-												homeSearchResultContainer.html(artist);
+												homeSearchResultContainer.html(html);
 
 											}
 											else {
