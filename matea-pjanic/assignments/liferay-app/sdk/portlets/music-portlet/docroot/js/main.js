@@ -3,6 +3,8 @@ AUI().add(
 	function(A) {
 		var Lang = A.Lang;
 
+		var STR_BLANK = '';
+
 		var TPL_ALBUM = '<img class="search-result-picture" src="/music-portlet{picture}" />' +
 			'<div class="search-result-album-name">{album}</div>';
 
@@ -117,10 +119,10 @@ AUI().add(
 
 													}
 
-													albums.push(songs.join(''));
+													albums.push(songs.join(STR_BLANK));
 												}
 
-												html.push(albums.join(''));
+												html.push(albums.join(STR_BLANK));
 
 												homeSearchResultContainer.html(html);
 
@@ -134,7 +136,7 @@ AUI().add(
 							);
 						}
 
-						searchInput.val('');
+						searchInput.val(STR_BLANK);
 					}
 				}
 			}
