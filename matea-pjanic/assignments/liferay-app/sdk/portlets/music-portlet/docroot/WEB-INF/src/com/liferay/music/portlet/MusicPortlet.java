@@ -89,7 +89,7 @@ public class MusicPortlet extends MVCPortlet {
 					getPortletConfig(), resourceRequest.getLocale(),
 					"sorry-we-currently-dont-have-that-in-our-base");
 
-				jsonObject.put("not_found", message);
+				jsonObject.put("notFound", message);
 
 				writeJSON(resourceRequest, resourceResponse, jsonObject);
 			}

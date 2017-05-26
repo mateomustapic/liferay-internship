@@ -128,7 +128,7 @@ AUI().add(
 
 											}
 											else {
-												homeSearchResultContainer.html(object.not_found);
+												homeSearchResultContainer.html(object.notFound);
 											}
 										}
 									}
