@@ -47,11 +47,15 @@
 		<div class="tracks-inner">
 
 			<%
-			List<Bend> bends = MusicFiles.getInstance().getBends();
+			MusicFiles musicFiles =	MusicFiles.getInstance();
+
+			List<Bend> bends = musicFiles.getBends();
+
+			DateTime dateTime = new DateTime();
 
 			for (Bend bend : bends) {
 				for (Album album : bend.getAlbums()) {
-					if (album.getYear() == new DateTime().getYear()) {
+					if (album.getYear() == dateTime.getYear()) {
 			%>
 
 				<div class="artist">
@@ -86,7 +90,7 @@
 			<table>
 
 				<%
-				for (Event event : MusicFiles.getInstance().getEvents()) {
+				for (Event event : musicFiles.getEvents()) {
 				%>
 
 				<tr>
@@ -107,12 +111,14 @@
 					<td>
 
 						<%
-						DateTime date = new DateTime(event.getDate()*1000);
+						long date = event.getDate();
+
+						dateTime = new DateTime(date * 1000);
 
 						DateTimeFormatter userDateFormat = DateTimeFormat.forPattern("dd.MM.yyyy HH:mm");
 						%>
 
-						<%= date.toString(userDateFormat) %>
+						<%= dateTime.toString(userDateFormat) %>
 					</td>
 
 					<td class="more-info-td">
