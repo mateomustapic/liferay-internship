@@ -36,11 +36,11 @@ import java.util.List;
 /**
  * @author Matea Pjanic
  */
-public class MusicSingleton {
+public class MusicFiles {
 
-	List<Bend> bendList;
+	List<Bend> bends;
 
-	List<Event> eventList;
+	List<Event> events;
 
 	public static Gson getGson() {
 		FieldNamingStrategy customPolicy = new FieldNamingStrategy() {
@@ -60,20 +60,20 @@ public class MusicSingleton {
 		return gsonBuilder.create();
 	}
 
-	public static synchronized MusicSingleton getInstance() throws IOException {
+	public static synchronized MusicFiles getInstance() throws IOException {
 		if (instance == null) {
-			instance = new MusicSingleton();
+			instance = new MusicFiles();
 		}
 
 		return instance;
 	}
 
-	public List<Bend> getBendList() {
-		return bendList;
+	public List<Bend> getBends() {
+		return bends;
 	}
 
-	public List<Event> getEventList() {
-		return eventList;
+	public List<Event> getEvents() {
+		return events;
 	}
 
 	private static <T> List<T> getList(InputStream is, Class<T> type)
@@ -91,25 +91,25 @@ public class MusicSingleton {
 		return list;
 	}
 
-	private MusicSingleton() throws IOException {
+	private MusicFiles() throws IOException {
 
 		InputStream is = getInputStream("../../../../../../../json/bends.json");
 
-		bendList = getList(is, Bend.class);
+		bends = getList(is, Bend.class);
 
 		is.close();
 
 		is = getInputStream("../../../../../../../json/events.json");
 
-		eventList = getList(is, Event.class);
+		events = getList(is, Event.class);
 
 		is.close();
 	}
 
 	private InputStream getInputStream(String filename) {
-		return MusicSingleton.class.getResourceAsStream(filename);
+		return MusicFiles.class.getResourceAsStream(filename);
 	}
 
-	private static MusicSingleton instance = null;
+	private static MusicFiles instance = null;
 
 }

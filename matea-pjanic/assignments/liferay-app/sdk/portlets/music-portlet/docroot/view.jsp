@@ -47,7 +47,7 @@
 		<div class="tracks-inner">
 
 			<%
-			List<Bend> bends = MusicSingleton.getInstance().getBendList();
+			List<Bend> bends = MusicFiles.getInstance().getBends();
 
 			for (Bend bend : bends) {
 				for (Album album : bend.getAlbums()) {
@@ -86,7 +86,7 @@
 			<table>
 
 				<%
-				for (Event event : MusicSingleton.getInstance().getEventList()) {
+				for (Event event : MusicFiles.getInstance().getEvents()) {
 				%>
 
 				<tr>
