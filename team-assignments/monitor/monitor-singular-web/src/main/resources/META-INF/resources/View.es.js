@@ -2,7 +2,12 @@ import Component from 'metal-component/src/Component';
 import Soy from 'metal-soy/src/Soy';
 import templates from './View.soy';
 
+let websocket = null;
+
+const wsUri = 'ws://localhost:8080/o/echo';
+
 class View extends Component {
+
 	animateValue(valueContainerDOM, startingValue, finalValue, animationDuration) {
 		const valueContainer = document.querySelector(valueContainerDOM);
 
@@ -42,16 +47,63 @@ class View extends Component {
 	}
 
 	setOnlineServerCount() {
-		//TODO: startingValue and finalValue are retrieved from the API
-
-		this.animateValue('.online-server-count', startingValue, finalValue, 200);
-
 		return 147;
 	};
 
 	setServerCountDifference() {
 		return -3;
-	}
+	};
+
+	sendMessage(message) {
+		const msg = document.querySelector('#msgInput');
+
+		if (websocket != null) {
+			document.querySelector('#msgInput').value = '';
+
+			websocket.send(msg);
+
+			console.log('Message sent: ' + msg);
+		}
+		else {
+			console.log('Cant send message, the connection is not open');
+		}
+	};
+
+	initWebSocket() {
+		try {
+			if (websocket && websocket.readyState == 1) {
+				websocket.close();
+			}
+
+			websocket = new WebSocket(wsUri);
+
+			websocket.onopen = function(evt) {
+				console.log('CONNECTED');
+			};
+
+			websocket.onclose = function(evt) {
+				console.log('DISCONNECTED');
+			};
+
+			websocket.onmessage = function(evt) {
+				console.log('Message received: ' + evt.data);
+			};
+
+			websocket.onerror = function(evt) {
+				console.log('ERROR: ' + evt.data);
+			};
+		}
+		catch (exception) {
+			this.debugWebSockets('Error: ' + exception);
+		}
+	};
+
+	stopWebSocket() {
+		if (websocket) {
+			websocket.close();
+		}
+	};
+
 }
 
 View.STATE = {
