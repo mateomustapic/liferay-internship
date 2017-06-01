@@ -42,7 +42,7 @@ public class MonitorSingularConfigurator {
 	}
 
 	@Reference(target = "(original.bean=true)")
-	private void setServletContext(ServletContext servletContext) {
+	protected void setServletContext(ServletContext servletContext) {
 		_servletContext = servletContext;
 	}
 
