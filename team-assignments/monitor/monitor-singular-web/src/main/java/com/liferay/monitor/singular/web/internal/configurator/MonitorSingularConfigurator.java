@@ -14,6 +14,7 @@
 
 package com.liferay.monitor.singular.web.internal.configurator;
 
+import java.util.Dictionary;
 import java.util.Hashtable;
 
 import javax.servlet.ServletContext;
@@ -25,14 +26,14 @@ import org.osgi.service.component.annotations.Reference;
 
 /**
  * @author Krešimir Čoko
+ * @author Marko Čikoš
  */
 @Component(immediate = true)
 public class MonitorSingularConfigurator {
 
 	@Activate
 	public void activate(BundleContext bundleContext) {
-		java.util.Dictionary<String, Object> servletContextProps =
-			new Hashtable<>();
+		Dictionary<String, Object> servletContextProps = new Hashtable<>();
 
 		servletContextProps.put("websocket.active", Boolean.TRUE);
 
