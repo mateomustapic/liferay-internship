@@ -3,49 +3,49 @@
 <#include init />
 
 <html class="${root_css_class}" dir="<@liferay.language key="lang.dir" />" lang="${w3c_language_id}">
+	<head>
+		<title>
+			${the_title} - ${company_name}
+		</title>
 
-<head>
-	<title>${the_title} - ${company_name}</title>
+		<meta content="initial-scale=1.0, width=device-width" name="viewport" />
 
-	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+		<@liferay_util["include"] page=top_head_include />
+	</head>
 
-	<@liferay_util["include"] page=top_head_include />
-</head>
+	<body class="${css_class}">
+		<@liferay_ui["quick-access"] contentId="#main-content" />
 
-<body class="${css_class}">
+		<@liferay_util["include"] page=body_top_include />
 
-<@liferay_ui["quick-access"] contentId="#main-content" />
+		<@liferay.control_menu />
 
-<@liferay_util["include"] page=body_top_include />
+		<div class="container-fluid" id="wrapper">
+			<section id="content">
+				<h1 class="hide-accessible">
+					${the_title}
+				</h1>
 
-<@liferay.control_menu />
+				<#if selectable>
+					<@liferay_util["include"] page=content_include />
+				<#else>
+					${portletDisplay.recycle()}
 
-<div class="container-fluid" id="wrapper">
+					${portletDisplay.setTitle(the_title)}
 
-	<section id="content">
-		<h1 class="hide-accessible">${the_title}</h1>
+					<@liferay_theme["wrap-portlet"] page="portlet.ftl">
+						<@liferay_util["include"] page=content_include />
+					</@>
+				</#if>
+			</section>
+		</div>
 
-		<#if selectable>
-			<@liferay_util["include"] page=content_include />
-		<#else>
-			${portletDisplay.recycle()}
+		<@liferay_util["include"] page=body_bottom_include />
 
-			${portletDisplay.setTitle(the_title)}
+		<@liferay_util["include"] page=bottom_include />
 
-			<@liferay_theme["wrap-portlet"] page="portlet.ftl">
-				<@liferay_util["include"] page=content_include />
-			</@>
-		</#if>
-	</section>
-</div>
+		<!-- inject:js -->
+		<!-- endinject -->
 
-<@liferay_util["include"] page=body_bottom_include />
-
-<@liferay_util["include"] page=bottom_include />
-
-<!-- inject:js -->
-<!-- endinject -->
-
-</body>
-
+	</body>
 </html>
