@@ -2,45 +2,6 @@
 
 /**
  * Prints the Monitor Singular Web portlet View.
- *
- * @param id
- * @param onlineServerCount
- * @param serverCountDifference
  */
 {template .render}
-	<div class="monitor-singular-web" id="{$id}">
-		<h1 class="online-server-count">{$onlineServerCount}</h1>
-
-		<div class="server-count-difference">
-			{if $serverCountDifference > 0}
-				<h4 class="difference-amount difference-positive">
-					{$serverCountDifference}
-				</h4>
-
-				<span class="difference-arrow icon-monospaced icon-5x icon-long-arrow-up"></span>
-			{elseif $serverCountDifference < 0}
-				<h4 class="difference-amount difference-negative">
-					{$serverCountDifference}
-				</h4>
-
-				<span class="difference-arrow icon-monospaced icon-5x icon-long-arrow-down"></span>
-			{else}
-				<h4 class="difference-amount difference-zero">
-					{$serverCountDifference}
-				</h4>
-
-				<span>•</span>
-			{/if}
-		</div>
-
-		<button id="connect" name="connect" data-onclick="initWebSocket" value="connect">connect</button>
-
-		<button id="disconnect" name="disconnect" data-onclick="stopWebSocket" value="disconnect">disconnect</button>
-
-//		<button id="state" name="state" onClick="checkWebSocket();" value="state"></button>
-
-		<input id="msgInput" name="message" type="text">
-
-		<button id="send" name="send" data-onclick="sendMessage">send</button>
-	</div>
 {/template}
