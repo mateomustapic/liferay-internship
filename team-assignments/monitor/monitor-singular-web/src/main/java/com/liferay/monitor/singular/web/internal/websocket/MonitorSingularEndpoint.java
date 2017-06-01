@@ -16,12 +16,17 @@ package com.liferay.monitor.singular.web.internal.websocket;
 
 import java.io.IOException;
 
-import javax.websocket.*;
+import javax.websocket.Endpoint;
+import javax.websocket.EndpointConfig;
+import javax.websocket.MessageHandler;
+import javax.websocket.RemoteEndpoint;
+import javax.websocket.Session;
 
 import org.osgi.service.component.annotations.Component;
 
 /**
  * @author Krešimir Čoko
+ * @author Marko Čikoš
  */
 @Component(
 	immediate = true,
