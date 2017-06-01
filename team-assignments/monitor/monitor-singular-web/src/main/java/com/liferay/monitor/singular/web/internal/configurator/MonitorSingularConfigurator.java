@@ -12,7 +12,7 @@
  * details.
  */
 
-package com.liferay.monitor.singular.web;
+package com.liferay.monitor.singular.web.internal.configurator;
 
 import java.util.Hashtable;
 

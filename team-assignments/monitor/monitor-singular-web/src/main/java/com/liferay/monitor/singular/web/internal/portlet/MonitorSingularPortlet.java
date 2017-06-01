@@ -12,7 +12,7 @@
  * details.
  */
 
-package com.liferay.monitor.singular.web;
+package com.liferay.monitor.singular.web.internal.portlet;
 
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.portlet.bridge.soy.SoyPortlet;
@@ -37,7 +37,7 @@ import org.osgi.service.component.annotations.Component;
 		"com.liferay.portlet.application-type=widget",
 		"com.liferay.portlet.css-class-wrapper=monitor",
 		"com.liferay.portlet.display-category=category.monitor",
-		"com.liferay.portlet.header-portlet-css=/View.css",
+		"com.liferay.portlet.header-portlet-css=/MonitorSingular.css",
 		"com.liferay.portlet.layout-cacheable=true",
 		"com.liferay.portlet.preferences-owned-by-group=true",
 		"com.liferay.portlet.private-request-attributes=false",
@@ -45,11 +45,11 @@ import org.osgi.service.component.annotations.Component;
 		"com.liferay.portlet.render-weight=50",
 		"com.liferay.portlet.scopeable=true",
 		"com.liferay.portlet.use-default-template=true",
-		"javax.portlet.display-name=Monitor Singular Web",
+		"javax.portlet.display-name=Monitor Singular",
 		"javax.portlet.expiration-cache=0",
 		"javax.portlet.init-param.copy-request-parameters=true",
 		"javax.portlet.init-param.template-path=/",
-		"javax.portlet.init-param.view-template=View",
+		"javax.portlet.init-param.view-template=MonitorSingular",
 		"javax.portlet.name=monitor_singular_web",
 		"javax.portlet.resource-bundle=content.Language",
 		"javax.portlet.security-role-ref=guest,power-user,user",
@@ -57,7 +57,7 @@ import org.osgi.service.component.annotations.Component;
 	},
 	service = Portlet.class
 )
-public class MonitorSingularWeb extends SoyPortlet {
+public class MonitorSingularPortlet extends SoyPortlet {
 
 	@Override
 	public void render(

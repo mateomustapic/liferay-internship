@@ -12,7 +12,7 @@
  * details.
  */
 
-package com.liferay.monitor.singular.web;
+package com.liferay.monitor.singular.web.internal.websocket;
 
 import java.io.IOException;
 
@@ -28,7 +28,7 @@ import org.osgi.service.component.annotations.Component;
 	property = {"org.osgi.http.websocket.endpoint.path=/o/echo"},
 	service = Endpoint.class
 )
-public class MonitorSingularWebSocketEndpoint extends Endpoint {
+public class MonitorSingularEndpoint extends Endpoint {
 
 	@Override
 	public void onOpen(final Session session, EndpointConfig endpointConfig) {
