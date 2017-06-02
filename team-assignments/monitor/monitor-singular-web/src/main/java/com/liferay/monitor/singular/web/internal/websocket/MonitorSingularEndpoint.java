@@ -37,7 +37,7 @@ public class MonitorSingularEndpoint extends Endpoint {
 	@Override
 	public void onOpen(final Session session, EndpointConfig endpointConfig) {
 		try {
-			RemoteEndpoint.Basic remoteEndpoint =	session.getBasicRemote();
+			RemoteEndpoint.Basic remoteEndpoint = session.getBasicRemote();
 
 			remoteEndpoint.sendText("Hello from the server");
 		}
