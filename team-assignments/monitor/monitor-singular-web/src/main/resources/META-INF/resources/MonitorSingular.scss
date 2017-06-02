@@ -1,0 +1,61 @@
+@import "bourbon";
+@import "mixins";
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&subset=latin-ext');
+
+/* ---------- Common variables ---------- */
+
+$accent_negative: #F44336;
+$accent_positive: #2ECC71;
+$primary_light: #EAEAEA;
+$primary_dark: #333;
+
+/* ---------- Base styles ---------- */
+
+.monitor-singular-web {
+	align-items: center;
+	color: $primary_light;
+	display: flex;
+	font-family: Roboto, sans-serif;
+	font-weight: 700;
+	justify-content: center;
+}
+
+.online-server-count {
+	font-size: 144px;
+	margin: 0;
+}
+
+.server-count-difference {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0;
+}
+
+.difference-amount {
+	font-size: 55px;
+	margin: 0;
+}
+
+.difference-arrow {
+	margin: 0;
+}
+
+.difference-positive {
+	color: $accent_positive;
+}
+
+.difference-negative {
+	color: $accent_negative;
+	order: 2;
+
+	& + span {
+		order: 1;
+	}
+}
+
+.serverMessage {
+	color: orange;
+	padding: 16px;
+}
