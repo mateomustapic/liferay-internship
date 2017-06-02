@@ -10,10 +10,10 @@ dependencies {
 
 	provided group: "com.liferay", name: "com.liferay.websocket.whiteboard", version: "1.0.1"
 	provided group: "javax.websocket", name: "javax.websocket-api", version: "1.1"
+}
 
-	deployDependencies {
-		from configurations.provided
+deployDependencies {
+	from configurations.provided
 
-		include "javax.websocket-*.jar"
-	}
+	include "javax.websocket-*.jar"
 }
