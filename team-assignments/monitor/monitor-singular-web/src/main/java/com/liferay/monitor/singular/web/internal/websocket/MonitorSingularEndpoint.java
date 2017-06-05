@@ -42,7 +42,15 @@ public class MonitorSingularEndpoint extends Endpoint {
 		try {
 			RemoteEndpoint.Basic remoteEndpoint = session.getBasicRemote();
 
-			remoteEndpoint.sendText("Hello from the server");
+			for (int i = 1; i <= 60; i++) {
+				try {
+					Thread.sleep(1000);
+				} catch(InterruptedException ie) {
+				}
+
+				remoteEndpoint.sendText(
+					"Last message from server received " + i + " seconds ago.");
+			}
 		}
 		catch (IOException ioe) {
 			_log.error("Unable to send a text message", ioe);
