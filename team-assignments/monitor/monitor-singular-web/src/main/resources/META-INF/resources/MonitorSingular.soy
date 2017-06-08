@@ -8,7 +8,7 @@
  * @param? serverCountDifference
  */
 {template .render}
-	<div class="monitor-singular-web" id="{$id}">
+	<div class="content-container" id="{$id}">
 		{if $onlineServerCount and $serverCountDifference}
 			<h1 class="online-server-count">
 				{$onlineServerCount}
@@ -39,6 +39,6 @@
 			{/if}
 		</div>
 
-		<span class="serverMessage"></span>
+		<span class="server-message"></span>
 	</div>
 {/template}

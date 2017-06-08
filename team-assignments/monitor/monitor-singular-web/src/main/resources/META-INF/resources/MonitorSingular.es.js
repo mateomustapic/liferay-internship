@@ -77,7 +77,7 @@ class MonitorSingular extends Component {
 			};
 
 			websocket.onmessage = (evt) => {
-				const serverMessageSpan = document.querySelector('.serverMessage');
+				const serverMessageSpan = document.querySelector('.server-message');
 
 				serverMessageSpan.innerHTML = evt.data;
 			};
