@@ -39,22 +39,23 @@ public class MonitorSingularEndpoint extends Endpoint {
 
 	@Override
 	public void onOpen(final Session session, EndpointConfig endpointConfig) {
-		try {
-			RemoteEndpoint.Basic remoteEndpoint = session.getBasicRemote();
+		RemoteEndpoint.Basic remoteEndpoint = session.getBasicRemote();
 
-			for (int i = 1; i <= 60; i++) {
-				try {
-					Thread.sleep(1000);
-				}
-				catch (InterruptedException ie) {
-				}
+		for (int i = 1; i <= 60; i++) {
+			try {
+				Thread.sleep(1000);
+			}
+			catch (InterruptedException ie) {
+				_log.error("Sleep interrupted.", ie);
+			}
 
+			try {
 				remoteEndpoint.sendText(
 					"Last message from server received " + i + " seconds ago.");
 			}
-		}
-		catch (IOException ioe) {
-			_log.error("Unable to send a text message", ioe);
+			catch (IOException ioe) {
+				_log.error("Unable to send a text message.", ioe);
+			}
 		}
 	}
 
