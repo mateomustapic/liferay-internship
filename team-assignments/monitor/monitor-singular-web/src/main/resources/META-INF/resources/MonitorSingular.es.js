@@ -34,8 +34,6 @@ class MonitorSingular extends Component {
 
 			const currentValue = Math.round(finalValue - (remainingTime * valueRange));
 
-			//TODO: Instead of doing it by changing the DOM, change and update the state
-
 			valueContainer.innerHTML = currentValue;
 
 			if (currentValue === finalValue) {
@@ -65,34 +63,17 @@ class MonitorSingular extends Component {
 	};
 
 	_initWebSocket() {
-		try {
-			if (websocket && websocket.readyState === 1) {
-				websocket.close();
-			}
-
-			websocket = new WebSocket(wsUri);
-
-			websocket.onopen = () => {
-				console.log('Connected to the server');
-			};
-
-			websocket.onmessage = (evt) => {
-				const serverMessageSpan = document.querySelector('.server-message');
-
-				serverMessageSpan.innerHTML = evt.data;
-			};
-
-			websocket.onclose = () => {
-				console.warn('Disconnected from the server');
-			};
-
-			websocket.onerror = (evt) => {
-				console.log('Error: ' + evt.data);
-			};
+		if (websocket && websocket.readyState === 1) {
+			websocket.close();
 		}
-		catch (exception) {
-			console.log('Error: ' + exception);
-		}
+
+		websocket = new WebSocket(wsUri);
+
+		websocket.onmessage = (evt) => {
+			const serverMessageSpan = document.querySelector('.server-message');
+
+			serverMessageSpan.innerHTML = evt.data;
+		};
 	};
 
 	_stopWebSocket() {
@@ -100,7 +81,6 @@ class MonitorSingular extends Component {
 			websocket.close();
 		}
 	};
-
 }
 
 MonitorSingular.STATE = {

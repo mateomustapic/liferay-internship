@@ -2,14 +2,10 @@
 @import "mixins";
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&subset=latin-ext');
 
-/* ---------- Common variables ---------- */
-
 $accent_negative: #F44336;
 $accent_positive: #2ECC71;
 $primary_light: #EAEAEA;
 $primary_dark: #333;
-
-/* ---------- Base styles ---------- */
 
 .monitor-singular {
 	.content-container {
