@@ -10,7 +10,9 @@
 {template .render}
 	<div class="monitor-singular-web" id="{$id}">
 		{if $onlineServerCount and $serverCountDifference}
-			<h1 class="online-server-count">{$onlineServerCount}</h1>
+			<h1 class="online-server-count">
+				{$onlineServerCount}
+			</h1>
 
 			<div class="server-count-difference">
 				{if $serverCountDifference > 0}
@@ -30,7 +32,9 @@
 						{$serverCountDifference}
 					</h4>
 
-					<span>•</span>
+					<span>
+						•
+					</span>
 				{/if}
 			{/if}
 		</div>
