@@ -14,15 +14,9 @@
 
 package com.liferay.monitor.singular.web.internal.portlet;
 
-import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.portlet.bridge.soy.SoyPortlet;
 
-import java.io.IOException;
-
 import javax.portlet.Portlet;
-import javax.portlet.PortletException;
-import javax.portlet.RenderRequest;
-import javax.portlet.RenderResponse;
 
 import org.osgi.service.component.annotations.Component;
 
@@ -58,23 +52,4 @@ import org.osgi.service.component.annotations.Component;
 	service = Portlet.class
 )
 public class MonitorSingularPortlet extends SoyPortlet {
-
-	@Override
-	public void render(
-			RenderRequest renderRequest, RenderResponse renderResponse)
-		throws IOException, PortletException {
-
-		Integer onlineServerCount = ParamUtil.getInteger(
-			renderRequest, "onlineServerCount");
-
-		template.put("onlineServerCount", onlineServerCount);
-
-		Integer serverCountDifference = ParamUtil.getInteger(
-			renderRequest, "serverCountDifference");
-
-		template.put("serverCountDifference", serverCountDifference);
-
-		super.render(renderRequest, renderResponse);
-	}
-
 }
