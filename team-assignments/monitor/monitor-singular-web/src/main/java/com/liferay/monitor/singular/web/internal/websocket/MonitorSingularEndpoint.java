@@ -45,7 +45,8 @@ public class MonitorSingularEndpoint extends Endpoint {
 			for (int i = 1; i <= 60; i++) {
 				try {
 					Thread.sleep(1000);
-				} catch(InterruptedException ie) {
+				}
+				catch (InterruptedException ie) {
 				}
 
 				remoteEndpoint.sendText(
