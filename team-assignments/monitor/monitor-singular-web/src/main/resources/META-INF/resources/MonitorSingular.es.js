@@ -10,22 +10,6 @@ let websocket = null;
 
 class MonitorSingular extends Component {
 	created() {
-		this._initWebSocket();
-	};
-
-	desposed() {
-		this._stopWebSocket();
-	};
-
-	setOnlineServerCount() {
-		return 147;
-	};
-
-	setServerCountDifference() {
-		return -3;
-	};
-
-	_initWebSocket() {
 		if (websocket && websocket.readyState === 1) {
 			websocket.close();
 		}
@@ -39,7 +23,7 @@ class MonitorSingular extends Component {
 		};
 	};
 
-	_stopWebSocket() {
+	desposed() {
 		if (websocket) {
 			websocket.close();
 		}
@@ -48,12 +32,10 @@ class MonitorSingular extends Component {
 
 MonitorSingular.STATE = {
 	onlineServerCount: {
-		setter: 'setOnlineServerCount',
-		value: 0
+		value: 147
 	},
 	serverCountDifference: {
-		setter: 'setServerCountDifference',
-		value: 0
+		value: -3
 	}
 };
 
