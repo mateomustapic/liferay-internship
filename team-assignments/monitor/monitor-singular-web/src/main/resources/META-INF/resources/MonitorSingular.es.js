@@ -6,10 +6,10 @@ import templates from './MonitorSingular.soy';
 
 const wsUri = 'ws://localhost:8080/o/singularEndpoint';
 
-let websocket = null;
-
 class MonitorSingular extends Component {
 	created() {
+		let websocket = this.websocket;
+
 		if (websocket && websocket.readyState === 1) {
 			websocket.close();
 		}
@@ -24,6 +24,8 @@ class MonitorSingular extends Component {
 	};
 
 	desposed() {
+		let websocket = this.websocket;
+
 		if (websocket) {
 			websocket.close();
 		}
@@ -36,6 +38,9 @@ MonitorSingular.STATE = {
 	},
 	serverCountDifference: {
 		value: -3
+	},
+	websocket: {
+		value: null
 	}
 };
 
