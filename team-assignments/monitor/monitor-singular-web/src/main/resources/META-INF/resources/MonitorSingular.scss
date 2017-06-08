@@ -12,13 +12,18 @@ $primary_light: #EAEAEA;
 		align-items: center;
 		color: $primary_light;
 		display: flex;
+		flex-direction: column;
 		font-family: Roboto, sans-serif;
 		font-weight: 700;
 		justify-content: center;
 	}
 
+	.server-data-container {
+		border-bottom: 1px solid #444;
+	}
+
 	.server-count {
-		font-size: 144px;
+		font-size: 146px;
 		margin: 0;
 	}
 
@@ -53,7 +58,20 @@ $primary_light: #EAEAEA;
 	}
 
 	.server-message {
-		color: orange;
-		padding: 16px;
+		background-color: $accent_positive;
+		border-radius: 3px;
+		box-shadow: 0 2px 5px rgba(#000, 0.6);
+		color: $primary_light;
+		font-size: 20px;
+		font-weight: 400;
+		opacity: 0;
+		padding: 16px 24px;
+		transform: scale(0.8) translateY(20px);
+		transition: ease 0.3s;
+
+		&.enhanced {
+			opacity: 1;
+			transform: scale(1) translateY(0);
+		}
 	}
 }

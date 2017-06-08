@@ -10,35 +10,43 @@
 {template .render}
 	<div class="content-container" id="{$id}">
 		{if $serverCount and $serverCountDifference}
-			<h1 class="server-count">
-				{$serverCount}
-			</h1>
+			<div class="monitor-content-row server-data-container">
+				<h1 class="server-count">
+					{$serverCount}
+				</h1>
 
-			<div class="server-count-difference">
-				{if $serverCountDifference > 0}
-					<h4 class="difference-amount difference-positive">
-						{$serverCountDifference}
-					</h4>
+				<div class="server-count-difference">
+					{if $serverCountDifference > 0}
+						<h4 class="difference-amount difference-positive">
+							{$serverCountDifference}
+						</h4>
 
-					<span class="difference-arrow icon-5x icon-long-arrow-up icon-monospaced"></span>
-				{elseif $serverCountDifference < 0}
-					<h4 class="difference-amount difference-negative">
-						{$serverCountDifference}
-					</h4>
+							<span class="difference-arrow icon-5x icon-long-arrow-up icon-monospaced"></span>
+					{elseif $serverCountDifference < 0}
+						<h4 class="difference-amount difference-negative">
+							{$serverCountDifference}
+						</h4>
 
-					<span class="difference-arrow icon-5x icon-long-arrow-down icon-monospaced"></span>
-				{else}
-					<h4 class="difference-amount difference-zero">
-						{$serverCountDifference}
-					</h4>
+						<span class="difference-arrow icon-5x icon-long-arrow-down icon-monospaced"></span>
+					{else}
+						<h4 class="difference-amount difference-zero">
+							{$serverCountDifference}
+						</h4>
 
-					<span>
-						•
-					</span>
-				{/if}
-			{/if}
+						<span>•</span>
+					{/if}
+				</div>
+			</div>
+		{/if}
+
+		<div class="monitor-content-row">
+			<span class="server-message"></span>
 		</div>
-
-		<span class="server-message"></span>
 	</div>
 {/template}
+
+
+
+
+
+
