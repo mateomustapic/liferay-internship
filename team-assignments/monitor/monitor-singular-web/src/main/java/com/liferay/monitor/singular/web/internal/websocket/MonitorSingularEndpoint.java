@@ -14,6 +14,9 @@
 
 package com.liferay.monitor.singular.web.internal.websocket;
 
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
 import java.io.IOException;
 
 import javax.websocket.Endpoint;
@@ -42,8 +45,11 @@ public class MonitorSingularEndpoint extends Endpoint {
 			remoteEndpoint.sendText("Hello from the server");
 		}
 		catch (IOException ioe) {
-			throw new RuntimeException(ioe);
+			_log.error("Unable to send a text message", ioe);
 		}
 	}
+
+	private static final Log _log = LogFactoryUtil.getLog(
+		MonitorSingularEndpoint.class);
 
 }
