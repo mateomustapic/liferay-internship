@@ -4,7 +4,7 @@ import Component from 'metal-component/src/Component';
 import Soy from 'metal-soy/src/Soy';
 import templates from './MonitorSingular.soy';
 
-const wsUri = 'ws://localhost:8080/o/singularEndpoint';
+const WS_URI = 'ws://localhost:8080/o/singularEndpoint';
 
 class MonitorSingular extends Component {
 	created() {
@@ -14,12 +14,12 @@ class MonitorSingular extends Component {
 			websocket.close();
 		}
 
-		websocket = new WebSocket(wsUri);
+		websocket = new WebSocket(WS_URI);
 
-		websocket.onmessage = (evt) => {
+		websocket.onmessage = (event) => {
 			const serverMessageSpan = document.querySelector('.server-message');
 
-			serverMessageSpan.innerHTML = evt.data;
+			serverMessageSpan.innerHTML = event.data;
 		};
 	};
 
@@ -33,7 +33,7 @@ class MonitorSingular extends Component {
 }
 
 MonitorSingular.STATE = {
-	onlineServerCount: {
+	serverCount: {
 		value: 147
 	},
 	serverCountDifference: {

@@ -4,14 +4,14 @@
  * Prints the Monitor Singular Web portlet View.
  *
  * @param id
- * @param? onlineServerCount
+ * @param? serverCount
  * @param? serverCountDifference
  */
 {template .render}
 	<div class="content-container" id="{$id}">
-		{if $onlineServerCount and $serverCountDifference}
-			<h1 class="online-server-count">
-				{$onlineServerCount}
+		{if $serverCount and $serverCountDifference}
+			<h1 class="server-count">
+				{$serverCount}
 			</h1>
 
 			<div class="server-count-difference">
