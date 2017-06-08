@@ -29,7 +29,7 @@ import org.osgi.service.component.annotations.Component;
 		"com.liferay.portlet.add-default-resource=true",
 		"com.liferay.portlet.application-type=full-page-application",
 		"com.liferay.portlet.application-type=widget",
-		"com.liferay.portlet.css-class-wrapper=monitor",
+		"com.liferay.portlet.css-class-wrapper=monitor-singular",
 		"com.liferay.portlet.display-category=category.monitor",
 		"com.liferay.portlet.header-portlet-css=/MonitorSingular.css",
 		"com.liferay.portlet.layout-cacheable=true",
