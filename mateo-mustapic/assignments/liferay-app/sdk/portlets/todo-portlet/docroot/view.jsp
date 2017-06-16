@@ -43,7 +43,9 @@
 					<aui:button cssClass="add-task" name="add" value="add" />
 				</aui:form>
 
-				<span class="counter">35</span>
+				<span class="counter">
+					35
+				</span>
 
 				<liferay-ui:message key="characters-remaining" />
 
@@ -52,9 +54,7 @@
 				</h3>
 
 				<ul class="task-list">
-
 					<li>
-
 						<liferay-ui:message key="sample-task" />
 
 						<aui:button cssClass="delete-task" icon="icon-remove" size="large" />
@@ -72,9 +72,7 @@
 				</div>
 
 				<div class="finished-task">
-
-					<ul class="finished-task-list">
-					</ul>
+					<ul class="finished-task-list"></ul>
 				</div>
 			</div>
 		</liferay-ui:section>
@@ -84,49 +82,45 @@
 				<h3>
 					<liferay-ui:message key="task-history" />
 
-					<i class="icon-book">
-					</i>
+					<i class="icon-book"></i>
 				</h3>
 
 				<div class="empty-task-history">
 					<liferay-ui:message key="no-tasks" />
-
 				</div>
 
 				<table class="history-table">
 					<thead>
 						<tr>
-							<th><liferay-ui:message key="id" /></th>
-							<th><liferay-ui:message key="task-description" /></th>
-							<th><liferay-ui:message key="time" /></th>
+							<th>
+								<liferay-ui:message key="id" />
+							</th>
+							<th>
+								<liferay-ui:message key="task-description" />
+							</th>
+							<th>
+								<liferay-ui:message key="time" />
+							</th>
 						</tr>
 					</thead>
-
-						<tbody>
-							<tr>
-								<td class="td-1">
-								</td>
-								<td class="td-2">
-								</td>
-								<td class="td-3">
-								</td>
-							</tr>
-						</tbody>
+					<tbody>
+						<tr>
+							<td class="td-1"></td>
+							<td class="td-2"></td>
+							<td class="td-3"></td>
+						</tr>
+					</tbody>
 				</table>
-
 			</div>
 		</liferay-ui:section>
 
 		<liferay-ui:section>
-
 			<div class="finished-tasks">
 				<h3>
 					<liferay-ui:message key="finished-tasks" />
-
 				</h3>
 
-				<ul class="finished-task-list">
-				</ul>
+				<ul class="finished-task-list"></ul>
 			</div>
 		</liferay-ui:section>
 	</liferay-ui:tabs>
