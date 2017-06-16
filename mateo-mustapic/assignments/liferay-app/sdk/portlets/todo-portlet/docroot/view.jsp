@@ -29,10 +29,10 @@
 		<liferay-ui:message key="welcome" />
 		<%= user.getFirstName() %>
 
-		<img alt="<%= user.getFullName() %>" src="<%=user.getPortraitURL(themeDisplay)%>">
+		<img alt="<%= user.getFullName() %>" src="<%=user.getPortraitURL(themeDisplay) %>">
 	</div>
 
-	<liferay-ui:tabs names="task-list-tab,task-history-tab,finished-tasks-tab" refresh="false" >
+	<liferay-ui:tabs names="task-list-tab,task-history-tab,finished-tasks-tab" refresh="false">
 		<liferay-ui:section>
 			<div class="task-container">
 				<aui:form>
