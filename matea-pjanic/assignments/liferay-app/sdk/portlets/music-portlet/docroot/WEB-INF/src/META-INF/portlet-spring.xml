@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.liferay.music.portlet.service.AlbumLocalService" class="com.liferay.music.portlet.service.impl.AlbumLocalServiceImpl" />
+	<bean id="com.liferay.music.portlet.service.AlbumService" class="com.liferay.music.portlet.service.impl.AlbumServiceImpl" />
+	<bean id="com.liferay.music.portlet.service.persistence.AlbumPersistence" class="com.liferay.music.portlet.service.persistence.AlbumPersistenceImpl" parent="basePersistence" />
+	<bean id="com.liferay.music.portlet.service.BendLocalService" class="com.liferay.music.portlet.service.impl.BendLocalServiceImpl" />
+	<bean id="com.liferay.music.portlet.service.BendService" class="com.liferay.music.portlet.service.impl.BendServiceImpl" />
+	<bean id="com.liferay.music.portlet.service.persistence.BendPersistence" class="com.liferay.music.portlet.service.persistence.BendPersistenceImpl" parent="basePersistence" />
+	<bean id="com.liferay.music.portlet.service.EventLocalService" class="com.liferay.music.portlet.service.impl.EventLocalServiceImpl" />
+	<bean id="com.liferay.music.portlet.service.EventService" class="com.liferay.music.portlet.service.impl.EventServiceImpl" />
+	<bean id="com.liferay.music.portlet.service.persistence.EventPersistence" class="com.liferay.music.portlet.service.persistence.EventPersistenceImpl" parent="basePersistence" />
+	<bean id="com.liferay.music.portlet.service.SongLocalService" class="com.liferay.music.portlet.service.impl.SongLocalServiceImpl" />
+	<bean id="com.liferay.music.portlet.service.SongService" class="com.liferay.music.portlet.service.impl.SongServiceImpl" />
+	<bean id="com.liferay.music.portlet.service.persistence.SongPersistence" class="com.liferay.music.portlet.service.persistence.SongPersistenceImpl" parent="basePersistence" />
+</beans>

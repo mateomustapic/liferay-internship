@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.liferay.music.portlet.model.Album" />
+	<import class="com.liferay.music.portlet.model.Bend" />
+	<import class="com.liferay.music.portlet.model.Event" />
+	<import class="com.liferay.music.portlet.model.Song" />
+	<class name="com.liferay.music.portlet.model.impl.AlbumImpl" table="Music_Album">
+		<cache usage="read-write" />
+		<id name="albumId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="bendId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="image" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="year" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.liferay.music.portlet.model.impl.BendImpl" table="Music_Bend">
+		<cache usage="read-write" />
+		<id name="bendId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.liferay.music.portlet.model.impl.EventImpl" table="Music_Event">
+		<cache usage="read-write" />
+		<id name="eventId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="artist" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="city" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="country" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="date" type="com.liferay.portal.dao.orm.hibernate.LongType" column="date_" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.liferay.music.portlet.model.impl.SongImpl" table="Music_Song">
+		<cache usage="read-write" />
+		<id name="songId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="albumId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

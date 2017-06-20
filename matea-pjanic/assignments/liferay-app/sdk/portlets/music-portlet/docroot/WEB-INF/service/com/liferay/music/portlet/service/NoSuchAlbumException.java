@@ -12,21 +12,29 @@
  * details.
  */
 
-package com.liferay.music.portlet.model;
+package com.liferay.music.portlet.service;
+
+import com.liferay.portal.NoSuchModelException;
 
 /**
  * @author Matea Pjanic
  */
-public class Song {
+public class NoSuchAlbumException extends NoSuchModelException {
 
-	public String getName() {
-		return _name;
+	public NoSuchAlbumException() {
+		super();
 	}
 
-	public void setName(String name) {
-		this._name = name;
+	public NoSuchAlbumException(String msg) {
+		super(msg);
 	}
 
-	private String _name;
+	public NoSuchAlbumException(String msg, Throwable cause) {
+		super(msg, cause);
+	}
+
+	public NoSuchAlbumException(Throwable cause) {
+		super(cause);
+	}
 
 }

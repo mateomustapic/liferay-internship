@@ -12,30 +12,29 @@
  * details.
  */
 
-package com.liferay.music.portlet.model;
+package com.liferay.music.portlet.service;
+
+import com.liferay.portal.NoSuchModelException;
 
 /**
  * @author Matea Pjanic
  */
-public class Bend {
+public class NoSuchBendException extends NoSuchModelException {
 
-	public Album[] getAlbums() {
-		return _albums;
+	public NoSuchBendException() {
+		super();
 	}
 
-	public String getName() {
-		return _name;
+	public NoSuchBendException(String msg) {
+		super(msg);
 	}
 
-	public void setAlbums(Album[] albums) {
-		this._albums = albums;
+	public NoSuchBendException(String msg, Throwable cause) {
+		super(msg, cause);
 	}
 
-	public void setName(String name) {
-		this._name = name;
+	public NoSuchBendException(Throwable cause) {
+		super(cause);
 	}
-
-	private Album[] _albums;
-	private String _name;
 
 }

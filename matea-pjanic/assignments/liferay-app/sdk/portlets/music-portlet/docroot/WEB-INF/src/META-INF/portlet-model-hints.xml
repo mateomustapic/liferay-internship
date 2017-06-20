@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.liferay.music.portlet.service.model.Album">
+		<field name="albumId" type="long" />
+		<field name="bendId" type="long" />
+		<field name="image" type="String" />
+		<field name="name" type="String" />
+		<field name="year" type="int" />
+	</model>
+	<model name="com.liferay.music.portlet.service.model.Bend">
+		<field name="bendId" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.liferay.music.portlet.service.model.Event">
+		<field name="eventId" type="long" />
+		<field name="artist" type="String" />
+		<field name="city" type="String" />
+		<field name="country" type="String" />
+		<field name="date" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.liferay.music.portlet.service.model.Song">
+		<field name="songId" type="long" />
+		<field name="albumId" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.liferay.music.portlet.myservice.model.Album">
+		<field name="albumId" type="long" />
+		<field name="bendId" type="long" />
+		<field name="image" type="String" />
+		<field name="name" type="String" />
+		<field name="year" type="int" />
+	</model>
+	<model name="com.liferay.music.portlet.myservice.model.Bend">
+		<field name="bendId" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.liferay.music.portlet.myservice.model.Event">
+		<field name="eventId" type="long" />
+		<field name="artist" type="String" />
+		<field name="city" type="String" />
+		<field name="country" type="String" />
+		<field name="date" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.liferay.music.portlet.myservice.model.Song">
+		<field name="songId" type="long" />
+		<field name="albumId" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.liferay.music.portlet.model.Album">
+		<field name="albumId" type="long" />
+		<field name="bendId" type="long" />
+		<field name="image" type="String" />
+		<field name="name" type="String" />
+		<field name="year" type="int" />
+	</model>
+	<model name="com.liferay.music.portlet.model.Bend">
+		<field name="bendId" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.liferay.music.portlet.model.Event">
+		<field name="eventId" type="long" />
+		<field name="artist" type="String" />
+		<field name="city" type="String" />
+		<field name="country" type="String" />
+		<field name="date" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.liferay.music.portlet.model.Song">
+		<field name="songId" type="long" />
+		<field name="albumId" type="long" />
+		<field name="name" type="String" />
+	</model>
+</model-hints>

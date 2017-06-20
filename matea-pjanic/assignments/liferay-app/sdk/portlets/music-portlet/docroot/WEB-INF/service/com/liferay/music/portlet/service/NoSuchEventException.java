@@ -12,48 +12,29 @@
  * details.
  */
 
-package com.liferay.music.portlet.model;
+package com.liferay.music.portlet.service;
+
+import com.liferay.portal.NoSuchModelException;
 
 /**
  * @author Matea Pjanic
  */
-public class Album {
+public class NoSuchEventException extends NoSuchModelException {
 
-	public String getImage() {
-		return _image;
+	public NoSuchEventException() {
+		super();
 	}
 
-	public String getName() {
-		return _name;
+	public NoSuchEventException(String msg) {
+		super(msg);
 	}
 
-	public Song[] getSongs() {
-		return _songs;
+	public NoSuchEventException(String msg, Throwable cause) {
+		super(msg, cause);
 	}
 
-	public int getYear() {
-		return _year;
+	public NoSuchEventException(Throwable cause) {
+		super(cause);
 	}
-
-	public void setImage(String image) {
-		this._image = image;
-	}
-
-	public void setName(String name) {
-		this._name = name;
-	}
-
-	public void setSongs(Song[] songs) {
-		this._songs = songs;
-	}
-
-	public void setYear(int year) {
-		this._year = year;
-	}
-
-	private String _image;
-	private String _name;
-	private Song[] _songs;
-	private int _year;
 
 }
