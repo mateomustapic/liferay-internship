@@ -17,6 +17,7 @@ package com.liferay.music.portlet;
 import com.google.gson.Gson;
 
 import com.liferay.music.portlet.model.Bend;
+import com.liferay.music.portlet.service.BendLocalServiceUtil;
 import com.liferay.music.portlet.util.MusicFiles;
 import com.liferay.portal.kernel.json.JSONFactoryUtil;
 import com.liferay.portal.kernel.json.JSONObject;
@@ -24,12 +25,9 @@ import com.liferay.portal.kernel.language.LanguageUtil;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.ParamUtil;
-import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 
 import java.io.IOException;
-
-import java.util.List;
 
 import javax.portlet.PortletException;
 import javax.portlet.ResourceRequest;
@@ -52,46 +50,33 @@ public class MusicPortlet extends MVCPortlet {
 				return;
 			}
 
-			List<Bend> bends = MusicFiles.getInstance().getBends();
+			try {
+				Bend bend = BendLocalServiceUtil.findBend(music);
 
-			if (bends.isEmpty()) {
-				return;
-			}
-
-			boolean found = false;
-
-			for (Bend bend : bends) {
-				if (StringUtil.equalsIgnoreCase(music, bend.getName())) {
-					if (_log.isInfoEnabled()) {
-						_log.info(music + " was found.");
-					}
-
-					found = true;
+				if (_log.isInfoEnabled()) {
+					_log.info(music + " was found.");
 
 					Gson gson = MusicFiles.getGson();
 
 					String json = gson.toJson(bend);
 
 					writeJSON(resourceRequest, resourceResponse, json);
-
-					break;
 				}
 			}
-
-			if (!found) {
+			catch (Exception e) {
 				if (_log.isInfoEnabled()) {
 					_log.info(music + " was not found.");
+
+					JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
+
+					String message = LanguageUtil.get(
+							getPortletConfig(), resourceRequest.getLocale(),
+							"sorry-we-currently-dont-have-that-in-our-base");
+
+					jsonObject.put("notFound", message);
+
+					writeJSON(resourceRequest, resourceResponse, jsonObject);
 				}
-
-				JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
-
-				String message = LanguageUtil.get(
-					getPortletConfig(), resourceRequest.getLocale(),
-					"sorry-we-currently-dont-have-that-in-our-base");
-
-				jsonObject.put("notFound", message);
-
-				writeJSON(resourceRequest, resourceResponse, jsonObject);
 			}
 		}
 	}
