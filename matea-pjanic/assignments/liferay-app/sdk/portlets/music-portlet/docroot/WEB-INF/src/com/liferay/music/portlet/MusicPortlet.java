@@ -43,15 +43,33 @@ public class MusicPortlet extends MVCPortlet {
 			ResourceRequest resourceRequest, ResourceResponse resourceResponse)
 		throws IOException, PortletException {
 
-		if (resourceRequest.getResourceID().equals("search-resource")) {
-			String music = ParamUtil.getString(resourceRequest, "music");
+		try {
+			if (resourceRequest.getResourceID().equals("search-resource")) {
+				String music = ParamUtil.getString(resourceRequest, "music");
 
-			if (music == null) {
-				return;
-			}
+				if (music == null) {
+					return;
+				}
 
-			try {
-				Bend bend = BendLocalServiceUtil.findBend(music);
+				Bend bend = BendLocalServiceUtil.getBend(music);
+
+				if (bend == null) {
+					if (_log.isInfoEnabled()) {
+						_log.info(music + " was not found.");
+					}
+
+					JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
+
+					String message = LanguageUtil.get(
+						getPortletConfig(), resourceRequest.getLocale(),
+						"sorry-we-currently-dont-have-that-in-our-base");
+
+					jsonObject.put("notFound", message);
+
+					writeJSON(resourceRequest, resourceResponse, jsonObject);
+
+					return;
+				}
 
 				if (_log.isInfoEnabled()) {
 					_log.info(music + " was found.");
@@ -63,19 +81,15 @@ public class MusicPortlet extends MVCPortlet {
 
 				writeJSON(resourceRequest, resourceResponse, json);
 			}
-			catch (Exception e) {
-				_log.error(music + " was not found.", e);
+		}
+		catch (Exception e) {
+			JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
 
-				JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
+			jsonObject.put("errorMsg", "Error.");
 
-				String message = LanguageUtil.get(
-						getPortletConfig(), resourceRequest.getLocale(),
-						"sorry-we-currently-dont-have-that-in-our-base");
+			_log.error(e);
 
-				jsonObject.put("notFound", message);
-
-				writeJSON(resourceRequest, resourceResponse, jsonObject);
-			}
+			writeJSON(resourceRequest, resourceResponse, jsonObject);
 		}
 	}
 

@@ -14,6 +14,7 @@
 
 package com.liferay.music.portlet.service.impl;
 
+import com.liferay.music.portlet.NoSuchBendException;
 import com.liferay.music.portlet.model.Album;
 import com.liferay.music.portlet.model.Bend;
 import com.liferay.music.portlet.model.Song;
@@ -45,22 +46,29 @@ public class BendLocalServiceImpl extends BendLocalServiceBaseImpl {
 	 *
 	 * Never reference this interface directly. Always use {@link com.liferay.music.portlet.service.BendLocalServiceUtil} to access the bend local service.
 	 */
-	public Bend findBend(String name) throws PortalException, SystemException {
-		Bend bend = bendPersistence.findByName(name);
+	public Bend getBend(String name) throws PortalException, SystemException {
+		Bend bend = null;
+
+		try {
+			bend = bendPersistence.findByName(name);
+		}
+		catch (NoSuchBendException nsbe) {
+			return null;
+		}
 
 		List<Album> albums = getBendAlbums(bend.getBendId());
 
-	for (Album album : albums) {
-		List<Song> songs = AlbumLocalServiceUtil.getAlbumSongs(
-				album.getAlbumId());
+		for (Album album : albums) {
+			List<Song> songs = AlbumLocalServiceUtil.getAlbumSongs(
+					album.getAlbumId());
 
-		album.setSongs(songs);
+			album.setSongs(songs);
+		}
+
+		bend.setAlbums(albums);
+
+		return bend;
 	}
-
-	bend.setAlbums(albums);
-
-	return bend;
-}
 
 	public List<Album> getBendAlbums(long bendId)
 		throws PortalException, SystemException {
