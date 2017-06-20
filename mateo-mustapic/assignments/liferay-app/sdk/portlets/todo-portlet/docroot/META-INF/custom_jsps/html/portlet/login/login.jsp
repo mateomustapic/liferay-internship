@@ -16,6 +16,13 @@
 
 <%@ include file="/html/portlet/login/init.jsp" %>
 
+<div class="header">
+	<h3>
+		<liferay-ui:message key="sign-in" />
+		<i class="icon-key"></i>
+	</h3>
+</div>
+
 <c:choose>
 	<c:when test="<%= themeDisplay.isSignedIn() %>">
 
@@ -145,8 +152,6 @@
 				<aui:button type="submit" value="sign-in" />
 			</aui:button-row>
 		</aui:form>
-
-		<liferay-util:include page="/html/portlet/login/navigation.jsp" />
 
 		<aui:script use="aui-base">
 			var form = A.one(document.<portlet:namespace />fm);
