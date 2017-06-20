@@ -24,7 +24,9 @@
 <%@ page import="com.liferay.music.portlet.model.Album" %><%@
 page import="com.liferay.music.portlet.model.Bend" %><%@
 page import="com.liferay.music.portlet.model.Event" %><%@
-page import="com.liferay.music.portlet.util.MusicFiles" %><%@
+page import="com.liferay.music.portlet.service.AlbumLocalServiceUtil" %><%@
+page import="com.liferay.music.portlet.service.BendLocalServiceUtil" %><%@
+page import="com.liferay.music.portlet.service.EventLocalServiceUtil" %><%@
 page import="com.liferay.portal.util.PortalUtil" %>
 
 <%@ page import="java.util.*" %><%@

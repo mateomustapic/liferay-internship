@@ -47,35 +47,35 @@
 		<div class="tracks-inner">
 
 			<%
-			MusicFiles musicFiles =	MusicFiles.getInstance();
-
-			List<Bend> bends = musicFiles.getBends();
-
 			DateTime dateTime = new DateTime();
 
-			for (Bend bend : bends) {
-				for (Album album : bend.getAlbums()) {
-					if (album.getYear() == dateTime.getYear()) {
+			List<Album> albumList = AlbumLocalServiceUtil.getAlbums(0, AlbumLocalServiceUtil.getAlbumsCount());
+
+			for (Album album : albumList) {
+				if (album.getYear() == dateTime.getYear()) {
 			%>
 
-				<div class="artist">
-					<div class="artist-picture" style="background-image: url(<%= PortalUtil.getPathContext(request) %>/<%= album.getImage() %>)">
-						<img class="play-button" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
-					</div>
-
-					<div class="artist-name">
-						<%= bend.getName() %>
-					</div>
-
-					<div class="artist-album">
-						<%= album.getName() %>
-					</div>
+			<div class="artist">
+				<div class="artist-picture" style="background-image: url(<%= PortalUtil.getPathContext(request) %>/<%= album.getImage() %>)">
+					<img class="play-button" src="<%= PortalUtil.getPathContext(request) %>/images/play.png">
 				</div>
+
+				<%
+					Bend bend = BendLocalServiceUtil.getBend(album.getBendId());
+				%>
+
+				<div class="artist-name">
+					<%= bend.getName() %>
+				</div>
+
+				<div class="artist-album">
+					<%= album.getName() %>
+				</div>
+			</div>
 
 			<%
 					}
 				}
-			}
 			%>
 
 		</div>
@@ -87,11 +87,16 @@
 		</h3>
 
 		<div class="events-inner">
-			<table>
 
-				<%
-				for (Event event : musicFiles.getEvents()) {
-				%>
+			<%
+			List<Event> eventList =
+					EventLocalServiceUtil.getEvents(0,
+					EventLocalServiceUtil.getEventsCount());
+
+			for (Event event : eventList) {
+			%>
+
+			<table>
 
 				<tr>
 					<td>
@@ -115,7 +120,8 @@
 
 						dateTime = new DateTime(date * 1000);
 
-						DateTimeFormatter userDateFormat = DateTimeFormat.forPattern("dd.MM.yyyy HH:mm");
+						DateTimeFormatter userDateFormat =
+							DateTimeFormat.forPattern("dd.MM.yyyy HH:mm");
 						%>
 
 						<%= dateTime.toString(userDateFormat) %>
