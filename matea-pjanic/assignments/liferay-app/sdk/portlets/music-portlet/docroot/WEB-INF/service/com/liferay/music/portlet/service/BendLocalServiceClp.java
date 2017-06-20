@@ -114,7 +114,7 @@ public class BendLocalServiceClp implements BendLocalService {
 
 		_methodParameterTypes17 = new String[] { "java.lang.String" };
 
-		_methodName19 = "findBend";
+		_methodName19 = "getBend";
 
 		_methodParameterTypes19 = new String[] { "java.lang.String" };
 
@@ -670,7 +670,7 @@ public class BendLocalServiceClp implements BendLocalService {
 	}
 
 	@Override
-	public com.liferay.music.portlet.model.Bend findBend(java.lang.String name)
+	public com.liferay.music.portlet.model.Bend getBend(java.lang.String name)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;

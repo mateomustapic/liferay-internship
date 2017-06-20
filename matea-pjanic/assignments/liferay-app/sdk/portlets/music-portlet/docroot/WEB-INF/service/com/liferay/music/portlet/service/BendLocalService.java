@@ -255,7 +255,8 @@ public interface BendLocalService extends BaseLocalService, InvokableLocalServic
 	*
 	* Never reference this interface directly. Always use {@link com.liferay.music.portlet.service.BendLocalServiceUtil} to access the bend local service.
 	*/
-	public com.liferay.music.portlet.model.Bend findBend(java.lang.String name)
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public com.liferay.music.portlet.model.Bend getBend(java.lang.String name)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 

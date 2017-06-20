@@ -114,7 +114,7 @@ public class BendLocalServiceClpInvoker {
 
 		_methodParameterTypes53 = new String[] { "java.lang.String" };
 
-		_methodName58 = "findBend";
+		_methodName58 = "getBend";
 
 		_methodParameterTypes58 = new String[] { "java.lang.String" };
 
@@ -226,7 +226,7 @@ public class BendLocalServiceClpInvoker {
 
 		if (_methodName58.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
-			return BendLocalServiceUtil.findBend((java.lang.String)arguments[0]);
+			return BendLocalServiceUtil.getBend((java.lang.String)arguments[0]);
 		}
 
 		if (_methodName59.equals(name) &&

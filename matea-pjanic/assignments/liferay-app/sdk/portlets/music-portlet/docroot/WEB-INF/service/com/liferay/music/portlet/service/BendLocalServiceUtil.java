@@ -276,11 +276,11 @@ public class BendLocalServiceUtil {
 	*
 	* Never reference this interface directly. Always use {@link com.liferay.music.portlet.service.BendLocalServiceUtil} to access the bend local service.
 	*/
-	public static com.liferay.music.portlet.model.Bend findBend(
+	public static com.liferay.music.portlet.model.Bend getBend(
 		java.lang.String name)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		return getService().findBend(name);
+		return getService().getBend(name);
 	}
 
 	public static java.util.List<com.liferay.music.portlet.model.Album> getBendAlbums(
