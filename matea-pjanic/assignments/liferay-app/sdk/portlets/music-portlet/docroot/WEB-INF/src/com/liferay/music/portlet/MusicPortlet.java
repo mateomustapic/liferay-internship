@@ -55,28 +55,26 @@ public class MusicPortlet extends MVCPortlet {
 
 				if (_log.isInfoEnabled()) {
 					_log.info(music + " was found.");
-
-					Gson gson = MusicFiles.getGson();
-
-					String json = gson.toJson(bend);
-
-					writeJSON(resourceRequest, resourceResponse, json);
 				}
+
+				Gson gson = MusicFiles.getGson();
+
+				String json = gson.toJson(bend);
+
+				writeJSON(resourceRequest, resourceResponse, json);
 			}
 			catch (Exception e) {
-				if (_log.isInfoEnabled()) {
-					_log.info(music + " was not found.");
+				_log.error(music + " was not found.", e);
 
-					JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
+				JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
 
-					String message = LanguageUtil.get(
-							getPortletConfig(), resourceRequest.getLocale(),
-							"sorry-we-currently-dont-have-that-in-our-base");
+				String message = LanguageUtil.get(
+						getPortletConfig(), resourceRequest.getLocale(),
+						"sorry-we-currently-dont-have-that-in-our-base");
 
-					jsonObject.put("notFound", message);
+				jsonObject.put("notFound", message);
 
-					writeJSON(resourceRequest, resourceResponse, jsonObject);
-				}
+				writeJSON(resourceRequest, resourceResponse, jsonObject);
 			}
 		}
 	}
