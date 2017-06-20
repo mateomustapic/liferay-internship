@@ -39,7 +39,6 @@ _sass_cache_*.css
 bin/
 build/
 classes/
-lib/
 liferay-hook.xml.processed
 node_modules/
 npm-debug.log
