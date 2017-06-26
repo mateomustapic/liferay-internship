@@ -1,0 +1,13 @@
+{
+	"dependencies": {
+		"gulp-replace": "^0.6.1",
+		"metal-component": "^2.4.5",
+		"metal-soy": "^2.4.5"
+	},
+	"devDependencies": {
+		"liferay-module-config-generator": "^1.2.1",
+		"metal-cli": "^4.0.1"
+	},
+	"name": "matea-portlet-web",
+	"version": "1.0.6"
+}
