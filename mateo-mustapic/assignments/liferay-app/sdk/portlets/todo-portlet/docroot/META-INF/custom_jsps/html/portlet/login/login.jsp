@@ -16,13 +16,11 @@
 
 <%@ include file="/html/portlet/login/init.jsp" %>
 
-<div class="header">
-	<h3>
-		<liferay-ui:message key="sign-in" />
+<h3 class="header">
+	<liferay-ui:message key="sign-in" />
 
-		<i class="icon-key"></i>
-	</h3>
-</div>
+	<i class="icon-key"></i>
+</h3>
 
 <c:choose>
 	<c:when test="<%= themeDisplay.isSignedIn() %>">
