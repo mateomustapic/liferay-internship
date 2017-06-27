@@ -19,6 +19,7 @@
 <div class="header">
 	<h3>
 		<liferay-ui:message key="sign-in" />
+
 		<i class="icon-key"></i>
 	</h3>
 </div>
