@@ -30,7 +30,7 @@
 
 		<%= user.getFirstName() %>
 
-		<img alt="<%= user.getFullName() %>" src="<%=user.getPortraitURL(themeDisplay) %>">
+		<img alt="<%= user.getFullName() %>" src="<%= user.getPortraitURL(themeDisplay) %>">
 	</div>
 
 	<liferay-ui:tabs names="task-list-tab,task-history-tab,profile-tab,contact-tab" refresh="false">
@@ -56,7 +56,6 @@
 
 				<ul class="task-list" id="<portlet:namespace />todo-list">
 					<li>
-
 						<liferay-ui:message key="sample-task" />
 
 						<aui:button cssClass="delete-task" icon="icon-remove" size="large" />
@@ -69,7 +68,6 @@
 					</div>
 
 					<div class="remaining-tasks">
-
 						<liferay-ui:message key="tasks-left" />
 					</div>
 				</div>

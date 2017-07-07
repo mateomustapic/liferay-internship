@@ -3,15 +3,15 @@ AUI.add(
 	function(A) {
 		var EVENT_CLICK = 'click';
 
-		var TPL_FINISHED_TASK = '<li> ' +
-			'{taskFinished}' +
+		var TPL_FINISHED_TASK = '<li>' +
+				'{taskFinished}' +
 				'<button>' +
 					'<i class="icon-trash"></i>' +
 				'</button>' +
 			'</li>';
 
 		var TPL_TASK = '<li>' +
-			'{taskContent} ' +
+				'{taskContent} ' +
 				'<button class="btn delete-task">' +
 					'<i class="icon-remove"></i>' +
 				'</button>' +
@@ -34,7 +34,8 @@ AUI.add(
 								counter: '.counter',
 								input: '.input-item',
 								maxLength: 35
-							});
+							}
+						);
 
 						var todoList = instance.byId('todo-list');
 
@@ -69,7 +70,6 @@ AUI.add(
 									listItem.remove();
 
 									if (finishedTask) {
-
 										var taskFinished = config.taskFinished;
 
 										instance._taskFinished = taskFinished;
@@ -90,7 +90,6 @@ AUI.add(
 										var emptyTaskHistory = instance._emptyTaskHistory;
 
 										if (taskListItems) {
-
 											emptyTaskHistory.hide();
 
 											taskHistory.setStyle('visibility', 'visible');
@@ -169,7 +168,6 @@ AUI.add(
 						var remainingDiv = instance._remainingDiv;
 
 						if (remainingDiv) {
-
 							remainingDiv.html(remainingCount);
 						}
 					}

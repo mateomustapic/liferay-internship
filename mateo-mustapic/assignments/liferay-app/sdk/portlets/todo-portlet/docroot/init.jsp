@@ -22,4 +22,5 @@
 <%@ page import="com.liferay.portal.kernel.language.UnicodeLanguageUtil" %>
 
 <liferay-theme:defineObjects />
+
 <portlet:defineObjects />
