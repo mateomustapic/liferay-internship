@@ -27,12 +27,13 @@
 
 	<div class="welcome-message">
 		<liferay-ui:message key="welcome" />
+
 		<%= user.getFirstName() %>
 
 		<img alt="<%= user.getFullName() %>" src="<%=user.getPortraitURL(themeDisplay) %>">
 	</div>
 
-	<liferay-ui:tabs names="task-list-tab,task-history-tab,finished-tasks-tab" refresh="false">
+	<liferay-ui:tabs names="task-list-tab,task-history-tab,profile-tab,contact-tab" refresh="false">
 		<liferay-ui:section>
 			<div class="task-container">
 				<aui:form>
@@ -53,8 +54,9 @@
 					<liferay-ui:message key="tasks" />
 				</h3>
 
-				<ul class="task-list">
+				<ul class="task-list" id="<portlet:namespace />todo-list">
 					<li>
+
 						<liferay-ui:message key="sample-task" />
 
 						<aui:button cssClass="delete-task" icon="icon-remove" size="large" />
@@ -62,16 +64,17 @@
 				</ul>
 
 				<div class="remaining-tasks-container">
-					<div class="remaining-tasks-count">
+					<div class="remaining-tasks-count" id="<portlet:namespace />remaining-tasks-count">
 						1
 					</div>
 
 					<div class="remaining-tasks">
+
 						<liferay-ui:message key="tasks-left" />
 					</div>
 				</div>
 
-				<div class="finished-task">
+				<div class="finished-task" id="<portlet:namespace />finished-task">
 					<ul class="finished-task-list"></ul>
 				</div>
 			</div>
@@ -85,43 +88,20 @@
 					<i class="icon-book"></i>
 				</h3>
 
-				<div class="empty-task-history">
+				<div class="empty-task-history" id="<portlet:namespace />empty-task-history">
 					<liferay-ui:message key="no-tasks" />
 				</div>
 
-				<table class="history-table">
-					<thead>
-						<tr>
-							<th>
-								<liferay-ui:message key="id" />
-							</th>
-							<th>
-								<liferay-ui:message key="task-description" />
-							</th>
-							<th>
-								<liferay-ui:message key="time" />
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td class="td-1"></td>
-							<td class="td-2"></td>
-							<td class="td-3"></td>
-						</tr>
-					</tbody>
-				</table>
+				<ul class="history-list" id="<portlet:namespace />history-list"></ul>
 			</div>
 		</liferay-ui:section>
 
 		<liferay-ui:section>
-			<div class="finished-tasks">
-				<h3>
-					<liferay-ui:message key="finished-tasks" />
-				</h3>
+			<div class="profile-page"></div>
+		</liferay-ui:section>
 
-				<ul class="finished-task-list"></ul>
-			</div>
+		<liferay-ui:section>
+			<div class="contact-form"></div>
 		</liferay-ui:section>
 	</liferay-ui:tabs>
 </div>
@@ -129,7 +109,8 @@
 <aui:script use="todo">
 	new Liferay.Portlet.Todo(
 		{
-			namespace: '<portlet:namespace />'
+			namespace: '<portlet:namespace />',
+			taskFinished: '<%= UnicodeLanguageUtil.get(pageContext, "task-finished") %>'
 		}
 	);
 </aui:script>
