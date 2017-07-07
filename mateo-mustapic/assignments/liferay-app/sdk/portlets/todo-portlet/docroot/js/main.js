@@ -37,27 +37,14 @@ AUI.add(
 							}
 						);
 
-						var todoList = instance.byId('todo-list');
-
-						instance._todoList = todoList;
-
-						var finishedTask = instance.byId('finished-task');
-
-						var taskInput = instance.byId('task');
-
-						var taskListItems = todoList.all('li');
-
-						var taskHistory = instance.byId('history-list');
-
-						instance._taskHistory = taskHistory;
-
-						var emptyTaskHistory = instance.byId('empty-task-history');
-
-						instance._emptyTaskHistory = emptyTaskHistory;
-
 						var remainingDiv = instance.byId('remaining-tasks-count');
 
 						instance._remainingDiv = remainingDiv;
+
+						var emptyTaskHistory = instance.byId('empty-task-history');
+						var finishedTask = instance.byId('finished-task');
+						var taskHistory = instance.byId('history-list');
+						var todoList = instance.byId('todo-list');
 
 						if (todoList) {
 							todoList.delegate(
@@ -85,11 +72,9 @@ AUI.add(
 
 										instance._updateTaskCounts();
 
-										var taskHistory = instance._taskHistory;
+										var taskListItems = todoList.all('li');
 
-										var emptyTaskHistory = instance._emptyTaskHistory;
-
-										if (taskListItems) {
+										if (emptyTaskHistory && taskHistory && taskListItems) {
 											emptyTaskHistory.hide();
 
 											taskHistory.setStyle('visibility', 'visible');
@@ -116,8 +101,6 @@ AUI.add(
 								},
 								'button'
 							);
-
-							instance._finishedTask = finishedTask;
 						}
 
 						var addButton = instance.byId('add');
@@ -125,6 +108,8 @@ AUI.add(
 						if (addButton) {
 							addButton.on(EVENT_CLICK, A.bind('_appendTodoList', instance));
 						}
+
+						var taskInput = instance.byId('task');
 
 						if (taskInput) {
 							taskInput.on('key', A.bind('_appendTodoList', instance), 'enter');
@@ -159,16 +144,13 @@ AUI.add(
 					_updateTaskCounts: function() {
 						var instance = this;
 
+						var remainingDiv = instance._remainingDiv;
 						var todoList = instance._todoList;
 
-						var taskListItems = todoList.all('li');
+						if (remainingDiv && todoList) {
+							var taskListItems = todoList.all('li');
 
-						var remainingCount = taskListItems.size();
-
-						var remainingDiv = instance._remainingDiv;
-
-						if (remainingDiv) {
-							remainingDiv.html(remainingCount);
+							remainingDiv.html(taskListItems.size());
 						}
 					}
 				}
