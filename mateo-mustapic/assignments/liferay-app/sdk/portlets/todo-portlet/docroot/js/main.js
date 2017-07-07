@@ -77,8 +77,6 @@ AUI.add(
 										if (emptyTaskHistory && taskHistory && taskListItems) {
 											emptyTaskHistory.hide();
 
-											taskHistory.setStyle('visibility', 'visible');
-
 											taskHistory.append(listItem);
 										}
 									}
