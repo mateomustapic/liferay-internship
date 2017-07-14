@@ -1,9 +1,40 @@
 @import "mixins";
+@import "compass";
 
-/* Overridden aui tags
-*/
+/* Colors */
+
+$black: #000;
+$gray: #888;
+$lightred: #FF9395;
+$royalblue: #4169E1;
+$white: #FFF;
+$yellow: #EEFF59;
+
+/* Overridden aui tags */
 
 .aui .todo-portlet {
+	.btn.add-task {
+		background: $royalblue none;
+		border-width: 0;
+		color: $white;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 16px;
+		margin-bottom: 10px;
+		margin-left: 3px;
+		margin-top: -5px;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		text-align: center;
+		text-decoration: none;
+		width: 11%;
+
+		&:hover {
+			background-color: #BBB;
+			font-size: 18px;
+		}
+	}
+
 	input[type="text"].input-item {
 		border: 1px solid #CCC;
 		border-radius: 10px;
@@ -13,35 +44,9 @@
 		height: 18px;
 		margin: auto;
 		padding: 10px 0 10px 1%;
-		transition: font-size 1s;
 		width: 85%;
 
 		&:hover {
-			font-size: 18px;
-		}
-	}
-
-	.btn.add-task {
-		background-color: royalblue;
-		background-image: none;
-		border-radius: 10px;
-		border-width: 0;
-		color: white;
-		cursor: pointer;
-		display: inline-block;
-		font-size: 16px;
-		margin-bottom: 10px;
-		margin-left: 3px;
-		margin-top: -25px;
-		padding-bottom: 10px;
-		padding-top: 10px;
-		text-align: center;
-		text-decoration: none;
-		transition: font-size 1s;
-		width: 11%;
-
-		&:hover {
-			background-color: #BBB;
 			font-size: 18px;
 		}
 	}
@@ -49,13 +54,13 @@
 
 @include respond-to(tablet) {
 	.aui .todo-portlet {
-		input[type="text"].input-item {
-			width: 84%;
+		.btn.add-task {
+			box-shadow: 10px 10px 5px $gray;
+			width: 14%;
 		}
 
-		.btn.add-task {
-			box-shadow: 10px 10px 5px #888;
-			width: 14%;
+		input[type="text"].input-item {
+			width: 84%;
 		}
 	}
 }
@@ -64,7 +69,6 @@
 	.aui .todo-portlet {
 		input[type="text"].input-item {
 			border-radius: 0;
-			transition: none;
 			width: 98.5%;
 
 			&:hover {
@@ -74,11 +78,10 @@
 
 		.btn.add-task {
 			border-radius: 0;
-			box-shadow: 10px 10px 5px #888;
+			box-shadow: 10px 10px 5px $gray;
 			font-weight: bold;
 			margin: 0 0 10px 0;
 			text-transform: uppercase;
-			transition: none;
 			width: 100%;
 
 			&:hover {
@@ -91,18 +94,151 @@
 /* Todo portlet */
 
 .todo-portlet {
+	.counter {
+		background-color: $royalblue;
+		border-radius: 50%;
+		color: #E1E6EF;
+		font-weight: bold;
+		margin: 0 5px 0 6px;
+		padding: 8px 8px 8px 8px;
+
+		&:hover {
+			font-size: 20px;
+		}
+	}
+
+	.delete-task {
+		background-color: $white;
+		border-width: 0;
+		color: $white;
+		margin: auto;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		&:hover {
+		background-color: #757C87;
+		}
+	}
+
+	.empty-task-history {
+		font-style: italic;
+		text-align: center;
+	}
+
+	.finished-task {
+		border-top: 1px solid #C7CED8;
+		margin-top: 8px;
+
+		li {
+			background-color: #FF6B68;
+			border-radius: 0;
+			box-shadow: 10px 10px 5px $gray;
+			color: $white;
+			cursor: pointer;
+			font-size: 16px;
+			list-style-type: none;
+			margin-bottom: 6px;
+			padding: 8px 8px 8px 8px;
+		}
+
+		button {
+			background-color: #FF6B68;
+			border-radius: 50%;
+			border-width: 0;
+			color: $white;
+			float: right;
+			margin-top: -6px;
+			padding: 6px 10px 6px 10px;
+
+			&:hover {
+				background-color: #757C87;
+			}
+		}
+	}
+
+	.finished-tasks {
+		padding: 0 10px 10px 10px;
+
+		h3 {
+			font-size: 30px;
+			text-align: center;
+		}
+	}
+
+	.form-container {
+		margin: auto;
+		width: 90%;
+
+		h3 {
+			color: $royalblue;
+			font-weight: 900;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		form {
+			font-size: 16px;
+			margin: auto;
+			width: 100%;
+
+			input, select {
+				box-sizing: content-box;
+				float: left;
+				height: 18px;
+				margin: auto;
+				padding: 10px 0 10px 1%;
+				width: 100%;
+
+				&:hover {
+					font-size: 18px;
+				}
+			}
+
+			textarea {
+				width: 100%;
+
+				&:hover {
+					font-size: 18px;
+				}
+			}
+		}
+
+		.form-buttons {
+			text-align: center;
+
+			button {
+				background: $royalblue none;
+				border-width: 0;
+				color: $white;
+				cursor: pointer;
+				display: inline-block;
+				font-size: 16px;
+				margin-bottom: 10px;
+				padding-bottom: 10px;
+				padding-top: 10px;
+				text-align: center;
+				text-decoration: none;
+
+				&:hover {
+					background-color: #BBB;
+					font-size: 18px;
+				}
+			}
+		}
+	}
+
 	.list-container {
-		border-radius: 10px;
-		box-shadow: 10px 10px 5px 10px #888;
+		background-color: $white;
+		border-left: 1px solid #C7CED8;
 		height: 100%;
 		margin: auto;
 		max-width: 900px;
-		min-height: 500px;
+		min-height: 600px;
 
 		.header {
-			background-color: royalblue;
-			border-radius: 10px 10px 0 0;
-			color: white;
+			background-color: $royalblue;
+			color: $white;
 			padding: 20px 40px;
 			text-align: center;
 		}
@@ -110,14 +246,107 @@
 		h2 {
 			font-size: 60px;
 			font-weight: 900;
+			margin-top: -10px;
 			text-align: center;
 			text-transform: uppercase;
 		}
 	}
 
+	.task-container {
+		padding: 10px 10px 10px 10px;
+
+		h3 {
+			font-family: Raleway, sans-serif;
+			font-size: 30px;
+			font-weight: 900;
+			text-transform: uppercase;
+		}
+	}
+
+	.task-history {
+		padding: 0 10px 0 10px;
+
+		h3 {
+			color: $royalblue;
+			font-family: Raleway, sans-serif;
+			font-weight: 900;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		ul {
+			margin-left: 0;
+		}
+
+		li {
+			background: $gray;
+			box-shadow: 10px 10px 5px $gray;
+			color: #FFF;
+			cursor: pointer;
+			font-size: 16px;
+			list-style-type: none;
+			margin-bottom: 6px;
+			padding: 8px 8px 8px 8px;
+			text-decoration: line-through;
+
+			button {
+				display: none;
+			}
+		}
+
+		li:nth-child(odd) {
+			background: #DDD;
+			color: $white;
+		}
+	}
+
+	.task-list {
+		margin-left: 0;
+		margin-top: 8px;
+
+		li {
+			background-color: #1A53AF;
+			box-shadow: 10px 10px 5px $gray;
+			color: $white;
+			cursor: pointer;
+			font-size: 16px;
+			list-style-type: none;
+			margin-bottom: 6px;
+			padding: 8px 8px 8px 8px;
+			position: relative;
+
+			&:nth-child(odd) {
+				background-color: #93D5FF;
+			}
+		}
+	}
+
+	.remaining-tasks-container {
+		margin-bottom: 0;
+
+		.remaining-tasks-count {
+			background-color: $yellow;
+			border-radius: 50%;
+			color: $black;
+			float: left;
+			font-weight: bold;
+			margin: 0 5px 0 6px;
+			padding: 0 8px 0 8px;
+
+			&:hover {
+				font-size: 20px;
+			}
+		}
+
+		.remaining-tasks {
+			font-style: italic;
+			margin-bottom: -8px;
+		}
+	}
+
 	.welcome-message {
-		background-color: #FF9395;
-		color: white;
+		background-color: $lightred;
+		color: $white;
 		display: inline-block;
 		float: right;
 		font-weight: bold;
@@ -131,273 +360,187 @@
 			width: 25px;
 		}
 	}
+}
 
-	.task-container {
-		padding: 10px 10px 10px 10px;
-
-		h3 {
-			font-family: 'Open Sans', sans-serif;
-			font-size: 30px;
-			font-weight: 900;
-			text-transform: uppercase;
-		}
+@include respond-to(tablet) {
+	.delete-task {
+		font-size: 16px;
+		padding: 8px 8px;
+		width: 7%;
 	}
 
+	.list-container {
+		min-height: 600px;
+
+		.header {
+			padding: 20px 15px;
+		}
+
+		.welcome-message {
+			width: 97.5%;
+		}
+	}
+}
+
+@include respond-to(phone) {
 	.counter {
-		background-color: royalblue;
-		border-radius: 50%;
-		color: #E1E6EF;
+		border-radius: 0;
+		font-style: italic;
 		font-weight: bold;
-		margin: 0 5px 0 6px;
-		padding: 8px 8px 8px 8px;
-		transition: font-size 1s;
+		margin: 0;
 
 		&:hover {
-			font-size: 20px;
-		}
-	}
-
-	.task-list {
-		margin-left: 0;
-		margin-top: 8px;
-
-		li {
-			background-color: #1A53AF;
-			border-radius: 10px;
-			color: white;
-			cursor: pointer;
-			font-size: 16px;
-			list-style-type: none;
-			padding: 8px 0 8px 8px;
-			position: relative;
-			transition: all 1s ease-out;
-			user-select: none;
-
-			&:nth-child(odd) {
-				background-color: #93D5FF;
-			}
+			font-size: 14px;
 		}
 	}
 
 	.delete-task {
-		background-color: white;
-		border-width: 0;
-		color: white;
+		padding: 8px;
+		width: 10%;
+	}
+
+	.finished-task, .task-list {
+		width: 100%;
+	}
+
+	.finished-task button {
+		padding: 4px 12px 4px 8px;
+	}
+
+	.finished-task button, .finished-task li, .delete-task, .task-list li {
+		border-radius: 0;
+	}
+
+	.finished-task li, .task-list li {
+		box-shadow: 10px 10px 5px $gray;
+		margin-bottom: 6px;
+	}
+
+	.form-container {
 		margin: auto;
-		position: absolute;
-		right: 0;
-		top: 0;
+		width: 100%;
 
-		&:hover {
-			background-color: #757C87;
-		}
-	}
-
-	.remaining-tasks-container {
-		margin-bottom: 0;
-
-		.remaining-tasks-count {
-			background-color: #EEFF59;
-			border-radius: 50%;
-			color: black;
-			float: left;
-			font-weight: bold;
-			margin: 0 5px 0 6px;
-			padding: 0 8px 0 8px;
-			transition: font-size 1s;
-
-			&:hover {
-				font-size: 20px;
-			}
-		}
-
-		.remaining-tasks {
-			font-style: italic;
-			margin-bottom: -8px;
-		}
-	}
-
-	.finished-task {
-		border-top: 1px solid #C7CED8;
-		margin-top: 8px;
-
-		li {
-			background-color: #FF6B68;
-			border-radius: 10px;
-			color: white;
-			cursor: pointer;
-			font-size: 16px;
-			list-style-type: none;
-			padding: 8px 8px 8px 8px;
-		}
-
-		button {
-			background-color: #FF6B68;
-			border-radius: 50%;
-			border-width: 0;
-			color: white;
-			float: right;
-			padding: 6px 10px 6px 10px;
-
-			&:hover {
-				background-color: #757C87;
-			}
-		}
-	}
-
-	.task-history {
-		padding: 0 10px 0 10px;
-
-		h3 {
-			font-family: 'Open Sans', sans-serif;
-			font-size: 30px;
+		form {
+			font-size: 14px;
 			text-align: center;
-		}
+			width: 92.5%;
 
-		table {
-			border-collapse: collapse;
-			width: 98%;
-		}
-
-		td, th {
-			border: 1px solid #DDD;
-			font-size: 16px;
-			padding: 8px;
-			text-align: left;
-		}
-
-		th {
-			background-color: royalblue;
-			color: #E4F1FE;
-			text-transform: uppercase;
-		}
-
-		tr {
-			padding: 8px;
-		}
-
-		tr:nth-child(even) {
-			background-color: #C4CAD3;
-			color: yellow;
-		}
-	}
-
-	.finished-tasks {
-		padding: 0 10px 10px 10px;
-
-		h3 {
-			font-size: 30px;
-			text-align: center;
-		}
-	}
-
-	.empty-task-history {
-		font-style: italic;
-		text-align: center;
-	}
-
-	@include respond-to(tablet) {
-		.list-container {
-			.welcome-message {
-				width: 97.5%;
-			}
-		}
-
-		.delete-task {
-			border-radius: 10px;
-			font-size: 17.5px;
-			padding: 11px 11px;
-			width: 7%;
-		}
-
-		.list-container {
-			.header {
-				padding: 20px 15px;
-			}
-		}
-	}
-
-	@include respond-to(phone) {
-		.list-container {
-			border-radius: 0;
-			border:  1px solid #C7CED8;;
-			box-shadow: 10px 10px 5px #888;
-
-			h2 {
-				font-size: 40px;
-			}
-
-			.header {
-				border-radius: 0;
-				padding: 15px 0;
-			}
-
-			.welcome-message {
-				float: none;
-				margin: auto;
-				width: 94.5%;
-			}
-		}
-
-		.task-container {
-			padding: 0;
-		}
-
-		.task-list {
-			margin-right: 5%;
-		}
-
-		.delete-task {
-			width: 10%;
-		}
-
-		.task-list, .finished-task {
-			width: 100%;
-		}
-
-		.task-list li, .finished-task li, .finished-task button, .delete-task {
-			border-radius: 0;
-		}
-
-		.task-list li, .finished-task li {
-			box-shadow: 10px 10px 5px #888;
-			margin-bottom: 6px;
-		}
-
-		.finished-task button {
-			padding: 4px 12px 10px 8px;
-		}
-
-		.counter {
-			border-radius: 0;
-			font-style: italic;
-			font-weight: bold;
-			margin: 0;
-			transition: none;
-
-			&:hover {
+		input, select {
 				font-size: 14px;
+				width: 100%;
 			}
-		}
 
-		.remaining-tasks-container {
-			.remaining-tasks-count {
-				border-radius: 0;
-				font-weight: bold;
-				margin: 0;
-				transition: none;
+			textarea {
+				width: 97%;
+			}
 
+			input, select, textarea {
 				&:hover {
-					font-size: 14px;
+				font-size: 14px;
 				}
 			}
 		}
 
-		.task-history {
-			table {
-				box-shadow: 10px 10px 5px #888;
-				visibility: hidden;
-			}
+		.form-buttons button {
+			border-radius: 0;
+			box-shadow: 10px 10px 5px $gray;
+			margin-bottom: 0;
+			width: 100%;
 		}
+	}
+
+	.list-container {
+		border-radius: 0;
+		box-shadow: 10px 10px 0 $gray;
+		min-height: 600px;
+
+		h2 {
+			font-size: 40px;
+		}
+
+		.header {
+			border-radius: 0;
+			padding: 15px 0;
+		}
+
+		.welcome-message {
+			float: none;
+			margin: auto;
+			width: 94.5%;
+		}
+	}
+
+	.remaining-tasks-container .remaining-tasks-count {
+		border-radius: 0;
+		font-weight: bold;
+		margin: 0;
+
+		&:hover {
+			font-size: 14px;
+		}
+	}
+
+	.task-container {
+		padding: 0;
+	}
+
+	.task-list {
+		margin-right: 5%;
+	}
+}
+
+/* Extras compass */
+
+.aui .todo-portlet {
+	input[type="text"].input-item, .btn.add-task  {
+		@include transition(font-size 1s);
+	}
+}
+
+@include respond-to(phone) {
+	.aui .todo-portlet {
+		input[type="text"].input-item {
+			@include transition(none);
+		}
+	}
+}
+
+.todo-portlet {
+	.counter {
+		@include transition(font-size 1s);
+	}
+
+	.form-container {
+		form input, select, textarea {
+			@include transition(font-size 1s);
+		}
+	}
+
+	.remaining-tasks-container .remaining-tasks-count {
+		@include transition(font-size 1s);
+	}
+
+	.task-list li {
+		@include transition(all 1s ease-out);
+	}
+}
+
+@include respond-to(phone) {
+	.counter {
+		@include transition(none);
+	}
+
+	.form-container {
+		form input, select, textarea {
+			@include transition(none);
+		}
+	}
+
+	.task-list li {
+		@include transition(none);
+	}
+
+	.remaining-tasks-container .remaining-tasks-count {
+		@include transition(none);
 	}
 }
