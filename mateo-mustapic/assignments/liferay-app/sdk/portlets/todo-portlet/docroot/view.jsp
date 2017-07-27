@@ -16,92 +16,66 @@
 
 <%@ include file="/init.jsp" %>
 
-<div class="list-container">
-	<div class="header">
-		<h2>
-			<liferay-ui:message key="to-do-list" />
+<%@ include file="/header.jspf" %>
 
-			<i class="icon-check"></i>
-		</h2>
+<div class="task-container">
+	<h3>
+		<liferay-ui:message key="task-list" />
+
+		<i class="icon-check"></i>
+	</h3>
+
+	<aui:form name="task-form">
+		<aui:input cssClass="input-item" name="task" placeholder="enter-task" required="true" />
+
+		<aui:button cssClass="add-task" name="add" type="submit" value="add" />
+	</aui:form>
+
+	<span class="counter">
+		35
+	</span>
+
+	<liferay-ui:message key="characters-remaining" />
+
+	<h3>
+		<liferay-ui:message key="tasks" />
+	</h3>
+
+	<ul class="task-list" id="<portlet:namespace />todo-list">
+		<li>
+			<liferay-ui:message key="sample-task" />
+
+			<aui:button cssClass="delete-task" icon="icon-remove" size="large" />
+		</li>
+	</ul>
+
+	<div class="remaining-tasks-container">
+		<div class="remaining-tasks-count" id="<portlet:namespace />remaining-tasks-count">
+			1
+		</div>
+
+		<div class="remaining-tasks">
+			<liferay-ui:message key="tasks-left" />
+		</div>
 	</div>
 
-	<div class="welcome-message">
-		<liferay-ui:message key="welcome" />
+	<div class="finished-task" id="<portlet:namespace />finished-task">
+		<ul class="finished-task-list"></ul>
+	</div>
+</div>
 
-		<%= user.getFirstName() %>
+<div class="task-history">
+	<h3>
+		<liferay-ui:message key="task-history" />
 
-		<img alt="<%= user.getFullName() %>" src="<%= user.getPortraitURL(themeDisplay) %>">
+		<i class="icon-book"></i>
+	</h3>
+
+	<div class="empty-task-history" id="<portlet:namespace />empty-task-history">
+		<liferay-ui:message key="no-tasks" />
 	</div>
 
-	<liferay-ui:tabs names="task-list-tab,task-history-tab,profile-tab,contact-tab" refresh="false">
-		<liferay-ui:section>
-			<div class="task-container">
-				<aui:form>
-					<aui:input cssClass="input-item" name="task" placeholder="enter-task">
-						<aui:validator name="required" />
-					</aui:input>
-
-					<aui:button cssClass="add-task" name="add" value="add" />
-				</aui:form>
-
-				<span class="counter">
-					35
-				</span>
-
-				<liferay-ui:message key="characters-remaining" />
-
-				<h3>
-					<liferay-ui:message key="tasks" />
-				</h3>
-
-				<ul class="task-list" id="<portlet:namespace />todo-list">
-					<li>
-						<liferay-ui:message key="sample-task" />
-
-						<aui:button cssClass="delete-task" icon="icon-remove" size="large" />
-					</li>
-				</ul>
-
-				<div class="remaining-tasks-container">
-					<div class="remaining-tasks-count" id="<portlet:namespace />remaining-tasks-count">
-						1
-					</div>
-
-					<div class="remaining-tasks">
-						<liferay-ui:message key="tasks-left" />
-					</div>
-				</div>
-
-				<div class="finished-task" id="<portlet:namespace />finished-task">
-					<ul class="finished-task-list"></ul>
-				</div>
-			</div>
-		</liferay-ui:section>
-
-		<liferay-ui:section>
-			<div class="task-history">
-				<h3>
-					<liferay-ui:message key="task-history" />
-
-					<i class="icon-book"></i>
-				</h3>
-
-				<div class="empty-task-history" id="<portlet:namespace />empty-task-history">
-					<liferay-ui:message key="no-tasks" />
-				</div>
-
-				<ul class="history-list" id="<portlet:namespace />history-list"></ul>
-			</div>
-		</liferay-ui:section>
-
-		<liferay-ui:section>
-			<div class="profile-page"></div>
-		</liferay-ui:section>
-
-		<liferay-ui:section>
-			<div class="contact-form"></div>
-		</liferay-ui:section>
-	</liferay-ui:tabs>
+	<ul class="history-list" id="<portlet:namespace />history-list"></ul>
 </div>
 
 <aui:script use="todo">

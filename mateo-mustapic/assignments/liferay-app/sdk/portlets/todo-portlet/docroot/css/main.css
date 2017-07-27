@@ -37,7 +37,6 @@ $yellow: #EEFF59;
 
 	input[type="text"].input-item {
 		border: 1px solid #CCC;
-		border-radius: 10px;
 		box-sizing: content-box;
 		float: left;
 		font-size: 16px;
@@ -228,32 +227,16 @@ $yellow: #EEFF59;
 		}
 	}
 
-	.list-container {
-		background-color: $white;
-		border-left: 1px solid #C7CED8;
-		height: 100%;
-		margin: auto;
-		max-width: 900px;
-		min-height: 600px;
-
-		.header {
-			background-color: $royalblue;
-			color: $white;
-			padding: 20px 40px;
-			text-align: center;
-		}
+	.task-container {
+		padding: 10px 10px 10px 10px;
 
 		h2 {
-			font-size: 60px;
+			color: $royalblue;
+			font-family: Raleway, sans-serif;
 			font-weight: 900;
-			margin-top: -10px;
 			text-align: center;
 			text-transform: uppercase;
 		}
-	}
-
-	.task-container {
-		padding: 10px 10px 10px 10px;
 
 		h3 {
 			font-family: Raleway, sans-serif;
@@ -344,13 +327,34 @@ $yellow: #EEFF59;
 		}
 	}
 
+	.top-navigation {
+		background-color: $royalblue;
+		overflow: hidden;
+
+		a {
+			color: #F2F2F2;
+			display: block;
+			float: left;
+			font-size: 17px;
+			font-weight: 900;
+			padding: 14px 14px;
+			text-align: center;
+			text-decoration: none;
+
+			&:hover {
+				background-color: #DDD;
+				color: black;
+			}
+		}
+	}
+
 	.welcome-message {
 		background-color: $lightred;
 		color: $white;
 		display: inline-block;
 		float: right;
 		font-weight: bold;
-		padding: 10px 10px 10px 10px;
+		padding: 10px 10px 12px 10px;
 
 		img {
 			border-radius: 50%;
@@ -369,7 +373,7 @@ $yellow: #EEFF59;
 		width: 7%;
 	}
 
-	.list-container {
+	.task-container {
 		min-height: 600px;
 
 		.header {
@@ -383,109 +387,93 @@ $yellow: #EEFF59;
 }
 
 @include respond-to(phone) {
-	.counter {
-		border-radius: 0;
-		font-style: italic;
-		font-weight: bold;
-		margin: 0;
-
-		&:hover {
-			font-size: 14px;
-		}
-	}
-
-	.delete-task {
-		padding: 8px;
-		width: 10%;
-	}
-
-	.finished-task, .task-list {
-		width: 100%;
-	}
-
-	.finished-task button {
-		padding: 4px 12px 4px 8px;
-	}
-
-	.finished-task button, .finished-task li, .delete-task, .task-list li {
-		border-radius: 0;
-	}
-
-	.finished-task li, .task-list li {
-		box-shadow: 10px 10px 5px $gray;
-		margin-bottom: 6px;
-	}
-
-	.form-container {
-		margin: auto;
-		width: 100%;
-
-		form {
-			font-size: 14px;
-			text-align: center;
-			width: 92.5%;
-
-		input, select {
-				font-size: 14px;
-				width: 100%;
-			}
-
-			textarea {
-				width: 97%;
-			}
-
-			input, select, textarea {
-				&:hover {
-				font-size: 14px;
-				}
-			}
-		}
-
-		.form-buttons button {
+	.todo {
+		.counter {
 			border-radius: 0;
-			box-shadow: 10px 10px 5px $gray;
-			margin-bottom: 0;
+			font-style: italic;
+			font-weight: bold;
+			margin: 0;
+
+			&:hover {
+				font-size: 14px;
+			}
+		}
+
+		.delete-task {
+			padding: 8px;
+			width: 10%;
+		}
+
+		.finished-task, .task-list {
 			width: 100%;
 		}
-	}
 
-	.list-container {
-		border-radius: 0;
-		box-shadow: 10px 10px 0 $gray;
-		min-height: 600px;
-
-		h2 {
-			font-size: 40px;
+		.finished-task button {
+			padding: 4px 12px 4px 8px;
 		}
 
-		.header {
+		.finished-task button, .finished-task li, .delete-task, .task-list li {
 			border-radius: 0;
-			padding: 15px 0;
 		}
 
-		.welcome-message {
-			float: none;
+		.finished-task li, .task-list li {
+			box-shadow: 10px 10px 5px $gray;
+			margin-bottom: 6px;
+		}
+
+		.form-container {
 			margin: auto;
-			width: 94.5%;
+			width: 100%;
 		}
-	}
 
-	.remaining-tasks-container .remaining-tasks-count {
-		border-radius: 0;
-		font-weight: bold;
-		margin: 0;
+		.list-container {
+			border-radius: 0;
+			box-shadow: 10px 10px 0 $gray;
+			min-height: 600px;
 
-		&:hover {
-			font-size: 14px;
+			h2 {
+				font-size: 40px;
+			}
+
+			.header {
+				border-radius: 0;
+				padding: 15px 0;
+			}
+
+			.welcome-message {
+				float: none;
+				margin: auto;
+				width: 94.5%;
+			}
 		}
-	}
 
-	.task-container {
-		padding: 0;
-	}
+		.task-container {
+			form {
+				width: 100%;
+			}
+		}
 
-	.task-list {
-		margin-right: 5%;
+		.remaining-tasks-container .remaining-tasks-count {
+			border-radius: 0;
+			font-weight: bold;
+			margin: 0;
+
+			&:hover {
+				font-size: 14px;
+			}
+		}
+
+		.task-container {
+			padding: 0;
+		}
+
+		.task-history {
+			padding: 0;
+		}
+
+		.task-list {
+			margin-right: 5%;
+		}
 	}
 }
 
