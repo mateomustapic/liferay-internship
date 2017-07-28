@@ -30,11 +30,11 @@
 	<liferay-ui:error key="error" message="error" />
 </div>
 
-<portlet:actionURL name="submitContactForm" var="formActionURL">
+<portlet:actionURL name="contact" var="contactURL">
 	<portlet:param name="redirect" value="/contact.jsp"></portlet:param>
 </portlet:actionURL>
 
-<aui:form action="<%= formActionURL %>" cssClass="contact-form" method="post" name="contact">
+<aui:form action="<%= contactURL %>" cssClass="contact-form" method="post" name="contact">
 	<aui:input name="name" required="<%= true %>" size="20" type="text" value="" />
 
 	<aui:input name="last-name" required="<%= true %>" size="20" type="text" value="" />

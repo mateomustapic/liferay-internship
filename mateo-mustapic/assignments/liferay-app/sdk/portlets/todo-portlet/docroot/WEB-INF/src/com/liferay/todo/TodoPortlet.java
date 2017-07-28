@@ -48,7 +48,7 @@ public class TodoPortlet extends MVCPortlet {
 			super.doView(renderRequest, renderResponse);
 	}
 
-	public void submitContactForm(
+	public void contact(
 			ActionRequest actionRequest, ActionResponse actionResponse)
 		throws Exception {
 
