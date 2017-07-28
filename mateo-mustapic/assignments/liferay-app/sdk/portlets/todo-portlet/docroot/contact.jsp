@@ -25,14 +25,14 @@
 		<i class="icon-envelope"></i>
 	</h3>
 
-	<portlet:actionURL name="submitContactForm" var="formActionURL">
-		<portlet:param name="redirect" value="/contact.jsp"></portlet:param>
-	</portlet:actionURL>
-
 	<liferay-ui:success key="success" message="success" />
 
 	<liferay-ui:error key="error" message="error" />
 </div>
+
+<portlet:actionURL name="submitContactForm" var="formActionURL">
+	<portlet:param name="redirect" value="/contact.jsp"></portlet:param>
+</portlet:actionURL>
 
 <aui:form action="<%= formActionURL %>" cssClass="contact-form" method="post" name="contact">
 	<aui:input name="name" required="<%= true %>" size="20" type="text" value="" />

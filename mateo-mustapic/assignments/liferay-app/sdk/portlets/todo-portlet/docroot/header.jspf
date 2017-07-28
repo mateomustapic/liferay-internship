@@ -31,16 +31,16 @@
 		<img alt="<%= user.getFullName() %>" src="<%= user.getPortraitURL(themeDisplay) %>">
 	</div>
 
-	<portlet:renderURL var="homeURL">
-		<portlet:param name="mvcPath" value="/view.jsp"></portlet:param>
-	</portlet:renderURL>
-
-	<portlet:renderURL var="contactURL">
-		<portlet:param name="mvcPath" value="/contact.jsp"></portlet:param>
-	</portlet:renderURL>
-
 	<div class="top-navigation">
+		<portlet:renderURL var="homeURL">
+			<portlet:param name="mvcPath" value="/view.jsp"></portlet:param>
+		</portlet:renderURL>
+
 		<aui:a cssCass="active" href="<%= homeURL.toString() %>" label="task-list" />
+
+		<portlet:renderURL var="contactURL">
+			<portlet:param name="mvcPath" value="/contact.jsp"></portlet:param>
+		</portlet:renderURL>
 
 		<aui:a href="<%= contactURL.toString() %>" label="contact-us" />
 	</div>
