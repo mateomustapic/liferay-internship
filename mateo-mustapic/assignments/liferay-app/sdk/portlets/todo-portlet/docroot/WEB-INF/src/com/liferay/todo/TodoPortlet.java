@@ -56,11 +56,11 @@ public class TodoPortlet extends MVCPortlet {
 			_log.info("Process action for contact form works");
 		}
 
-		String birthday = ParamUtil.getString(actionRequest, "birthday", "");
-		String comment = ParamUtil.getString(actionRequest, "comment", "");
-		String email = ParamUtil.getString(actionRequest, "email", "");
-		String lastName = ParamUtil.getString(actionRequest, "last-name", "");
-		String name = ParamUtil.getString(actionRequest, "name", "");
+		String birthday = ParamUtil.getString(actionRequest, "birthday");
+		String comment = ParamUtil.getString(actionRequest, "comment");
+		String email = ParamUtil.getString(actionRequest, "email");
+		String lastName = ParamUtil.getString(actionRequest, "last-name");
+		String name = ParamUtil.getString(actionRequest, "name");
 
 		if (comment.isEmpty()) {
 			SessionErrors.add(actionRequest, "error");
