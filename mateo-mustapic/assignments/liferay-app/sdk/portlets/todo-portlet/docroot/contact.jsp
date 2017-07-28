@@ -35,7 +35,6 @@
 </div>
 
 <aui:form action="<%= formActionURL %>" cssClass="contact-form" method="post" name="contact">
-
 	<aui:input name="name" required="<%= true %>" size="20" type="text" value="" />
 
 	<aui:input name="last-name" required="<%= true %>" size="20" type="text" value="" />

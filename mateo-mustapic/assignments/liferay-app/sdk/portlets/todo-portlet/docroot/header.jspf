@@ -41,6 +41,7 @@
 
 	<div class="top-navigation">
 		<aui:a cssCass="active" href="<%= homeURL.toString() %>" label="task-list" />
+
 		<aui:a href="<%= contactURL.toString() %>" label="contact-us" />
 	</div>
 </div>

@@ -49,53 +49,47 @@ public class TodoPortlet extends MVCPortlet {
 	}
 
 	public void submitContactForm(
-		ActionRequest actionRequest, ActionResponse actionResponse)
-			throws Exception {
-				if (_log.isInfoEnabled()) {
-					_log.info("Process action for contact form works");
-				}
+			ActionRequest actionRequest, ActionResponse actionResponse)
+		throws Exception {
 
-				String name = ParamUtil.getString(actionRequest, "name", "");
+		if (_log.isInfoEnabled()) {
+			_log.info("Process action for contact form works");
+		}
 
-				String lastName = ParamUtil.getString(
-					actionRequest, "last-name", "");
+		String name = ParamUtil.getString(actionRequest, "name", "");
+		String lastName = ParamUtil.getString(actionRequest, "last-name", "");
+		String email = ParamUtil.getString(actionRequest, "email", "");
+		String birthday = ParamUtil.getString(actionRequest, "birthday", "");
+		String comment = ParamUtil.getString(actionRequest, "comment", "");
 
-				String email = ParamUtil.getString(actionRequest, "email", "");
+		if (comment.isEmpty()) {
+			SessionErrors.add(actionRequest, "error");
 
-				String birthday = ParamUtil.getString(
-					actionRequest, "birthday", "");
+			SessionMessages.add(
+				actionRequest, PortalUtil.getPortletId(actionRequest) +
+				SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
+		}
+		else {
+			StringBundler sb = new StringBundler(9);
 
-				String comment = ParamUtil.getString(
-					actionRequest, "comment", "");
+			sb.append(name);
+			sb.append(StringPool.COMMA);
+			sb.append(lastName);
+			sb.append(StringPool.COMMA);
+			sb.append(email);
+			sb.append(StringPool.COMMA);
+			sb.append(birthday);
+			sb.append(StringPool.COMMA);
+			sb.append(comment);
 
-				if (comment.isEmpty()) {
-					SessionErrors.add(actionRequest, "error");
+			if (_log.isInfoEnabled()) {
+				_log.info(sb.toString());
+			}
 
-					SessionMessages.add(
-						actionRequest, PortalUtil.getPortletId(actionRequest) +
-						SessionMessages.KEY_SUFFIX_HIDE_DEFAULT_ERROR_MESSAGE);
-				}
+			SessionMessages.add(actionRequest, "success");
+		}
 
-				else {
-					StringBundler sb = new StringBundler(9);
-					sb.append(name);
-					sb.append(StringPool.COMMA);
-					sb.append(lastName);
-					sb.append(StringPool.COMMA);
-					sb.append(email);
-					sb.append(StringPool.COMMA);
-					sb.append(birthday);
-					sb.append(StringPool.COMMA);
-					sb.append(comment);
-
-					if (_log.isInfoEnabled()) {
-						_log.info(sb.toString());
-					}
-
-					SessionMessages.add(actionRequest, "success");
-				}
-
-				actionResponse.setRenderParameter("mvcPath", "/contact.jsp");
+		actionResponse.setRenderParameter("mvcPath", "/contact.jsp");
 	}
 
 	private static Log _log = LogFactoryUtil.getLog(TodoPortlet.class);
