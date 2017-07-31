@@ -227,6 +227,29 @@ $yellow: #EEFF59;
 		}
 	}
 
+	.remaining-tasks-container {
+		margin-bottom: 0;
+
+		.remaining-tasks-count {
+			background-color: $yellow;
+			border-radius: 50%;
+			color: $black;
+			float: left;
+			font-weight: bold;
+			margin: 0 5px 0 6px;
+			padding: 0 8px 0 8px;
+
+			&:hover {
+				font-size: 20px;
+			}
+		}
+
+		.remaining-tasks {
+			font-style: italic;
+			margin-bottom: -8px;
+		}
+	}
+
 	.task-container {
 		padding: 10px 10px 10px 10px;
 
@@ -304,29 +327,6 @@ $yellow: #EEFF59;
 		}
 	}
 
-	.remaining-tasks-container {
-		margin-bottom: 0;
-
-		.remaining-tasks-count {
-			background-color: $yellow;
-			border-radius: 50%;
-			color: $black;
-			float: left;
-			font-weight: bold;
-			margin: 0 5px 0 6px;
-			padding: 0 8px 0 8px;
-
-			&:hover {
-				font-size: 20px;
-			}
-		}
-
-		.remaining-tasks {
-			font-style: italic;
-			margin-bottom: -8px;
-		}
-	}
-
 	.top-navigation {
 		background-color: $royalblue;
 		overflow: hidden;
@@ -353,7 +353,7 @@ $yellow: #EEFF59;
 		color: $white;
 		display: inline-block;
 		float: right;
-		font-weight: bold;
+		font-weight: 900;
 		padding: 10px 10px 12px 10px;
 
 		img {
@@ -426,30 +426,13 @@ $yellow: #EEFF59;
 			width: 100%;
 		}
 
-		.list-container {
-			border-radius: 0;
-			box-shadow: 10px 10px 0 $gray;
-			min-height: 600px;
-
-			h2 {
-				font-size: 40px;
-			}
-
-			.header {
-				border-radius: 0;
-				padding: 15px 0;
-			}
-
-			.welcome-message {
-				float: none;
-				margin: auto;
-				width: 94.5%;
-			}
-		}
-
 		.task-container {
 			form {
 				width: 100%;
+			}
+
+			h3 {
+				text-align: center;
 			}
 		}
 
@@ -473,6 +456,10 @@ $yellow: #EEFF59;
 
 		.task-list {
 			margin-right: 5%;
+		}
+
+		.top-navigation {
+			font-size: 15px;
 		}
 	}
 }

@@ -41,7 +41,7 @@
 
 	<aui:input name="email" required="<%= true %>" size="20" type="text"  value="" />
 
-	<aui:select name="gender">
+	<aui:select name="gender" showEmptyOption="<%= true %>">
 		<aui:option key="male" label="male" />
 		<aui:option key="female" label="female" />
 	</aui:select>

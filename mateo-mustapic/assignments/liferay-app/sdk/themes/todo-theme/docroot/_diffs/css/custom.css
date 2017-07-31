@@ -1,0 +1,270 @@
+@import "compass";
+@import "mixins";
+
+$black: #000;
+$gray: #888;
+$royalblue: #4169E1;
+$white: #FFF;
+
+html {
+	height: 100%;
+}
+
+.aui {
+	background-color: transparent;
+
+	body {
+		background: url(../images/background.jpg) no-repeat fixed center top;
+		background-size: cover;
+		height: 100%;
+	}
+
+	@include respond-to(phone) {
+		body {
+			background: none;
+			min-height: 500px;
+		}
+	}
+}
+
+.todo {
+	.button-holder {
+		.btn {
+			background: $royalblue none;
+			color: $white;
+			cursor: pointer;
+			display: inline-block;
+			font-size: 16px;
+			margin: auto;
+			padding-bottom: 10px;
+			padding-top: 10px;
+			text-align: center;
+
+			&:hover {
+				background-color: #BBB;
+				font-size: 18px;
+			}
+		}
+	}
+
+	.language-picker {
+		background-color: $royalblue;
+		border-left: 1px solid #C7CED8;
+		color: $white;
+		font-weight: 900;
+		margin: auto;
+		max-width: 900px;
+
+		a {
+			color: $black;
+			text-decoration: underline;
+		}
+
+		.portlet-title {
+			display: none;
+		}
+
+		.portlet-content {
+			padding: 0;
+		}
+
+		@include respond-to(phone) {
+			box-shadow: 5px 5px 0 5px $gray;
+		}
+	}
+
+	.list-container {
+		background-color: $white;
+		height: 100%;
+		margin: auto auto 20px;
+		max-width: 900px;
+		min-height: 600px;
+
+		.header {
+			background-color: $royalblue;
+			color: $white;
+			padding: 20px 40px;
+			text-align: center;
+		}
+
+		h2 {
+			font-size: 60px;
+			font-weight: 900;
+			margin-top: -10px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		form {
+			font-family: Montserrat, sans-serif;
+			font-size: 14px;
+			font-weight: 900;
+			margin: auto;
+			padding-right: 10px;
+			text-align: center;
+			width: 97%;
+
+			input, select {
+				border: 1px solid #CCC;
+				box-sizing: content-box;
+				float: left;
+				font-size: 16px;
+				height: 18px;
+				margin: auto;
+				padding: 10px 0 10px 7px;
+				width: 100%;
+			}
+
+			label {
+				font-weight: 900;
+			}
+
+			textarea {
+				padding-right: 0;
+				width: 100%;
+			}
+
+			input, select, textarea {
+				&:hover {
+					font-size: 18px;
+				}
+			}
+
+			.form-buttons button {
+				background: $royalblue none;
+				color: $white;
+				cursor: pointer;
+				display: inline-block;
+				font-size: 16px;
+				margin: auto;
+				padding-bottom: 10px;
+				padding-top: 10px;
+				text-align: center;
+
+				&:hover {
+					background-color: #BBB;
+					font-size: 18px;
+				}
+			}
+		}
+
+		@include respond-to(phone) {
+			border-left: 1px solid #C7CED8;
+			border-radius: 0;
+			box-shadow: 10px 10px 0 $gray;
+			min-height: 600px;
+
+			h2 {
+				font-size: 36px;
+			}
+
+			.header {
+				border-radius: 0;
+				padding: 15px 0;
+			}
+
+			.welcome-message {
+				float: none;
+				margin: auto;
+				width: 94.5%;
+			}
+		}
+	}
+
+	.portlet-login {
+		background-color: $white;
+		margin: auto;
+		max-width: 900px;
+		min-height: 500px;
+
+		h3 {
+			background-color: $royalblue;
+			color: $white;
+			font-family: Raleway, sans-serif;
+			font-size: 30px;
+			font-weight: 900;
+			margin: auto;
+			max-width: 900px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		.form {
+			margin-top: 10px;
+			width: 70%;
+
+			input {
+				cursor: pointer;
+				font-size: 16px;
+				margin-bottom: 10px;
+				margin-top: 10px;
+				padding: 10px 0 10px 10px;
+			}
+
+			fieldset {
+				text-align: center;
+			}
+		}
+	}
+}
+
+@include respond-to(phone) {
+	.todo {
+		.button-holder .btn {
+			border-radius: 0;
+			box-shadow: 10px 10px 5px $gray;
+			transition: none;
+			width: 100%;
+		}
+
+		.container-fluid {
+			background: none;
+			height: 100%;
+		}
+
+		.form input {
+			border-radius: 0;
+			width: 95%;
+		}
+	}
+}
+
+/* Extras */
+
+.todo {
+	.list-container {
+		form {
+			input, select, textarea {
+				@include transition(font size 1s);
+			}
+		}
+
+		@include respond-to(phone) {
+			form {
+				input, select, textarea {
+					font-size: 14px;
+
+					&:hover {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+
+	.portlet-login {
+		.button-holder {
+			.btn {
+				@include transition(font-size 1s);
+			}
+		}
+
+		@include respond-to(phone) {
+			.button-holder {
+				.btn {
+					@include transition(none);
+				}
+			}
+		}
+	}
+}
