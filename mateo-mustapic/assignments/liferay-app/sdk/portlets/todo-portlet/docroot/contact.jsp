@@ -49,7 +49,7 @@
 	<aui:input name="birthday" type="date" />
 
 	<aui:select name="problem" required="<%= true %>">
-		<aui:option selected="<%= true %>" value="1" label="please-select-a-topic" />
+		<aui:option label="please-select-a-topic" selected="<%= true %>" value="1" />
 		<aui:option key="cannot-add-tasks-to-list" label="cannot-add-tasks-to-list" value="2" />
 		<aui:option key="cannot-remove-tasks-from-the-list" label="cannot-remove-tasks-from-the-list" value="3" />
 		<aui:option key="deleted-tasks-do-not-appear-in-history" label="deleted-tasks-do-not-appear-in-history" value="4" />

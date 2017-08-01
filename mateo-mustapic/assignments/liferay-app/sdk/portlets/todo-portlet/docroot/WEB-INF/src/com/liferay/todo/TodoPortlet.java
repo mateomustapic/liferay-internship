@@ -38,16 +38,6 @@ import javax.portlet.RenderResponse;
 
 public class TodoPortlet extends MVCPortlet {
 
-	public void doView(
-			RenderRequest renderRequest, RenderResponse renderResponse)
-		throws IOException, PortletException {
-			if (_log.isInfoEnabled()) {
-				_log.info("Render view of Todo Portlet");
-			}
-
-			super.doView(renderRequest, renderResponse);
-	}
-
 	public void contact(
 			ActionRequest actionRequest, ActionResponse actionResponse)
 		throws Exception {
@@ -90,6 +80,16 @@ public class TodoPortlet extends MVCPortlet {
 		}
 
 		actionResponse.setRenderParameter("mvcPath", "/contact.jsp");
+	}
+
+	public void doView(
+			RenderRequest renderRequest, RenderResponse renderResponse)
+		throws IOException, PortletException {
+			if (_log.isInfoEnabled()) {
+				_log.info("Render view of Todo Portlet");
+			}
+
+			super.doView(renderRequest, renderResponse);
 	}
 
 	private static Log _log = LogFactoryUtil.getLog(TodoPortlet.class);
