@@ -262,10 +262,15 @@ $yellow: #EEFF59;
 		}
 
 		h3 {
+			color: $royalblue;
 			font-family: Raleway, sans-serif;
 			font-size: 30px;
 			font-weight: 900;
 			text-transform: uppercase;
+		}
+
+		.task-form {
+			width: 100%;
 		}
 	}
 
@@ -343,7 +348,12 @@ $yellow: #EEFF59;
 
 			&:hover {
 				background-color: #DDD;
-				color: black;
+				color: $black;
+			}
+
+			&:active {
+				background-color: red;
+				color: white;
 			}
 		}
 	}
@@ -459,7 +469,7 @@ $yellow: #EEFF59;
 		}
 
 		.top-navigation {
-			font-size: 15px;
+			font-size: 14px;
 		}
 	}
 }

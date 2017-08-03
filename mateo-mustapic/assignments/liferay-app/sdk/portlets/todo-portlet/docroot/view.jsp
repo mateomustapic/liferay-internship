@@ -25,7 +25,7 @@
 		<i class="icon-check"></i>
 	</h3>
 
-	<aui:form name="task-form">
+	<aui:form cssClass="task-form" name="task-form">
 		<aui:input cssClass="input-item" name="task" placeholder="enter-task" required="true" />
 
 		<aui:button cssClass="add-task" name="add" type="submit" value="add" />
