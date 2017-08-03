@@ -50,6 +50,8 @@ html {
 	.language-picker {
 		background-color: $royalblue;
 		border-left: 1px solid #C7CED8;
+		border-right: 1px solid #C7CED8;
+		border-top: 1px solid #C7CED8;
 		color: $white;
 		font-weight: 900;
 		margin: auto;
@@ -75,6 +77,9 @@ html {
 
 	.list-container {
 		background-color: $white;
+		border-left: 1px solid #C7CED8;
+		border-right: 1px solid #C7CED8;
+		border-bottom: 1px solid #C7CED8;
 		height: 100%;
 		margin: auto auto 20px;
 		max-width: 900px;
