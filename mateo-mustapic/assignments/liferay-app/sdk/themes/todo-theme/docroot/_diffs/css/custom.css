@@ -3,6 +3,7 @@
 
 $black: #000;
 $gray: #888;
+$lightgray: #C7CED8;
 $royalblue: #4169E1;
 $white: #FFF;
 
@@ -49,9 +50,9 @@ html {
 
 	.language-picker {
 		background-color: $royalblue;
-		border-left: 1px solid #C7CED8;
-		border-right: 1px solid #C7CED8;
-		border-top: 1px solid #C7CED8;
+		border-color: $lightgray;
+		border-style: solid;
+		border-width: 1px 1px 0 1px;
 		color: $white;
 		font-weight: 900;
 		margin: auto;
@@ -77,9 +78,9 @@ html {
 
 	.list-container {
 		background-color: $white;
-		border-left: 1px solid #C7CED8;
-		border-right: 1px solid #C7CED8;
-		border-bottom: 1px solid #C7CED8;
+		border-color: $lightgray;
+		border-style: solid;
+		border-width: 0 1px 1px 1px;
 		height: 100%;
 		margin: auto auto 20px;
 		max-width: 900px;
