@@ -346,14 +346,14 @@ $yellow: #EEFF59;
 			text-align: center;
 			text-decoration: none;
 
-			&:hover {
-				background-color: #DDD;
-				color: $black;
-			}
-
 			&:active {
 				background-color: red;
 				color: white;
+			}
+
+			&:hover {
+				background-color: #DDD;
+				color: $black;
 			}
 		}
 	}
