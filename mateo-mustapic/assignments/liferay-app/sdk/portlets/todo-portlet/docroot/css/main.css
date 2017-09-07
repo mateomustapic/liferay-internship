@@ -31,7 +31,20 @@ $yellow: #EEFF59;
 
 		&:hover {
 			background-color: #BBB;
-			font-size: 18px;
+		}
+	}
+
+	.btn.delete-task {
+		background: inherit;
+		border-width: 0;
+		color: $white;
+		cursor: pointer;
+		padding-right: 12px;
+		padding-top: 8px;
+		text-align: center;
+
+		&:hover {
+			background-color: #BBB;
 		}
 	}
 
@@ -56,6 +69,11 @@ $yellow: #EEFF59;
 		.btn.add-task {
 			box-shadow: 10px 10px 5px $gray;
 			width: 14%;
+		}
+
+		.btn.delete-task {
+			padding-right: 10px;
+			padding-top: 5px;
 		}
 
 		input[type="text"].input-item {
@@ -86,6 +104,10 @@ $yellow: #EEFF59;
 			&:hover {
 				font-size: 16px;
 			}
+		}
+
+		.btn.delete-task {
+			padding: 8px;
 		}
 	}
 }
