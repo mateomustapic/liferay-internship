@@ -31,6 +31,8 @@ import javax.portlet.ActionResponse;
 import javax.portlet.PortletException;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
+import javax.portlet.ResourceRequest;
+import javax.portlet.ResourceResponse;
 
 /**
  * @author Mateo Mustapic
@@ -53,7 +55,7 @@ public class TodoPortlet extends MVCPortlet {
 		String name = ParamUtil.getString(actionRequest, "name");
 
 		if (comment.isEmpty()) {
-			SessionErrors.add(actionRequest, "error");
+			SessionErrors.add(actionRequest, "formSubmissionFailed");
 
 			SessionMessages.add(
 				actionRequest, PortalUtil.getPortletId(actionRequest) +
@@ -76,7 +78,7 @@ public class TodoPortlet extends MVCPortlet {
 				_log.info(sb.toString());
 			}
 
-			SessionMessages.add(actionRequest, "success");
+			SessionMessages.add(actionRequest, "formSuccessfullySubmitted");
 		}
 
 		actionResponse.setRenderParameter("mvcPath", "/contact.jsp");
@@ -90,6 +92,36 @@ public class TodoPortlet extends MVCPortlet {
 			}
 
 			super.doView(renderRequest, renderResponse);
+	}
+
+	@Override
+	public void serveResource(
+			ResourceRequest resourceRequest, ResourceResponse resourceResponse)
+		throws IOException, PortletException {
+			String resourceID = resourceRequest.getResourceID();
+				try {
+					if (resourceID.equals("task-resource")) {
+						String taskContent = ParamUtil.getString(
+							resourceRequest, "task");
+
+						if (taskContent == null) {
+							if (_log.isInfoEnabled()) {
+								_log.info("Ajax call is not performed");
+							}
+						}
+						else {
+							if (_log.isInfoEnabled()) {
+								_log.info("Ajax call is performed");
+							}
+						}
+
+						super.serveResource(resourceRequest, resourceResponse);
+					}
+				}
+
+				catch (Exception e) {
+					e.printStackTrace();
+				}
 	}
 
 	private static Log _log = LogFactoryUtil.getLog(TodoPortlet.class);

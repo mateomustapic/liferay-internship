@@ -18,6 +18,8 @@
 
 <%@ include file="/header.jspf" %>
 
+<div id="<portlet:namespace />request-status"></div>
+
 <div class="task-container">
 	<h3>
 		<liferay-ui:message key="task-list" />
@@ -25,11 +27,11 @@
 		<i class="icon-check"></i>
 	</h3>
 
-	<aui:form cssClass="task-form" name="task-form">
-		<aui:input cssClass="input-item" name="task" placeholder="enter-task" required="true" />
+	<portlet:resourceURL id="task-resource" var="taskListURL" />
 
-		<aui:button cssClass="add-task" name="add" type="submit" value="add" />
-	</aui:form>
+	<aui:input cssClass="input-item" name="task" placeholder="enter-task" required="true" />
+
+	<aui:button cssClass="add-task" name="add" type="submit" value="add" />
 
 	<span class="counter">
 		35
@@ -81,8 +83,11 @@
 <aui:script use="todo">
 	new Liferay.Portlet.Todo(
 		{
+			taskSubmissionFailed: '<%= UnicodeLanguageUtil.get(pageContext, "task-submission-failed") %>',
+			taskSuccessfullySubmitted: '<%= UnicodeLanguageUtil.get(pageContext, "task-successfully-submitted") %>',
 			namespace: '<portlet:namespace />',
-			taskFinished: '<%= UnicodeLanguageUtil.get(pageContext, "task-finished") %>'
+			taskFinished: '<%= UnicodeLanguageUtil.get(pageContext, "task-finished") %>',
+			taskListResourceURL: '<%= taskListURL %>'
 		}
 	);
 </aui:script>

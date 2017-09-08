@@ -25,9 +25,9 @@
 		<i class="icon-envelope"></i>
 	</h3>
 
-	<liferay-ui:success key="success" message="success" />
+	<liferay-ui:success key="formSuccessfullySubmitted" message="form-successfully-submitted" />
 
-	<liferay-ui:error key="error" message="error" />
+	<liferay-ui:error key="formSubmissionFailed" message="form-submission-failed" />
 </div>
 
 <portlet:actionURL name="contact" var="contactURL">
