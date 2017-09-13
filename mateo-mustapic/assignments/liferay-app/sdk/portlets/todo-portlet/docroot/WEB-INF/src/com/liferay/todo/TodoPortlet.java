@@ -87,41 +87,43 @@ public class TodoPortlet extends MVCPortlet {
 	public void doView(
 			RenderRequest renderRequest, RenderResponse renderResponse)
 		throws IOException, PortletException {
-			if (_log.isInfoEnabled()) {
-				_log.info("Render view of Todo Portlet");
-			}
 
-			super.doView(renderRequest, renderResponse);
+		if (_log.isInfoEnabled()) {
+			_log.info("Render view of Todo Portlet");
+		}
+
+		super.doView(renderRequest, renderResponse);
 	}
 
 	@Override
 	public void serveResource(
 			ResourceRequest resourceRequest, ResourceResponse resourceResponse)
 		throws IOException, PortletException {
-			String resourceID = resourceRequest.getResourceID();
-				try {
-					if (resourceID.equals("task-resource")) {
-						String taskContent = ParamUtil.getString(
-							resourceRequest, "task");
 
-						if (taskContent == null) {
-							if (_log.isInfoEnabled()) {
-								_log.info("Ajax call is not performed");
-							}
-						}
-						else {
-							if (_log.isInfoEnabled()) {
-								_log.info("Ajax call is performed");
-							}
-						}
+		String resourceID = resourceRequest.getResourceID();
 
-						super.serveResource(resourceRequest, resourceResponse);
+		try {
+			if (resourceID.equals("task-resource")) {
+				String taskContent = ParamUtil.getString(
+					resourceRequest, "task");
+
+				if (taskContent == null) {
+					if (_log.isInfoEnabled()) {
+						_log.info("Ajax call is not performed");
+					}
+				}
+				else {
+					if (_log.isInfoEnabled()) {
+						_log.info("Ajax call is performed");
 					}
 				}
 
-				catch (Exception e) {
-					e.printStackTrace();
-				}
+				super.serveResource(resourceRequest, resourceResponse);
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	private static Log _log = LogFactoryUtil.getLog(TodoPortlet.class);
