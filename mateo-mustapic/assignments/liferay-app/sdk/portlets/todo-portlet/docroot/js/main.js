@@ -58,9 +58,7 @@ AUI.add(
 
 						instance._taskSubmissionFailed = taskSubmissionFailed;
 
-						var taskListResourceURL = config.taskListResourceURL;
-
-						instance._taskListResourceURL = taskListResourceURL;
+						instance._addTaskURL = config.addTaskURL;
 
 						var emptyTaskHistory = instance.byId('empty-task-history');
 						var finishedTask = instance.byId('finished-task');
@@ -156,12 +154,10 @@ AUI.add(
 
 							var taskInputValue = taskInput.val();
 
-							var taskListResourceURL = instance._taskListResourceURL;
-
 							var requestStatus = instance.byId('request-status');
 
 							A.io.request(
-								taskListResourceURL,
+								instance._addTaskURL,
 								{
 									data: {
 										taskInputValue: taskInputValue

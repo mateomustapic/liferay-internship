@@ -103,7 +103,7 @@ public class TodoPortlet extends MVCPortlet {
 		String resourceID = resourceRequest.getResourceID();
 
 		try {
-			if (resourceID.equals("task-resource")) {
+			if (resourceID.equals("addTask")) {
 				String taskContent = ParamUtil.getString(
 					resourceRequest, "task");
 

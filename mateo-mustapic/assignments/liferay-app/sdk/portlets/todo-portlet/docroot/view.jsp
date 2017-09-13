@@ -78,14 +78,14 @@
 	<ul class="history-list" id="<portlet:namespace />history-list"></ul>
 </div>
 
-<portlet:resourceURL id="task-resource" var="taskListURL" />
+<portlet:resourceURL id="addTask" var="addTaskURL" />
 
 <aui:script use="todo">
 	new Liferay.Portlet.Todo(
 		{
+			addTaskURL: '<%= addTaskURL %>',
 			namespace: '<portlet:namespace />',
 			taskFinished: '<%= UnicodeLanguageUtil.get(pageContext, "task-finished") %>',
-			taskListResourceURL: '<%= taskListURL %>',
 			taskSubmissionFailed: '<%= UnicodeLanguageUtil.get(pageContext, "task-submission-failed") %>',
 			taskSuccessfullySubmitted: '<%= UnicodeLanguageUtil.get(pageContext, "task-successfully-submitted") %>'
 		}
