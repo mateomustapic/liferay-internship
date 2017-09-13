@@ -163,10 +163,10 @@ AUI.add(
 							A.io.request(
 								taskListResourceURL,
 								{
-									method: 'post',
 									data: {
 										taskInputValue: taskInputValue
 									},
+									method: 'post',
 									on: {
 										failure: function() {
 											var failureHtml = A.Lang.sub(

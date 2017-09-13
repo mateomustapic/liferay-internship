@@ -83,11 +83,11 @@
 <aui:script use="todo">
 	new Liferay.Portlet.Todo(
 		{
-			taskSubmissionFailed: '<%= UnicodeLanguageUtil.get(pageContext, "task-submission-failed") %>',
-			taskSuccessfullySubmitted: '<%= UnicodeLanguageUtil.get(pageContext, "task-successfully-submitted") %>',
 			namespace: '<portlet:namespace />',
 			taskFinished: '<%= UnicodeLanguageUtil.get(pageContext, "task-finished") %>',
-			taskListResourceURL: '<%= taskListURL %>'
+			taskListResourceURL: '<%= taskListURL %>',
+			taskSubmissionFailed: '<%= UnicodeLanguageUtil.get(pageContext, "task-submission-failed") %>',
+			taskSuccessfullySubmitted: '<%= UnicodeLanguageUtil.get(pageContext, "task-successfully-submitted") %>'
 		}
 	);
 </aui:script>
