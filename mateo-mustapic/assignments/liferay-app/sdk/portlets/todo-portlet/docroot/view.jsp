@@ -27,8 +27,6 @@
 		<i class="icon-check"></i>
 	</h3>
 
-	<portlet:resourceURL id="task-resource" var="taskListURL" />
-
 	<aui:input cssClass="input-item" name="task" placeholder="enter-task" required="true" />
 
 	<aui:button cssClass="add-task" name="add" type="submit" value="add" />
@@ -79,6 +77,8 @@
 
 	<ul class="history-list" id="<portlet:namespace />history-list"></ul>
 </div>
+
+<portlet:resourceURL id="task-resource" var="taskListURL" />
 
 <aui:script use="todo">
 	new Liferay.Portlet.Todo(
