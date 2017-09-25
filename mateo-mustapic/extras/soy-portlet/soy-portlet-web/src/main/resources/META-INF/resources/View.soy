@@ -1,0 +1,14 @@
+{namespace View}
+
+/**
+ * Prints the Hello Soy portlet view.
+ */
+{template .render}
+	<div>
+		{call Header.render data="all"}{/call}
+
+		<p>This is my first soy portlet</p>
+
+		{call Footer.render data="all"}{/call}
+	</div>
+{/template}

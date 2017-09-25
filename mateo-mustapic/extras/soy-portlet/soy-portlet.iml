@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.0.32" level="application_server_libraries" />
+    <orderEntry type="module" module-name="portal-portlet-bridge-soy" />
+    <orderEntry type="library" name="portal-impl" level="project" />
+    <orderEntry type="library" name="portal-kernel" level="project" />
+    <orderEntry type="library" name="util-bridges" level="project" />
+    <orderEntry type="library" name="util-java" level="project" />
+    <orderEntry type="library" name="util-taglib" level="project" />
+  </component>
+</module>

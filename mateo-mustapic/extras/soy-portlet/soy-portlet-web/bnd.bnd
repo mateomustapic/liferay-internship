@@ -1,0 +1,7 @@
+Bundle-Name: Mateo Web Portlet
+Bundle-SymbolicName: com.liferay.mateo.soy.web
+Bundle-Version: 1.0.6
+Include-Resource: package.json
+Require-Capability:\
+	soy;\
+		filter:="(type=metal)"
