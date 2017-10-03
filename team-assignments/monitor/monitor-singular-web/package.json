@@ -9,6 +9,6 @@
 		"metal-soy": "^2.13.2",
 		"metal-tools-soy": "^4.2.7"
 	},
-	"name": "osb-lcs-web",
+	"name": "monitor-singular-web",
 	"version": "1.0.0"
 }
